@@ -8,20 +8,18 @@ module.exports = {
         extend: {
             colors: {
                 brand: {
-                    red: '#ff4757',
-                    blue: '#2ed573',
-                    yellow: '#ffa502',
-                    purple: '#a29bfe',
-                    green: '#78be20',
-                    orange: '#ff5722',
-                },
-                timeline: {
-                    line: '#ff6b81',
-                    year: '#1e90ff',
+                    primary: '#FF9933', // Saffron Orange
+                    secondary: '#00AEEF', // Cyan Blue
+                    red: '#E31E24', // CTA Red
+                    green: '#78BE20', // Lime Green
+                    yellow: '#FFD700', // Gold
+                    purple: '#A29BFE', // Pastel Purple
+                    navy: '#1A2B49', // Dark Navy for Footer
+                    orange: '#ff5722', // Keeping original orange just in case
                 },
                 text: {
-                    main: '#1a1a2e',
-                    secondary: '#555',
+                    main: '#2D2D2D', // Charcoal
+                    light: '#555555',
                 }
             },
             fontFamily: {

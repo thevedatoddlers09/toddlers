@@ -76,18 +76,18 @@ export default function StatsCounter() {
     };
 
     return (
-        <section className="bg-[#76Aebf] py-24 px-[5%] pb-40 relative overflow-hidden" ref={sectionRef}>
+        <section className="bg-brand-secondary py-24 px-[5%] pb-40 relative overflow-hidden" ref={sectionRef}>
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {stats.map((stat) => (
                         <div key={stat.key} className="flex flex-col items-center gap-4">
-                            <div className="text-4xl text-[#C2185B] bg-white/20 w-20 h-20 flex items-center justify-center rounded-full mb-2 shadow-lg">
+                            <div className="text-4xl text-brand-primary bg-white w-20 h-20 flex items-center justify-center rounded-full mb-2 shadow-lg">
                                 {stat.icon}
                             </div>
-                            <div className="text-[3.5rem] font-extrabold text-[#1e3a8a] leading-none font-poppins">
+                            <div className="text-[3.5rem] font-extrabold text-white leading-none font-poppins">
                                 {counts[stat.key]}{stat.key === 'experience' ? '+' : ''}
                             </div>
-                            <div className="text-lg font-semibold text-[#1e3a8a] uppercase tracking-wider opacity-90">
+                            <div className="text-lg font-semibold text-white/90 uppercase tracking-wider opacity-90">
                                 {stat.label}
                             </div>
                         </div>

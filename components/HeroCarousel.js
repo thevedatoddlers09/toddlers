@@ -65,7 +65,7 @@ export default function HeroCarousel() {
                 >
                     <div className="relative z-20 max-w-4xl animate-[fadeInUp_0.8s_ease-out]">
                         <h1 className="text-4xl md:text-6xl text-white mb-6 drop-shadow-md font-extrabold font-poppins">
-                            {slide.title.main} <span className="text-brand-red">{slide.title.accent}</span>
+                            {slide.title.main} <span className="text-brand-primary">{slide.title.accent}</span>
                         </h1>
                         <p className="text-lg md:text-2xl text-text-main mb-10 font-opensans bg-white/80 px-4 py-2 rounded-xl inline-block drop-shadow-sm">
                             {slide.subtitle}
@@ -97,7 +97,7 @@ export default function HeroCarousel() {
                 {slides.map((_, index) => (
                     <button
                         key={index}
-                        className={`w-3 h-3 rounded-full border-none cursor-pointer transition-all duration-300 ${index === currentSlide ? 'bg-brand-red scale-125' : 'bg-black/20 hover:bg-black/40'}`}
+                        className={`w-3 h-3 rounded-full border-none cursor-pointer transition-all duration-300 ${index === currentSlide ? 'bg-brand-primary scale-125' : 'bg-black/20 hover:bg-black/40'}`}
                         onClick={() => goToSlide(index)}
                         aria-label={`Go to slide ${index + 1}`}
                     />

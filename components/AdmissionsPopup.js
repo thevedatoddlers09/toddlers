@@ -44,7 +44,7 @@ export default function AdmissionsPopup() {
 
                 {!isSubmitted ? (
                     <div className="flex flex-col gap-6">
-                        <h2 className="text-3xl text-brand-blue mb-0 text-center font-bold">Admissions Now Open</h2>
+                        <h2 className="text-3xl text-brand-secondary mb-0 text-center font-bold">Admissions Now Open</h2>
                         <p className="text-center text-text-main mb-2 text-base">Enrich your child's future starting today.</p>
 
                         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -53,7 +53,7 @@ export default function AdmissionsPopup() {
                                 <input
                                     type="tel"
                                     id="phone"
-                                    className="w-full py-4 px-6 border-2 border-[#eee] rounded-full text-base font-inherit transition-all outline-none bg-gray-50 focus:border-brand-blue focus:bg-white focus:shadow-[0_4px_12px_rgba(0,74,153,0.1)]"
+                                    className="w-full py-4 px-6 border-2 border-[#eee] rounded-full text-base font-inherit transition-all outline-none bg-gray-50 focus:border-brand-secondary focus:bg-white focus:shadow-[0_4px_12px_rgba(0,174,239,0.1)]"
                                     placeholder="+91 98765 43210"
                                     required
                                 />
@@ -66,7 +66,7 @@ export default function AdmissionsPopup() {
                 ) : (
                     <div className="text-center py-8">
                         <div className="w-[60px] h-[60px] bg-brand-green text-white rounded-full flex items-center justify-center text-3xl mx-auto mb-6">✓</div>
-                        <h3 className="text-2xl font-bold mb-2 text-brand-blue">Thank You!</h3>
+                        <h3 className="text-2xl font-bold mb-2 text-brand-secondary">Thank You!</h3>
                         <p>We will contact you shortly.</p>
                     </div>
                 )}

@@ -1,3 +1,4 @@
+
 export const metadata = {
     title: 'About Us - The Veda Toddlers',
     description: 'Learn about our vision, mission, and journey from 2008 to today.',
@@ -9,15 +10,15 @@ export default function AboutPage() {
         {
             title: 'Vision',
             icon: '👁️',
-            borderClass: 'border-brand-red',
-            iconBg: 'bg-brand-red text-white',
+            borderClass: 'border-brand-primary',
+            iconBg: 'bg-brand-primary text-white',
             text: 'To be the leading early education provider, enabling every child to become a lifelong learner and a leader of tomorrow.',
         },
         {
             title: 'Mission',
             icon: '🎯',
-            borderClass: 'border-brand-blue',
-            iconBg: 'bg-brand-blue text-white',
+            borderClass: 'border-brand-secondary',
+            iconBg: 'bg-brand-secondary text-white',
             text: 'To provide a culturally appropriate environment assuring moral values, love, and protection for every child.',
         },
         {
@@ -90,19 +91,19 @@ export default function AboutPage() {
 
             {/* Section C: The Journey Timeline */}
             <section className="py-14 px-4 bg-blue-50/50">
-                <h2 className="text-center font-poppins text-4xl font-bold text-[#1a1a2e] mb-12 relative uppercase tracking-wide after:content-[''] after:block after:w-[50px] after:h-[3px] after:bg-brand-red after:mx-auto after:mt-3 after:rounded">
+                <h2 className="text-center font-poppins text-4xl font-bold text-[#1a1a2e] mb-12 relative uppercase tracking-wide after:content-[''] after:block after:w-[50px] after:h-[3px] after:bg-brand-primary after:mx-auto after:mt-3 after:rounded">
                     Our Journey
                 </h2>
                 <div className="relative max-w-4xl mx-auto py-5">
                     {/* Dotted Line */}
-                    <div className="absolute top-0 bottom-0 left-1/2 w-0 border-l-[3px] border-dotted border-timeline-line -translate-x-1/2 hidden md:block"></div>
+                    <div className="absolute top-0 bottom-0 left-1/2 w-0 border-l-[3px] border-dotted border-brand-primary -translate-x-1/2 hidden md:block"></div>
 
                     {timeline.map((item, idx) => (
                         <div key={idx} className={`relative md:w-1/2 w-full mb-8 md:mb-12 box-border ${item.side === 'left' ? 'md:mr-auto md:pr-12 md:text-right' : 'md:ml-auto md:pl-12 md:text-left'} text-center md:text-right`}>
                             {/* Specific adjustments for right side text alignment */}
                             <div className={`relative ${item.side === 'right' ? 'md:text-left' : ''}`}>
                                 <div className="bg-white p-6 rounded-lg shadow-sm relative z-10 inline-block text-left md:inline-block md:w-full">
-                                    <div className="font-poppins text-3xl font-extrabold text-timeline-year mb-1 leading-none">{item.year}</div>
+                                    <div className="font-poppins text-3xl font-extrabold text-brand-secondary mb-1 leading-none">{item.year}</div>
                                     <p className="text-gray-600 text-[0.95rem] leading-relaxed">{item.text}</p>
                                 </div>
                             </div>
@@ -118,7 +119,7 @@ export default function AboutPage() {
 
             {/* Section D: Leadership Team */}
             <section className="py-14 px-4 bg-white">
-                <h2 className="text-center font-poppins text-4xl font-bold text-[#1a1a2e] mb-12 relative uppercase tracking-wide after:content-[''] after:block after:w-[50px] after:h-[3px] after:bg-brand-red after:mx-auto after:mt-3 after:rounded">
+                <h2 className="text-center font-poppins text-4xl font-bold text-[#1a1a2e] mb-12 relative uppercase tracking-wide after:content-[''] after:block after:w-[50px] after:h-[3px] after:bg-brand-primary after:mx-auto after:mt-3 after:rounded">
                     Leadership Team
                 </h2>
                 <div className="max-w-6xl mx-auto">
@@ -129,7 +130,7 @@ export default function AboutPage() {
                                     {/* Placeholder */}
                                     {leader.name.charAt(0)}
                                 </div>
-                                <h3 className="text-lg font-bold text-brand-blue mb-1">{leader.name}</h3>
+                                <h3 className="text-lg font-bold text-brand-secondary mb-1">{leader.name}</h3>
                                 <p className="text-sm text-gray-400 font-medium uppercase tracking-wider">{leader.role}</p>
                             </div>
                         ))}
@@ -139,7 +140,7 @@ export default function AboutPage() {
 
             {/* Section E: Awards & Recognition */}
             <section className="py-14 px-4 bg-gray-50">
-                <h2 className="text-center font-poppins text-4xl font-bold text-[#1a1a2e] mb-12 relative uppercase tracking-wide after:content-[''] after:block after:w-[50px] after:h-[3px] after:bg-brand-red after:mx-auto after:mt-3 after:rounded">
+                <h2 className="text-center font-poppins text-4xl font-bold text-[#1a1a2e] mb-12 relative uppercase tracking-wide after:content-[''] after:block after:w-[50px] after:h-[3px] after:bg-brand-primary after:mx-auto after:mt-3 after:rounded">
                     Recognition
                 </h2>
                 <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">

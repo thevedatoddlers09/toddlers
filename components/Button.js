@@ -29,9 +29,9 @@ export default function Button({
     };
 
     const variants = {
-        primary: "bg-brand-red text-white shadow-md hover:bg-[#c4191f] hover:-translate-y-0.5 hover:shadow-lg",
-        secondary: "bg-brand-blue text-white shadow-md hover:bg-[#003d80] hover:-translate-y-0.5 hover:shadow-lg",
-        outline: "bg-transparent border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/5"
+        primary: "bg-brand-primary text-white shadow-md hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-lg",
+        secondary: "bg-brand-secondary text-white shadow-md hover:bg-cyan-600 hover:-translate-y-0.5 hover:shadow-lg",
+        outline: "bg-transparent border-2 border-brand-secondary text-brand-secondary hover:bg-brand-secondary/5"
     };
 
     const widthClass = fullWidth ? "w-full" : "";

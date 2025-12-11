@@ -23,8 +23,8 @@ export default function GridGallery({ items }) {
                         </div>
                     </div>
                     <div className="p-6 text-center">
-                        {item.category && <span className="inline-block text-xs uppercase tracking-wider text-brand-red font-bold mb-2">{item.category}</span>}
-                        <h3 className="text-lg text-brand-blue m-0 font-semibold">{item.title}</h3>
+                        {item.category && <span className="inline-block text-xs uppercase tracking-wider text-brand-primary font-bold mb-2">{item.category}</span>}
+                        <h3 className="text-lg text-brand-secondary m-0 font-semibold">{item.title}</h3>
                     </div>
                 </div>
             ))}

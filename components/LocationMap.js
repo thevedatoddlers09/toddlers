@@ -148,7 +148,7 @@ export default function LocationMap() {
     }, []);
 
     return (
-        <section className="bg-gradient-to-br from-[#87CEEB] via-[#5BA4B5] to-[#4A90A4] py-10 px-[4%] relative overflow-hidden rounded-[24px] my-6 mx-[3%]">
+        <section className="bg-gradient-to-br from-brand-secondary to-[#0089bd] py-10 px-[4%] relative overflow-hidden rounded-[24px] my-6 mx-[3%]">
             <div className="absolute w-[500px] h-[500px] bg-white/10 rounded-full -top-[150px] -right-[100px] pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[42%_58%] gap-12 items-center relative z-10 text-center md:text-left">
@@ -173,7 +173,7 @@ export default function LocationMap() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[400px] md:max-w-none mx-auto md:mx-0">
                         {stats.map((stat, idx) => (
                             <div key={idx} className="bg-white/85 p-5 rounded-xl backdrop-blur-sm">
-                                <div className="text-[2.2rem] font-extrabold text-[#0056b3] leading-none mb-1 font-poppins">{stat.number}</div>
+                                <div className="text-[2.2rem] font-extrabold text-brand-secondary leading-none mb-1 font-poppins">{stat.number}</div>
                                 <div className="text-[0.85rem] font-medium text-[#1a1a1a] leading-tight">{stat.label}</div>
                             </div>
                         ))}
