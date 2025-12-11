@@ -1,5 +1,5 @@
+
 import Link from 'next/link';
-import styles from './PageHero.module.css';
 
 /**
  * PageHero Component
@@ -11,20 +11,20 @@ import styles from './PageHero.module.css';
  */
 export default function PageHero({ title, breadcrumbs = [] }) {
     return (
-        <section className={styles.hero}>
-            <div className={styles.container}>
-                <h1 className={styles.title}>{title}</h1>
-                <div className={styles.breadcrumbs}>
-                    <Link href="/" className={styles.crumbLink}>Home</Link>
+        <section className="bg-[#f5f5f5] py-12 px-[5%] text-center border-b border-black/5">
+            <div className="max-w-7xl mx-auto">
+                <h1 className="text-4xl text-brand-blue mb-2 font-poppins font-bold">{title}</h1>
+                <div className="text-sm text-gray-500 uppercase font-semibold font-opensans flex justify-center items-center flex-wrap gap-2">
+                    <Link href="/" className="text-gray-500 hover:text-brand-red no-underline transition-colors">Home</Link>
                     {breadcrumbs.map((crumb, index) => (
-                        <span key={index} className={styles.crumbItem}>
-                            <span className={styles.separator}>/</span>
+                        <span key={index} className="flex items-center">
+                            <span className="mx-2 text-[#ccc]">/</span>
                             {crumb.href ? (
-                                <Link href={crumb.href} className={styles.crumbLink}>
+                                <Link href={crumb.href} className="text-gray-500 hover:text-brand-red no-underline transition-colors">
                                     {crumb.label}
                                 </Link>
                             ) : (
-                                <span className={styles.current}>{crumb.label}</span>
+                                <span className="text-brand-red">{crumb.label}</span>
                             )}
                         </span>
                     ))}

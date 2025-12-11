@@ -1,5 +1,5 @@
+
 import Link from 'next/link';
-import styles from './Button.module.css';
 
 /**
  * Button Component
@@ -21,10 +21,21 @@ export default function Button({
     href,
     ...rest
 }) {
-    const variantClass = styles[variant] || styles.primary;
-    const shapeClass = styles[shape] || styles.pill;
-    const widthClass = fullWidth ? styles.fullWidth : '';
-    const combinedClassName = `${styles.button} ${variantClass} ${shapeClass} ${widthClass} ${className}`;
+    const baseClass = "inline-flex items-center justify-center py-3 px-6 font-poppins font-semibold text-base border-none cursor-pointer transition-all duration-200 no-underline";
+
+    const shapes = {
+        pill: "rounded-full",
+        rounded: "rounded-xl"
+    };
+
+    const variants = {
+        primary: "bg-brand-red text-white shadow-md hover:bg-[#c4191f] hover:-translate-y-0.5 hover:shadow-lg",
+        secondary: "bg-brand-blue text-white shadow-md hover:bg-[#003d80] hover:-translate-y-0.5 hover:shadow-lg",
+        outline: "bg-transparent border-2 border-brand-blue text-brand-blue hover:bg-brand-blue/5"
+    };
+
+    const widthClass = fullWidth ? "w-full" : "";
+    const combinedClassName = `${baseClass} ${variants[variant]} ${shapes[shape]} ${widthClass} ${className}`;
 
     // If href is provided, render as a Link
     if (href) {

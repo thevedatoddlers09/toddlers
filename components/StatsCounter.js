@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
-import styles from './StatsCounter.module.css';
 
 /**
  * StatsCounter Component
@@ -77,27 +76,29 @@ export default function StatsCounter() {
     };
 
     return (
-        <section className={styles.statsSection} ref={sectionRef}>
-            <div className={styles.container}>
-                <div className={styles.grid}>
+        <section className="bg-[#76Aebf] py-24 px-[5%] pb-40 relative overflow-hidden" ref={sectionRef}>
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {stats.map((stat) => (
-                        <div key={stat.key} className={styles.statItem}>
-                            <div className={styles.iconWrapper}>
+                        <div key={stat.key} className="flex flex-col items-center gap-4">
+                            <div className="text-4xl text-[#C2185B] bg-white/20 w-20 h-20 flex items-center justify-center rounded-full mb-2 shadow-lg">
                                 {stat.icon}
                             </div>
-                            <div className={styles.number}>
+                            <div className="text-[3.5rem] font-extrabold text-[#1e3a8a] leading-none font-poppins">
                                 {counts[stat.key]}{stat.key === 'experience' ? '+' : ''}
                             </div>
-                            <div className={styles.label}>{stat.label}</div>
+                            <div className="text-lg font-semibold text-[#1e3a8a] uppercase tracking-wider opacity-90">
+                                {stat.label}
+                            </div>
                         </div>
                     ))}
                 </div>
             </div>
 
             {/* Wavy Divider SVG */}
-            <div className={styles.waveDivider}>
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className={styles.shapeFill}></path>
+            <div className="absolute bottom-0 left-0 w-full rotate-180 leading-[0] overflow-hidden">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px]">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-white"></path>
                 </svg>
             </div>
         </section>

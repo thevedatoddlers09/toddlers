@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useLayoutEffect } from 'react';
-import styles from './LocationMap.module.css';
+import { useEffect, useRef } from 'react';
 
 /**
  * LocationMap Component
@@ -149,33 +148,33 @@ export default function LocationMap() {
     }, []);
 
     return (
-        <section className={styles.mapSection}>
-            <div className={styles.decorativeCircle}></div>
+        <section className="bg-gradient-to-br from-[#87CEEB] via-[#5BA4B5] to-[#4A90A4] py-10 px-[4%] relative overflow-hidden rounded-[24px] my-6 mx-[3%]">
+            <div className="absolute w-[500px] h-[500px] bg-white/10 rounded-full -top-[150px] -right-[100px] pointer-events-none"></div>
 
-            <div className={styles.container}>
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[42%_58%] gap-12 items-center relative z-10 text-center md:text-left">
                 {/* Left: Map */}
-                <div className={styles.mapColumn}>
-                    <div className={styles.mapWrapper}>
+                <div className="flex justify-center items-center">
+                    <div className="relative w-full max-w-[400px]">
                         <div
                             ref={chartRef}
-                            className={styles.amchartContainer}
+                            className="w-full h-[320px] rounded-xl overflow-hidden"
                         ></div>
                     </div>
                 </div>
 
                 {/* Right: Content */}
-                <div className={styles.contentColumn}>
-                    <h2 className={styles.headline}>
+                <div className="text-left">
+                    <h2 className="text-4xl md:text-[2.4rem] font-extrabold text-white leading-[1.15] mb-8 font-poppins drop-shadow-sm">
                         India&apos;s<br />
-                        <span className={styles.highlight}>Fastest Growing</span><br />
+                        <span className="text-[#FFD700]">Fastest Growing</span><br />
                         Preschool Brand
                     </h2>
 
-                    <div className={styles.statsGrid}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[400px] md:max-w-none mx-auto md:mx-0">
                         {stats.map((stat, idx) => (
-                            <div key={idx} className={styles.statCard}>
-                                <div className={styles.statNumber}>{stat.number}</div>
-                                <div className={styles.statLabel}>{stat.label}</div>
+                            <div key={idx} className="bg-white/85 p-5 rounded-xl backdrop-blur-sm">
+                                <div className="text-[2.2rem] font-extrabold text-[#0056b3] leading-none mb-1 font-poppins">{stat.number}</div>
+                                <div className="text-[0.85rem] font-medium text-[#1a1a1a] leading-tight">{stat.label}</div>
                             </div>
                         ))}
                     </div>

@@ -1,21 +1,21 @@
 import Link from 'next/link';
 import Button from './Button';
-import styles from './Navbar.module.css';
+
 
 export default function Navbar() {
     return (
-        <nav className={styles.navbar}>
-            <div className={styles.logo}>
-                The Veda <span>Toddlers</span>
+        <nav className="flex justify-between items-center py-4 px-[5%] bg-white shadow-sm sticky top-0 z-[1000]">
+            <div className="font-poppins font-bold text-2xl text-brand-blue tracking-tighter">
+                The Veda <span className="text-brand-red">Toddlers</span>
             </div>
 
-            <div className={styles.navLinks}>
-                <Link href="/" className={styles.link}>Home</Link>
-                <Link href="/about" className={styles.link}>About Us</Link>
-                <Link href="/programs" className={styles.link}>Programs</Link>
-                <Link href="/events" className={styles.link}>Events</Link>
-                <Link href="/activities" className={styles.link}>Activities</Link>
-                <Link href="/admissions" className={styles.link}>Admissions</Link>
+            <div className="hidden md:flex gap-8 items-center">
+                <Link href="/" className="font-semibold text-text-main uppercase text-sm transition-colors hover:text-brand-red">Home</Link>
+                <Link href="/about" className="font-semibold text-text-main uppercase text-sm transition-colors hover:text-brand-red">About Us</Link>
+                <Link href="/programs" className="font-semibold text-text-main uppercase text-sm transition-colors hover:text-brand-red">Programs</Link>
+                <Link href="/events" className="font-semibold text-text-main uppercase text-sm transition-colors hover:text-brand-red">Events</Link>
+                <Link href="/activities" className="font-semibold text-text-main uppercase text-sm transition-colors hover:text-brand-red">Activities</Link>
+                <Link href="/admissions" className="font-semibold text-text-main uppercase text-sm transition-colors hover:text-brand-red">Admissions</Link>
 
                 <Button variant="primary" shape="pill" href="/contact">
                     Contact Us
