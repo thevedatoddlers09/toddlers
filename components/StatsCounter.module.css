@@ -1,0 +1,92 @@
+.statsSection {
+    background-color: #76Aebf;
+    /* Muted Teal */
+    padding: 6rem 5% 10rem;
+    /* Extra bottom padding for wave */
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.iconWrapper {
+    font-size: 2.5rem;
+    color: #C2185B;
+    /* Magenta/Deep Pink */
+    background: rgba(255, 255, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1e3a8a;
+    /* Dark Blue */
+    line-height: 1;
+    font-family: var(--font-poppins);
+}
+
+.label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    /* Dark Blue matching numbers per request */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+/* Wavy Divider styling */
+.waveDivider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.waveDivider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.shapeFill {
+    fill: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}

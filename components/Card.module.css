@@ -1,0 +1,43 @@
+.card {
+    background-color: var(--color-background-white);
+    border-radius: 24px;
+    /* More rounded like reference */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    /* Softer, premium shadow */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy subtle feel */
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    /* Ensure image clips */
+    display: flex;
+    flex-direction: column;
+}
+
+.cardImage {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.hoverEffect:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.12);
+}
+
+.paddingNone {
+    padding: 0;
+}
+
+.paddingSmall {
+    padding: 1.5rem;
+}
+
+.paddingNormal {
+    padding: 2.5rem;
+}
+
+.paddingLarge {
+    padding: 3.5rem;
+}

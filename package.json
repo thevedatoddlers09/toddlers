@@ -8,8 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@amcharts/amcharts5": "^5.14.4",
+    "@amcharts/amcharts5-geodata": "^5.1.5",
+    "@highcharts/map-collection": "^2.3.2",
+    "highcharts": "^12.4.0",
+    "highcharts-react-official": "^3.2.3",
+    "leaflet": "^1.9.4",
     "next": "16.0.7",
+    "prop-types": "^15.8.1",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "react-leaflet": "^5.0.0",
+    "react-simple-maps": "^3.0.0"
   }
 }

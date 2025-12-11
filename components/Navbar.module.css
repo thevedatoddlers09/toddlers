@@ -1,0 +1,48 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--color-background-white);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primary-blue);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--color-primary-red);
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.link {
+    font-weight: 600;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.link:hover {
+    color: var(--color-primary-red);
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+        /* Simple mobile hide for now */
+    }
+}
