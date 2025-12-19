@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                 <div className="col-span-1">
                     <div className="mb-6">
-                        <img src="/logo.png" alt="The Veda Toddlers Logo" className="h-20 w-auto object-contain bg-white rounded-xl p-2" />
+                        <img src="/logo.jpg" alt="The Veda Toddlers Logo" className="h-28 w-auto object-contain bg-white rounded-xl p-2" />
                     </div>
                     <p className="opacity-90 leading-relaxed font-opensans text-sm">
                         Big Futures Start Small. Nurturing young minds with love and care.
