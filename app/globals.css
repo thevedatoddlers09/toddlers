@@ -3,29 +3,40 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Colors */
-  --color-primary-red: #E31E24;
-  --color-primary-blue: #004A99;
+  /* Veda Color Palette */
+  --veda-primary: #3E2A4F;
+  --veda-primary-light: #5A3F6E;
+  --veda-primary-dark: #2A1B38;
 
-  /* Neutral Colors */
-  --color-text-main: #333333;
-  --color-text-light: #555555;
-  --color-background-white: #FFFFFF;
-  --color-background-light: #F5F5F5;
+  --veda-secondary: #CFC6DF;
+  --veda-secondary-light: #E8E3F1;
+  --veda-secondary-dark: #B8ACC9;
 
-  /* Accent Colors (Seven Petal Spectrum) */
-  --color-accent-yellow: #FFD700;
-  --color-accent-green: #78BE20;
-  --color-accent-purple: #9C27B0;
-  --color-accent-orange: #FF5722;
+  --veda-accent: #F2C14E;
+  --veda-accent-light: #F7D77A;
+  --veda-accent-dark: #E5AF3A;
+
+  --veda-background: #FFFFFF;
+  --veda-background-soft: #FAF8F5;
+  --veda-background-muted: #F1EDF7;
+
+  --veda-text: #4A4A4A;
+  --veda-text-heading: #3E2A4F;
+  --veda-text-muted: #7A7A7A;
+  --veda-text-light: #FFFFFF;
+
+  /* Playful Colors */
+  --veda-playful-blue: #A7C7E7;
+  --veda-playful-green: #A8C686;
+  --veda-playful-peach: #F4B6A6;
 
   /* UI Helpers */
+  --border-radius-soft: 1rem;
+  --border-radius-softer: 1.5rem;
   --border-radius-pill: 9999px;
-  --border-radius-soft: 12px;
-  --border-radius-card: 16px;
 
-  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
-  --shadow-lift: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-softer: 0 4px 16px rgba(0, 0, 0, 0.08);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -45,8 +56,8 @@ body {
 }
 
 body {
-  color: var(--color-text-main);
-  background: var(--color-background-light);
+  color: var(--veda-text);
+  background: var(--veda-background-soft);
   font-family: var(--font-open-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -59,7 +70,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-poppins), sans-serif;
-  color: var(--color-primary-blue);
+  color: var(--veda-text-heading);
   font-weight: 700;
   line-height: 1.2;
 }
@@ -71,21 +82,4 @@ a {
 
 button {
   font-family: var(--font-poppins), sans-serif;
-}
-
-/* Global Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-main {
-  animation: fadeInUp 0.8s ease-out;
 }

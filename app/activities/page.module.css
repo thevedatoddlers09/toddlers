@@ -1,98 +1,96 @@
 .main {
-    background-color: white;
+    background-color: var(--veda-background);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .section {
-    padding: 5rem 5%;
-    background-color: white;
+    padding: 4rem 5%;
+    background-color: var(--veda-background);
 }
 
 .sectionAlt {
-    padding: 5rem 5%;
-    background-color: var(--color-background-light);
+    padding: 4rem 5%;
+    background-color: var(--veda-background-muted);
 }
 
 .sectionHeader {
     text-align: center;
-    margin-bottom: 3rem;
-    max-width: 700px;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .sectionTitle {
-    font-size: 2rem;
-    color: var(--color-primary-blue);
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: var(--veda-text-heading);
+    margin-bottom: 0.75rem;
     font-family: var(--font-poppins);
 }
 
 .sectionSubtitle {
-    color: var(--color-text-main);
-    font-size: 1.1rem;
+    color: var(--veda-text);
+    font-size: 1rem;
     line-height: 1.6;
 }
 
 /* Philosophy Section */
 .philosophySection {
-    padding: 4rem 5%;
-    background-color: white;
+    padding: 3.5rem 5%;
+    background-color: var(--veda-background);
     text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid var(--veda-border, #E5E1EC);
 }
 
 .philosophyTitle {
-    font-size: 1.75rem;
-    color: var(--color-primary-red);
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--veda-primary);
+    margin-bottom: 1.25rem;
     font-family: var(--font-poppins);
 }
 
 .philosophyText {
-    font-size: 1.2rem;
-    color: var(--color-text-main);
-    line-height: 1.8;
-    max-width: 800px;
+    font-size: 1.1rem;
+    color: var(--veda-text);
+    line-height: 1.7;
+    max-width: 750px;
     margin: 0 auto;
-    font-style: italic;
     font-family: var(--font-open-sans);
 }
 
 /* CTA Section */
 .ctaSection {
-    background-color: var(--color-background-light);
-    /* Or a brand color accent */
-    padding: 3rem 5%;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: var(--veda-background-muted);
+    padding: 2.5rem 5%;
+    border-top: 1px solid var(--veda-border, #E5E1EC);
 }
 
 .ctaContainer {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    background: white;
-    padding: 2.5rem;
-    border-radius: 16px;
+    background: var(--veda-background);
+    padding: 2rem;
+    border-radius: 1rem;
     box-shadow: var(--shadow-soft);
 }
 
 .ctaContent h2 {
-    color: var(--color-primary-blue);
+    color: var(--veda-text-heading);
     margin-bottom: 0.5rem;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .ctaContent p {
-    color: var(--color-text-main);
-    font-size: 1.1rem;
+    color: var(--veda-text);
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {

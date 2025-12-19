@@ -1,4 +1,3 @@
-
 /**
  * Card Component
  * @param {Object} props
@@ -16,14 +15,14 @@ export default function Card({
     className = '',
     ...rest
 }) {
-    const baseClass = "bg-white rounded-[24px] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] border border-black/5 overflow-hidden flex flex-col";
-    const hoverClass = hoverEffect ? "hover:-translate-y-2 hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.12)]" : "";
+    const baseClass = "bg-veda-background-soft rounded-2xl shadow-soft transition-all duration-300 ease-out border border-veda-border overflow-hidden flex flex-col";
+    const hoverClass = hoverEffect ? "hover:-translate-y-1 hover:shadow-softer" : "";
 
     const paddings = {
         none: "p-0",
-        small: "p-6",
-        normal: "p-10",
-        large: "p-14"
+        small: "p-5",
+        normal: "p-8",
+        large: "p-12"
     };
 
     return (
@@ -33,7 +32,7 @@ export default function Card({
         >
             {image && (
                 <div
-                    className="w-full h-[220px] bg-cover bg-center border-b border-black/5"
+                    className="w-full h-[200px] bg-cover bg-center border-b border-veda-border"
                     style={{ backgroundImage: `url(${image})` }}
                 />
             )}

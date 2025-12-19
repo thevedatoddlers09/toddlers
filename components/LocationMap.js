@@ -57,12 +57,12 @@ export default function LocationMap() {
                 })
             );
 
-            // Create polygon series for India
+            // Create polygon series for India - using Veda colors
             const polygonSeries = chart.series.push(
                 am5map.MapPolygonSeries.new(root, {
                     geoJSON: am5geodata_india.default,
-                    fill: am5.color(0x0a2540),
-                    stroke: am5.color(0x4A90A4),
+                    fill: am5.color(0x2A1B38), // veda-primary-dark
+                    stroke: am5.color(0x5A3F6E), // veda-primary-light
                     strokeWidth: 1,
                 })
             );
@@ -80,12 +80,12 @@ export default function LocationMap() {
             pointSeries.bullets.push(function () {
                 const container = am5.Container.new(root, {});
 
-                // Outer circle
+                // Outer circle - using veda-accent
                 container.children.push(
                     am5.Circle.new(root, {
                         radius: 8,
                         fill: am5.color(0xffffff),
-                        stroke: am5.color(0xE31E24),
+                        stroke: am5.color(0xF2C14E), // veda-accent
                         strokeWidth: 3,
                     })
                 );
@@ -94,7 +94,7 @@ export default function LocationMap() {
                 container.children.push(
                     am5.Circle.new(root, {
                         radius: 3,
-                        fill: am5.color(0xE31E24),
+                        fill: am5.color(0xF2C14E), // veda-accent
                     })
                 );
 
@@ -110,13 +110,17 @@ export default function LocationMap() {
                         centerY: am5.p100,
                         dy: -12,
                         background: am5.RoundedRectangle.new(root, {
-                            fill: am5.color(0x0a2540),
-                            fillOpacity: 0.8,
+                            fill: am5.color(0x2A1B38),
+                            fillOpacity: 0.9,
+                            cornerRadiusTL: 6,
+                            cornerRadiusTR: 6,
+                            cornerRadiusBL: 6,
+                            cornerRadiusBR: 6,
                         }),
-                        paddingTop: 2,
-                        paddingBottom: 2,
-                        paddingLeft: 6,
-                        paddingRight: 6,
+                        paddingTop: 3,
+                        paddingBottom: 3,
+                        paddingLeft: 8,
+                        paddingRight: 8,
                     })
                 );
 
@@ -148,33 +152,33 @@ export default function LocationMap() {
     }, []);
 
     return (
-        <section className="bg-gradient-to-br from-brand-secondary to-[#0089bd] py-10 px-[4%] relative overflow-hidden rounded-[24px] my-6 mx-[3%]">
-            <div className="absolute w-[500px] h-[500px] bg-white/10 rounded-full -top-[150px] -right-[100px] pointer-events-none"></div>
+        <section className="bg-gradient-to-br from-veda-primary to-veda-primary-dark py-12 px-[4%] relative overflow-hidden rounded-2xl my-8 mx-[3%]">
+            <div className="absolute w-[400px] h-[400px] bg-white/5 rounded-full -top-[100px] -right-[80px] pointer-events-none"></div>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[42%_58%] gap-12 items-center relative z-10 text-center md:text-left">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[42%_58%] gap-10 items-center relative z-10 text-center md:text-left">
                 {/* Left: Map */}
                 <div className="flex justify-center items-center">
-                    <div className="relative w-full max-w-[400px]">
+                    <div className="relative w-full max-w-[360px]">
                         <div
                             ref={chartRef}
-                            className="w-full h-[320px] rounded-xl overflow-hidden"
+                            className="w-full h-[300px] rounded-xl overflow-hidden"
                         ></div>
                     </div>
                 </div>
 
                 {/* Right: Content */}
                 <div className="text-left">
-                    <h2 className="text-4xl md:text-[2.4rem] font-extrabold text-white leading-[1.15] mb-8 font-poppins drop-shadow-sm">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-8 font-poppins">
                         India&apos;s<br />
-                        <span className="text-[#FFD700]">Fastest Growing</span><br />
+                        <span className="text-veda-accent">Fastest Growing</span><br />
                         Preschool Brand
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[400px] md:max-w-none mx-auto md:mx-0">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[380px] md:max-w-none mx-auto md:mx-0">
                         {stats.map((stat, idx) => (
-                            <div key={idx} className="bg-white/85 p-5 rounded-xl backdrop-blur-sm">
-                                <div className="text-[2.2rem] font-extrabold text-brand-secondary leading-none mb-1 font-poppins">{stat.number}</div>
-                                <div className="text-[0.85rem] font-medium text-[#1a1a1a] leading-tight">{stat.label}</div>
+                            <div key={idx} className="bg-white/90 p-4 rounded-xl backdrop-blur-sm shadow-soft">
+                                <div className="text-2xl font-bold text-veda-primary leading-none mb-1 font-poppins">{stat.number}</div>
+                                <div className="text-xs font-medium text-veda-text-DEFAULT leading-tight">{stat.label}</div>
                             </div>
                         ))}
                     </div>

@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 
 /**
@@ -11,20 +10,20 @@ import Link from 'next/link';
  */
 export default function PageHero({ title, breadcrumbs = [] }) {
     return (
-        <section className="bg-[#f5f5f5] py-12 px-[5%] text-center border-b border-black/5">
+        <section className="bg-veda-background-muted py-14 px-[5%] text-center border-b border-veda-border">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl text-brand-secondary mb-2 font-poppins font-bold">{title}</h1>
-                <div className="text-sm text-gray-500 uppercase font-semibold font-opensans flex justify-center items-center flex-wrap gap-2">
-                    <Link href="/" className="text-gray-500 hover:text-brand-primary no-underline transition-colors">Home</Link>
+                <h1 className="text-3xl text-veda-text-heading mb-3 font-poppins font-bold">{title}</h1>
+                <div className="text-sm text-veda-text-muted uppercase font-medium font-opensans flex justify-center items-center flex-wrap gap-2">
+                    <Link href="/" className="text-veda-text-muted hover:text-veda-primary no-underline transition-colors">Home</Link>
                     {breadcrumbs.map((crumb, index) => (
                         <span key={index} className="flex items-center">
-                            <span className="mx-2 text-[#ccc]">/</span>
+                            <span className="mx-2 text-veda-border">/</span>
                             {crumb.href ? (
-                                <Link href={crumb.href} className="text-gray-500 hover:text-brand-primary no-underline transition-colors">
+                                <Link href={crumb.href} className="text-veda-text-muted hover:text-veda-primary no-underline transition-colors">
                                     {crumb.label}
                                 </Link>
                             ) : (
-                                <span className="text-brand-primary">{crumb.label}</span>
+                                <span className="text-veda-primary">{crumb.label}</span>
                             )}
                         </span>
                     ))}

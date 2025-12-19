@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import PageHero from '@/components/PageHero';
 import Button from '@/components/Button';
+import { MapPin, Mail, Phone, Clock, Check } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function ContactPage() {
@@ -42,7 +43,7 @@ export default function ContactPage() {
                             <h2 className={styles.infoTitle}>Get In Touch</h2>
 
                             <div className={styles.infoItem}>
-                                <div className={styles.infoIcon}>📍</div>
+                                <div className={styles.infoIcon}><MapPin size={18} /></div>
                                 <div>
                                     <strong>Address</strong>
                                     <p>BQ-Block, NS-9, Shalimar Bagh,<br />New Delhi - 110088</p>
@@ -50,7 +51,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className={styles.infoItem}>
-                                <div className={styles.infoIcon}>✉️</div>
+                                <div className={styles.infoIcon}><Mail size={18} /></div>
                                 <div>
                                     <strong>Email</strong>
                                     <p>info@vedatoddlers.com</p>
@@ -58,7 +59,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className={styles.infoItem}>
-                                <div className={styles.infoIcon}>📞</div>
+                                <div className={styles.infoIcon}><Phone size={18} /></div>
                                 <div>
                                     <strong>Contact Numbers</strong>
                                     <p>+91-9310129888<br />+91-11-27422001</p>
@@ -66,7 +67,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className={styles.infoItem}>
-                                <div className={styles.infoIcon}>🕒</div>
+                                <div className={styles.infoIcon}><Clock size={18} /></div>
                                 <div>
                                     <strong>Timings</strong>
                                     <p>8:30 a.m. to 3:30 p.m.<br />(Monday to Saturday)</p>
@@ -149,7 +150,7 @@ export default function ContactPage() {
                                 </form>
                             ) : (
                                 <div className={styles.successMessage}>
-                                    <div className={styles.successIcon}>✓</div>
+                                    <div className={styles.successIcon}><Check size={24} /></div>
                                     <h3>Thank You!</h3>
                                     <p>We have received your query and will get back to you shortly.</p>
                                 </div>

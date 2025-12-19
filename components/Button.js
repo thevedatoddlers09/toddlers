@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 
 /**
@@ -29,9 +28,9 @@ export default function Button({
     };
 
     const variants = {
-        primary: "bg-brand-primary text-white shadow-md hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-lg",
-        secondary: "bg-brand-secondary text-white shadow-md hover:bg-cyan-600 hover:-translate-y-0.5 hover:shadow-lg",
-        outline: "bg-transparent border-2 border-brand-secondary text-brand-secondary hover:bg-brand-secondary/5"
+        primary: "bg-veda-accent text-veda-primary-dark shadow-soft hover:bg-veda-accent-dark hover:-translate-y-0.5 hover:shadow-softer",
+        secondary: "bg-veda-primary text-white shadow-soft hover:bg-veda-primary-light hover:-translate-y-0.5 hover:shadow-softer",
+        outline: "bg-transparent border-2 border-veda-primary text-veda-primary hover:bg-veda-secondary-light"
     };
 
     const widthClass = fullWidth ? "w-full" : "";
