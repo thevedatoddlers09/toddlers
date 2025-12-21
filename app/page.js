@@ -16,46 +16,70 @@ export default function Home() {
 
       {/* Why Us Section */}
       <section className="py-24 px-[5%] bg-veda-background-DEFAULT">
-        <h2 className="text-center text-4xl font-bold mb-12 text-veda-text-heading font-poppins">Why Choose Us?</h2>
+        <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Why Choose Us?</h2>
+        <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">Discover what makes The Veda Toddlers the perfect choice for your child's early education</p>
         <div className="flex flex-wrap justify-center gap-6">
+          {/* Award Winning Curriculum - Golden Theme */}
           <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
-            <Card hoverEffect className="text-center h-full">
-              <div className="w-14 h-14 rounded-xl bg-veda-accent/15 text-veda-accent mx-auto mb-5 flex items-center justify-center">
-                <Award size={26} />
+            <div className="relative bg-gradient-to-br from-veda-accent/10 via-white to-veda-accent/5 rounded-2xl p-6 h-full border border-veda-accent/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-veda-accent/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-16 h-16 bg-veda-accent/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-accent to-veda-accent-dark text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <Award size={30} />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-veda-text-heading text-center">Award Winning Curriculum</h3>
+                <p className="text-veda-text-muted text-sm text-center leading-relaxed">Designed by experts to foster holistic development through play-based learning.</p>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-veda-text-heading">Award Winning Curriculum</h3>
-              <p className="text-veda-text-muted text-sm">Designed by experts to foster holistic development.</p>
-            </Card>
+            </div>
           </div>
 
+          {/* Safe & Secure - Green Theme */}
           <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
-            <Card hoverEffect className="text-center h-full">
-              <div className="w-14 h-14 rounded-xl bg-veda-playful-green/20 text-veda-playful-green mx-auto mb-5 flex items-center justify-center">
-                <ShieldCheck size={26} />
+            <div className="relative bg-gradient-to-br from-veda-playful-green/15 via-white to-veda-playful-green/5 rounded-2xl p-6 h-full border border-veda-playful-green/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-veda-playful-green/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute bottom-4 left-4 w-3 h-3 bg-veda-playful-green/30 rounded-full"></div>
+              <div className="absolute top-1/2 right-4 w-2 h-2 bg-veda-playful-green/20 rounded-full"></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-playful-green to-green-600 text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <ShieldCheck size={30} />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-veda-text-heading text-center">Safe & Secure</h3>
+                <p className="text-veda-text-muted text-sm text-center leading-relaxed">CCTV monitored facilities and child-safe infrastructure for peace of mind.</p>
               </div>
-              <h3 className="text-lg font-bold mb-2 text-veda-text-heading">Safe & Secure</h3>
-              <p className="text-veda-text-muted text-sm">CCTV monitored functionality and child-safe infrastructure.</p>
-            </Card>
+            </div>
           </div>
 
+          {/* Passionate Educators - Peach Theme */}
           <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
-            <Card hoverEffect className="text-center h-full">
-              <div className="w-14 h-14 rounded-xl bg-veda-playful-peach/20 text-veda-playful-peach mx-auto mb-5 flex items-center justify-center">
-                <Heart size={26} />
+            <div className="relative bg-gradient-to-br from-veda-playful-peach/15 via-white to-rose-50 rounded-2xl p-6 h-full border border-veda-playful-peach/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
+              <div className="absolute top-4 right-4 text-veda-playful-peach/20">
+                <Heart size={60} />
               </div>
-              <h3 className="text-lg font-bold mb-2 text-veda-text-heading">Passionate Educators</h3>
-              <p className="text-veda-text-muted text-sm">Highly trained teachers who treat every child with love.</p>
-            </Card>
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-playful-peach to-rose-400 text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <Heart size={30} />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-veda-text-heading text-center">Passionate Educators</h3>
+                <p className="text-veda-text-muted text-sm text-center leading-relaxed">Highly trained teachers who treat every child with love and care.</p>
+              </div>
+            </div>
           </div>
 
+          {/* Seven Petal Approach - Purple Theme */}
           <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
-            <Card hoverEffect className="text-center h-full">
-              <div className="w-14 h-14 rounded-xl bg-veda-secondary/30 text-veda-primary mx-auto mb-5 flex items-center justify-center">
-                <Flower2 size={26} />
+            <div className="relative bg-gradient-to-br from-veda-secondary/40 via-white to-veda-secondary/20 rounded-2xl p-6 h-full border border-veda-secondary shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
+              <div className="absolute -bottom-4 -right-4 text-veda-secondary/30">
+                <Flower2 size={80} />
               </div>
-              <h3 className="text-lg font-bold mb-2 text-veda-text-heading">Seven Petal Approach</h3>
-              <p className="text-veda-text-muted text-sm">Ensuring development across all key skills and senses.</p>
-            </Card>
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-primary to-veda-primary-dark text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <Flower2 size={30} />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-veda-text-heading text-center">Seven Petal Approach</h3>
+                <p className="text-veda-text-muted text-sm text-center leading-relaxed">Ensuring development across all key skills, senses, and abilities.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -65,39 +89,66 @@ export default function Home() {
 
       {/* Featured Programs Section */}
       <section className="py-24 px-[5%] bg-veda-background-muted">
-        <h2 className="text-center text-4xl font-bold mb-12 text-veda-text-heading font-poppins">Our Programs</h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          <div className="w-full md:w-[calc(33.333%-16px)]">
-            <Card className="flex flex-col h-full" padding="small" image="https://images.unsplash.com/photo-1596464716127-f9a0639b9de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-              <div className="inline-block bg-veda-secondary-light py-1 px-3 rounded-full text-xs font-bold text-veda-primary mb-4 self-start">2-3 Years</div>
-              <h3 className="text-xl text-veda-text-heading mb-2 font-bold font-poppins">Toddlers</h3>
-              <p className="text-veda-text-muted mb-6 flex-grow text-sm">A fun-filled beginning to your child's learning journey.</p>
-              <Button variant="outline" shape="rounded" fullWidth href="/programs">
-                View Details
-              </Button>
-            </Card>
+        <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Our Programs</h2>
+        <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">Age-appropriate programs designed to nurture every stage of early development</p>
+        <div className="flex flex-wrap justify-center gap-8">
+          {/* Toddlers Program */}
+          <div className="w-full md:w-[calc(33.333%-22px)]">
+            <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 group">
+              <div className="relative h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1596464716127-f9a0639b9de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Toddlers" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">2-3 Years</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl text-veda-text-heading mb-2 font-bold font-poppins">Toddlers</h3>
+                <p className="text-veda-text-muted mb-5 text-sm leading-relaxed">A fun-filled beginning to your child's learning journey with sensory play and motor skill development.</p>
+                <Button variant="outline" shape="rounded" fullWidth href="/programs" className="group-hover:bg-veda-primary group-hover:text-white group-hover:border-veda-primary transition-all">
+                  View Details
+                </Button>
+              </div>
+            </div>
           </div>
 
-          <div className="w-full md:w-[calc(33.333%-16px)]">
-            <Card className="flex flex-col h-full" padding="small" image="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-              <div className="inline-block bg-veda-secondary-light py-1 px-3 rounded-full text-xs font-bold text-veda-primary mb-4 self-start">3-4 Years</div>
-              <h3 className="text-xl text-veda-text-heading mb-2 font-bold font-poppins">Nursery</h3>
-              <p className="text-veda-text-muted mb-6 flex-grow text-sm">Building foundational skills through play and exploration.</p>
-              <Button variant="outline" shape="rounded" fullWidth href="/programs">
-                View Details
-              </Button>
-            </Card>
+          {/* Nursery Program - Featured/Elevated */}
+          <div className="w-full md:w-[calc(33.333%-22px)] md:-mt-4">
+            <div className="relative bg-veda-primary rounded-3xl overflow-hidden shadow-softer transition-all duration-300 group">
+              <div className="absolute top-4 right-4 bg-veda-accent text-veda-primary-dark py-1 px-3 rounded-full text-xs font-bold z-10">Most Popular</div>
+              <div className="relative h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nursery" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary to-transparent"></div>
+              </div>
+              <div className="p-6">
+                <span className="inline-block bg-veda-accent/20 text-veda-accent py-1.5 px-4 rounded-full text-xs font-bold mb-3">3-4 Years</span>
+                <h3 className="text-xl text-white mb-2 font-bold font-poppins">Nursery</h3>
+                <p className="text-veda-secondary-light mb-5 text-sm leading-relaxed">Building foundational skills through play, exploration, and structured activities.</p>
+                <Button variant="primary" shape="rounded" fullWidth href="/programs" className="bg-veda-accent hover:bg-veda-accent-dark text-veda-primary-dark border-none">
+                  View Details
+                </Button>
+              </div>
+            </div>
           </div>
 
-          <div className="w-full md:w-[calc(33.333%-16px)]">
-            <Card className="flex flex-col h-full" padding="small" image="https://images.unsplash.com/photo-1587654780291-39c940483719?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-              <div className="inline-block bg-veda-secondary-light py-1 px-3 rounded-full text-xs font-bold text-veda-primary mb-4 self-start">4-6 Years</div>
-              <h3 className="text-xl text-veda-text-heading mb-2 font-bold font-poppins">Kindergarten</h3>
-              <p className="text-veda-text-muted mb-6 flex-grow text-sm">Preparing children for formal schooling with confidence.</p>
-              <Button variant="outline" shape="rounded" fullWidth href="/programs">
-                View Details
-              </Button>
-            </Card>
+          {/* Kindergarten Program */}
+          <div className="w-full md:w-[calc(33.333%-22px)]">
+            <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 group">
+              <div className="relative h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1587654780291-39c940483719?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kindergarten" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">4-6 Years</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl text-veda-text-heading mb-2 font-bold font-poppins">Kindergarten</h3>
+                <p className="text-veda-text-muted mb-5 text-sm leading-relaxed">Preparing children for formal schooling with confidence, creativity, and critical thinking.</p>
+                <Button variant="outline" shape="rounded" fullWidth href="/programs" className="group-hover:bg-veda-primary group-hover:text-white group-hover:border-veda-primary transition-all">
+                  View Details
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
         <div className="text-center mt-12">
@@ -109,24 +160,25 @@ export default function Home() {
 
       {/* Facilities & Infrastructure Section */}
       <section className="py-24 px-[5%] bg-veda-background-DEFAULT">
-        <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-16 relative uppercase tracking-wide after:content-[''] after:block after:w-12 after:h-1 after:bg-veda-accent after:mx-auto after:mt-4 after:rounded-full">
+        <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
           World-Class Facilities
         </h2>
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-y-10 gap-x-8">
+        <p className="text-center text-veda-text-muted mb-16 max-w-2xl mx-auto">Modern infrastructure designed with children's safety and learning in mind</p>
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { title: 'Classrooms', desc: 'Safe, hygienic, bright, and spacious with strictly sanitized materials.', Icon: School, color: 'bg-veda-accent' },
-            { title: 'Security', desc: '24x7 CCTV surveillance covering the entire campus with monitored entry/exit.', Icon: Shield, color: 'bg-veda-primary' },
-            { title: 'Play Areas', desc: 'Dedicated indoor and outdoor play zones with soft flooring for safety.', Icon: FerrisWheel, color: 'bg-veda-playful-green' },
-            { title: 'Technology', desc: 'Smart learning rooms with interactive digital tools and audio-visual aids.', Icon: Laptop, color: 'bg-veda-playful-blue' },
-            { title: 'Transport', desc: 'Managed facility with trained drivers and attendants following strictly safety protocols.', Icon: Bus, color: 'bg-veda-secondary-dark' },
-            { title: 'Health First', desc: 'Fully equipped medical first-aid station with trained staff for immediate care.', Icon: Hospital, color: 'bg-veda-playful-peach' },
+            { title: 'Classrooms', desc: 'Safe, hygienic, bright, and spacious with strictly sanitized materials.', Icon: School, gradient: 'from-veda-accent to-amber-500' },
+            { title: 'Security', desc: '24x7 CCTV surveillance covering the entire campus with monitored entry/exit.', Icon: Shield, gradient: 'from-veda-primary to-veda-primary-dark' },
+            { title: 'Play Areas', desc: 'Dedicated indoor and outdoor play zones with soft flooring for safety.', Icon: FerrisWheel, gradient: 'from-veda-playful-green to-green-500' },
+            { title: 'Technology', desc: 'Smart learning rooms with interactive digital tools and audio-visual aids.', Icon: Laptop, gradient: 'from-veda-playful-blue to-blue-500' },
+            { title: 'Transport', desc: 'Managed facility with trained drivers and attendants following safety protocols.', Icon: Bus, gradient: 'from-veda-secondary-dark to-purple-600' },
+            { title: 'Health First', desc: 'Fully equipped medical first-aid station with trained staff for immediate care.', Icon: Hospital, gradient: 'from-veda-playful-peach to-rose-400' },
           ].map((item, idx) => (
-            <div key={idx} className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] flex gap-4 items-start group">
-              <div className={`w-12 h-12 min-w-[3rem] rounded-xl flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform duration-300 text-veda-primary ${item.color}`}>
-                <item.Icon size={24} />
+            <div key={idx} className="bg-white rounded-2xl p-5 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300 flex gap-4 items-start group border border-veda-border">
+              <div className={`w-14 h-14 min-w-[3.5rem] rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 text-white`}>
+                <item.Icon size={26} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-veda-text-heading mb-1 font-poppins">{item.title}</h3>
+                <h3 className="text-lg font-bold text-veda-text-heading mb-1.5 font-poppins">{item.title}</h3>
                 <p className="text-veda-text-muted text-sm leading-relaxed">{item.desc}</p>
               </div>
             </div>
