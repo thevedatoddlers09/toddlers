@@ -40,7 +40,7 @@ module.exports = {
                     text: {
                         DEFAULT: '#4A4A4A',
                         heading: '#3E2A4F',
-                        muted: '#7A7A7A',
+                        muted: '#555555',
                         light: '#FFFFFF',
                     },
 

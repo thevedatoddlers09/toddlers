@@ -26,7 +26,7 @@ export default function AboutPage() {
             title: 'Care & Safety',
             Icon: ShieldCheck,
             borderClass: 'border-veda-playful-green',
-            iconBg: 'bg-veda-playful-green text-white',
+            iconBg: 'bg-veda-playful-green text-veda-primary-dark',
             text: 'Prioritizing a warm, secure emotional atmosphere for learning.',
         },
         {

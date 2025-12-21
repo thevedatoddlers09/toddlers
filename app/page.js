@@ -122,7 +122,7 @@ export default function Home() {
             { title: 'Health First', desc: 'Fully equipped medical first-aid station with trained staff for immediate care.', Icon: Hospital, color: 'bg-veda-playful-peach' },
           ].map((item, idx) => (
             <div key={idx} className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] flex gap-4 items-start group">
-              <div className={`w-12 h-12 min-w-[3rem] rounded-xl flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform duration-300 text-white ${item.color}`}>
+              <div className={`w-12 h-12 min-w-[3rem] rounded-xl flex items-center justify-center shadow-soft group-hover:scale-105 transition-transform duration-300 text-veda-primary ${item.color}`}>
                 <item.Icon size={24} />
               </div>
               <div>
