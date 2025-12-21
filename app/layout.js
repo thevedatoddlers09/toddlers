@@ -1,4 +1,5 @@
 import { Poppins, Open_Sans } from "next/font/google";
+import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${openSans.variable}`}>
+        <TopBar />
         <Navbar />
         {children}
         <Footer />

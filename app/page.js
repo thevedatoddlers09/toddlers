@@ -14,9 +14,6 @@ export default function Home() {
       {/* Hero Carousel */}
       <HeroCarousel />
 
-      {/* Stats Counter */}
-      <StatsCounter />
-
       {/* Why Us Section */}
       <section className="py-24 px-[5%] bg-veda-background-DEFAULT">
         <h2 className="text-center text-4xl font-bold mb-12 text-veda-text-heading font-poppins">Why Choose Us?</h2>
@@ -62,6 +59,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Stats Counter */}
+      <StatsCounter />
 
       {/* Featured Programs Section */}
       <section className="py-24 px-[5%] bg-veda-background-muted">
