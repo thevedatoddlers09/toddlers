@@ -1,7 +1,22 @@
+"use client";
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Button from './Button';
 
 export default function Navbar() {
+    const pathname = usePathname();
+
+    const navLinks = [
+        { name: 'Home', href: '/' },
+        { name: 'About Us', href: '/about' },
+        { name: 'Programs', href: '/programs' },
+        { name: 'Events', href: '/events' },
+        { name: 'Activities', href: '/activities' },
+        { name: 'Franchise', href: '/franchise' },
+        { name: 'Admissions', href: '/admissions' },
+    ];
+
     return (
         <nav className="flex justify-between items-center py-4 px-[5%] bg-veda-background-DEFAULT shadow-soft sticky top-0 z-[1000]">
             <Link href="/" className="flex items-center">
@@ -9,13 +24,19 @@ export default function Navbar() {
             </Link>
 
             <div className="hidden md:flex gap-8 items-center">
-                <Link href="/" className="font-semibold text-veda-text-DEFAULT uppercase text-sm transition-colors hover:text-veda-primary">Home</Link>
-                <Link href="/about" className="font-semibold text-veda-text-DEFAULT uppercase text-sm transition-colors hover:text-veda-primary">About Us</Link>
-                <Link href="/programs" className="font-semibold text-veda-text-DEFAULT uppercase text-sm transition-colors hover:text-veda-primary">Programs</Link>
-                <Link href="/events" className="font-semibold text-veda-text-DEFAULT uppercase text-sm transition-colors hover:text-veda-primary">Events</Link>
-                <Link href="/activities" className="font-semibold text-veda-text-DEFAULT uppercase text-sm transition-colors hover:text-veda-primary">Activities</Link>
-                <Link href="/franchise" className="font-semibold text-veda-text-DEFAULT uppercase text-sm transition-colors hover:text-veda-primary">Franchise</Link>
-                <Link href="/admissions" className="font-semibold text-veda-text-DEFAULT uppercase text-sm transition-colors hover:text-veda-primary">Admissions</Link>
+                {navLinks.map((link) => {
+                    const isActive = pathname === link.href;
+                    return (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={`font-semibold uppercase text-sm transition-colors hover:text-veda-primary ${isActive ? 'text-veda-primary border-b-2 border-veda-primary pb-1' : 'text-veda-text-DEFAULT'
+                                }`}
+                        >
+                            {link.name}
+                        </Link>
+                    );
+                })}
 
                 <Button variant="primary" shape="pill" href="/contact">
                     Contact Us

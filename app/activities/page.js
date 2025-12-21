@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import PageHero from '@/components/PageHero';
+
 import GridGallery from '@/components/GridGallery';
 import Button from '@/components/Button';
 import styles from './page.module.css';
@@ -24,10 +24,7 @@ export default function ActivitiesPage() {
 
     return (
         <main className={styles.main}>
-            <PageHero
-                title="School Activities"
-                breadcrumbs={[{ label: 'Activities', href: null }]}
-            />
+
 
             {/* Philosophy Statement */}
             <section className={styles.philosophySection}>

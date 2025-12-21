@@ -1,4 +1,4 @@
-import PageHero from '@/components/PageHero';
+
 import Button from '@/components/Button';
 import { Building2, Wallet, GraduationCap, Heart, HardHat, Users, Megaphone, FlaskConical, Puzzle, PartyPopper } from 'lucide-react';
 
@@ -31,10 +31,7 @@ export default function FranchisePage() {
 
     return (
         <main className="bg-veda-background-DEFAULT">
-            <PageHero
-                title="Partner With Us"
-                breadcrumbs={[{ label: 'Franchise', href: null }]}
-            />
+
 
             {/* Intro */}
             <section className="py-16 px-4 text-center">

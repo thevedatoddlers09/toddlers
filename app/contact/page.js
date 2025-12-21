@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import PageHero from '@/components/PageHero';
+
 import Button from '@/components/Button';
 import { MapPin, Mail, Phone, Clock, Check } from 'lucide-react';
 import styles from './page.module.css';
@@ -30,10 +30,7 @@ export default function ContactPage() {
 
     return (
         <main className={styles.main}>
-            <PageHero
-                title="Contact Us"
-                breadcrumbs={[{ label: 'Contact Us', href: null }]}
-            />
+
 
             <section className={styles.contactSection}>
                 <div className={styles.container}>

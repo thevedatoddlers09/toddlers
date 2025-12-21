@@ -54,10 +54,7 @@ export default function ProgramsPage() {
 
     return (
         <main className="bg-veda-background-DEFAULT">
-            <PageHero
-                title="Our Programs"
-                breadcrumbs={[{ label: 'Programs', href: null }]}
-            />
+            {/* PageHero removed as per request */}
 
             {/* Curriculum Introduction */}
             <section className="py-16 px-4 text-center">

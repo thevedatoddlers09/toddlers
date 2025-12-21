@@ -1,4 +1,4 @@
-import PageHero from '@/components/PageHero';
+
 import GridGallery from '@/components/GridGallery';
 import styles from './page.module.css';
 
@@ -23,10 +23,7 @@ export default function EventsPage() {
 
     return (
         <main className={styles.main}>
-            <PageHero
-                title="School Events"
-                breadcrumbs={[{ label: 'Events', href: null }]}
-            />
+
 
             <section className={styles.section}>
                 <div className={styles.container}>
