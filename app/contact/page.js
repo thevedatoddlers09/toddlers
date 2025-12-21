@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import Button from '@/components/Button';
-import { MapPin, Mail, Phone, Clock, Check } from 'lucide-react';
+import { MapPin, Mail, Phone, Clock, Check, Loader2 } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function ContactPage() {
@@ -15,17 +15,42 @@ export default function ContactPage() {
         message: ''
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsSubmitted(true);
-        // Reset after 3 seconds
-        setTimeout(() => setIsSubmitted(false), 3000);
+        setIsLoading(true);
+        setError('');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setIsSubmitted(true);
+                setFormData({ firstName: '', lastName: '', mobile: '', email: '', message: '' });
+                // Reset after 5 seconds
+                setTimeout(() => setIsSubmitted(false), 5000);
+            } else {
+                const data = await response.json();
+                setError(data.message || 'Failed to send message. Please try again.');
+            }
+        } catch (err) {
+            setError('Network error. Please check your connection.');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -141,8 +166,21 @@ export default function ContactPage() {
                                         ></textarea>
                                     </div>
 
-                                    <Button type="submit" variant="primary" fullWidth>
-                                        Submit Query
+                                    {error && (
+                                        <div className={styles.errorMessage}>
+                                            {error}
+                                        </div>
+                                    )}
+
+                                    <Button type="submit" variant="primary" fullWidth disabled={isLoading}>
+                                        {isLoading ? (
+                                            <>
+                                                <Loader2 className="animate-spin mr-2" size={18} />
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            'Submit Query'
+                                        )}
                                     </Button>
                                 </form>
                             ) : (
