@@ -88,10 +88,10 @@ export default function AboutPage() {
                     Core Values
                 </h2>
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="flex flex-wrap justify-center gap-6">
                         {values.map((value, idx) => (
                             <div key={idx}
-                                className={`bg-veda-background-DEFAULT p-6 rounded-2xl shadow-soft border-t-4 ${value.borderClass} text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-softer`}>
+                                className={`w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-veda-background-DEFAULT p-6 rounded-2xl shadow-soft border-t-4 ${value.borderClass} text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-softer`}>
                                 <div className={`w-14 h-14 mx-auto mb-4 rounded-xl flex items-center justify-center ${value.iconBg}`}>
                                     <value.Icon size={28} />
                                 </div>
@@ -136,9 +136,9 @@ export default function AboutPage() {
                     Leadership Team
                 </h2>
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+                    <div className="flex flex-wrap justify-center gap-6 text-center">
                         {leaders.map((leader, idx) => (
-                            <div key={idx} className="transition-all duration-300 hover:-translate-y-1 group">
+                            <div key={idx} className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] transition-all duration-300 hover:-translate-y-1 group">
                                 <div className="w-24 h-24 bg-veda-secondary-light rounded-2xl mx-auto mb-3 flex items-center justify-center text-3xl text-veda-primary font-bold shadow-soft overflow-hidden border-2 border-transparent group-hover:border-veda-accent transition-colors">
                                     <span className="group-hover:text-veda-accent transition-colors">{leader.name.charAt(0)}</span>
                                 </div>
@@ -162,14 +162,14 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div className="flex flex-wrap justify-center gap-6">
                         {[
                             { text: 'Top Ranked Early Years School in Mohali.', image: 'https://images.unsplash.com/photo-1610214959124-76229c1fb29a?auto=format&fit=crop&q=80' },
                             { text: 'Advita Women Entrepreneur Award.', image: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&q=80' },
                             { text: 'Star Education Award 2024 (Best Preschool Mohali).', image: 'https://images.unsplash.com/photo-1601004562473-b7899be4a9a0?auto=format&fit=crop&q=80' },
                             { text: 'Visionary Leader Award.', image: 'https://images.unsplash.com/photo-1521406699684-2cdad2529ab8?auto=format&fit=crop&q=80' }
                         ].map((award, idx) => (
-                            <div key={idx} className="flex flex-col group">
+                            <div key={idx} className="w-[calc(50%-12px)] md:w-[calc(25%-18px)] flex flex-col group">
                                 <div className="relative aspect-[3/4] bg-veda-background-DEFAULT rounded-2xl overflow-hidden shadow-soft mb-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-softer border border-veda-border">
                                     <img
                                         src={award.image}

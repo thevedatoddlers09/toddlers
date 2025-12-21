@@ -69,9 +69,9 @@ export default function ProgramsPage() {
 
             {/* 7 Spectrums Grid */}
             <section className="py-12 px-4 bg-veda-background-muted">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-5">
                     {spectrums.map((item, idx) => (
-                        <div key={idx} className="bg-veda-background-DEFAULT p-5 rounded-2xl shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-1 transition-all duration-300">
+                        <div key={idx} className="w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(25%-15px)] bg-veda-background-DEFAULT p-5 rounded-2xl shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-1 transition-all duration-300">
                             <div className={`w-12 h-12 ${item.color} text-white rounded-xl flex items-center justify-center mb-4`}>
                                 <item.Icon size={24} />
                             </div>

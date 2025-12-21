@@ -7,10 +7,10 @@
  */
 export default function GridGallery({ items }) {
     return (
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6 py-8">
+        <div className="flex flex-wrap justify-center gap-6 py-8">
             {items.map((item) => (
-                <div key={item.id} className="bg-veda-background-soft rounded-2xl overflow-hidden shadow-soft transition-all duration-300 border border-veda-border hover:-translate-y-1 hover:shadow-softer group">
-                    <div className="relative w-full pt-[66%] overflow-hidden bg-veda-secondary-light">
+                <div key={item.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-veda-background-soft rounded-2xl overflow-hidden shadow-soft transition-all duration-300 border border-veda-border hover:-translate-y-1 hover:shadow-softer group flex flex-col">
+                    <div className="relative w-full pt-[66%] overflow-hidden bg-veda-secondary-light flex-shrink-0">
                         <img
                             src={item.image}
                             alt={item.title}
@@ -21,7 +21,7 @@ export default function GridGallery({ items }) {
                             <span className="text-white font-semibold py-2 px-5 border-2 border-white rounded-xl uppercase text-xs tracking-wider">View</span>
                         </div>
                     </div>
-                    <div className="p-5 text-center">
+                    <div className="p-5 text-center flex-grow flex flex-col justify-center">
                         {item.category && <span className="inline-block text-xs uppercase tracking-wider text-veda-primary font-bold mb-2">{item.category}</span>}
                         <h3 className="text-base text-veda-text-heading m-0 font-semibold">{item.title}</h3>
                     </div>

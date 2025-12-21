@@ -40,9 +40,9 @@ export default function FranchisePage() {
                     <p className="text-base text-veda-text-DEFAULT leading-relaxed mb-8">
                         Join our mission to revolutionize early childhood education. We offer a proven franchise model for aspiring education entrepreneurs with comprehensive support at every step.
                     </p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+                    <div className="flex flex-wrap justify-center gap-4 mt-10">
                         {requirements.map((req, idx) => (
-                            <div key={idx} className="bg-veda-secondary-light/30 p-5 rounded-xl border border-veda-border">
+                            <div key={idx} className="w-[calc(50%-8px)] md:w-[calc(25%-12px)] bg-veda-secondary-light/30 p-5 rounded-xl border border-veda-border">
                                 <div className="w-11 h-11 bg-veda-primary/10 text-veda-primary rounded-xl flex items-center justify-center mb-3 mx-auto">
                                     <req.Icon size={22} />
                                 </div>
@@ -77,9 +77,9 @@ export default function FranchisePage() {
                     <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-14 relative after:content-[''] after:block after:w-12 after:h-1 after:bg-veda-accent after:mx-auto after:mt-4 after:rounded-full">
                         Our Multi-Layer Support System
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="flex flex-wrap justify-center gap-6">
                         {support.map((item, idx) => (
-                            <div key={idx} className="bg-veda-background-DEFAULT p-6 rounded-2xl shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300 group">
+                            <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-veda-background-DEFAULT p-6 rounded-2xl shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300 group">
                                 <div className="w-12 h-12 bg-veda-secondary text-veda-primary rounded-xl flex items-center justify-center mb-5 group-hover:bg-veda-accent transition-colors">
                                     <item.Icon size={24} />
                                 </div>
