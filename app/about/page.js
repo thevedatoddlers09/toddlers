@@ -1,4 +1,4 @@
-import { Palette, Handshake, ShieldCheck, Rocket, BookOpen, GraduationCap, Baby } from 'lucide-react';
+import { Palette, Handshake, ShieldCheck, Rocket, BookOpen, GraduationCap, Baby, Trophy } from 'lucide-react';
 
 export const metadata = {
     title: 'About Us - The Veda Toddlers',
@@ -11,29 +11,33 @@ export default function AboutPage() {
         {
             title: 'Holistic Development',
             Icon: Palette,
-            borderClass: 'border-veda-accent',
-            iconBg: 'bg-veda-accent text-veda-primary-dark',
+            gradient: 'from-veda-accent to-amber-500',
+            bgGradient: 'from-veda-accent/10 via-white to-veda-accent/5',
+            borderColor: 'border-veda-accent/20',
             text: 'Balancing academics, creativity, physical activity, and socio-emotional growth.',
         },
         {
             title: 'Respect & Empathy',
             Icon: Handshake,
-            borderClass: 'border-veda-primary',
-            iconBg: 'bg-veda-primary text-white',
+            gradient: 'from-veda-primary to-veda-primary-dark',
+            bgGradient: 'from-veda-secondary/30 via-white to-veda-secondary/10',
+            borderColor: 'border-veda-secondary',
             text: 'Teaching kindness, patience, and understanding to every child.',
         },
         {
             title: 'Care & Safety',
             Icon: ShieldCheck,
-            borderClass: 'border-veda-playful-green',
-            iconBg: 'bg-veda-playful-green text-veda-primary-dark',
+            gradient: 'from-veda-playful-green to-green-600',
+            bgGradient: 'from-veda-playful-green/15 via-white to-veda-playful-green/5',
+            borderColor: 'border-veda-playful-green/20',
             text: 'Prioritizing a warm, secure emotional atmosphere for learning.',
         },
         {
             title: 'Creativity & Exploration',
             Icon: Rocket,
-            borderClass: 'border-veda-secondary-dark',
-            iconBg: 'bg-veda-secondary text-veda-primary',
+            gradient: 'from-veda-playful-peach to-rose-400',
+            bgGradient: 'from-veda-playful-peach/15 via-white to-rose-50',
+            borderColor: 'border-veda-playful-peach/20',
             text: 'Encouraging creativity, independence, and curiosity.',
         },
     ];
@@ -47,13 +51,13 @@ export default function AboutPage() {
 
     // Leadership Data
     const leaders = [
-        { name: 'Mandeep Sharma', role: 'Founder & Director', image: '/images/leader1.jpg' },
-        { name: 'Jatinder Pal', role: 'Marketing & Support', image: '/images/leader2.jpg' },
-        { name: 'Parul', role: 'Legal & Policy Advisor', image: '/images/leader3.jpg' },
-        { name: 'Pooja Chauhan', role: 'Admission & Outreach', image: '/images/leader4.jpg' },
-        { name: 'Kanika', role: 'Pedagogy & Training Head', image: '/images/leader5.jpg' },
-        { name: 'Sukhmani Kaur', role: 'Academic Learning & Development Head', image: '/images/leader6.jpg' },
-        { name: 'Drishti Chugh', role: 'Parenting & Child Development Coach', image: '/images/leader7.jpg' },
+        { name: 'Mandeep Sharma', role: 'Founder & Director', color: 'from-veda-accent to-amber-500' },
+        { name: 'Jatinder Pal', role: 'Marketing & Support', color: 'from-veda-primary to-veda-primary-dark' },
+        { name: 'Parul', role: 'Legal & Policy Advisor', color: 'from-veda-playful-green to-green-600' },
+        { name: 'Pooja Chauhan', role: 'Admission & Outreach', color: 'from-veda-playful-peach to-rose-400' },
+        { name: 'Kanika', role: 'Pedagogy & Training Head', color: 'from-veda-playful-blue to-blue-500' },
+        { name: 'Sukhmani Kaur', role: 'Academic Learning & Development', color: 'from-veda-secondary-dark to-purple-600' },
+        { name: 'Drishti Chugh', role: 'Parenting & Child Development Coach', color: 'from-veda-accent to-amber-500' },
     ];
 
     return (
@@ -82,32 +86,38 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Section B: Core Values */}
+            {/* Section B: Core Values - Redesigned */}
             <section className="py-16 px-4 bg-veda-background-muted">
-                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-12 relative after:content-[''] after:block after:w-12 after:h-1 after:bg-veda-accent after:mx-auto after:mt-4 after:rounded-full">
+                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-4">
                     Core Values
                 </h2>
+                <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">The principles that guide everything we do</p>
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-wrap justify-center gap-6">
                         {values.map((value, idx) => (
-                            <div key={idx}
-                                className={`w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-veda-background-DEFAULT p-6 rounded-2xl shadow-soft border-t-4 ${value.borderClass} text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-softer`}>
-                                <div className={`w-14 h-14 mx-auto mb-4 rounded-xl flex items-center justify-center ${value.iconBg}`}>
-                                    <value.Icon size={28} />
+                            <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+                                <div className={`relative bg-gradient-to-br ${value.bgGradient} rounded-2xl p-6 h-full border ${value.borderColor} shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden`}>
+                                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                                    <div className="relative z-10 text-center">
+                                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${value.gradient} text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
+                                            <value.Icon size={30} />
+                                        </div>
+                                        <h3 className="text-lg font-bold mb-3 text-veda-text-heading font-poppins">{value.title}</h3>
+                                        <p className="text-veda-text-muted text-sm leading-relaxed">{value.text}</p>
+                                    </div>
                                 </div>
-                                <h3 className="text-lg font-bold mb-2 text-veda-text-heading font-poppins">{value.title}</h3>
-                                <p className="text-veda-text-muted text-sm leading-relaxed">{value.text}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Section C: The Journey Timeline */}
+            {/* Section C: The Journey Timeline - Enhanced */}
             <section className="py-16 px-4 bg-veda-secondary-light/30">
-                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-12 relative after:content-[''] after:block after:w-12 after:h-1 after:bg-veda-accent after:mx-auto after:mt-4 after:rounded-full">
+                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-4">
                     Our History & Growth
                 </h2>
+                <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">A decade of excellence in education</p>
                 <div className="relative max-w-4xl mx-auto py-5">
                     {/* Dotted Line */}
                     <div className="absolute top-0 bottom-0 left-1/2 w-0 border-l-2 border-dashed border-veda-primary/30 -translate-x-1/2 hidden md:block"></div>
@@ -115,42 +125,43 @@ export default function AboutPage() {
                     {timeline.map((item, idx) => (
                         <div key={idx} className={`relative md:w-1/2 w-full mb-8 md:mb-12 box-border ${item.side === 'left' ? 'md:mr-auto md:pr-12 md:text-right' : 'md:ml-auto md:pl-12 md:text-left'} text-center md:text-right`}>
                             <div className={`relative ${item.side === 'right' ? 'md:text-left' : ''}`}>
-                                <div className="bg-veda-background-DEFAULT p-5 rounded-xl shadow-soft relative z-10 inline-block text-left md:inline-block md:w-full">
-                                    <div className="font-poppins text-2xl font-bold text-veda-primary mb-1 leading-none">{item.year}</div>
-                                    <p className="text-veda-text-DEFAULT text-sm leading-relaxed">{item.text}</p>
+                                <div className="bg-white p-6 rounded-2xl shadow-soft relative z-10 inline-block text-left md:inline-block md:w-full border border-veda-border hover:shadow-softer hover:-translate-y-1 transition-all duration-300 group">
+                                    <div className="font-poppins text-3xl font-bold text-veda-primary mb-2 leading-none group-hover:text-veda-accent transition-colors">{item.year}</div>
+                                    <p className="text-veda-text-DEFAULT text-base leading-relaxed">{item.text}</p>
                                 </div>
                             </div>
 
                             {/* Icon Bubble */}
-                            <div className={`hidden md:flex absolute top-0 w-10 h-10 items-center justify-center z-20 bg-veda-accent text-veda-primary-dark rounded-xl shadow-soft ${item.side === 'left' ? '-right-[60px]' : '-left-[60px]'}`}>
-                                <item.Icon size={18} />
+                            <div className={`hidden md:flex absolute top-3 w-12 h-12 items-center justify-center z-20 bg-gradient-to-br from-veda-accent to-amber-500 text-white rounded-xl shadow-lg ${item.side === 'left' ? '-right-[66px]' : '-left-[66px]'}`}>
+                                <item.Icon size={22} />
                             </div>
                         </div>
                     ))}
                 </div>
             </section>
 
-            {/* Section D: Leadership Team */}
+            {/* Section D: Leadership Team - Redesigned */}
             <section className="py-16 px-4 bg-veda-background-DEFAULT">
-                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-12 relative after:content-[''] after:block after:w-12 after:h-1 after:bg-veda-accent after:mx-auto after:mt-4 after:rounded-full">
+                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-4">
                     Leadership Team
                 </h2>
+                <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">Meet the passionate people behind The Veda</p>
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-wrap justify-center gap-6 text-center">
                         {leaders.map((leader, idx) => (
-                            <div key={idx} className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] transition-all duration-300 hover:-translate-y-1 group">
-                                <div className="w-24 h-24 bg-veda-secondary-light rounded-2xl mx-auto mb-3 flex items-center justify-center text-3xl text-veda-primary font-bold shadow-soft overflow-hidden border-2 border-transparent group-hover:border-veda-accent transition-colors">
-                                    <span className="group-hover:text-veda-accent transition-colors">{leader.name.charAt(0)}</span>
+                            <div key={idx} className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] bg-white rounded-2xl p-5 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
+                                <div className={`w-20 h-20 bg-gradient-to-br ${leader.color} rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl text-white font-bold shadow-lg group-hover:scale-110 transition-transform`}>
+                                    <span>{leader.name.charAt(0)}</span>
                                 </div>
-                                <h3 className="text-base font-bold text-veda-text-heading mb-1">{leader.name}</h3>
-                                <p className="text-xs text-veda-text-muted font-medium uppercase tracking-wider px-2">{leader.role}</p>
+                                <h3 className="text-base font-bold text-veda-text-heading mb-1 font-poppins">{leader.name}</h3>
+                                <p className="text-xs text-veda-text-muted font-medium uppercase tracking-wider">{leader.role}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Section E: Awards & Recognition */}
+            {/* Section E: Awards & Recognition - Redesigned */}
             <section className="py-20 px-4 bg-veda-background-soft relative overflow-hidden">
                 <div className="max-w-6xl mx-auto relative z-10">
                     <div className="text-center mb-12">
@@ -158,28 +169,36 @@ export default function AboutPage() {
                             Our Awards
                         </h2>
                         <p className="text-veda-text-DEFAULT max-w-2xl mx-auto">
-                            We're proud to be recognized as one of India's most trusted preschool brands. Our accolades reflect the trust parents place in us.
+                            We're proud to be recognized as one of India's most trusted preschool brands.
                         </p>
                     </div>
 
                     <div className="flex flex-wrap justify-center gap-6">
                         {[
-                            { text: 'Top Ranked Early Years School in Mohali.', image: 'https://images.unsplash.com/photo-1610214959124-76229c1fb29a?auto=format&fit=crop&q=80' },
-                            { text: 'Advita Women Entrepreneur Award.', image: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&q=80' },
-                            { text: 'Star Education Award 2024 (Best Preschool Mohali).', image: 'https://images.unsplash.com/photo-1601004562473-b7899be4a9a0?auto=format&fit=crop&q=80' },
-                            { text: 'Visionary Leader Award.', image: 'https://images.unsplash.com/photo-1521406699684-2cdad2529ab8?auto=format&fit=crop&q=80' }
+                            { text: 'Top Ranked Early Years School in Mohali', image: 'https://images.unsplash.com/photo-1610214959124-76229c1fb29a?auto=format&fit=crop&q=80' },
+                            { text: 'Advita Women Entrepreneur Award', image: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&q=80' },
+                            { text: 'Star Education Award 2024', image: 'https://images.unsplash.com/photo-1601004562473-b7899be4a9a0?auto=format&fit=crop&q=80' },
+                            { text: 'Visionary Leader Award', image: 'https://images.unsplash.com/photo-1521406699684-2cdad2529ab8?auto=format&fit=crop&q=80' }
                         ].map((award, idx) => (
-                            <div key={idx} className="w-[calc(50%-12px)] md:w-[calc(25%-18px)] flex flex-col group">
-                                <div className="relative aspect-[3/4] bg-veda-background-DEFAULT rounded-2xl overflow-hidden shadow-soft mb-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-softer border border-veda-border">
-                                    <img
-                                        src={award.image}
-                                        alt="Award"
-                                        className="w-full h-full object-cover"
-                                    />
+                            <div key={idx} className="w-[calc(50%-12px)] md:w-[calc(25%-18px)] group">
+                                <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 hover:-translate-y-2">
+                                    <div className="relative aspect-[3/4] overflow-hidden">
+                                        <img
+                                            src={award.image}
+                                            alt="Award"
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/80 via-veda-primary/20 to-transparent"></div>
+                                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                                            <div className="w-10 h-10 bg-veda-accent rounded-xl flex items-center justify-center mb-2 shadow-lg">
+                                                <Trophy size={20} className="text-veda-primary-dark" />
+                                            </div>
+                                            <p className="text-white font-poppins font-medium text-sm leading-snug">
+                                                {award.text}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p className="text-center font-poppins text-veda-text-heading font-medium text-sm leading-snug">
-                                    {award.text}
-                                </p>
                             </div>
                         ))}
                     </div>
@@ -188,3 +207,4 @@ export default function AboutPage() {
         </main>
     );
 }
+
