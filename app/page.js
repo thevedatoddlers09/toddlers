@@ -134,17 +134,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Franchise Highlight */}
-      <section className="py-20 px-[5%] bg-veda-primary relative overflow-hidden text-center text-white">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-6">Partner With Us</h2>
-          <p className="text-lg md:text-xl text-veda-secondary-light mb-8 font-light">
-            Join the fastest growing preschool brand in India. Start your own The Veda Toddlers franchise today.
-          </p>
-          <Button variant="primary" shape="pill" href="/franchise">
-            Franchise Opportunities
-          </Button>
+      {/* Franchise Highlight (Redesigned) */}
+      <section className="relative py-32 bg-veda-primary overflow-hidden">
+        {/* Top Wave Divider */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px] md:h-[100px]">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-veda-background-DEFAULT"></path>
+          </svg>
+        </div>
+
+        {/* Background Decorations */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-veda-accent probability-0 rounded-full blur-[80px] opacity-40 animate-pulse"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-veda-playful-blue rounded-full blur-[80px] opacity-30"></div>
+        <div className="absolute top-1/2 left-[15%] w-4 h-4 bg-veda-accent rounded-full opacity-60"></div>
+        <div className="absolute top-[30%] right-[20%] w-6 h-6 border-2 border-veda-secondary-light rounded-full opacity-40"></div>
+        <div className="absolute bottom-[20%] left-[25%] w-3 h-3 bg-white rounded-full opacity-40"></div>
+
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <span className="inline-block py-1 px-4 rounded-full bg-veda-accent/20 text-veda-accent font-bold uppercase tracking-widest text-xs mb-6 border border-veda-accent/30 backdrop-blur-sm">
+              Growth Opportunity
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-white mb-6 leading-tight">
+              Partner With <span className="text-veda-accent relative inline-block">
+                The Veda
+                <svg className="absolute w-full h-3 -bottom-1 left-0 text-veda-accent opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                  <path d="M0 5 Q 50 10 100 5 L 100 10 L 0 10 Z" fill="currentColor" />
+                </svg>
+              </span>
+            </h2>
+            <p className="text-lg md:text-xl text-veda-secondary-light mb-10 font-light max-w-2xl mx-auto leading-relaxed">
+              Join India's fastest-growing preschool network. We provide the blueprint, training, and support to build your own legacy of education.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button variant="primary" shape="pill" href="/franchise" className="bg-veda-accent hover:bg-veda-accent-dark text-veda-primary-dark font-bold px-10 py-4 text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                Start Your Franchise
+              </Button>
+              <Button variant="outline" shape="pill" href="/contact" className="border-veda-secondary-light text-veda-secondary-light hover:bg-white/10 hover:border-white hover:text-white px-8">
+                Contact Us
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Wave Divider */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px] md:h-[100px]">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-veda-background-soft"></path>
+          </svg>
         </div>
       </section>
 

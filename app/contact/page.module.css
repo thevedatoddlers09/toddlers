@@ -20,24 +20,26 @@
 
 /* Info Card */
 .infoCard {
-    background-color: var(--veda-background-muted);
-    padding: 2rem;
+    background-color: #FFFFFF;
+    padding: 2.5rem;
     border-radius: 1rem;
-    border-left: 4px solid var(--veda-accent);
+    border-left: 5px solid var(--veda-accent);
+    box-shadow: var(--shadow-soft);
 }
 
 .infoTitle {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--veda-text-heading);
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
     font-family: var(--font-poppins);
+    font-weight: 700;
 }
 
 .infoItem {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-    padding-bottom: 1.25rem;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--veda-border, #E5E1EC);
 }
 
@@ -49,15 +51,26 @@
 
 .infoIcon {
     font-size: 1.25rem;
-    color: var(--veda-accent);
+    color: var(--veda-primary);
+    /* Deep Purple Icon */
     flex-shrink: 0;
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
     background-color: var(--veda-secondary-light);
-    border-radius: 0.75rem;
+    /* Light Purple Background */
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.infoItem:hover .infoIcon {
+    background-color: var(--veda-accent);
+    /* Yellow on hover */
+    color: var(--veda-primary-dark);
+    transform: scale(1.05);
 }
 
 .infoItem strong {
