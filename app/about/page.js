@@ -83,19 +83,9 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-primary-dark/80 to-veda-primary-dark/90"></div>
                 <div className="relative z-10 p-6 max-w-5xl">
                     <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">
-                        About The Veda Toddlers
+                        Our Philosophy
                     </h1>
                     <p className="font-opensans text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
-                        A "new-age" preschool and daycare for children aged 1.5 to 6 years, emphasizing joyful, holistic, and experiential learning.
-                    </p>
-                </div>
-            </section>
-
-            {/* Overview & Philosophy */}
-            <section className="py-16 px-3 bg-veda-background-DEFAULT text-center">
-                <div className="max-w-5xl mx-auto">
-                    <h2 className="text-4xl font-bold font-poppins text-veda-text-heading mb-6">Our Philosophy</h2>
-                    <p className="text-xl text-veda-text-DEFAULT leading-relaxed">
                         We blend global early education standards with rich Indian values, aiming to nurture confident, kind, and creative learners through a child-centered philosophy.
                     </p>
                 </div>
