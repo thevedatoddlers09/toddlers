@@ -14,6 +14,121 @@ export default function Home() {
       {/* Hero Carousel */}
       <HeroCarousel />
 
+      {/* About The Veda Toddlers Section */}
+      <section className="py-20 px-[3%] bg-gradient-to-br from-veda-playful-blue/10 via-white to-veda-secondary-light/20 relative overflow-hidden">
+        {/* Decorative Handprints */}
+        <div className="absolute top-10 right-10 text-veda-primary/10 rotate-12">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m0-9c-.83 0-1.5-.67-1.5-1.5S11.17 2.5 12 2.5s1.5.67 1.5 1.5S12.83 5.5 12 5.5M5.5 8C4.67 8 4 7.33 4 6.5S4.67 5 5.5 5 7 5.67 7 6.5 6.33 8 5.5 8m13 0c-.83 0-1.5-.67-1.5-1.5S17.67 5 18.5 5s1.5.67 1.5 1.5S19.33 8 18.5 8M19.5 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m-15 0c-.83 0-1.5-.67-1.5-1.5S3.67 18 4.5 18s1.5.67 1.5 1.5S5.33 21 4.5 21" />
+          </svg>
+        </div>
+        <div className="absolute bottom-16 right-32 text-veda-primary/15 -rotate-12">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m0-9c-.83 0-1.5-.67-1.5-1.5S11.17 2.5 12 2.5s1.5.67 1.5 1.5S12.83 5.5 12 5.5M5.5 8C4.67 8 4 7.33 4 6.5S4.67 5 5.5 5 7 5.67 7 6.5 6.33 8 5.5 8m13 0c-.83 0-1.5-.67-1.5-1.5S17.67 5 18.5 5s1.5.67 1.5 1.5S19.33 8 18.5 8M19.5 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m-15 0c-.83 0-1.5-.67-1.5-1.5S3.67 18 4.5 18s1.5.67 1.5 1.5S5.33 21 4.5 21" />
+          </svg>
+        </div>
+        <div className="absolute top-1/2 left-10 w-20 h-20 bg-veda-accent/10 rounded-full blur-2xl"></div>
+
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Content */}
+            <div className="lg:w-1/2 order-2 lg:order-1">
+              <h2 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-6 leading-tight">
+                About <span className="text-veda-accent">The Veda Toddlers</span>
+              </h2>
+              <div className="space-y-4 text-lg text-veda-text-DEFAULT leading-relaxed">
+                <p>
+                  The Veda Toddlers is a <strong className="text-veda-primary">new-age preschool and daycare</strong> for children aged <strong className="text-veda-accent-dark">1.5 to 6 years</strong>, built on joyful, holistic, and experiential learning.
+                </p>
+                <p>
+                  Founded by <strong className="text-veda-primary">Mandeep Sharma</strong>, it blends global early education standards with rich Indian values. Every Veda school nurtures confident, kind, and creative learners through a child-centered philosophy, research-based curriculum, and warm, supportive environment — <em className="text-veda-primary">redefining early education, one happy childhood at a time.</em>
+                </p>
+              </div>
+              <div className="mt-8">
+                <Button variant="primary" shape="pill" href="/about">
+                  Learn More About Us
+                </Button>
+              </div>
+            </div>
+            {/* Image */}
+            <div className="lg:w-1/2 order-1 lg:order-2">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-veda-accent/20 to-veda-primary/20 rounded-3xl transform rotate-3"></div>
+                <img
+                  src="https://images.unsplash.com/photo-1587654780291-39c940483719?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Happy children at The Veda Toddlers"
+                  className="relative rounded-3xl shadow-softer w-full object-cover aspect-[4/3]"
+                />
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-veda-accent rounded-2xl flex items-center justify-center shadow-lg">
+                  <span className="text-2xl">🎨</span>
+                </div>
+                <div className="absolute -bottom-4 -left-4 w-14 h-14 bg-veda-playful-green rounded-2xl flex items-center justify-center shadow-lg">
+                  <span className="text-xl">📚</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* From The Principal Section */}
+      <section className="py-20 px-[3%] bg-gradient-to-br from-veda-secondary-light/40 via-veda-playful-blue/10 to-white relative overflow-hidden">
+        {/* Decorative Hearts */}
+        <div className="absolute top-20 right-20 text-veda-primary/20">
+          <Heart size={40} />
+        </div>
+        <div className="absolute bottom-20 right-40 text-veda-primary/15">
+          <Heart size={30} />
+        </div>
+        <div className="absolute top-1/3 right-16 text-veda-primary/10">
+          <Heart size={25} />
+        </div>
+        <div className="absolute bottom-1/4 left-20 w-32 h-32 bg-veda-accent/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            {/* Image */}
+            <div className="lg:w-2/5">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-tr from-veda-primary/20 to-veda-playful-green/20 rounded-3xl transform -rotate-3"></div>
+                <div className="relative bg-gradient-to-br from-veda-primary-light to-veda-primary rounded-3xl p-1 shadow-softer">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Mandeep Sharma - Principal"
+                    className="rounded-3xl w-full object-cover aspect-[3/4]"
+                  />
+                </div>
+              </div>
+            </div>
+            {/* Content */}
+            <div className="lg:w-3/5">
+              <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-6 leading-tight">
+                <span className="text-veda-primary">From The</span> <span className="text-veda-accent">Principal</span>
+              </h2>
+              <div className="space-y-4 text-lg text-veda-text-DEFAULT leading-relaxed italic">
+                <p>
+                  "Being the Principal of The Veda Toddlers is a privilege. Our preschool offers a warm, nurturing, and future-ready environment where every child feels safe, supported, and encouraged to explore."
+                </p>
+                <p>
+                  "We are dedicated to early childhood education, ensuring each child's first school experience is joyful, meaningful, and filled with discovery."
+                </p>
+                <p>
+                  "Our focus is on building confidence, healthy habits, emotional well-being, social skills, and curiosity through play-based, hands-on learning. By nurturing creativity and individuality, we help children learn naturally and develop a strong foundation of essential skills."
+                </p>
+                <p>
+                  "I am confident that you and your child will cherish your time at The Veda Toddlers as we work together to build a bright future."
+                </p>
+              </div>
+              <div className="mt-8 pt-6 border-t border-veda-secondary">
+                <h3 className="text-xl font-bold text-veda-primary font-poppins">Mandeep Sharma</h3>
+                <p className="text-veda-accent font-semibold">(Principal, The Veda Toddlers)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Us Section */}
       <section className="py-24 px-[3%] bg-veda-background-DEFAULT">
         <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Why Choose Us?</h2>
