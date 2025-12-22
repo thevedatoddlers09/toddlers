@@ -59,12 +59,16 @@ export default function ProgramsPage() {
 
     return (
         <main className="bg-veda-background-DEFAULT">
-            {/* Curriculum Introduction */}
-            <section className="py-16 px-3 text-center">
-                <div className="max-w-4xl mx-auto">
-                    <span className="inline-block py-1 px-3 rounded-full bg-veda-accent/20 text-veda-primary font-bold uppercase tracking-widest text-xs mb-4 border border-veda-accent/30">Our Methodology</span>
-                    <h3 className="font-poppins text-4xl font-bold text-veda-text-heading mb-6">The "7 Spectrums" Curriculum</h3>
-                    <p className="text-lg text-veda-text-DEFAULT leading-relaxed max-w-3xl mx-auto">
+            {/* Hero Banner */}
+            <section className="relative h-[45vh] min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
+                style={{ backgroundImage: "url('/programs-bg.png')" }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-veda-primary-dark/80 to-veda-primary-dark/90"></div>
+                <div className="relative z-10 p-6 max-w-5xl">
+                    <span className="inline-block py-1 px-4 rounded-full bg-white/20 text-white font-bold uppercase tracking-widest text-xs mb-4 border border-white/30">Our Methodology</span>
+                    <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
+                        The "7 Spectrums" Curriculum
+                    </h1>
+                    <p className="font-opensans text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
                         At The Veda Toddlers, we follow a unique, activity-based curriculum designed to nurture every aspect of a child's growth. Our 7 Spectrums approach ensures a balanced and holistic development journey.
                     </p>
                 </div>

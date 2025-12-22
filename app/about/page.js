@@ -79,10 +79,10 @@ export default function AboutPage() {
         <main>
             {/* Section A: Hero Banner */}
             <section className="relative h-[45vh] min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80')" }}>
+                style={{ backgroundImage: "url('/philosophy-bg.png')" }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-primary-dark/80 to-veda-primary-dark/90"></div>
                 <div className="relative z-10 p-6 max-w-5xl">
-                    <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">
+                    <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
                         Our Philosophy
                     </h1>
                     <p className="font-opensans text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
