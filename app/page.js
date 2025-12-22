@@ -55,7 +55,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-accent/20 to-veda-primary/20 rounded-3xl transform rotate-3"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1587654780291-39c940483719?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="/about-children.jpg"
                   alt="Happy children at The Veda Toddlers"
                   className="relative rounded-3xl shadow-softer w-full object-cover aspect-[4/3]"
                 />
@@ -94,7 +94,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-veda-primary/20 to-veda-playful-green/20 rounded-3xl transform -rotate-3"></div>
                 <div className="relative bg-gradient-to-br from-veda-primary-light to-veda-primary rounded-3xl p-1 shadow-softer">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    src="/principal.png"
                     alt="Mandeep Sharma - Principal"
                     className="rounded-3xl w-full object-cover aspect-[3/4]"
                   />
