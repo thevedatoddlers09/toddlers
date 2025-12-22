@@ -20,7 +20,7 @@ export default function Navbar() {
     return (
         <nav className="flex justify-between items-center py-4 px-[5%] bg-veda-background-DEFAULT shadow-soft sticky top-0 z-[1000]">
             <Link href="/" className="flex items-center">
-                <img src="/logo.jpg" alt="The Veda Toddlers Logo" className="h-24 w-auto object-contain" />
+                <img src="/logo.png" alt="The Veda Toddlers Logo" className="h-24 w-auto object-contain" />
             </Link>
 
             <div className="hidden md:flex gap-8 items-center">

@@ -21,7 +21,7 @@ export default function Footer() {
                     {/* Column 1: Logo & Tagline */}
                     <div>
                         <div className="bg-white rounded-2xl p-4 inline-block mb-5">
-                            <img src="/logo.jpg" alt="The Veda Toddlers Logo" className="h-20 w-auto object-contain" />
+                            <img src="/logo.png" alt="The Veda Toddlers Logo" className="h-20 w-auto object-contain" />
                         </div>
                         <p className="text-veda-secondary-light text-base leading-relaxed font-opensans">
                             We enrich and expand our student's educational horizons well beyond to ensure students are working at their personal best level of achievement.
