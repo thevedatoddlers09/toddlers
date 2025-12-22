@@ -44,9 +44,24 @@ export default function AboutPage() {
 
     // Timeline Data
     const timeline = [
-        { year: '2009', text: 'Established "The Veda Coaching"', Icon: BookOpen, side: 'left' },
-        { year: '2017', text: 'Established "The Veda Tuitions"', Icon: GraduationCap, side: 'right' },
-        { year: '2022', text: 'Established "The Veda Toddlers"', Icon: Baby, side: 'left' },
+        {
+            year: '2009',
+            title: 'The Veda Coaching',
+            text: 'The Veda Coaching, established in 2009, has been dedicated to guiding students with expert mentorship and a focus on consistent growth and success.',
+            Icon: BookOpen
+        },
+        {
+            year: '2017',
+            title: 'The Veda Tuitions',
+            text: 'The Veda Tuitions, established in 2017, has been focused on providing quality learning support and personalized guidance to help students excel academically.',
+            Icon: GraduationCap
+        },
+        {
+            year: '2022',
+            title: 'The Veda Toddlers',
+            text: 'The Veda Toddlers, established in 2022, has been committed to nurturing young minds with care, creativity, and a strong foundation for lifelong learning.',
+            Icon: Baby
+        },
     ];
 
     // Leadership Data
@@ -112,31 +127,74 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Section C: The Journey Timeline - Enhanced */}
-            <section className="py-16 px-4 bg-veda-secondary-light/30">
-                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-4">
-                    Our History & Growth
-                </h2>
-                <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">A decade of excellence in education</p>
-                <div className="relative max-w-4xl mx-auto py-5">
-                    {/* Dotted Line */}
-                    <div className="absolute top-0 bottom-0 left-1/2 w-0 border-l-2 border-dashed border-veda-primary/30 -translate-x-1/2 hidden md:block"></div>
+            {/* Section C: VEDA GROWTH JOURNEY - Redesigned */}
+            <section className="py-20 px-4 bg-gradient-to-b from-veda-secondary-light/30 via-white to-veda-background-soft relative overflow-hidden">
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-veda-accent/5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-72 h-72 bg-veda-primary/5 rounded-full blur-3xl"></div>
 
-                    {timeline.map((item, idx) => (
-                        <div key={idx} className={`relative md:w-1/2 w-full mb-8 md:mb-12 box-border ${item.side === 'left' ? 'md:mr-auto md:pr-12 md:text-right' : 'md:ml-auto md:pl-12 md:text-left'} text-center md:text-right`}>
-                            <div className={`relative ${item.side === 'right' ? 'md:text-left' : ''}`}>
-                                <div className="bg-white p-6 rounded-2xl shadow-soft relative z-10 inline-block text-left md:inline-block md:w-full border border-veda-border hover:shadow-softer hover:-translate-y-1 transition-all duration-300 group">
-                                    <div className="font-poppins text-3xl font-bold text-veda-primary mb-2 leading-none group-hover:text-veda-accent transition-colors">{item.year}</div>
-                                    <p className="text-veda-text-DEFAULT text-base leading-relaxed">{item.text}</p>
+                <div className="max-w-7xl mx-auto relative z-10">
+                    {/* Section Header */}
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center gap-2 bg-veda-primary/10 px-4 py-2 rounded-full mb-4">
+                            <Rocket size={18} className="text-veda-primary" />
+                            <span className="text-veda-primary font-medium text-sm uppercase tracking-wider">Our Journey</span>
+                        </div>
+                        <h2 className="font-poppins text-4xl md:text-5xl font-bold text-veda-text-heading mb-4">
+                            VEDA GROWTH JOURNEY
+                        </h2>
+                        <p className="text-veda-text-muted max-w-2xl mx-auto text-lg">
+                            A decade of excellence in education
+                        </p>
+                    </div>
+
+                    {/* Timeline Cards - Horizontal Layout */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                        {timeline.map((item, idx) => (
+                            <div key={idx} className="group">
+                                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full border border-veda-border/50">
+                                    {/* Year Header */}
+                                    <div className="bg-gradient-to-r from-veda-primary via-veda-primary to-veda-primary-dark p-6 relative">
+                                        <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                            <item.Icon size={24} className="text-white" />
+                                        </div>
+                                        <span className="text-veda-accent font-bold text-5xl font-poppins">{item.year}</span>
+                                        <h3 className="text-white font-poppins font-semibold text-xl mt-2">
+                                            {item.title}
+                                        </h3>
+                                    </div>
+
+                                    {/* Description */}
+                                    <div className="p-6">
+                                        <p className="text-veda-text-DEFAULT leading-relaxed text-base">
+                                            "{item.text}"
+                                        </p>
+                                    </div>
+
+                                    {/* Decorative connector line */}
+                                    {idx < 2 && (
+                                        <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-veda-primary to-veda-accent z-10"></div>
+                                    )}
                                 </div>
                             </div>
+                        ))}
+                    </div>
 
-                            {/* Icon Bubble */}
-                            <div className={`hidden md:flex absolute top-3 w-12 h-12 items-center justify-center z-20 bg-gradient-to-br from-veda-accent to-amber-500 text-white rounded-xl shadow-lg ${item.side === 'left' ? '-right-[66px]' : '-left-[66px]'}`}>
-                                <item.Icon size={22} />
+                    {/* Franchise Support Message */}
+                    <div className="bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+                        {/* Decorative circles */}
+                        <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+
+                        <div className="relative z-10">
+                            <div className="w-16 h-16 bg-veda-accent rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                                <Handshake size={32} className="text-veda-primary-dark" />
                             </div>
+                            <p className="text-white text-lg md:text-xl leading-relaxed max-w-4xl mx-auto font-light">
+                                At The Veda Toddlers, our core team is the driving force behind your success. With unmatched expertise and dedication, they provide complete franchise support – from setup, recruitment, and training to marketing and day-to-day operations. Beyond preschool setup, our team also focuses on sustainable growth strategies, ensuring that every partner not only launches smoothly but also scales with confidence. With The Veda Toddlers by your side, you gain the knowledge, resources, and continuous guidance needed to build and expand a thriving preschool business.
+                            </p>
                         </div>
-                    ))}
+                    </div>
                 </div>
             </section>
 
