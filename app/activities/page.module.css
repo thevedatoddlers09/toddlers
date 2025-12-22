@@ -3,17 +3,17 @@
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .section {
-    padding: 4rem 5%;
+    padding: 4rem 3%;
     background-color: var(--veda-background);
 }
 
 .sectionAlt {
-    padding: 4rem 5%;
+    padding: 4rem 3%;
     background-color: var(--veda-background-muted);
 }
 
@@ -26,7 +26,7 @@
 }
 
 .sectionTitle {
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     color: var(--veda-text-heading);
     margin-bottom: 0.75rem;
     font-family: var(--font-poppins);
@@ -34,27 +34,27 @@
 
 .sectionSubtitle {
     color: var(--veda-text);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.125rem;
+    line-height: 1.7;
 }
 
 /* Philosophy Section */
 .philosophySection {
-    padding: 3.5rem 5%;
+    padding: 3.5rem 3%;
     background-color: var(--veda-background);
     text-align: center;
     border-bottom: 1px solid var(--veda-border, #E5E1EC);
 }
 
 .philosophyTitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--veda-primary);
     margin-bottom: 1.25rem;
     font-family: var(--font-poppins);
 }
 
 .philosophyText {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: var(--veda-text);
     line-height: 1.7;
     max-width: 750px;
@@ -65,7 +65,7 @@
 /* CTA Section */
 .ctaSection {
     background-color: var(--veda-background-muted);
-    padding: 2.5rem 5%;
+    padding: 2.5rem 3%;
     border-top: 1px solid var(--veda-border, #E5E1EC);
 }
 
@@ -85,12 +85,12 @@
 .ctaContent h2 {
     color: var(--veda-text-heading);
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 .ctaContent p {
     color: var(--veda-text);
-    font-size: 1rem;
+    font-size: 1.125rem;
 }
 
 @media (max-width: 768px) {

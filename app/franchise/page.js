@@ -33,11 +33,11 @@ export default function FranchisePage() {
         <main className="bg-veda-background-DEFAULT">
 
             {/* Intro */}
-            <section className="py-16 px-4 text-center">
-                <div className="max-w-4xl mx-auto">
-                    <span className="inline-block py-1 px-4 rounded-full bg-veda-accent/20 text-veda-primary font-bold uppercase tracking-widest text-xs mb-4 border border-veda-accent/30">Franchise Opportunity</span>
-                    <h2 className="text-2xl md:text-3xl font-bold font-poppins text-veda-text-heading mb-6">Start Your Own "The Veda Toddlers" Preschool</h2>
-                    <p className="text-base text-veda-text-DEFAULT leading-relaxed mb-10 max-w-3xl mx-auto">
+            <section className="py-16 px-3 text-center">
+                <div className="max-w-5xl mx-auto">
+                    <span className="inline-block py-1 px-3 rounded-full bg-veda-accent/20 text-veda-primary font-bold uppercase tracking-widest text-xs mb-4 border border-veda-accent/30">Franchise Opportunity</span>
+                    <h2 className="text-3xl md:text-4xl font-bold font-poppins text-veda-text-heading mb-6">Start Your Own "The Veda Toddlers" Preschool</h2>
+                    <p className="text-lg text-veda-text-DEFAULT leading-relaxed mb-10 max-w-3xl mx-auto">
                         Join our mission to revolutionize early childhood education. We offer a proven franchise model for aspiring education entrepreneurs with comprehensive support at every step.
                     </p>
 
@@ -51,8 +51,8 @@ export default function FranchisePage() {
                                         <div className={`w-14 h-14 bg-gradient-to-br ${req.gradient} text-white rounded-xl flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 transition-transform`}>
                                             <req.Icon size={26} />
                                         </div>
-                                        <h3 className="font-bold text-veda-text-heading text-sm mb-1 font-poppins">{req.label}</h3>
-                                        <p className="text-veda-primary font-semibold text-sm">{req.value}</p>
+                                        <h3 className="font-bold text-veda-text-heading text-base mb-1 font-poppins">{req.label}</h3>
+                                        <p className="text-veda-primary font-semibold text-base">{req.value}</p>
                                     </div>
                                 </div>
                             </div>
@@ -62,18 +62,18 @@ export default function FranchisePage() {
             </section>
 
             {/* 10 Steps Timeline - Enhanced */}
-            <section className="py-14 px-4 bg-veda-primary text-white overflow-hidden relative">
+            <section className="py-14 px-3 bg-veda-primary text-white overflow-hidden relative">
                 <div className="absolute top-10 left-10 w-32 h-32 bg-veda-accent rounded-full blur-[80px] opacity-30"></div>
                 <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-[80px] opacity-10"></div>
-                <div className="max-w-5xl mx-auto relative z-10">
-                    <h2 className="text-center font-poppins text-2xl font-bold mb-4">10 Steps to Launch</h2>
-                    <p className="text-center text-veda-secondary-light mb-10 max-w-2xl mx-auto">Your roadmap to becoming a successful franchise partner</p>
+                <div className="max-w-[1400px] mx-auto relative z-10">
+                    <h2 className="text-center font-poppins text-3xl font-bold mb-4">10 Steps to Launch</h2>
+                    <p className="text-center text-veda-secondary-light text-lg mb-10 max-w-2xl mx-auto">Your roadmap to becoming a successful franchise partner</p>
                     <div className="flex flex-wrap justify-center gap-3">
                         {steps.map((step, idx) => (
                             <div key={idx} className="flex items-center">
                                 <div className="bg-white/10 backdrop-blur-sm px-5 py-3 rounded-xl border border-white/20 hover:bg-veda-accent hover:text-veda-primary-dark hover:border-veda-accent transition-all duration-300 cursor-default group shadow-lg">
                                     <span className="font-bold text-veda-accent mr-2 group-hover:text-veda-primary-dark">{idx + 1}.</span>
-                                    <span className="font-medium text-sm">{step}</span>
+                                    <span className="font-medium text-base">{step}</span>
                                 </div>
                             </div>
                         ))}
@@ -82,12 +82,12 @@ export default function FranchisePage() {
             </section>
 
             {/* Support System - Redesigned */}
-            <section className="py-20 px-4 bg-veda-background-muted">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-4">
+            <section className="py-20 px-3 bg-veda-background-muted">
+                <div className="max-w-[1400px] mx-auto">
+                    <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
                         Our Multi-Layer Support System
                     </h2>
-                    <p className="text-center text-veda-text-muted mb-14 max-w-2xl mx-auto">Comprehensive assistance at every stage of your journey</p>
+                    <p className="text-center text-veda-text-muted text-lg mb-14 max-w-2xl mx-auto">Comprehensive assistance at every stage of your journey</p>
                     <div className="flex flex-wrap justify-center gap-6">
                         {support.map((item, idx) => (
                             <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
@@ -95,8 +95,8 @@ export default function FranchisePage() {
                                     <div className={`w-14 h-14 bg-gradient-to-br ${item.gradient} text-white rounded-xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform`}>
                                         <item.Icon size={26} />
                                     </div>
-                                    <h3 className="text-lg font-bold mb-2 font-poppins text-veda-text-heading">{item.title}</h3>
-                                    <p className="text-veda-text-muted text-sm leading-relaxed">{item.desc}</p>
+                                    <h3 className="text-xl font-bold mb-2 font-poppins text-veda-text-heading">{item.title}</h3>
+                                    <p className="text-veda-text-muted text-base leading-relaxed">{item.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -105,13 +105,13 @@ export default function FranchisePage() {
             </section>
 
             {/* CTA - Enhanced */}
-            <section className="py-20 px-4 text-center">
+            <section className="py-20 px-3 text-center">
                 <div className="max-w-3xl mx-auto relative bg-veda-primary p-12 rounded-3xl text-white shadow-softer overflow-hidden">
                     <div className="absolute top-0 right-0 w-40 h-40 bg-veda-accent/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                     <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
                     <div className="relative z-10">
-                        <h2 className="text-2xl md:text-3xl font-bold font-poppins mb-4">Ready to Start Your Journey?</h2>
-                        <p className="text-lg mb-8 text-veda-secondary-light max-w-xl mx-auto">Get in touch with us to discuss franchise opportunities in your city.</p>
+                        <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Ready to Start Your Journey?</h2>
+                        <p className="text-xl mb-8 text-veda-secondary-light max-w-xl mx-auto">Get in touch with us to discuss franchise opportunities in your city.</p>
                         <Button variant="primary" href="/contact" className="bg-veda-accent hover:bg-veda-accent-dark text-veda-primary-dark border-none font-bold px-8 py-3 shadow-lg">
                             Enquire Now
                         </Button>

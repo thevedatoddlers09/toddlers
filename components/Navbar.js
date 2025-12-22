@@ -30,7 +30,7 @@ export default function Navbar() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={`font-semibold uppercase text-sm transition-colors hover:text-veda-primary ${isActive ? 'text-veda-primary border-b-2 border-veda-primary pb-1' : 'text-veda-text-DEFAULT'
+                            className={`font-semibold uppercase text-base transition-colors hover:text-veda-primary ${isActive ? 'text-veda-primary border-b-2 border-veda-primary pb-1' : 'text-veda-text-DEFAULT'
                                 }`}
                         >
                             {link.name}

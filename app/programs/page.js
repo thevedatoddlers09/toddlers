@@ -60,19 +60,19 @@ export default function ProgramsPage() {
     return (
         <main className="bg-veda-background-DEFAULT">
             {/* Curriculum Introduction */}
-            <section className="py-16 px-4 text-center">
+            <section className="py-16 px-3 text-center">
                 <div className="max-w-4xl mx-auto">
-                    <span className="inline-block py-1 px-4 rounded-full bg-veda-accent/20 text-veda-primary font-bold uppercase tracking-widest text-xs mb-4 border border-veda-accent/30">Our Methodology</span>
-                    <h3 className="font-poppins text-3xl font-bold text-veda-text-heading mb-6">The "7 Spectrums" Curriculum</h3>
-                    <p className="text-base text-veda-text-DEFAULT leading-relaxed max-w-3xl mx-auto">
+                    <span className="inline-block py-1 px-3 rounded-full bg-veda-accent/20 text-veda-primary font-bold uppercase tracking-widest text-xs mb-4 border border-veda-accent/30">Our Methodology</span>
+                    <h3 className="font-poppins text-4xl font-bold text-veda-text-heading mb-6">The "7 Spectrums" Curriculum</h3>
+                    <p className="text-lg text-veda-text-DEFAULT leading-relaxed max-w-3xl mx-auto">
                         At The Veda Toddlers, we follow a unique, activity-based curriculum designed to nurture every aspect of a child's growth. Our 7 Spectrums approach ensures a balanced and holistic development journey.
                     </p>
                 </div>
             </section>
 
             {/* 7 Spectrums Grid - Redesigned */}
-            <section className="py-12 px-4 bg-veda-background-muted">
-                <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-5">
+            <section className="py-12 px-3 bg-veda-background-muted">
+                <div className="max-w-[1400px] mx-auto flex flex-wrap justify-center gap-5">
                     {spectrums.map((item, idx) => (
                         <div key={idx} className="w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(25%-15px)]">
                             <div className={`relative bg-gradient-to-br ${item.bgGradient} p-6 rounded-2xl shadow-soft border border-white/50 hover:shadow-softer hover:-translate-y-2 transition-all duration-300 h-full group overflow-hidden`}>
@@ -81,8 +81,8 @@ export default function ProgramsPage() {
                                     <div className={`w-14 h-14 bg-gradient-to-br ${item.gradient} text-white rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
                                         <item.Icon size={26} />
                                     </div>
-                                    <h4 className="text-lg font-bold text-veda-text-heading mb-2 font-poppins">{item.title}</h4>
-                                    <p className="text-sm text-veda-text-muted leading-relaxed">{item.desc}</p>
+                                    <h4 className="text-xl font-bold text-veda-text-heading mb-2 font-poppins">{item.title}</h4>
+                                    <p className="text-base text-veda-text-muted leading-relaxed">{item.desc}</p>
                                 </div>
                             </div>
                         </div>
@@ -91,12 +91,12 @@ export default function ProgramsPage() {
             </section>
 
             {/* Specialized Programs - Redesigned */}
-            <section className="py-20 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-4">
+            <section className="py-20 px-3">
+                <div className="max-w-[1400px] mx-auto">
+                    <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
                         Specialized Programs
                     </h2>
-                    <p className="text-center text-veda-text-muted mb-16 max-w-2xl mx-auto">Unique learning experiences that prepare children for the future</p>
+                    <p className="text-center text-veda-text-muted text-lg mb-16 max-w-2xl mx-auto">Unique learning experiences that prepare children for the future</p>
 
                     <div className="space-y-16">
                         {programs.map((program, idx) => (
@@ -106,18 +106,18 @@ export default function ProgramsPage() {
                                         <img src={program.image} alt={program.title} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110" />
                                         <div className={`absolute inset-0 bg-gradient-to-t ${program.gradient} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
                                         <div className="absolute top-4 left-4">
-                                            <span className="bg-white/90 backdrop-blur-sm text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">{program.title}</span>
+                                            <span className="bg-white/90 backdrop-blur-sm text-veda-primary-dark py-1.5 px-3 rounded-full text-xs font-bold shadow-lg">{program.title}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="w-full md:w-1/2 space-y-4">
                                     <div className="flex gap-2 flex-wrap">
                                         {program.tags.map((tag, tIdx) => (
-                                            <span key={tIdx} className={`bg-gradient-to-r ${program.gradient} text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-soft`}>{tag}</span>
+                                            <span key={tIdx} className={`bg-gradient-to-r ${program.gradient} text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-soft`}>{tag}</span>
                                         ))}
                                     </div>
-                                    <h3 className="text-2xl font-bold font-poppins text-veda-text-heading">{program.title}</h3>
-                                    <p className="text-base text-veda-text-DEFAULT leading-relaxed">{program.desc}</p>
+                                    <h3 className="text-3xl font-bold font-poppins text-veda-text-heading">{program.title}</h3>
+                                    <p className="text-lg text-veda-text-DEFAULT leading-relaxed">{program.desc}</p>
                                 </div>
                             </div>
                         ))}

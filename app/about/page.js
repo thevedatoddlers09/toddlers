@@ -81,33 +81,33 @@ export default function AboutPage() {
             <section className="relative h-[45vh] min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
                 style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80')" }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-primary-dark/80 to-veda-primary-dark/90"></div>
-                <div className="relative z-10 p-6 max-w-4xl">
+                <div className="relative z-10 p-6 max-w-5xl">
                     <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">
                         About The Veda Toddlers
                     </h1>
-                    <p className="font-opensans text-lg md:text-xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
+                    <p className="font-opensans text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
                         A "new-age" preschool and daycare for children aged 1.5 to 6 years, emphasizing joyful, holistic, and experiential learning.
                     </p>
                 </div>
             </section>
 
             {/* Overview & Philosophy */}
-            <section className="py-16 px-4 bg-veda-background-DEFAULT text-center">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold font-poppins text-veda-text-heading mb-6">Our Philosophy</h2>
-                    <p className="text-lg text-veda-text-DEFAULT leading-relaxed">
+            <section className="py-16 px-3 bg-veda-background-DEFAULT text-center">
+                <div className="max-w-5xl mx-auto">
+                    <h2 className="text-4xl font-bold font-poppins text-veda-text-heading mb-6">Our Philosophy</h2>
+                    <p className="text-xl text-veda-text-DEFAULT leading-relaxed">
                         We blend global early education standards with rich Indian values, aiming to nurture confident, kind, and creative learners through a child-centered philosophy.
                     </p>
                 </div>
             </section>
 
             {/* Section B: Core Values - Redesigned */}
-            <section className="py-16 px-4 bg-veda-background-muted">
-                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-4">
+            <section className="py-16 px-3 bg-veda-background-muted">
+                <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
                     Core Values
                 </h2>
-                <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">The principles that guide everything we do</p>
-                <div className="max-w-6xl mx-auto">
+                <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">The principles that guide everything we do</p>
+                <div className="max-w-[1400px] mx-auto">
                     <div className="flex flex-wrap justify-center gap-6">
                         {values.map((value, idx) => (
                             <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
@@ -117,8 +117,8 @@ export default function AboutPage() {
                                         <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${value.gradient} text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
                                             <value.Icon size={30} />
                                         </div>
-                                        <h3 className="text-lg font-bold mb-3 text-veda-text-heading font-poppins">{value.title}</h3>
-                                        <p className="text-veda-text-muted text-sm leading-relaxed">{value.text}</p>
+                                        <h3 className="text-xl font-bold mb-3 text-veda-text-heading font-poppins">{value.title}</h3>
+                                        <p className="text-veda-text-muted text-base leading-relaxed">{value.text}</p>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
             </section>
 
             {/* Section C: VEDA GROWTH JOURNEY - Redesigned */}
-            <section className="py-20 px-4 bg-gradient-to-b from-veda-secondary-light/30 via-white to-veda-background-soft relative overflow-hidden">
+            <section className="py-20 px-3 bg-gradient-to-b from-veda-secondary-light/30 via-white to-veda-background-soft relative overflow-hidden">
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-veda-accent/5 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-72 h-72 bg-veda-primary/5 rounded-full blur-3xl"></div>
@@ -136,14 +136,14 @@ export default function AboutPage() {
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Section Header */}
                     <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 bg-veda-primary/10 px-4 py-2 rounded-full mb-4">
+                        <div className="inline-flex items-center gap-2 bg-veda-primary/10 px-3 py-2 rounded-full mb-4">
                             <Rocket size={18} className="text-veda-primary" />
-                            <span className="text-veda-primary font-medium text-sm uppercase tracking-wider">Our Journey</span>
+                            <span className="text-veda-primary font-medium text-base uppercase tracking-wider">Our Journey</span>
                         </div>
                         <h2 className="font-poppins text-4xl md:text-5xl font-bold text-veda-text-heading mb-4">
                             VEDA GROWTH JOURNEY
                         </h2>
-                        <p className="text-veda-text-muted max-w-2xl mx-auto text-lg">
+                        <p className="text-veda-text-muted max-w-2xl mx-auto text-xl">
                             A decade of excellence in education
                         </p>
                     </div>
@@ -159,14 +159,14 @@ export default function AboutPage() {
                                             <item.Icon size={24} className="text-white" />
                                         </div>
                                         <span className="text-veda-accent font-bold text-5xl font-poppins">{item.year}</span>
-                                        <h3 className="text-white font-poppins font-semibold text-xl mt-2">
+                                        <h3 className="text-white font-poppins font-semibold text-2xl mt-2">
                                             {item.title}
                                         </h3>
                                     </div>
 
                                     {/* Description */}
                                     <div className="p-6">
-                                        <p className="text-veda-text-DEFAULT leading-relaxed text-base">
+                                        <p className="text-veda-text-DEFAULT leading-relaxed text-lg">
                                             "{item.text}"
                                         </p>
                                     </div>
@@ -190,7 +190,7 @@ export default function AboutPage() {
                             <div className="w-16 h-16 bg-veda-accent rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
                                 <Handshake size={32} className="text-veda-primary-dark" />
                             </div>
-                            <p className="text-white text-lg md:text-xl leading-relaxed max-w-4xl mx-auto font-light">
+                            <p className="text-white text-lg md:text-xl leading-relaxed max-w-5xl mx-auto font-light">
                                 At The Veda Toddlers, our core team is the driving force behind your success. With unmatched expertise and dedication, they provide complete franchise support – from setup, recruitment, and training to marketing and day-to-day operations. Beyond preschool setup, our team also focuses on sustainable growth strategies, ensuring that every partner not only launches smoothly but also scales with confidence. With The Veda Toddlers by your side, you gain the knowledge, resources, and continuous guidance needed to build and expand a thriving preschool business.
                             </p>
                         </div>
@@ -199,20 +199,20 @@ export default function AboutPage() {
             </section>
 
             {/* Section D: Leadership Team - Redesigned */}
-            <section className="py-16 px-4 bg-veda-background-DEFAULT">
-                <h2 className="text-center font-poppins text-3xl font-bold text-veda-text-heading mb-4">
+            <section className="py-16 px-3 bg-veda-background-DEFAULT">
+                <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
                     Leadership Team
                 </h2>
-                <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">Meet the passionate people behind The Veda</p>
-                <div className="max-w-6xl mx-auto">
+                <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Meet the passionate people behind The Veda</p>
+                <div className="max-w-[1400px] mx-auto">
                     <div className="flex flex-wrap justify-center gap-6 text-center">
                         {leaders.map((leader, idx) => (
                             <div key={idx} className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] bg-white rounded-2xl p-5 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
                                 <div className={`w-20 h-20 bg-gradient-to-br ${leader.color} rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl text-white font-bold shadow-lg group-hover:scale-110 transition-transform`}>
                                     <span>{leader.name.charAt(0)}</span>
                                 </div>
-                                <h3 className="text-base font-bold text-veda-text-heading mb-1 font-poppins">{leader.name}</h3>
-                                <p className="text-xs text-veda-text-muted font-medium uppercase tracking-wider">{leader.role}</p>
+                                <h3 className="text-lg font-bold text-veda-text-heading mb-1 font-poppins">{leader.name}</h3>
+                                <p className="text-sm text-veda-text-muted font-medium uppercase tracking-wider">{leader.role}</p>
                             </div>
                         ))}
                     </div>
@@ -220,7 +220,7 @@ export default function AboutPage() {
             </section>
 
             {/* Section E: Awards & Recognition - Premium Redesigned */}
-            <section className="py-24 px-4 bg-gradient-to-b from-veda-background-soft via-white to-veda-secondary-light/20 relative overflow-hidden">
+            <section className="py-24 px-3 bg-gradient-to-b from-veda-background-soft via-white to-veda-secondary-light/20 relative overflow-hidden">
                 {/* Decorative Background Elements */}
                 <div className="absolute top-0 left-0 w-72 h-72 bg-veda-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-veda-primary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
@@ -229,14 +229,14 @@ export default function AboutPage() {
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Section Header */}
                     <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 bg-veda-accent/10 px-4 py-2 rounded-full mb-4">
+                        <div className="inline-flex items-center gap-2 bg-veda-accent/10 px-3 py-2 rounded-full mb-4">
                             <Trophy size={18} className="text-veda-accent" />
-                            <span className="text-veda-accent font-medium text-sm uppercase tracking-wider">Recognition</span>
+                            <span className="text-veda-accent font-medium text-base uppercase tracking-wider">Recognition</span>
                         </div>
                         <h2 className="font-poppins text-4xl md:text-5xl font-bold mb-4 text-veda-text-heading">
                             Our Awards & Achievements
                         </h2>
-                        <p className="text-veda-text-muted max-w-2xl mx-auto text-lg">
+                        <p className="text-veda-text-muted max-w-2xl mx-auto text-xl">
                             We're proud to be recognized as one of India's most trusted preschool brands
                         </p>
                     </div>
@@ -273,10 +273,10 @@ export default function AboutPage() {
                                             <Trophy size={18} className="text-veda-primary-dark" />
                                         </div>
 
-                                        <h3 className="text-white font-poppins font-semibold text-base leading-tight mb-1 pr-8">
+                                        <h3 className="text-white font-poppins font-semibold text-lg leading-tight mb-1 pr-8">
                                             {award.text}
                                         </h3>
-                                        <p className="text-white/70 text-sm font-light">
+                                        <p className="text-white/70 text-base font-light">
                                             {award.subtitle}
                                         </p>
                                     </div>

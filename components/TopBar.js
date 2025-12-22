@@ -16,8 +16,8 @@ export default function TopBar() {
         <div className="bg-veda-primary-dark overflow-hidden whitespace-nowrap">
             <div className="animate-marquee inline-flex py-2">
                 {marqueeItems.map((item, idx) => (
-                    <div key={idx} className="inline-flex items-center gap-2 mx-6 text-white text-sm font-medium">
-                        <item.Icon size={14} strokeWidth={2.5} />
+                    <div key={idx} className="inline-flex items-center gap-2 mx-6 text-white text-base font-medium">
+                        <item.Icon size={16} strokeWidth={2.5} />
                         <span>{item.text}</span>
                         <span className="mx-4 text-white/40">•</span>
                     </div>

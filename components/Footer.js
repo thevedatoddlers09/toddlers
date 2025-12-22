@@ -23,7 +23,7 @@ export default function Footer() {
                         <div className="bg-white rounded-2xl p-4 inline-block mb-5">
                             <img src="/logo.jpg" alt="The Veda Toddlers Logo" className="h-20 w-auto object-contain" />
                         </div>
-                        <p className="text-veda-secondary-light text-sm leading-relaxed font-opensans">
+                        <p className="text-veda-secondary-light text-base leading-relaxed font-opensans">
                             We enrich and expand our student's educational horizons well beyond to ensure students are working at their personal best level of achievement.
                         </p>
                     </div>
@@ -33,7 +33,7 @@ export default function Footer() {
                         <h3 className="text-veda-accent text-lg font-bold mb-5">
                             Quick Links
                         </h3>
-                        <ul className="space-y-2.5 font-opensans text-sm">
+                        <ul className="space-y-2.5 font-opensans text-base">
                             {quickLinks.map((link, idx) => (
                                 <li key={idx}>
                                     <Link href={link.href} className="text-white/80 hover:text-veda-accent transition-colors flex items-center gap-2">
@@ -50,9 +50,9 @@ export default function Footer() {
                         <h3 className="text-veda-accent text-lg font-bold mb-5">
                             Address
                         </h3>
-                        <div className="space-y-4 font-opensans text-sm">
+                        <div className="space-y-4 font-opensans text-base">
                             <div className="flex items-start gap-3">
-                                <MapPin size={18} className="text-veda-playful-peach mt-0.5 flex-shrink-0" />
+                                <MapPin size={20} className="text-veda-playful-peach mt-0.5 flex-shrink-0" />
                                 <p className="text-white leading-relaxed">
                                     CPM 61 Ground, Second & Third Floor,<br />
                                     Sector 105 Emaar, Mohali
@@ -63,16 +63,16 @@ export default function Footer() {
                         <h3 className="text-veda-accent text-lg font-bold mt-6 mb-4">
                             Timings
                         </h3>
-                        <div className="flex items-center gap-3 font-opensans text-sm">
-                            <Clock size={18} className="text-veda-playful-peach flex-shrink-0" />
+                        <div className="flex items-center gap-3 font-opensans text-base">
+                            <Clock size={20} className="text-veda-playful-peach flex-shrink-0" />
                             <p className="text-white">8:30 a.m. to 3:30 p.m.</p>
                         </div>
 
                         <h3 className="text-veda-accent text-lg font-bold mt-6 mb-4">
                             Email
                         </h3>
-                        <div className="flex items-center gap-3 font-opensans text-sm">
-                            <Mail size={18} className="text-veda-playful-peach flex-shrink-0" />
+                        <div className="flex items-center gap-3 font-opensans text-base">
+                            <Mail size={20} className="text-veda-playful-peach flex-shrink-0" />
                             <a href="mailto:info@vedatoddlers.com" className="text-white hover:text-veda-accent transition-colors">
                                 info@vedatoddlers.com
                             </a>
@@ -84,20 +84,20 @@ export default function Footer() {
                         <h3 className="text-veda-accent text-lg font-bold mb-5">
                             Contact Numbers
                         </h3>
-                        <div className="space-y-4 font-opensans text-sm">
+                        <div className="space-y-4 font-opensans text-base">
                             <div className="flex items-start gap-3">
-                                <User size={18} className="text-veda-playful-peach mt-0.5 flex-shrink-0" />
+                                <User size={20} className="text-veda-playful-peach mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Outreach Coordinator</p>
+                                    <p className="text-white/60 text-sm uppercase tracking-wider mb-1">Outreach Coordinator</p>
                                     <a href="tel:8968688486" className="text-white/90 hover:text-veda-accent transition-colors font-medium">
                                         8968688486
                                     </a>
                                 </div>
                             </div>
                             <div className="flex items-start gap-3">
-                                <Headphones size={18} className="text-veda-playful-peach mt-0.5 flex-shrink-0" />
+                                <Headphones size={20} className="text-veda-playful-peach mt-0.5 flex-shrink-0" />
                                 <div>
-                                    <p className="text-white/60 text-xs uppercase tracking-wider mb-1">Reception</p>
+                                    <p className="text-white/60 text-sm uppercase tracking-wider mb-1">Reception</p>
                                     <a href="tel:7657800886" className="text-white/90 hover:text-veda-accent transition-colors font-medium block">
                                         7657800886
                                     </a>
@@ -112,13 +112,13 @@ export default function Footer() {
                         <div className="mt-6">
                             <div className="flex gap-3">
                                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-veda-accent hover:text-veda-primary-dark transition-all">
-                                    <Facebook size={18} />
+                                    <Facebook size={20} />
                                 </a>
                                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-veda-playful-peach hover:text-white transition-all">
-                                    <Instagram size={18} />
+                                    <Instagram size={20} />
                                 </a>
                                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
-                                    <Youtube size={18} />
+                                    <Youtube size={20} />
                                 </a>
                             </div>
                         </div>
@@ -127,7 +127,7 @@ export default function Footer() {
             </div>
 
             {/* Copyright Bar */}
-            <div className="bg-black/20 py-4 px-[5%] text-center font-opensans text-sm text-white/70">
+            <div className="bg-black/20 py-4 px-[5%] text-center font-opensans text-base text-white/70">
                 &copy; {new Date().getFullYear()} All rights reserved | The Veda Toddlers
             </div>
         </footer>

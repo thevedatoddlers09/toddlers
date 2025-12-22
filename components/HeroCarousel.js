@@ -68,7 +68,7 @@ export default function HeroCarousel() {
             {slides.map((slide, index) => (
                 <div
                     key={slide.id}
-                    className={`absolute top-0 left-0 w-full h-full flex items-center justify-center text-center px-[5%] transition-opacity duration-700 ease-out bg-cover bg-center ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0'}`}
+                    className={`absolute top-0 left-0 w-full h-full flex items-center justify-center text-center px-[3%] transition-opacity duration-700 ease-out bg-cover bg-center ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0'}`}
                     style={{
                         backgroundImage: `linear-gradient(to bottom, rgba(62, 42, 79, 0.5), rgba(42, 27, 56, 0.7)), url(${slide.image})`,
                     }}

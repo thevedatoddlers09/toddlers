@@ -63,8 +63,8 @@ export default function StatsCounter() {
     };
 
     return (
-        <section className="py-16 px-[5%] bg-veda-primary" ref={sectionRef}>
-            <div className="max-w-5xl mx-auto">
+        <section className="py-16 px-[3%] bg-veda-primary" ref={sectionRef}>
+            <div className="max-w-[1400px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                     {stats.map((stat) => (
                         <div key={stat.key} className="flex flex-col items-center">

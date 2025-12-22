@@ -15,9 +15,9 @@ export default function Home() {
       <HeroCarousel />
 
       {/* Why Us Section */}
-      <section className="py-24 px-[5%] bg-veda-background-DEFAULT">
+      <section className="py-24 px-[3%] bg-veda-background-DEFAULT">
         <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Why Choose Us?</h2>
-        <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">Discover what makes The Veda Toddlers the perfect choice for your child's early education</p>
+        <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Discover what makes The Veda Toddlers the perfect choice for your child's early education</p>
         <div className="flex flex-wrap justify-center gap-6">
           {/* Award Winning Curriculum - Golden Theme */}
           <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
@@ -28,8 +28,8 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-accent to-veda-accent-dark text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <Award size={30} />
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-veda-text-heading text-center">Award Winning Curriculum</h3>
-                <p className="text-veda-text-muted text-sm text-center leading-relaxed">Designed by experts to foster holistic development through play-based learning.</p>
+                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Award Winning Curriculum</h3>
+                <p className="text-veda-text-muted text-base text-center leading-relaxed">Designed by experts to foster holistic development through play-based learning.</p>
               </div>
             </div>
           </div>
@@ -44,8 +44,8 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-playful-green to-green-600 text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <ShieldCheck size={30} />
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-veda-text-heading text-center">Safe & Secure</h3>
-                <p className="text-veda-text-muted text-sm text-center leading-relaxed">CCTV monitored facilities and child-safe infrastructure for peace of mind.</p>
+                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Safe & Secure</h3>
+                <p className="text-veda-text-muted text-base text-center leading-relaxed">CCTV monitored facilities and child-safe infrastructure for peace of mind.</p>
               </div>
             </div>
           </div>
@@ -60,8 +60,8 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-playful-peach to-rose-400 text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <Heart size={30} />
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-veda-text-heading text-center">Passionate Educators</h3>
-                <p className="text-veda-text-muted text-sm text-center leading-relaxed">Highly trained teachers who treat every child with love and care.</p>
+                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Passionate Educators</h3>
+                <p className="text-veda-text-muted text-base text-center leading-relaxed">Highly trained teachers who treat every child with love and care.</p>
               </div>
             </div>
           </div>
@@ -76,8 +76,8 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-primary to-veda-primary-dark text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <Flower2 size={30} />
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-veda-text-heading text-center">Seven Petal Approach</h3>
-                <p className="text-veda-text-muted text-sm text-center leading-relaxed">Ensuring development across all key skills, senses, and abilities.</p>
+                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Seven Petal Approach</h3>
+                <p className="text-veda-text-muted text-base text-center leading-relaxed">Ensuring development across all key skills, senses, and abilities.</p>
               </div>
             </div>
           </div>
@@ -88,9 +88,9 @@ export default function Home() {
       <StatsCounter />
 
       {/* Featured Programs Section */}
-      <section className="py-24 px-[5%] bg-veda-background-muted">
+      <section className="py-24 px-[3%] bg-veda-background-muted">
         <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Our Programs</h2>
-        <p className="text-center text-veda-text-muted mb-12 max-w-2xl mx-auto">Age-appropriate programs designed to nurture every stage of early development</p>
+        <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Age-appropriate programs designed to nurture every stage of early development</p>
         <div className="flex flex-wrap justify-center gap-8">
           {/* Toddlers Program */}
           <div className="w-full md:w-[calc(33.333%-22px)]">
@@ -103,8 +103,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl text-veda-text-heading mb-2 font-bold font-poppins">Toddlers</h3>
-                <p className="text-veda-text-muted mb-5 text-sm leading-relaxed">A fun-filled beginning to your child's learning journey with sensory play and motor skill development.</p>
+                <h3 className="text-2xl text-veda-text-heading mb-2 font-bold font-poppins">Toddlers</h3>
+                <p className="text-veda-text-muted mb-5 text-base leading-relaxed">A fun-filled beginning to your child's learning journey with sensory play and motor skill development.</p>
                 <Button variant="outline" shape="rounded" fullWidth href="/programs" className="group-hover:bg-veda-primary group-hover:text-white group-hover:border-veda-primary transition-all">
                   View Details
                 </Button>
@@ -122,8 +122,8 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <span className="inline-block bg-veda-accent/20 text-veda-accent py-1.5 px-4 rounded-full text-xs font-bold mb-3">3-4 Years</span>
-                <h3 className="text-xl text-white mb-2 font-bold font-poppins">Nursery</h3>
-                <p className="text-veda-secondary-light mb-5 text-sm leading-relaxed">Building foundational skills through play, exploration, and structured activities.</p>
+                <h3 className="text-2xl text-white mb-2 font-bold font-poppins">Nursery</h3>
+                <p className="text-veda-secondary-light mb-5 text-base leading-relaxed">Building foundational skills through play, exploration, and structured activities.</p>
                 <Button variant="primary" shape="rounded" fullWidth href="/programs" className="bg-veda-accent hover:bg-veda-accent-dark text-veda-primary-dark border-none">
                   View Details
                 </Button>
@@ -142,8 +142,8 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl text-veda-text-heading mb-2 font-bold font-poppins">Kindergarten</h3>
-                <p className="text-veda-text-muted mb-5 text-sm leading-relaxed">Preparing children for formal schooling with confidence, creativity, and critical thinking.</p>
+                <h3 className="text-2xl text-veda-text-heading mb-2 font-bold font-poppins">Kindergarten</h3>
+                <p className="text-veda-text-muted mb-5 text-base leading-relaxed">Preparing children for formal schooling with confidence, creativity, and critical thinking.</p>
                 <Button variant="outline" shape="rounded" fullWidth href="/programs" className="group-hover:bg-veda-primary group-hover:text-white group-hover:border-veda-primary transition-all">
                   View Details
                 </Button>
@@ -159,12 +159,12 @@ export default function Home() {
       </section>
 
       {/* Facilities & Infrastructure Section */}
-      <section className="py-24 px-[5%] bg-veda-background-DEFAULT">
+      <section className="py-24 px-[3%] bg-veda-background-DEFAULT">
         <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
           World-Class Facilities
         </h2>
-        <p className="text-center text-veda-text-muted mb-16 max-w-2xl mx-auto">Modern infrastructure designed with children's safety and learning in mind</p>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <p className="text-center text-veda-text-muted text-lg mb-16 max-w-2xl mx-auto">Modern infrastructure designed with children's safety and learning in mind</p>
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { title: 'Classrooms', desc: 'Safe, hygienic, bright, and spacious with strictly sanitized materials.', Icon: School, gradient: 'from-veda-accent to-amber-500' },
             { title: 'Security', desc: '24x7 CCTV surveillance covering the entire campus with monitored entry/exit.', Icon: Shield, gradient: 'from-veda-primary to-veda-primary-dark' },
@@ -178,8 +178,8 @@ export default function Home() {
                 <item.Icon size={26} />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-veda-text-heading mb-1.5 font-poppins">{item.title}</h3>
-                <p className="text-veda-text-muted text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold text-veda-text-heading mb-1.5 font-poppins">{item.title}</h3>
+                <p className="text-veda-text-muted text-base leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}
