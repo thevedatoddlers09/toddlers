@@ -175,22 +175,26 @@ export default function AboutPage() {
 
                     <div className="flex flex-wrap justify-center gap-6">
                         {[
-                            { text: 'Top Ranked Early Years School in Mohali', image: 'https://images.unsplash.com/photo-1610214959124-76229c1fb29a?auto=format&fit=crop&q=80' },
-                            { text: 'Advita Women Entrepreneur Award', image: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&q=80' },
-                            { text: 'Star Education Award 2024', image: 'https://images.unsplash.com/photo-1601004562473-b7899be4a9a0?auto=format&fit=crop&q=80' },
-                            { text: 'Visionary Leader Award', image: 'https://images.unsplash.com/photo-1521406699684-2cdad2529ab8?auto=format&fit=crop&q=80' }
+                            { text: 'AIP – Association of Indian Principals: Top Ranked Early Years School in Mohali', image: '/images/aip-award.jpg' },
+                            { text: 'Indian School Award: Best Pre School with Holistic Development', image: '/images/indian-school-award.jpg' },
+                            { text: 'Advita Women Entrepreneur Award', image: '/images/advita-award.jpg' },
+                            { text: 'Star Education Award 2024', image: '/images/star-education-award.jpg' },
+                            { text: 'Visionary Leader Award', image: '/images/visionary-leader-award.jpg' }
                         ].map((award, idx) => (
                             <div key={idx} className="w-[calc(50%-12px)] md:w-[calc(25%-18px)] group">
                                 <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 hover:-translate-y-2">
-                                    <div className="relative aspect-[3/4] overflow-hidden">
+                                    {/* Image Container */}
+                                    <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-veda-secondary-light via-white to-veda-accent/10">
                                         <img
                                             src={award.image}
-                                            alt="Award"
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                            alt={award.text}
+                                            className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/80 via-veda-primary/20 to-transparent"></div>
-                                        <div className="absolute bottom-0 left-0 right-0 p-4">
-                                            <div className="w-10 h-10 bg-veda-accent rounded-xl flex items-center justify-center mb-2 shadow-lg">
+                                    </div>
+                                    {/* Text Label */}
+                                    <div className="p-4 bg-gradient-to-r from-veda-primary to-veda-primary-dark">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 bg-veda-accent rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
                                                 <Trophy size={20} className="text-veda-primary-dark" />
                                             </div>
                                             <p className="text-white font-poppins font-medium text-sm leading-snug">
