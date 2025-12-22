@@ -161,46 +161,66 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Section E: Awards & Recognition - Redesigned */}
-            <section className="py-20 px-4 bg-veda-background-soft relative overflow-hidden">
-                <div className="max-w-6xl mx-auto relative z-10">
-                    <div className="text-center mb-12">
-                        <h2 className="font-poppins text-3xl font-bold mb-4 text-veda-text-heading">
-                            Our Awards
+            {/* Section E: Awards & Recognition - Premium Redesigned */}
+            <section className="py-24 px-4 bg-gradient-to-b from-veda-background-soft via-white to-veda-secondary-light/20 relative overflow-hidden">
+                {/* Decorative Background Elements */}
+                <div className="absolute top-0 left-0 w-72 h-72 bg-veda-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute bottom-0 right-0 w-96 h-96 bg-veda-primary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+                <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-veda-secondary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    {/* Section Header */}
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center gap-2 bg-veda-accent/10 px-4 py-2 rounded-full mb-4">
+                            <Trophy size={18} className="text-veda-accent" />
+                            <span className="text-veda-accent font-medium text-sm uppercase tracking-wider">Recognition</span>
+                        </div>
+                        <h2 className="font-poppins text-4xl md:text-5xl font-bold mb-4 text-veda-text-heading">
+                            Our Awards & Achievements
                         </h2>
-                        <p className="text-veda-text-DEFAULT max-w-2xl mx-auto">
-                            We're proud to be recognized as one of India's most trusted preschool brands.
+                        <p className="text-veda-text-muted max-w-2xl mx-auto text-lg">
+                            We're proud to be recognized as one of India's most trusted preschool brands
                         </p>
                     </div>
 
-                    <div className="flex flex-wrap justify-center gap-6">
+                    {/* Awards Grid */}
+                    <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
                         {[
-                            { text: 'AIP – Association of Indian Principals: Top Ranked Early Years School in Mohali', image: '/images/aip-award.jpg' },
-                            { text: 'Indian School Award: Best Pre School with Holistic Development', image: '/images/indian-school-award.jpg' },
-                            { text: 'Advita Women Entrepreneur Award', image: '/images/advita-award.jpg' },
-                            { text: 'Star Education Award 2024', image: '/images/star-education-award.jpg' },
-                            { text: 'Visionary Leader Award', image: '/images/visionary-leader-award.jpg' }
+                            { text: 'AIP – Association of Indian Principals', subtitle: 'Top Ranked Early Years School in Mohali', image: '/images/aip-award.jpg' },
+                            { text: 'Indian School Award', subtitle: 'Best Pre School with Holistic Development', image: '/images/indian-school-award.jpg' },
+                            { text: 'Advita Women Entrepreneur Award', subtitle: 'Most Promising Startup Award', image: '/images/advita-award.jpg' },
+                            { text: 'Star Education Award 2024', subtitle: 'Best Pre-School - Mohali', image: '/images/star-education-award.jpg' },
+                            { text: 'Visionary Leader Award', subtitle: 'Tricity Women Entrepreneurs', image: '/images/visionary-leader-award.jpg' }
                         ].map((award, idx) => (
-                            <div key={idx} className="w-[calc(50%-12px)] md:w-[calc(25%-18px)] group">
-                                <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 hover:-translate-y-2">
+                            <div
+                                key={idx}
+                                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] group"
+                            >
+                                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full border border-veda-border/50">
                                     {/* Image Container */}
-                                    <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-veda-secondary-light via-white to-veda-accent/10">
+                                    <div className="relative h-56 sm:h-64 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
                                         <img
                                             src={award.image}
                                             alt={award.text}
-                                            className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                                            className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-700"
                                         />
+                                        {/* Subtle overlay on hover */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                     </div>
-                                    {/* Text Label */}
-                                    <div className="p-4 bg-gradient-to-r from-veda-primary to-veda-primary-dark">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-10 h-10 bg-veda-accent rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
-                                                <Trophy size={20} className="text-veda-primary-dark" />
-                                            </div>
-                                            <p className="text-white font-poppins font-medium text-sm leading-snug">
-                                                {award.text}
-                                            </p>
+
+                                    {/* Content Section */}
+                                    <div className="p-5 bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark relative min-h-[100px]">
+                                        {/* Trophy Badge */}
+                                        <div className="absolute -top-5 right-5 w-10 h-10 bg-veda-accent rounded-xl flex items-center justify-center shadow-xl">
+                                            <Trophy size={18} className="text-veda-primary-dark" />
                                         </div>
+
+                                        <h3 className="text-white font-poppins font-semibold text-base leading-tight mb-1 pr-8">
+                                            {award.text}
+                                        </h3>
+                                        <p className="text-white/70 text-sm font-light">
+                                            {award.subtitle}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
