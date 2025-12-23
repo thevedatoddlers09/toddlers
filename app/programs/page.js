@@ -1,4 +1,4 @@
-import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles, Baby, Sprout, Footprints, PenTool, GraduationCap, Clock, Sun, Moon, Music, Mic, User, CircleDollarSign, Star } from 'lucide-react';
+import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles, Baby, Sprout, Footprints, PenTool, GraduationCap, Clock, Sun, Moon, Music, Mic, User, CircleDollarSign, Star, Rocket, Smile } from 'lucide-react';
 
 export const metadata = {
     title: 'Curriculum & Programs - The Veda Toddlers',
@@ -19,27 +19,27 @@ export default function ProgramsPage() {
 
     // Pre-School Levels
     const preschoolLevels = [
-        { name: 'Seedling', age: '1 to 2 years', desc: 'A gentle start to socialization and sensory exploration.', Icon: Baby, color: 'bg-veda-playful-peach', text: 'text-rose-600' },
-        { name: 'Sprouts', age: '2 to 3 years', desc: 'Focus on language, motor skills, and curiosity.', Icon: Sprout, color: 'bg-veda-playful-green', text: 'text-green-700' },
-        { name: 'Explorer', age: '3 to 4 years', desc: 'Building independence and early foundational concepts.', Icon: Footprints, color: 'bg-veda-playful-blue', text: 'text-blue-600' },
-        { name: 'Creator', age: '4 to 5 years', desc: 'Encouraging creativity, problem-solving, and collaboration.', Icon: PenTool, color: 'bg-veda-accent', text: 'text-amber-700' },
-        { name: 'UKG', age: '5 to 6 years', desc: 'Preparing for formal schooling with confidence.', Icon: GraduationCap, color: 'bg-veda-secondary', text: 'text-purple-700' },
+        { name: 'Seedling', age: '1 to 2 yrs', desc: 'Gentle socialization & sensory play', Icon: Baby, color: 'text-rose-600', bg: 'bg-rose-100', border: 'border-rose-200' },
+        { name: 'Sprouts', age: '2 to 3 yrs', desc: 'Language, motor skills & curiosity', Icon: Sprout, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' },
+        { name: 'Explorer', age: '3 to 4 yrs', desc: 'Independence & foundational concepts', Icon: Footprints, color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
+        { name: 'Creator', age: '4 to 5 yrs', desc: 'Creativity, problem-solving & collaboration', Icon: PenTool, color: 'text-amber-600', bg: 'bg-amber-100', border: 'border-amber-200' },
+        { name: 'UKG', age: '5 to 6 yrs', desc: 'Prep for formal schooling, confidence', Icon: GraduationCap, color: 'text-purple-600', bg: 'bg-purple-100', border: 'border-purple-200' },
     ];
 
     // After-School Activities
     const afterSchoolActivities = [
-        { name: 'Art & Craft', Icon: Palette, color: 'bg-rose-100 text-rose-600' },
-        { name: 'Painting', Icon: Palette, color: 'bg-orange-100 text-orange-600' },
-        { name: 'Dance', Icon: Music, color: 'bg-yellow-100 text-yellow-600' },
-        { name: 'Personality Development', Icon: User, color: 'bg-green-100 text-green-600' },
-        { name: 'Public Speaking', Icon: Mic, color: 'bg-teal-100 text-teal-600' },
-        { name: 'Right Brain Exercises', Icon: Brain, color: 'bg-blue-100 text-blue-600' },
-        { name: 'Tuition & Academic Support', Icon: BookOpen, color: 'bg-indigo-100 text-indigo-600' },
-        { name: 'Financial Literacy', Icon: CircleDollarSign, color: 'bg-purple-100 text-purple-600' },
+        { name: 'Art & Craft', Icon: Palette, color: 'text-rose-600', bg: 'bg-rose-50', hover: 'hover:bg-rose-100' },
+        { name: 'Painting', Icon: Palette, color: 'text-orange-600', bg: 'bg-orange-50', hover: 'hover:bg-orange-100' },
+        { name: 'Dance', Icon: Music, color: 'text-yellow-600', bg: 'bg-yellow-50', hover: 'hover:bg-yellow-100' },
+        { name: 'Personality Dev', Icon: User, color: 'text-green-600', bg: 'bg-green-50', hover: 'hover:bg-green-100' },
+        { name: 'Public Speaking', Icon: Mic, color: 'text-teal-600', bg: 'bg-teal-50', hover: 'hover:bg-teal-100' },
+        { name: 'Right Brain', Icon: Brain, color: 'text-blue-600', bg: 'bg-blue-50', hover: 'hover:bg-blue-100' },
+        { name: 'Tuition Support', Icon: BookOpen, color: 'text-indigo-600', bg: 'bg-indigo-50', hover: 'hover:bg-indigo-100' },
+        { name: 'Financial Literacy', Icon: CircleDollarSign, color: 'text-purple-600', bg: 'bg-purple-50', hover: 'hover:bg-purple-100' },
     ];
 
     return (
-        <main className="bg-veda-background-DEFAULT">
+        <main className="bg-white">
             {/* Hero Banner */}
             <section className="relative h-[45vh] min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
                 style={{ backgroundImage: "url('/programs-bg.png')" }}>
@@ -50,24 +50,24 @@ export default function ProgramsPage() {
                         The "7 Spectrums" Curriculum
                     </h1>
                     <p className="font-opensans text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
-                        At The Veda Toddlers, we follow a unique, activity-based curriculum designed to nurture every aspect of a child's growth. Our 7 Spectrums approach ensures a balanced and holistic development journey.
+                        At The Veda Toddlers, we follow a unique, activity-based curriculum designed to nurture every aspect of a child's growth.
                     </p>
                 </div>
             </section>
 
             {/* 7 Spectrums Grid */}
-            <section className="py-16 px-4 bg-veda-background-muted">
+            <section className="py-20 px-4 bg-veda-background-muted">
                 <div className="max-w-[1400px] mx-auto flex flex-wrap justify-center gap-6">
                     {spectrums.map((item, idx) => (
                         <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
-                            <div className={`relative bg-gradient-to-br ${item.bgGradient} p-6 rounded-2xl shadow-soft border border-white/50 hover:shadow-softer hover:-translate-y-2 transition-all duration-300 h-full group overflow-hidden`}>
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/30 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                            <div className={`relative bg-gradient-to-br ${item.bgGradient} p-6 rounded-3xl shadow-soft border border-white/60 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 h-full group overflow-hidden`}>
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/40 to-transparent rounded-full -translate-y-1/3 translate-x-1/3 blur-xl"></div>
                                 <div className="relative z-10">
-                                    <div className={`w-14 h-14 bg-gradient-to-br ${item.gradient} text-white rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
+                                    <div className={`w-14 h-14 bg-gradient-to-br ${item.gradient} text-white rounded-2xl flex items-center justify-center mb-4 shadow-md group-hover:rotate-6 transition-transform`}>
                                         <item.Icon size={26} />
                                     </div>
                                     <h4 className="text-xl font-bold text-veda-text-heading mb-2 font-poppins">{item.title}</h4>
-                                    <p className="text-base text-veda-text-muted leading-relaxed">{item.desc}</p>
+                                    <p className="text-sm text-veda-text-muted leading-relaxed font-medium">{item.desc}</p>
                                 </div>
                             </div>
                         </div>
@@ -76,121 +76,145 @@ export default function ProgramsPage() {
             </section>
 
             {/* Specialized Programs Intro */}
-            <section className="pt-20 pb-10 px-4 text-center">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
-                        Our Specialized Programs
+            <section className="pt-20 pb-12 px-4 text-center bg-white relative">
+                <div className="absolute top-10 left-10 text-veda-playful-peach/20 animate-bounce delay-700"><Star size={48} /></div>
+                <div className="absolute top-20 right-20 text-veda-playful-blue/20 animate-pulse"><Rocket size={56} /></div>
+
+                <div className="max-w-4xl mx-auto relative z-10">
+                    <h2 className="text-center font-poppins text-4xl md:text-5xl font-bold text-veda-text-heading mb-6">
+                        Our Learning Worlds
                     </h2>
-                    <p className="text-center text-veda-text-muted text-lg max-w-2xl mx-auto">
-                        Unique learning experiences that prepare children for the future
+                    <p className="text-center text-veda-text-muted text-xl max-w-2xl mx-auto font-light">
+                        Three unique environments designed to inspire, nurture, and grow with your child.
                     </p>
                 </div>
             </section>
 
-            {/* 1. Pre-School Program */}
-            <section className="py-10 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
-                        <div className="md:w-1/3">
-                            <h3 className="text-3xl font-bold font-poppins text-veda-primary mb-4 flex items-center gap-3">
-                                <span className="bg-veda-playful-peach/20 p-2 rounded-lg"><Star className="text-veda-playful-peach w-8 h-8" /></span>
-                                Pre-School Program
-                            </h3>
-                            <p className="text-veda-text-muted leading-relaxed text-lg">
-                                Our pre-school program caters to children from 1 year to 6 years. The curriculum focuses on early learning, social skills, creativity, and holistic development in a nurturing environment.
-                            </p>
+            <div className="max-w-[1400px] mx-auto px-4 pb-24 space-y-12">
+
+                {/* 1. Pre-School World */}
+                <section className="bg-gradient-to-br from-rose-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-rose-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
+                    <div className="absolute -right-20 -top-20 w-96 h-96 bg-rose-100 rounded-full blur-3xl opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
+
+                    <div className="relative z-10">
+                        <div className="flex flex-col md:flex-row gap-4 items-center mb-10">
+                            <div className="bg-white p-4 rounded-2xl shadow-sm text-rose-500">
+                                <Star size={40} className="fill-rose-100" />
+                            </div>
+                            <div>
+                                <h3 className="text-3xl font-bold font-poppins text-veda-text-heading">Pre-School Program</h3>
+                                <p className="text-rose-600 font-medium">For Little Learners (1 to 6 Years)</p>
+                            </div>
                         </div>
-                        <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
                             {preschoolLevels.map((level, idx) => (
-                                <div key={idx} className="bg-white p-5 rounded-2xl shadow-soft border border-veda-border hover:shadow-lg transition-all hover:-translate-y-1">
-                                    <div className="flex items-center justify-between mb-3">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${level.color} text-white`}>
-                                            <level.Icon size={20} />
+                                <div key={idx} className="relative">
+                                    {/* Line connector for desktop */}
+                                    {idx < preschoolLevels.length - 1 && (
+                                        <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-1 border-t-2 border-dashed border-rose-200 z-0"></div>
+                                    )}
+
+                                    <div className="bg-white rounded-2xl p-6 h-full border-2 border-transparent hover:border-rose-200 shadow-sm hover:shadow-md transition-all duration-300 relative z-10 flex flex-col items-center text-center group/card">
+                                        <div className={`w-16 h-16 rounded-full ${level.bg} ${level.color} flex items-center justify-center mb-4 group-hover/card:scale-110 transition-transform`}>
+                                            <level.Icon size={32} />
                                         </div>
-                                        <span className={`text-sm font-bold px-2 py-1 rounded-full bg-gray-100 ${level.text}`}>{level.age}</span>
+                                        <span className={`text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full ${level.bg} ${level.color} mb-3`}>
+                                            {level.age}
+                                        </span>
+                                        <h4 className="text-lg font-bold text-veda-text-heading mb-2">{level.name}</h4>
+                                        <p className="text-sm text-veda-text-muted leading-snug">{level.desc}</p>
                                     </div>
-                                    <h4 className="text-xl font-bold text-veda-text-heading mb-1">{level.name}</h4>
-                                    <p className="text-sm text-veda-text-muted">{level.desc}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* 2. Daycare Program */}
-            <section className="py-16 px-4 bg-veda-secondary-light/30 rounded-[3rem] my-10 max-w-[1400px] mx-auto">
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-                    <div className="md:w-1/2 order-2 md:order-1">
-                        <div className="bg-white p-8 rounded-3xl shadow-softer relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-veda-playful-peach/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                            <h4 className="text-xl font-bold text-veda-text-heading mb-6 flex items-center gap-2">
-                                <Clock className="text-veda-accent-dark" />
-                                Operational Timings
-                            </h4>
-                            <div className="space-y-4">
-                                <div className="flex items-center p-4 bg-amber-50 rounded-xl border border-amber-100">
-                                    <div className="bg-amber-100 p-3 rounded-full mr-4 text-amber-600">
-                                        <Sun size={24} />
-                                    </div>
-                                    <div>
-                                        <span className="block text-xs font-bold uppercase text-amber-500 tracking-wider">Full Day</span>
-                                        <span className="text-lg font-bold text-veda-text-heading">9:00 am to 6:00 pm</span>
-                                    </div>
+                {/* 2. Daycare World */}
+                <section className="bg-gradient-to-br from-amber-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-amber-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
+                    <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
+
+                    <div className="relative z-10 flex flex-col lg:flex-row gap-12 items-center">
+                        <div className="lg:w-2/5 w-full">
+                            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-[2.5rem] shadow-sm border border-amber-200 text-center relative">
+                                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-amber-500 text-white p-3 rounded-2xl shadow-md">
+                                    <Clock size={32} />
                                 </div>
-                                <div className="flex items-center p-4 bg-indigo-50 rounded-xl border border-indigo-100">
-                                    <div className="bg-indigo-100 p-3 rounded-full mr-4 text-indigo-600">
-                                        <Moon size={24} />
+                                <h3 className="text-3xl font-bold font-poppins text-veda-text-heading mt-6 mb-2">Daycare</h3>
+                                <p className="text-amber-600 font-medium mb-8">Home Away From Home</p>
+
+                                <div className="space-y-4">
+                                    <div className="bg-amber-50 p-4 rounded-2xl border border-amber-100 flex items-center gap-4 text-left">
+                                        <div className="bg-white p-3 rounded-full text-amber-500 shadow-sm"><Sun size={24} /></div>
+                                        <div>
+                                            <div className="text-xs font-bold text-amber-400 uppercase">Full Day</div>
+                                            <div className="font-bold text-veda-text-heading text-lg">9:00 AM - 6:00 PM</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <span className="block text-xs font-bold uppercase text-indigo-500 tracking-wider">Half Day</span>
-                                        <span className="text-lg font-bold text-veda-text-heading">1:00 pm to 6:00 pm</span>
+                                    <div className="bg-indigo-50 p-4 rounded-2xl border border-indigo-100 flex items-center gap-4 text-left">
+                                        <div className="bg-white p-3 rounded-full text-indigo-500 shadow-sm"><Moon size={24} /></div>
+                                        <div>
+                                            <div className="text-xs font-bold text-indigo-400 uppercase">Half Day</div>
+                                            <div className="font-bold text-veda-text-heading text-lg">1:00 PM - 6:00 PM</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <p className="mt-6 text-sm text-veda-text-muted italic text-center">
-                                *Available Monday to Saturday for children 8 months onwards.
+                        </div>
+
+                        <div className="lg:w-3/5 w-full">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {['Safe Environment', 'Caring Staff', 'Healthy Meals', 'Age-Appropriate Activities'].map((feat, i) => (
+                                    <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-amber-50 hover:border-amber-200 transition-colors">
+                                        <div className="bg-amber-100 p-2 rounded-full text-amber-600">
+                                            <Smile size={20} />
+                                        </div>
+                                        <span className="font-bold text-veda-text-heading">{feat}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <p className="mt-8 text-lg text-veda-text-muted leading-relaxed">
+                                We provide a safe, caring, and engaging space for children from <strong className="text-amber-600">8 months onwards</strong>. Our environment ensures comfort, supervision, and joyful experiences throughout the day.
                             </p>
                         </div>
                     </div>
-                    <div className="md:w-1/2 order-1 md:order-2 text-center md:text-left">
-                        <span className="inline-block py-1 px-3 rounded-full bg-veda-accent-light/50 text-veda-accent-dark font-bold text-sm mb-3">Home away from Home</span>
-                        <h3 className="text-4xl font-bold font-poppins text-veda-primary mb-6">Daycare Program</h3>
-                        <p className="text-veda-text-muted leading-relaxed text-lg mb-6">
-                            We provide a safe, caring, and engaging space for children, ensuring comfort, supervision, and age-appropriate activities throughout the day. Our environment is designed to be a "home away from home" where children feel secure and happy.
+                </section>
+
+                {/* 3. After-School World */}
+                <section className="bg-gradient-to-br from-blue-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-blue-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-blue-100/30 to-transparent opacity-50"></div>
+
+                    <div className="relative z-10 text-center">
+                        <div className="inline-flex items-center gap-3 bg-blue-100/50 px-6 py-2 rounded-full mb-8">
+                            <Rocket size={24} className="text-blue-600" />
+                            <h3 className="text-2xl font-bold font-poppins text-veda-text-heading">After-School Explorers</h3>
+                        </div>
+
+                        <p className="max-w-3xl mx-auto text-lg text-veda-text-muted mb-12">
+                            Designed to enrich children beyond academics. Pick your passion and start building confidence!
                         </p>
-                        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                            {['Safe Environment', 'Caring Staff', 'Engaging Activities', 'Healthy Meals'].map((tag, i) => (
-                                <span key={i} className="px-4 py-2 bg-white rounded-full text-veda-text-DEFAULT text-sm shadow-sm border border-veda-border">{tag}</span>
+
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {afterSchoolActivities.map((activity, idx) => (
+                                <div key={idx} className={`group cursor-default`}>
+                                    <div className={`
+                                        flex items-center gap-3 pl-4 pr-6 py-3 rounded-full 
+                                        bg-white shadow-soft border border-transparent 
+                                        ${activity.hover} hover:shadow-md transition-all duration-300 transform hover:-translate-y-1
+                                    `}>
+                                        <div className={`w-10 h-10 rounded-full ${activity.bg} ${activity.color} flex items-center justify-center`}>
+                                            <activity.Icon size={20} />
+                                        </div>
+                                        <span className="font-bold text-veda-text-heading">{activity.name}</span>
+                                    </div>
+                                </div>
                             ))}
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* 3. After-School Program */}
-            <section className="py-16 px-4 mb-20">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h3 className="text-3xl font-bold font-poppins text-veda-primary mb-4">After-School Program</h3>
-                        <p className="text-veda-text-muted max-w-2xl mx-auto text-lg">
-                            Designed to enrich children beyond academics, helping them build confidence, creativity, and essential life skills.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        {afterSchoolActivities.map((activity, idx) => (
-                            <div key={idx} className={`p-4 rounded-xl flex flex-col items-center justify-center text-center gap-3 transition-transform hover:scale-105 ${activity.color} bg-opacity-20`}>
-                                <div className={`w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center`}>
-                                    <activity.Icon size={24} className="opacity-80" />
-                                </div>
-                                <span className="font-bold text-sm md:text-base leading-tight">{activity.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            </div>
         </main>
     );
 }
-
