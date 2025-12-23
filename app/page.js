@@ -207,19 +207,19 @@ export default function Home() {
         <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Our Programs</h2>
         <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Age-appropriate programs designed to nurture every stage of early development</p>
         <div className="flex flex-wrap justify-center gap-8">
-          {/* Toddlers Program */}
+          {/* Pre-School Program */}
           <div className="w-full md:w-[calc(33.333%-22px)]">
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 group">
               <div className="relative h-52 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1596464716127-f9a0639b9de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Toddlers" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="https://images.unsplash.com/photo-1587654780291-39c940483719?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pre-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">2-3 Years</span>
+                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">1.5 - 6 Years</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-2xl text-veda-text-heading mb-2 font-bold font-poppins">Toddlers</h3>
-                <p className="text-veda-text-muted mb-5 text-base leading-relaxed">A fun-filled beginning to your child's learning journey with sensory play and motor skill development.</p>
+                <h3 className="text-2xl text-veda-text-heading mb-2 font-bold font-poppins">Pre-School</h3>
+                <p className="text-veda-text-muted mb-5 text-base leading-relaxed">Activity-based learning meant to nurture early development, social skills, and creativity.</p>
                 <Button variant="outline" shape="rounded" fullWidth href="/programs" className="group-hover:bg-veda-primary group-hover:text-white group-hover:border-veda-primary transition-all">
                   View Details
                 </Button>
@@ -227,18 +227,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Nursery Program - Featured/Elevated */}
+          {/* Daycare Program - Featured */}
           <div className="w-full md:w-[calc(33.333%-22px)] md:-mt-4">
             <div className="relative bg-veda-primary rounded-3xl overflow-hidden shadow-softer transition-all duration-300 group">
-              <div className="absolute top-4 right-4 bg-veda-accent text-veda-primary-dark py-1 px-3 rounded-full text-xs font-bold z-10">Most Popular</div>
+              <div className="absolute top-4 right-4 bg-veda-accent text-veda-primary-dark py-1 px-3 rounded-full text-xs font-bold z-10">Flexible Timings</div>
               <div className="relative h-52 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nursery" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Daycare" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-veda-primary to-transparent"></div>
               </div>
               <div className="p-6">
-                <span className="inline-block bg-veda-accent/20 text-veda-accent py-1.5 px-4 rounded-full text-xs font-bold mb-3">3-4 Years</span>
-                <h3 className="text-2xl text-white mb-2 font-bold font-poppins">Nursery</h3>
-                <p className="text-veda-secondary-light mb-5 text-base leading-relaxed">Building foundational skills through play, exploration, and structured activities.</p>
+                <span className="inline-block bg-veda-accent/20 text-veda-accent py-1.5 px-4 rounded-full text-xs font-bold mb-3">8 Months+</span>
+                <h3 className="text-2xl text-white mb-2 font-bold font-poppins">Daycare</h3>
+                <p className="text-veda-secondary-light mb-5 text-base leading-relaxed">A safe, caring "home away from home" with structured activities and nutritious meals.</p>
                 <Button variant="primary" shape="rounded" fullWidth href="/programs" className="bg-veda-accent hover:bg-veda-accent-dark text-veda-primary-dark border-none">
                   View Details
                 </Button>
@@ -246,19 +246,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Kindergarten Program */}
+          {/* After-School Program */}
           <div className="w-full md:w-[calc(33.333%-22px)]">
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 group">
               <div className="relative h-52 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1587654780291-39c940483719?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kindergarten" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="https://images.unsplash.com/photo-1596464716127-f9a0639b9de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">4-6 Years</span>
+                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">2.5 Years+</span>
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-2xl text-veda-text-heading mb-2 font-bold font-poppins">Kindergarten</h3>
-                <p className="text-veda-text-muted mb-5 text-base leading-relaxed">Preparing children for formal schooling with confidence, creativity, and critical thinking.</p>
+                <h3 className="text-2xl text-veda-text-heading mb-2 font-bold font-poppins">After-School</h3>
+                <p className="text-veda-text-muted mb-5 text-base leading-relaxed">Beyond academics: Dance, Art, Music, and more to build confidence and essential life skills.</p>
                 <Button variant="outline" shape="rounded" fullWidth href="/programs" className="group-hover:bg-veda-primary group-hover:text-white group-hover:border-veda-primary transition-all">
                   View Details
                 </Button>

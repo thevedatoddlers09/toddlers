@@ -1,9 +1,8 @@
-import PageHero from '@/components/PageHero';
-import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles } from 'lucide-react';
+import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles, Baby, Sprout, Footprints, PenTool, GraduationCap, Clock, Sun, Moon, Music, Mic, User, CircleDollarSign, Star } from 'lucide-react';
 
 export const metadata = {
     title: 'Curriculum & Programs - The Veda Toddlers',
-    description: 'Explore our activity-based 7 Spectrum Curriculum and specialized programs like Robotics, LEGO learning, and more.',
+    description: 'Explore our activity-based 7 Spectrum Curriculum and specialized programs like Pre-School, Daycare, and After-School activities.',
 };
 
 export default function ProgramsPage() {
@@ -18,43 +17,25 @@ export default function ProgramsPage() {
         { title: 'Spiritual Development', desc: 'Mindfulness, values, and inner peace.', Icon: Sparkles, gradient: 'from-amber-400 to-veda-accent', bgGradient: 'from-amber-50 via-white to-veda-accent/5' },
     ];
 
-    // Specialized Programs
-    const programs = [
-        {
-            title: 'Robotics',
-            desc: 'Introduces technology through hands-on activities using "ROBOTIME" kits. Focuses on coding basics, problem-solving, and STEM foundations (Starter and Beginner levels).',
-            image: 'https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&q=80',
-            tags: ['STEM', 'Coding', 'Innovation'],
-            gradient: 'from-veda-playful-blue to-blue-600'
-        },
-        {
-            title: 'LEGO Learning',
-            desc: 'Uses LEGO blocks to develop spatial awareness, fine motor skills, and engineering concepts through structured play.',
-            image: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?auto=format&fit=crop&q=80',
-            tags: ['Creativity', 'Engineering', 'Motor Skills'],
-            gradient: 'from-veda-accent to-amber-500'
-        },
-        {
-            title: 'Pretend & Play',
-            desc: 'Role-playing activities (doctors, chefs, astronauts) that develop imagination, language, and social interaction skills.',
-            image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&q=80',
-            tags: ['Imagination', 'Social Skills', 'Role Play'],
-            gradient: 'from-veda-playful-peach to-rose-400'
-        },
-        {
-            title: 'Skill Brew',
-            desc: 'A unique initiative to nurture essential life skills through fun, engaging everyday activities.',
-            image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80',
-            tags: ['Life Skills', 'Independence', 'Confidence'],
-            gradient: 'from-veda-playful-green to-green-600'
-        },
-        {
-            title: 'EduPrime',
-            desc: 'An advanced learning platform integrating modern teaching methods with digital tools for enhanced learning.',
-            image: 'https://images.unsplash.com/photo-1555436169-20e93ee6638b?auto=format&fit=crop&q=80',
-            tags: ['Digital Learning', 'Future Ready', 'Smart Class'],
-            gradient: 'from-veda-primary to-veda-primary-dark'
-        },
+    // Pre-School Levels
+    const preschoolLevels = [
+        { name: 'Seedling', age: '1 to 2 years', desc: 'A gentle start to socialization and sensory exploration.', Icon: Baby, color: 'bg-veda-playful-peach', text: 'text-rose-600' },
+        { name: 'Sprouts', age: '2 to 3 years', desc: 'Focus on language, motor skills, and curiosity.', Icon: Sprout, color: 'bg-veda-playful-green', text: 'text-green-700' },
+        { name: 'Explorer', age: '3 to 4 years', desc: 'Building independence and early foundational concepts.', Icon: Footprints, color: 'bg-veda-playful-blue', text: 'text-blue-600' },
+        { name: 'Creator', age: '4 to 5 years', desc: 'Encouraging creativity, problem-solving, and collaboration.', Icon: PenTool, color: 'bg-veda-accent', text: 'text-amber-700' },
+        { name: 'UKG', age: '5 to 6 years', desc: 'Preparing for formal schooling with confidence.', Icon: GraduationCap, color: 'bg-veda-secondary', text: 'text-purple-700' },
+    ];
+
+    // After-School Activities
+    const afterSchoolActivities = [
+        { name: 'Art & Craft', Icon: Palette, color: 'bg-rose-100 text-rose-600' },
+        { name: 'Painting', Icon: Palette, color: 'bg-orange-100 text-orange-600' },
+        { name: 'Dance', Icon: Music, color: 'bg-yellow-100 text-yellow-600' },
+        { name: 'Personality Development', Icon: User, color: 'bg-green-100 text-green-600' },
+        { name: 'Public Speaking', Icon: Mic, color: 'bg-teal-100 text-teal-600' },
+        { name: 'Right Brain Exercises', Icon: Brain, color: 'bg-blue-100 text-blue-600' },
+        { name: 'Tuition & Academic Support', Icon: BookOpen, color: 'bg-indigo-100 text-indigo-600' },
+        { name: 'Financial Literacy', Icon: CircleDollarSign, color: 'bg-purple-100 text-purple-600' },
     ];
 
     return (
@@ -74,11 +55,11 @@ export default function ProgramsPage() {
                 </div>
             </section>
 
-            {/* 7 Spectrums Grid - Redesigned */}
-            <section className="py-12 px-3 bg-veda-background-muted">
-                <div className="max-w-[1400px] mx-auto flex flex-wrap justify-center gap-5">
+            {/* 7 Spectrums Grid */}
+            <section className="py-16 px-4 bg-veda-background-muted">
+                <div className="max-w-[1400px] mx-auto flex flex-wrap justify-center gap-6">
                     {spectrums.map((item, idx) => (
-                        <div key={idx} className="w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(25%-15px)]">
+                        <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
                             <div className={`relative bg-gradient-to-br ${item.bgGradient} p-6 rounded-2xl shadow-soft border border-white/50 hover:shadow-softer hover:-translate-y-2 transition-all duration-300 h-full group overflow-hidden`}>
                                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/30 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
                                 <div className="relative z-10">
@@ -94,35 +75,116 @@ export default function ProgramsPage() {
                 </div>
             </section>
 
-            {/* Specialized Programs - Redesigned */}
-            <section className="py-20 px-3">
-                <div className="max-w-[1400px] mx-auto">
+            {/* Specialized Programs Intro */}
+            <section className="pt-20 pb-10 px-4 text-center">
+                <div className="max-w-4xl mx-auto">
                     <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
-                        Specialized Programs
+                        Our Specialized Programs
                     </h2>
-                    <p className="text-center text-veda-text-muted text-lg mb-16 max-w-2xl mx-auto">Unique learning experiences that prepare children for the future</p>
+                    <p className="text-center text-veda-text-muted text-lg max-w-2xl mx-auto">
+                        Unique learning experiences that prepare children for the future
+                    </p>
+                </div>
+            </section>
 
-                    <div className="space-y-16">
-                        {programs.map((program, idx) => (
-                            <div key={idx} className={`flex flex-col md:flex-row gap-10 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                                <div className="w-full md:w-1/2">
-                                    <div className="relative rounded-3xl overflow-hidden shadow-softer group">
-                                        <img src={program.image} alt={program.title} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110" />
-                                        <div className={`absolute inset-0 bg-gradient-to-t ${program.gradient} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
-                                        <div className="absolute top-4 left-4">
-                                            <span className="bg-white/90 backdrop-blur-sm text-veda-primary-dark py-1.5 px-3 rounded-full text-xs font-bold shadow-lg">{program.title}</span>
+            {/* 1. Pre-School Program */}
+            <section className="py-10 px-4">
+                <div className="max-w-6xl mx-auto">
+                    <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
+                        <div className="md:w-1/3">
+                            <h3 className="text-3xl font-bold font-poppins text-veda-primary mb-4 flex items-center gap-3">
+                                <span className="bg-veda-playful-peach/20 p-2 rounded-lg"><Star className="text-veda-playful-peach w-8 h-8" /></span>
+                                Pre-School Program
+                            </h3>
+                            <p className="text-veda-text-muted leading-relaxed text-lg">
+                                Our pre-school program caters to children from 1 year to 6 years. The curriculum focuses on early learning, social skills, creativity, and holistic development in a nurturing environment.
+                            </p>
+                        </div>
+                        <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {preschoolLevels.map((level, idx) => (
+                                <div key={idx} className="bg-white p-5 rounded-2xl shadow-soft border border-veda-border hover:shadow-lg transition-all hover:-translate-y-1">
+                                    <div className="flex items-center justify-between mb-3">
+                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${level.color} text-white`}>
+                                            <level.Icon size={20} />
                                         </div>
+                                        <span className={`text-sm font-bold px-2 py-1 rounded-full bg-gray-100 ${level.text}`}>{level.age}</span>
+                                    </div>
+                                    <h4 className="text-xl font-bold text-veda-text-heading mb-1">{level.name}</h4>
+                                    <p className="text-sm text-veda-text-muted">{level.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 2. Daycare Program */}
+            <section className="py-16 px-4 bg-veda-secondary-light/30 rounded-[3rem] my-10 max-w-[1400px] mx-auto">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+                    <div className="md:w-1/2 order-2 md:order-1">
+                        <div className="bg-white p-8 rounded-3xl shadow-softer relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-veda-playful-peach/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                            <h4 className="text-xl font-bold text-veda-text-heading mb-6 flex items-center gap-2">
+                                <Clock className="text-veda-accent-dark" />
+                                Operational Timings
+                            </h4>
+                            <div className="space-y-4">
+                                <div className="flex items-center p-4 bg-amber-50 rounded-xl border border-amber-100">
+                                    <div className="bg-amber-100 p-3 rounded-full mr-4 text-amber-600">
+                                        <Sun size={24} />
+                                    </div>
+                                    <div>
+                                        <span className="block text-xs font-bold uppercase text-amber-500 tracking-wider">Full Day</span>
+                                        <span className="text-lg font-bold text-veda-text-heading">9:00 am to 6:00 pm</span>
                                     </div>
                                 </div>
-                                <div className="w-full md:w-1/2 space-y-4">
-                                    <div className="flex gap-2 flex-wrap">
-                                        {program.tags.map((tag, tIdx) => (
-                                            <span key={tIdx} className={`bg-gradient-to-r ${program.gradient} text-white px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-soft`}>{tag}</span>
-                                        ))}
+                                <div className="flex items-center p-4 bg-indigo-50 rounded-xl border border-indigo-100">
+                                    <div className="bg-indigo-100 p-3 rounded-full mr-4 text-indigo-600">
+                                        <Moon size={24} />
                                     </div>
-                                    <h3 className="text-3xl font-bold font-poppins text-veda-text-heading">{program.title}</h3>
-                                    <p className="text-lg text-veda-text-DEFAULT leading-relaxed">{program.desc}</p>
+                                    <div>
+                                        <span className="block text-xs font-bold uppercase text-indigo-500 tracking-wider">Half Day</span>
+                                        <span className="text-lg font-bold text-veda-text-heading">1:00 pm to 6:00 pm</span>
+                                    </div>
                                 </div>
+                            </div>
+                            <p className="mt-6 text-sm text-veda-text-muted italic text-center">
+                                *Available Monday to Saturday for children 8 months onwards.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="md:w-1/2 order-1 md:order-2 text-center md:text-left">
+                        <span className="inline-block py-1 px-3 rounded-full bg-veda-accent-light/50 text-veda-accent-dark font-bold text-sm mb-3">Home away from Home</span>
+                        <h3 className="text-4xl font-bold font-poppins text-veda-primary mb-6">Daycare Program</h3>
+                        <p className="text-veda-text-muted leading-relaxed text-lg mb-6">
+                            We provide a safe, caring, and engaging space for children, ensuring comfort, supervision, and age-appropriate activities throughout the day. Our environment is designed to be a "home away from home" where children feel secure and happy.
+                        </p>
+                        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                            {['Safe Environment', 'Caring Staff', 'Engaging Activities', 'Healthy Meals'].map((tag, i) => (
+                                <span key={i} className="px-4 py-2 bg-white rounded-full text-veda-text-DEFAULT text-sm shadow-sm border border-veda-border">{tag}</span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 3. After-School Program */}
+            <section className="py-16 px-4 mb-20">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h3 className="text-3xl font-bold font-poppins text-veda-primary mb-4">After-School Program</h3>
+                        <p className="text-veda-text-muted max-w-2xl mx-auto text-lg">
+                            Designed to enrich children beyond academics, helping them build confidence, creativity, and essential life skills.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {afterSchoolActivities.map((activity, idx) => (
+                            <div key={idx} className={`p-4 rounded-xl flex flex-col items-center justify-center text-center gap-3 transition-transform hover:scale-105 ${activity.color} bg-opacity-20`}>
+                                <div className={`w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center`}>
+                                    <activity.Icon size={24} className="opacity-80" />
+                                </div>
+                                <span className="font-bold text-sm md:text-base leading-tight">{activity.name}</span>
                             </div>
                         ))}
                     </div>
