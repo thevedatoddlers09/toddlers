@@ -104,18 +104,15 @@ export default function FranchisePage() {
                 </div>
             </section>
 
-            {/* CTA - Enhanced */}
-            <section className="py-20 px-3 text-center">
-                <div className="max-w-3xl mx-auto relative bg-veda-primary p-12 rounded-3xl text-white shadow-softer overflow-hidden">
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-veda-accent/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-                    <div className="relative z-10">
-                        <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Ready to Start Your Journey?</h2>
-                        <p className="text-xl mb-8 text-veda-secondary-light max-w-xl mx-auto">Get in touch with us to discuss franchise opportunities in your city.</p>
-                        <Button variant="primary" href="/contact" className="bg-veda-accent hover:bg-veda-accent-dark text-veda-primary-dark border-none font-bold px-8 py-3 shadow-lg">
-                            Enquire Now
-                        </Button>
-                    </div>
+            {/* CTA Strip */}
+            <section className="py-12 px-4 bg-veda-primary text-white">
+                <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                    <p className="text-xl md:text-2xl font-bold font-poppins text-white">
+                        Get in touch with us to discuss franchise opportunities in your city.
+                    </p>
+                    <Button variant="primary" href="/contact" className="bg-veda-accent hover:bg-veda-accent-dark text-veda-primary-dark border-none font-bold px-8 py-4 shadow-lg shrink-0 rounded-full hover:scale-105 transition-transform">
+                        Enquire Now
+                    </Button>
                 </div>
             </section>
         </main>
