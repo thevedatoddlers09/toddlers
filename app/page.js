@@ -211,7 +211,7 @@ export default function Home() {
           <div className="w-full md:w-[calc(33.333%-22px)]">
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 group">
               <div className="relative h-52 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1587654780291-39c940483719?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pre-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="/images/preschool-group.png" alt="Pre-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">1.5 - 6 Years</span>
@@ -232,7 +232,7 @@ export default function Home() {
             <div className="relative bg-veda-primary rounded-3xl overflow-hidden shadow-softer transition-all duration-300 group">
               <div className="absolute top-4 right-4 bg-veda-accent text-veda-primary-dark py-1 px-3 rounded-full text-xs font-bold z-10">Flexible Timings</div>
               <div className="relative h-52 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Daycare" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="/images/daycare-group.png" alt="Daycare" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-veda-primary to-transparent"></div>
               </div>
               <div className="p-6">
@@ -250,7 +250,7 @@ export default function Home() {
           <div className="w-full md:w-[calc(33.333%-22px)]">
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 group">
               <div className="relative h-52 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1596464716127-f9a0639b9de0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="After-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src="/images/afterschool-child.png" alt="After-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">2.5 Years+</span>
