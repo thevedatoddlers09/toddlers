@@ -1,3 +1,8 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
 import HeroCarousel from '@/components/HeroCarousel';
@@ -7,15 +12,86 @@ import LocationMap from '@/components/LocationMap';
 import { Award, ShieldCheck, Heart, Flower2, School, Shield, FerrisWheel, Laptop, Bus, Hospital } from 'lucide-react';
 
 export default function Home() {
+  const mainRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      // About Section Animation
+      gsap.from('.anim-about-text', {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: '.anim-about-section',
+          start: 'top 80%',
+        }
+      });
+      gsap.from('.anim-about-image', {
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: '.anim-about-section',
+          start: 'top 80%',
+        }
+      });
+
+      // Programs Stagger
+      gsap.from('.anim-program-card', {
+        y: 60,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: '.anim-programs-section',
+          start: 'top 75%',
+        }
+      });
+
+      // Why Us Stagger
+      gsap.from('.anim-why-card', {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '.anim-why-section',
+          start: 'top 75%',
+        }
+      });
+
+      // Facilities Stagger
+      gsap.fromTo('.anim-facility-card',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: '.anim-facilities-section',
+            start: 'top 85%', // Trigger slightly earlier
+          }
+        }
+      );
+
+    }, mainRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <main>
+    <main ref={mainRef}>
       <AdmissionsPopup />
 
       {/* Hero Carousel */}
       <HeroCarousel />
 
       {/* About The Veda Toddlers Section */}
-      <section className="py-20 px-[3%] bg-gradient-to-br from-veda-playful-blue/10 via-white to-veda-secondary-light/20 relative overflow-hidden">
+      <section className="anim-about-section py-20 px-[3%] bg-gradient-to-br from-veda-playful-blue/10 via-white to-veda-secondary-light/20 relative overflow-hidden">
         {/* Decorative Handprints */}
         <div className="absolute top-10 right-10 text-veda-primary/10 rotate-12">
           <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
@@ -32,7 +108,7 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Content */}
-            <div className="lg:w-1/2 order-2 lg:order-1">
+            <div className="anim-about-text lg:w-1/2 order-2 lg:order-1">
               <h2 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-6 leading-tight">
                 About <span className="text-veda-accent">The Veda Toddlers</span>
               </h2>
@@ -51,7 +127,7 @@ export default function Home() {
               </div>
             </div>
             {/* Image */}
-            <div className="lg:w-1/2 order-1 lg:order-2">
+            <div className="anim-about-image lg:w-1/2 order-1 lg:order-2">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-accent/20 to-veda-primary/20 rounded-3xl transform rotate-3"></div>
                 <img
@@ -130,12 +206,12 @@ export default function Home() {
       </section>
 
       {/* Why Us Section */}
-      <section className="py-24 px-[3%] bg-veda-background-DEFAULT">
+      <section className="anim-why-section py-24 px-[3%] bg-veda-background-DEFAULT">
         <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Why Choose Us?</h2>
         <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Discover what makes The Veda Toddlers the perfect choice for your child's early education</p>
         <div className="flex flex-wrap justify-center gap-6">
           {/* Award Winning Curriculum - Golden Theme */}
-          <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+          <div className="anim-why-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
             <div className="relative bg-gradient-to-br from-veda-accent/10 via-white to-veda-accent/5 rounded-2xl p-6 h-full border border-veda-accent/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-veda-accent/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
               <div className="absolute bottom-0 left-0 w-16 h-16 bg-veda-accent/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
@@ -150,7 +226,7 @@ export default function Home() {
           </div>
 
           {/* Safe & Secure - Green Theme */}
-          <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+          <div className="anim-why-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
             <div className="relative bg-gradient-to-br from-veda-playful-green/15 via-white to-veda-playful-green/5 rounded-2xl p-6 h-full border border-veda-playful-green/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
               <div className="absolute top-0 right-0 w-20 h-20 bg-veda-playful-green/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
               <div className="absolute bottom-4 left-4 w-3 h-3 bg-veda-playful-green/30 rounded-full"></div>
@@ -166,7 +242,7 @@ export default function Home() {
           </div>
 
           {/* Passionate Educators - Peach Theme */}
-          <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+          <div className="anim-why-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
             <div className="relative bg-gradient-to-br from-veda-playful-peach/15 via-white to-rose-50 rounded-2xl p-6 h-full border border-veda-playful-peach/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
               <div className="absolute top-4 right-4 text-veda-playful-peach/20">
                 <Heart size={60} />
@@ -182,7 +258,7 @@ export default function Home() {
           </div>
 
           {/* Seven Petal Approach - Purple Theme */}
-          <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+          <div className="anim-why-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
             <div className="relative bg-gradient-to-br from-veda-secondary/40 via-white to-veda-secondary/20 rounded-2xl p-6 h-full border border-veda-secondary shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
               <div className="absolute -bottom-4 -right-4 text-veda-secondary/30">
                 <Flower2 size={80} />
@@ -203,12 +279,12 @@ export default function Home() {
       <StatsCounter />
 
       {/* Featured Programs Section */}
-      <section className="py-24 px-[3%] bg-veda-background-muted">
+      <section className="anim-programs-section py-24 px-[3%] bg-veda-background-muted">
         <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Our Programs</h2>
         <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Age-appropriate programs designed to nurture every stage of early development</p>
         <div className="flex flex-wrap justify-center gap-8">
           {/* Pre-School Program */}
-          <div className="w-full md:w-[calc(33.333%-22px)]">
+          <div className="anim-program-card w-full md:w-[calc(33.333%-22px)]">
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 group">
               <div className="relative h-52 overflow-hidden">
                 <img src="/images/preschool-group.png" alt="Pre-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -228,7 +304,7 @@ export default function Home() {
           </div>
 
           {/* Daycare Program - Featured */}
-          <div className="w-full md:w-[calc(33.333%-22px)] md:-mt-4">
+          <div className="anim-program-card w-full md:w-[calc(33.333%-22px)] md:-mt-4">
             <div className="relative bg-veda-primary rounded-3xl overflow-hidden shadow-softer transition-all duration-300 group">
               <div className="absolute top-4 right-4 bg-veda-accent text-veda-primary-dark py-1 px-3 rounded-full text-xs font-bold z-10">Flexible Timings</div>
               <div className="relative h-52 overflow-hidden">
@@ -247,7 +323,7 @@ export default function Home() {
           </div>
 
           {/* After-School Program */}
-          <div className="w-full md:w-[calc(33.333%-22px)]">
+          <div className="anim-program-card w-full md:w-[calc(33.333%-22px)]">
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 group">
               <div className="relative h-52 overflow-hidden">
                 <img src="/images/afterschool-child.png" alt="After-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -274,7 +350,7 @@ export default function Home() {
       </section>
 
       {/* Facilities & Infrastructure Section */}
-      <section className="py-24 px-[3%] bg-veda-background-DEFAULT">
+      <section className="anim-facilities-section py-24 px-[3%] bg-veda-background-DEFAULT">
         <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
           World-Class Facilities
         </h2>
@@ -288,7 +364,7 @@ export default function Home() {
             { title: 'Transport', desc: 'Managed facility with trained drivers and attendants following safety protocols.', Icon: Bus, gradient: 'from-veda-secondary-dark to-purple-600' },
             { title: 'Health First', desc: 'Fully equipped medical first-aid station with trained staff for immediate care.', Icon: Hospital, gradient: 'from-veda-playful-peach to-rose-400' },
           ].map((item, idx) => (
-            <div key={idx} className="bg-white rounded-2xl p-5 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300 flex gap-4 items-start group border border-veda-border">
+            <div key={idx} className="anim-facility-card bg-white rounded-2xl p-5 shadow-soft hover:shadow-softer hover:-translate-y-1 transition-all duration-300 flex gap-4 items-start group border border-veda-border">
               <div className={`w-14 h-14 min-w-[3.5rem] rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 text-white`}>
                 <item.Icon size={26} />
               </div>
