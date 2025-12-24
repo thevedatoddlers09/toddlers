@@ -3,11 +3,15 @@
 import { useState } from 'react';
 
 const allEvents = [
-    { id: 1, title: 'Baisakhi Celebration', category: 'Baisakhi', image: '/images/events/baisakhi-1.jpg' },
+    { id: 1, title: 'Baisakhi Celebration', category: 'Baisakhi', image: '/images/events/baisakhi-1.jpg', rotate: 270 },
     { id: 101, title: 'Baisakhi Dance', category: 'Baisakhi', image: '/images/events/baisakhi-2.jpg', rotate: 270 },
     { id: 102, title: 'Baisakhi Dhol', category: 'Baisakhi', image: '/images/events/baisakhi-3.jpg', rotate: 270 },
-    { id: 103, title: 'Baisakhi Group Photo', category: 'Baisakhi', image: '/images/events/baisakhi-4.jpg' },
+    { id: 103, title: 'Baisakhi Group Photo', category: 'Baisakhi', image: '/images/events/baisakhi-4.jpg', rotate: 270 },
     { id: 104, title: 'Baisakhi Performance', category: 'Baisakhi', image: '/images/events/baisakhi-5.jpg', rotate: 270 },
+    { id: 105, title: 'Baisakhi Girl', category: 'Baisakhi', image: '/images/events/baisakhi-6.jpg' },
+    { id: 108, title: 'Baisakhi Class Group', category: 'Baisakhi', image: '/images/events/baisakhi-9.jpg' },
+    { id: 109, title: 'Baisakhi Bangles', category: 'Baisakhi', image: '/images/events/baisakhi-10.jpg' },
+    { id: 110, title: 'Baisakhi Little Star', category: 'Baisakhi', image: '/images/events/baisakhi-11.jpg' },
     { id: 2, title: 'CM Visit', category: 'VIP Visit', image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&q=80' },
     { id: 3, title: '20th Birthday Celebration', category: 'Birthday Celebration', image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80' },
     { id: 4, title: 'Alphabet Ramp Walk', category: 'Annual Day', image: 'https://images.unsplash.com/photo-1503919545885-7f4ab0213719?w=600&q=80' },
@@ -90,9 +94,6 @@ export default function EventsPage() {
                                 className="w-full h-auto object-cover block group-hover:scale-105 transition-transform duration-500"
                                 style={event.rotate ? { transform: `rotate(${event.rotate}deg)` } : {}}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-veda-primary-dark/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <span className="text-white font-bold text-lg font-poppins drop-shadow-md">{event.title}</span>
-                            </div>
                         </div>
                     ))}
                 </div>
