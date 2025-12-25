@@ -8,7 +8,6 @@ import Card from '@/components/Card';
 import HeroCarousel from '@/components/HeroCarousel';
 import AdmissionsPopup from '@/components/AdmissionsPopup';
 import StatsCounter from '@/components/StatsCounter';
-import LocationMap from '@/components/LocationMap';
 import { Award, ShieldCheck, Heart, Flower2, School, Shield, FerrisWheel, Laptop, Bus, Hospital } from 'lucide-react';
 
 export default function Home() {
@@ -73,7 +72,25 @@ export default function Home() {
           stagger: 0.1,
           scrollTrigger: {
             trigger: '.anim-facilities-section',
-            start: 'top 85%', // Trigger slightly earlier
+            start: 'top 85%',
+          }
+        }
+      );
+
+      // Branches Section Animation
+      gsap.fromTo('.anim-branch-card',
+        { y: 50, opacity: 0, scale: 0.85 },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: 'power2.out',
+          immediateRender: false,
+          scrollTrigger: {
+            trigger: '.anim-branches-section',
+            start: 'top 90%',
           }
         }
       );
@@ -458,35 +475,33 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Branches Grid - House Style Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 max-w-6xl mx-auto">
+          {/* Branches Grid - Cards with Animation */}
+          <div className="anim-branches-section grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
             {[
-              { name: 'Sector 105', city: 'Mohali', iconColor: 'text-purple-500', bgColor: 'bg-gradient-to-b from-purple-100 to-purple-200', borderColor: 'border-purple-300', roofColor: 'bg-purple-400' },
-              { name: 'Sector 79', city: 'Mohali', iconColor: 'text-amber-500', bgColor: 'bg-gradient-to-b from-amber-100 to-amber-200', borderColor: 'border-amber-300', roofColor: 'bg-amber-400' },
-              { name: 'Sector 127', city: 'Mohali', iconColor: 'text-sky-500', bgColor: 'bg-gradient-to-b from-sky-100 to-sky-200', borderColor: 'border-sky-300', roofColor: 'bg-sky-400' },
-              { name: 'Zirakpur', city: 'Mohali', iconColor: 'text-pink-500', bgColor: 'bg-gradient-to-b from-pink-100 to-pink-200', borderColor: 'border-pink-300', roofColor: 'bg-pink-400' },
-              { name: 'Panchkula', city: 'Haryana', iconColor: 'text-emerald-500', bgColor: 'bg-gradient-to-b from-emerald-100 to-emerald-200', borderColor: 'border-emerald-300', roofColor: 'bg-emerald-400' },
-              { name: 'Ambala', city: 'Haryana', iconColor: 'text-rose-500', bgColor: 'bg-gradient-to-b from-rose-100 to-rose-200', borderColor: 'border-rose-300', roofColor: 'bg-rose-400' },
+              { name: 'Sector 105', city: 'Mohali', iconColor: 'text-purple-500', bgColor: 'bg-gradient-to-b from-purple-100 to-purple-200', borderColor: 'border-purple-300' },
+              { name: 'Sector 79', city: 'Mohali', iconColor: 'text-amber-500', bgColor: 'bg-gradient-to-b from-amber-100 to-amber-200', borderColor: 'border-amber-300' },
+              { name: 'Sector 127', city: 'Mohali', iconColor: 'text-sky-500', bgColor: 'bg-gradient-to-b from-sky-100 to-sky-200', borderColor: 'border-sky-300' },
+              { name: 'Zirakpur', city: 'Mohali', iconColor: 'text-pink-500', bgColor: 'bg-gradient-to-b from-pink-100 to-pink-200', borderColor: 'border-pink-300' },
+              { name: 'Panchkula', city: 'Haryana', iconColor: 'text-emerald-500', bgColor: 'bg-gradient-to-b from-emerald-100 to-emerald-200', borderColor: 'border-emerald-300' },
+              { name: 'Ambala', city: 'Haryana', iconColor: 'text-rose-500', bgColor: 'bg-gradient-to-b from-rose-100 to-rose-200', borderColor: 'border-rose-300' },
             ].map((branch, index) => (
-              <div key={index} className="group">
-                {/* House-shaped card */}
-                <div className={`relative ${branch.bgColor} rounded-3xl p-5 pt-8 text-center border-2 ${branch.borderColor} shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer`}>
-                  {/* Roof */}
-                  <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-8 ${branch.roofColor} rounded-t-full`}></div>
+              <div key={index} className="anim-branch-card group">
+                {/* Card without roof */}
+                <div className={`relative ${branch.bgColor} rounded-3xl p-6 pt-6 pb-8 text-center border-2 ${branch.borderColor} shadow-lg hover:shadow-xl transform hover:-translate-y-3 hover:scale-105 transition-all duration-300 cursor-pointer min-h-[160px] flex flex-col justify-center`}>
 
                   {/* Location Pin Icon */}
-                  <div className={`${branch.iconColor} mb-3 transform group-hover:scale-110 transition-transform duration-300`}>
-                    <svg className="w-10 h-10 mx-auto drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+                  <div className={`${branch.iconColor} mb-4 transform group-hover:scale-110 transition-transform duration-300`}>
+                    <svg className="w-12 h-12 mx-auto drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
                   </div>
 
                   {/* Branch Name */}
-                  <h3 className="font-bold font-poppins text-gray-700 text-base mb-0.5">{branch.name}</h3>
-                  <p className="text-gray-500 text-xs">{branch.city}</p>
+                  <h3 className="font-bold font-poppins text-gray-700 text-lg mb-1">{branch.name}</h3>
+                  <p className="text-gray-500 text-sm">{branch.city}</p>
 
                   {/* Coming Soon Ribbon */}
-                  <div className="absolute -top-1 -right-1 bg-veda-accent text-white text-[9px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-2xl shadow-sm">
+                  <div className="absolute -top-1 -right-1 bg-veda-accent text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-lg rounded-tr-3xl shadow-sm">
                     SOON ✨
                   </div>
                 </div>
@@ -505,9 +520,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Location Map */}
-      <LocationMap />
     </main>
   );
 }
