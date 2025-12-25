@@ -12,7 +12,25 @@ const allEvents = [
     { id: 108, title: 'Baisakhi Class Group', category: 'Baisakhi', image: '/images/events/baisakhi-9.jpg' },
     { id: 109, title: 'Baisakhi Bangles', category: 'Baisakhi', image: '/images/events/baisakhi-10.jpg' },
     { id: 110, title: 'Baisakhi Little Star', category: 'Baisakhi', image: '/images/events/baisakhi-11.jpg' },
-    { id: 2, title: 'CM Visit', category: 'VIP Visit', image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&q=80' },
+    { id: 111, title: 'Baisakhi Mother Child', category: 'Baisakhi', image: '/images/events/baisakhi-12.jpg', rotate: 270 },
+    { id: 112, title: 'Baisakhi Pink Dress', category: 'Baisakhi', image: '/images/events/baisakhi-13.jpg', rotate: 270 },
+    { id: 113, title: 'Baisakhi Art', category: 'Baisakhi', image: '/images/events/baisakhi-14.jpg' },
+    { id: 2, title: 'Sports Day Warmup', category: 'Sports Day', image: '/images/events/sports-1.jpg' },
+    { id: 201, title: 'Sports Day Guests', category: 'Sports Day', image: '/images/events/sports-2.jpg' },
+    { id: 202, title: 'Sports Day Race', category: 'Sports Day', image: '/images/events/sports-3.jpg' },
+    { id: 203, title: 'Sports Day Parachute', category: 'Sports Day', image: '/images/events/sports-4.jpg' },
+    { id: 204, title: 'Sports Day Hurdles', category: 'Sports Day', image: '/images/events/sports-5.jpg' },
+    { id: 205, title: 'Sports Day Smile', category: 'Sports Day', image: '/images/events/sports-6.jpg' },
+    { id: 206, title: 'Sports Day Parents', category: 'Sports Day', image: '/images/events/sports-7.jpg' },
+    { id: 207, title: 'Sports Day Family', category: 'Sports Day', image: '/images/events/sports-8.jpg' },
+    { id: 208, title: 'Sports Day Group', category: 'Sports Day', image: '/images/events/sports-9.jpg' },
+    { id: 209, title: 'Sports Day Fun', category: 'Sports Day', image: '/images/events/sports-10.jpg' },
+    { id: 210, title: 'Sports Day Crowd', category: 'Sports Day', image: '/images/events/sports-11.jpg' },
+    { id: 211, title: 'Sports Day Finish', category: 'Sports Day', image: '/images/events/sports-12.jpg' },
+    { id: 212, title: 'Sports Day Hoops', category: 'Sports Day', image: '/images/events/sports-13.jpg' },
+    { id: 213, title: 'Sports Day March', category: 'Sports Day', image: '/images/events/sports-14.jpg' },
+    { id: 214, title: 'Sports Day Football', category: 'Sports Day', image: '/images/events/sports-15.jpg' },
+    { id: 215, title: 'Sports Day Team', category: 'Sports Day', image: '/images/events/sports-16.jpg' },
     { id: 3, title: '20th Birthday Celebration', category: 'Birthday Celebration', image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80' },
     { id: 4, title: 'Alphabet Ramp Walk', category: 'Annual Day', image: 'https://images.unsplash.com/photo-1503919545885-7f4ab0213719?w=600&q=80' },
     { id: 5, title: 'Annual Day', category: 'Annual Day', image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80' },
@@ -34,7 +52,7 @@ const allEvents = [
 
 const categories = [
     'Baisakhi',
-    'VIP Visit',
+    'Sports Day',
     'Birthday Celebration',
     'Annual Day',
     'Baby Show',
@@ -80,18 +98,18 @@ export default function EventsPage() {
                 </div>
             </section>
 
-            {/* Masonry Photo Grid */}
+            {/* Photo Grid */}
             <section className="px-4 pb-24">
-                <div className="max-w-[1400px] mx-auto columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4">
+                <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                     {filteredEvents.map((event) => (
                         <div
                             key={event.id}
-                            className="mb-4 break-inside-avoid group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300"
+                            className="group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300 aspect-[4/3]"
                         >
                             <img
                                 src={event.image}
                                 alt={event.title}
-                                className="w-full h-auto object-cover block group-hover:scale-105 transition-transform duration-500"
+                                className="w-full h-full object-cover block group-hover:scale-105 transition-transform duration-500"
                                 style={event.rotate ? { transform: `rotate(${event.rotate}deg)` } : {}}
                             />
                         </div>
