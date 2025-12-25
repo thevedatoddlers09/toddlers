@@ -428,6 +428,84 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Branches - Coming Soon */}
+      <section className="py-20 bg-gradient-to-b from-amber-50 via-pink-50 to-sky-50 relative overflow-hidden">
+        {/* Playful Background Elements */}
+        <div className="absolute top-10 left-[5%] text-6xl opacity-20 animate-bounce" style={{ animationDuration: '3s' }}>🏠</div>
+        <div className="absolute top-20 right-[10%] text-5xl opacity-20 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>⭐</div>
+        <div className="absolute bottom-20 left-[15%] text-4xl opacity-20 animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>🌈</div>
+        <div className="absolute bottom-10 right-[8%] text-5xl opacity-20 animate-bounce" style={{ animationDuration: '4.5s', animationDelay: '2s' }}>🎈</div>
+
+        {/* Cloud decorations */}
+        <div className="absolute top-16 left-[20%] w-20 h-8 bg-white rounded-full opacity-60"></div>
+        <div className="absolute top-14 left-[22%] w-10 h-6 bg-white rounded-full opacity-60"></div>
+        <div className="absolute top-32 right-[25%] w-16 h-6 bg-white rounded-full opacity-50"></div>
+        <div className="absolute top-30 right-[27%] w-8 h-4 bg-white rounded-full opacity-50"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white shadow-md text-veda-primary font-bold text-sm mb-6 border-2 border-dashed border-veda-accent">
+              <span className="text-xl">🌟</span>
+              <span>Coming Soon Near You!</span>
+              <span className="text-xl">🌟</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">Learning Homes</span>
+            </h2>
+            <p className="text-veda-text-muted text-lg max-w-xl mx-auto">
+              Building new playful spaces for little learners across the city!
+            </p>
+          </div>
+
+          {/* Branches Grid - House Style Cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 max-w-6xl mx-auto">
+            {[
+              { name: 'Sector 105', city: 'Mohali', iconColor: 'text-purple-500', bgColor: 'bg-gradient-to-b from-purple-100 to-purple-200', borderColor: 'border-purple-300', roofColor: 'bg-purple-400' },
+              { name: 'Sector 79', city: 'Mohali', iconColor: 'text-amber-500', bgColor: 'bg-gradient-to-b from-amber-100 to-amber-200', borderColor: 'border-amber-300', roofColor: 'bg-amber-400' },
+              { name: 'Sector 127', city: 'Mohali', iconColor: 'text-sky-500', bgColor: 'bg-gradient-to-b from-sky-100 to-sky-200', borderColor: 'border-sky-300', roofColor: 'bg-sky-400' },
+              { name: 'Zirakpur', city: 'Mohali', iconColor: 'text-pink-500', bgColor: 'bg-gradient-to-b from-pink-100 to-pink-200', borderColor: 'border-pink-300', roofColor: 'bg-pink-400' },
+              { name: 'Panchkula', city: 'Haryana', iconColor: 'text-emerald-500', bgColor: 'bg-gradient-to-b from-emerald-100 to-emerald-200', borderColor: 'border-emerald-300', roofColor: 'bg-emerald-400' },
+              { name: 'Ambala', city: 'Haryana', iconColor: 'text-rose-500', bgColor: 'bg-gradient-to-b from-rose-100 to-rose-200', borderColor: 'border-rose-300', roofColor: 'bg-rose-400' },
+            ].map((branch, index) => (
+              <div key={index} className="group">
+                {/* House-shaped card */}
+                <div className={`relative ${branch.bgColor} rounded-3xl p-5 pt-8 text-center border-2 ${branch.borderColor} shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer`}>
+                  {/* Roof */}
+                  <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-8 ${branch.roofColor} rounded-t-full`}></div>
+
+                  {/* Location Pin Icon */}
+                  <div className={`${branch.iconColor} mb-3 transform group-hover:scale-110 transition-transform duration-300`}>
+                    <svg className="w-10 h-10 mx-auto drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                  </div>
+
+                  {/* Branch Name */}
+                  <h3 className="font-bold font-poppins text-gray-700 text-base mb-0.5">{branch.name}</h3>
+                  <p className="text-gray-500 text-xs">{branch.city}</p>
+
+                  {/* Coming Soon Ribbon */}
+                  <div className="absolute -top-1 -right-1 bg-veda-accent text-white text-[9px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-2xl shadow-sm">
+                    SOON ✨
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Message */}
+          <div className="text-center mt-14">
+            <div className="inline-block bg-white rounded-2xl px-8 py-4 shadow-lg border-2 border-dashed border-veda-secondary">
+              <p className="text-veda-text-muted mb-3 text-sm">Want a Veda school in your neighborhood?</p>
+              <Button variant="primary" shape="pill" href="/franchise" className="bg-gradient-to-r from-veda-primary to-purple-600 hover:from-purple-600 hover:to-veda-primary text-white shadow-md">
+                🤝 Become a Partner
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Location Map */}
       <LocationMap />
     </main>
