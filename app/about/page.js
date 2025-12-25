@@ -1,11 +1,92 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Palette, Handshake, ShieldCheck, Rocket, BookOpen, GraduationCap, Baby, Trophy } from 'lucide-react';
 
-export const metadata = {
-    title: 'About Us - The Veda Toddlers',
-    description: 'Learn about our vision, mission, and journey from 2008 to today.',
-};
-
 export default function AboutPage() {
+    const mainRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Hero animation
+            gsap.from('.anim-hero-content', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            // Core Values cards stagger
+            gsap.from('.anim-value-card', {
+                y: 60,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.15,
+                scrollTrigger: {
+                    trigger: '.anim-values-section',
+                    start: 'top 80%',
+                }
+            });
+
+            // Timeline cards stagger
+            gsap.from('.anim-timeline-card', {
+                x: -50,
+                opacity: 0,
+                duration: 0.7,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: '.anim-timeline-section',
+                    start: 'top 75%',
+                }
+            });
+
+            // Leadership cards stagger
+            gsap.fromTo('.anim-leader-card',
+                { scale: 0.8, opacity: 0 },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    scrollTrigger: {
+                        trigger: '.anim-leaders-section',
+                        start: 'top 85%',
+                    }
+                }
+            );
+
+            // Awards cards stagger
+            gsap.from('.anim-award-card', {
+                y: 40,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.15,
+                scrollTrigger: {
+                    trigger: '.anim-awards-section',
+                    start: 'top 80%',
+                }
+            });
+
+            // Section headers fade in
+            gsap.from('.anim-section-header', {
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: '.anim-section-header',
+                    start: 'top 85%',
+                }
+            });
+        }, mainRef);
+
+        return () => ctx.revert();
+    }, []);
+
+
     // Core Values Data
     const values = [
         {
@@ -76,12 +157,12 @@ export default function AboutPage() {
     ];
 
     return (
-        <main>
+        <main ref={mainRef}>
             {/* Section A: Hero Banner */}
             <section className="relative h-[45vh] min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
                 style={{ backgroundImage: "url('/philosophy-bg.png')" }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-primary-dark/80 to-veda-primary-dark/90"></div>
-                <div className="relative z-10 p-6 max-w-5xl">
+                <div className="anim-hero-content relative z-10 p-6 max-w-5xl">
                     <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
                         Our Philosophy
                     </h1>
@@ -92,7 +173,7 @@ export default function AboutPage() {
             </section>
 
             {/* Section B: Core Values - Redesigned */}
-            <section className="py-16 px-3 bg-veda-background-muted">
+            <section className="anim-values-section py-16 px-3 bg-veda-background-muted">
                 <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
                     Core Values
                 </h2>
@@ -100,7 +181,7 @@ export default function AboutPage() {
                 <div className="max-w-[1400px] mx-auto">
                     <div className="flex flex-wrap justify-center gap-6">
                         {values.map((value, idx) => (
-                            <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+                            <div key={idx} className="anim-value-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
                                 <div className={`relative bg-gradient-to-br ${value.bgGradient} rounded-2xl p-6 h-full border ${value.borderColor} shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden`}>
                                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2"></div>
                                     <div className="relative z-10 text-center">
@@ -118,7 +199,7 @@ export default function AboutPage() {
             </section>
 
             {/* Section C: VEDA GROWTH JOURNEY - Redesigned */}
-            <section className="py-20 px-3 bg-gradient-to-b from-veda-secondary-light/30 via-white to-veda-background-soft relative overflow-hidden">
+            <section className="anim-timeline-section py-20 px-3 bg-gradient-to-b from-veda-secondary-light/30 via-white to-veda-background-soft relative overflow-hidden">
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-veda-accent/5 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-72 h-72 bg-veda-primary/5 rounded-full blur-3xl"></div>
@@ -141,7 +222,7 @@ export default function AboutPage() {
                     {/* Timeline Cards - Horizontal Layout */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                         {timeline.map((item, idx) => (
-                            <div key={idx} className="group">
+                            <div key={idx} className="anim-timeline-card group">
                                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full border border-veda-border/50">
                                     {/* Year Header */}
                                     <div className="bg-gradient-to-r from-veda-primary via-veda-primary to-veda-primary-dark p-6 relative">
@@ -189,7 +270,7 @@ export default function AboutPage() {
             </section>
 
             {/* Section D: Leadership Team - Redesigned */}
-            <section className="py-16 px-3 bg-veda-background-DEFAULT">
+            <section className="anim-leaders-section py-16 px-3 bg-veda-background-DEFAULT">
                 <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
                     Leadership Team
                 </h2>
@@ -197,7 +278,7 @@ export default function AboutPage() {
                 <div className="max-w-[1400px] mx-auto">
                     <div className="flex flex-wrap justify-center gap-6 text-center">
                         {leaders.map((leader, idx) => (
-                            <div key={idx} className="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] bg-white rounded-2xl p-5 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
+                            <div key={idx} className="anim-leader-card w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] bg-white rounded-2xl p-5 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
                                 <div className={`w-20 h-20 bg-gradient-to-br ${leader.color} rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl text-white font-bold shadow-lg group-hover:scale-110 transition-transform`}>
                                     <span>{leader.name.charAt(0)}</span>
                                 </div>
@@ -209,8 +290,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Section E: Awards & Recognition - Premium Redesigned */}
-            <section className="py-24 px-3 bg-gradient-to-b from-veda-background-soft via-white to-veda-secondary-light/20 relative overflow-hidden">
+            <section className="anim-awards-section py-24 px-3 bg-gradient-to-b from-veda-background-soft via-white to-veda-secondary-light/20 relative overflow-hidden">
                 {/* Decorative Background Elements */}
                 <div className="absolute top-0 left-0 w-72 h-72 bg-veda-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-veda-primary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
@@ -242,7 +322,7 @@ export default function AboutPage() {
                         ].map((award, idx) => (
                             <div
                                 key={idx}
-                                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] group"
+                                className="anim-award-card w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] group"
                             >
                                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full border border-veda-border/50">
                                     {/* Image Container */}

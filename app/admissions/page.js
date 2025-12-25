@@ -56,10 +56,9 @@ export default function AdmissionsPage() {
     ];
 
     const programs = [
-        { name: 'Playgroup', age: '1.5 - 2.5 Years', Icon: Baby },
-        { name: 'Nursery', age: '2.5 - 3.5 Years', Icon: Sparkles },
-        { name: 'Junior KG', age: '3.5 - 4.5 Years', Icon: BookOpen },
-        { name: 'Senior KG', age: '4.5 - 5.5 Years', Icon: GraduationCap },
+        { name: 'Pre-School Programme', age: '1.5 - 5.5 Years', desc: 'Playgroup, Nursery, Junior KG, Senior KG', Icon: GraduationCap, color: 'text-rose-600', bg: 'bg-rose-50' },
+        { name: 'Day Care', age: '8 months onwards', desc: 'Full Day & Half Day options available', Icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
+        { name: 'After School Explorers', age: 'All Ages', desc: 'Art, Dance, Public Speaking & more', Icon: Sparkles, color: 'text-blue-600', bg: 'bg-blue-50' },
     ];
 
     return (
@@ -87,15 +86,16 @@ export default function AdmissionsPage() {
                             <h2 className={styles.sectionTitle}>Programs We Offer</h2>
                             <p className={styles.sectionDesc}>Our curriculum is designed to nurture every child's unique potential through play-based, experiential learning.</p>
 
-                            <div className={styles.programsGrid}>
+                            <div className={styles.programsGrid} style={{ gridTemplateColumns: '1fr' }}>
                                 {programs.map((program, idx) => (
-                                    <div key={idx} className={styles.programCard}>
-                                        <div className={styles.programIcon}>
-                                            <program.Icon size={24} />
+                                    <div key={idx} className={styles.programCard} style={{ padding: '1.25rem' }}>
+                                        <div className={styles.programIcon} style={{ backgroundColor: program.bg === 'bg-rose-50' ? '#fff1f2' : program.bg === 'bg-amber-50' ? '#fffbeb' : '#eff6ff' }}>
+                                            <program.Icon size={24} style={{ color: program.color === 'text-rose-600' ? '#e11d48' : program.color === 'text-amber-600' ? '#d97706' : '#2563eb' }} />
                                         </div>
                                         <div>
                                             <h3 className={styles.programName}>{program.name}</h3>
                                             <p className={styles.programAge}>{program.age}</p>
+                                            <p style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '0.25rem' }}>{program.desc}</p>
                                         </div>
                                     </div>
                                 ))}

@@ -1,11 +1,77 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles, Baby, Sprout, Footprints, PenTool, GraduationCap, Clock, Sun, Moon, Music, Mic, User, CircleDollarSign, Star, Rocket, Smile } from 'lucide-react';
 
-export const metadata = {
-    title: 'Curriculum & Programs - The Veda Toddlers',
-    description: 'Explore our activity-based 7 Spectrum Curriculum and specialized programs like Pre-School, Daycare, and After-School activities.',
-};
-
 export default function ProgramsPage() {
+    const mainRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Hero animation
+            gsap.from('.anim-hero-content', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            // Spectrum cards stagger
+            gsap.from('.anim-spectrum-card', {
+                y: 50,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: '.anim-spectrums-section',
+                    start: 'top 80%',
+                }
+            });
+
+            // Preschool levels stagger
+            gsap.from('.anim-level-card', {
+                x: -40,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.15,
+                scrollTrigger: {
+                    trigger: '.anim-levels-section',
+                    start: 'top 75%',
+                }
+            });
+
+            // Daycare section
+            gsap.from('.anim-daycare-card', {
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: '.anim-daycare-section',
+                    start: 'top 80%',
+                }
+            });
+
+            // After school activities
+            gsap.from('.anim-activity-card', {
+                y: 30,
+                opacity: 0,
+                duration: 0.4,
+                stagger: 0.08,
+                scrollTrigger: {
+                    trigger: '.anim-activities-section',
+                    start: 'top 80%',
+                }
+            });
+        }, mainRef);
+
+        return () => ctx.revert();
+    }, []);
+
     // 7 Spectrums of Development
     const spectrums = [
         { title: 'Physical Development', desc: 'Strength, coordination, and motor skills through active play.', Icon: PersonStanding, gradient: 'from-veda-playful-peach to-rose-400', bgGradient: 'from-veda-playful-peach/15 via-white to-rose-50' },
@@ -19,11 +85,10 @@ export default function ProgramsPage() {
 
     // Pre-School Levels
     const preschoolLevels = [
-        { name: 'Seedling', age: '1 to 2 yrs', desc: 'Gentle socialization & sensory play', Icon: Baby, color: 'text-rose-600', bg: 'bg-rose-100', border: 'border-rose-200' },
-        { name: 'Sprouts', age: '2 to 3 yrs', desc: 'Language, motor skills & curiosity', Icon: Sprout, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' },
-        { name: 'Explorer', age: '3 to 4 yrs', desc: 'Independence & foundational concepts', Icon: Footprints, color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
-        { name: 'Creator', age: '4 to 5 yrs', desc: 'Creativity, problem-solving & collaboration', Icon: PenTool, color: 'text-amber-600', bg: 'bg-amber-100', border: 'border-amber-200' },
-        { name: 'UKG', age: '5 to 6 yrs', desc: 'Prep for formal schooling, confidence', Icon: GraduationCap, color: 'text-purple-600', bg: 'bg-purple-100', border: 'border-purple-200' },
+        { name: 'Playgroup', age: '1.5 - 2.5 Years', desc: 'First steps into social learning', Icon: Smile, color: 'text-rose-600', bg: 'bg-rose-100', border: 'border-rose-200' },
+        { name: 'Nursery', age: '2.5 - 3.5 Years', desc: 'Building curiosity & creativity', Icon: Sparkles, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' },
+        { name: 'Junior KG', age: '3.5 - 4.5 Years', desc: 'Foundation for early learning', Icon: BookOpen, color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
+        { name: 'Senior KG', age: '4.5 - 5.5 Years', desc: 'Preparing for formal schooling', Icon: GraduationCap, color: 'text-purple-600', bg: 'bg-purple-100', border: 'border-purple-200' },
     ];
 
     // After-School Activities
@@ -39,12 +104,12 @@ export default function ProgramsPage() {
     ];
 
     return (
-        <main className="bg-white">
+        <main ref={mainRef} className="bg-white">
             {/* Hero Banner */}
             <section className="relative h-[45vh] min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
                 style={{ backgroundImage: "url('/programs-bg.png')" }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-primary-dark/80 to-veda-primary-dark/90"></div>
-                <div className="relative z-10 p-6 max-w-5xl">
+                <div className="anim-hero-content relative z-10 p-6 max-w-5xl">
                     <span className="inline-block py-1 px-4 rounded-full bg-white/20 text-white font-bold uppercase tracking-widest text-xs mb-4 border border-white/30">Our Methodology</span>
                     <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
                         The "7 Spectrums" Curriculum
@@ -56,10 +121,10 @@ export default function ProgramsPage() {
             </section>
 
             {/* 7 Spectrums Grid */}
-            <section className="py-20 px-4 bg-veda-background-muted">
+            <section className="anim-spectrums-section py-20 px-4 bg-veda-background-muted">
                 <div className="max-w-[1400px] mx-auto flex flex-wrap justify-center gap-6">
                     {spectrums.map((item, idx) => (
-                        <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
+                        <div key={idx} className="anim-spectrum-card w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
                             <div className={`relative bg-gradient-to-br ${item.bgGradient} p-6 rounded-3xl shadow-soft border border-white/60 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 h-full group overflow-hidden`}>
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/40 to-transparent rounded-full -translate-y-1/3 translate-x-1/3 blur-xl"></div>
                                 <div className="relative z-10">
@@ -93,7 +158,7 @@ export default function ProgramsPage() {
             <div className="max-w-[1400px] mx-auto px-4 pb-24 space-y-12">
 
                 {/* 1. Pre-School World */}
-                <section className="bg-gradient-to-br from-rose-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-rose-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
+                <section className="anim-levels-section bg-gradient-to-br from-rose-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-rose-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
                     <div className="absolute -right-20 -top-20 w-96 h-96 bg-rose-100 rounded-full blur-3xl opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
 
                     <div className="relative z-10">
@@ -102,14 +167,14 @@ export default function ProgramsPage() {
                                 <Star size={40} className="fill-rose-100" />
                             </div>
                             <div>
-                                <h3 className="text-3xl font-bold font-poppins text-veda-text-heading">Pre-School Program</h3>
-                                <p className="text-rose-600 font-medium">For Little Learners (1 to 6 Years)</p>
+                                <h3 className="text-3xl font-bold font-poppins text-veda-text-heading">Pre-School Programme</h3>
+                                <p className="text-rose-600 font-medium">For Little Learners (1.5 to 5.5 Years)</p>
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                             {preschoolLevels.map((level, idx) => (
-                                <div key={idx} className="relative">
+                                <div key={idx} className="anim-level-card relative">
                                     {/* Line connector for desktop */}
                                     {idx < preschoolLevels.length - 1 && (
                                         <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-1 border-t-2 border-dashed border-rose-200 z-0"></div>

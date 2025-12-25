@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const allEvents = [
     { id: 1, title: 'Baisakhi Celebration', category: 'Baisakhi', image: '/images/events/baisakhi-1.jpg', rotate: 270 },
@@ -64,14 +66,51 @@ const categories = [
 ];
 
 export default function EventsPage() {
+    const mainRef = useRef(null);
     const [activeFilter, setActiveFilter] = useState('Baisakhi');
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Header animation - smoother
+            gsap.fromTo('.anim-header',
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, ease: 'power2.out' }
+            );
+
+            // Filter pills stagger - smoother
+            gsap.fromTo('.anim-filter-pill',
+                { y: 15, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.04, delay: 0.4, ease: 'power2.out' }
+            );
+
+            // Photo grid items - smoother
+            gsap.fromTo('.anim-photo-card',
+                { y: 30, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.7,
+                    stagger: 0.05,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: '.anim-photo-grid',
+                        start: 'top 90%',
+                    }
+                }
+            );
+        }, mainRef);
+
+        return () => ctx.revert();
+    }, []);
 
     const filteredEvents = allEvents.filter(event => event.category === activeFilter);
 
     return (
-        <main className="bg-veda-background-DEFAULT min-h-screen">
+        <main ref={mainRef} className="bg-veda-background-DEFAULT min-h-screen">
             {/* Header */}
-            <section className="pt-20 pb-10 px-4 text-center">
+            <section className="anim-header pt-20 pb-10 px-4 text-center">
                 <h1 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
                     Our Events
                 </h1>
@@ -87,7 +126,7 @@ export default function EventsPage() {
                         <button
                             key={category}
                             onClick={() => setActiveFilter(category)}
-                            className={`py-2 px-5 rounded-full text-sm font-bold transition-all duration-300 border-2 cursor-pointer ${activeFilter === category
+                            className={`anim-filter-pill py-2 px-5 rounded-full text-sm font-bold transition-all duration-300 border-2 cursor-pointer ${activeFilter === category
                                 ? 'bg-veda-primary text-white border-veda-primary shadow-md'
                                 : 'bg-white text-veda-text-muted border-veda-border hover:border-veda-primary hover:text-veda-primary'
                                 }`}
@@ -98,13 +137,12 @@ export default function EventsPage() {
                 </div>
             </section>
 
-            {/* Photo Grid */}
             <section className="px-4 pb-24">
-                <div className="max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="anim-photo-grid max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                     {filteredEvents.map((event) => (
                         <div
                             key={event.id}
-                            className="group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300 aspect-[4/3]"
+                            className="anim-photo-card group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300 aspect-[4/3]"
                         >
                             <img
                                 src={event.image}

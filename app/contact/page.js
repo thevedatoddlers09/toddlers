@@ -1,12 +1,61 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import Button from '@/components/Button';
 import { MapPin, Mail, Phone, Clock, Check, Loader2 } from 'lucide-react';
 import styles from './page.module.css';
 
 export default function ContactPage() {
+    const mainRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Info card slide in from left
+            gsap.from('.anim-info-card', {
+                x: -60,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            });
+
+            // Form card slide in from right
+            gsap.from('.anim-form-card', {
+                x: 60,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.2,
+                ease: 'power3.out'
+            });
+
+            // Info items stagger
+            gsap.from('.anim-info-item', {
+                y: 20,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                delay: 0.4
+            });
+
+            // CTA section
+            gsap.from('.anim-cta-section', {
+                y: 40,
+                opacity: 0,
+                duration: 0.6,
+                scrollTrigger: {
+                    trigger: '.anim-cta-section',
+                    start: 'top 85%',
+                }
+            });
+        }, mainRef);
+
+        return () => ctx.revert();
+    }, []);
+
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -54,17 +103,17 @@ export default function ContactPage() {
     };
 
     return (
-        <main className={styles.main}>
+        <main ref={mainRef} className={styles.main}>
 
 
             <section className={styles.contactSection}>
                 <div className={styles.container}>
                     <div className={styles.grid}>
                         {/* Contact Info */}
-                        <div className={styles.infoCard}>
+                        <div className={`${styles.infoCard} anim-info-card`}>
                             <h2 className={styles.infoTitle}>Get In Touch</h2>
 
-                            <div className={styles.infoItem}>
+                            <div className={`${styles.infoItem} anim-info-item`}>
                                 <div className={styles.infoIcon}><MapPin size={18} /></div>
                                 <div>
                                     <strong>Address</strong>
@@ -72,7 +121,7 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            <div className={styles.infoItem}>
+                            <div className={`${styles.infoItem} anim-info-item`}>
                                 <div className={styles.infoIcon}><Mail size={18} /></div>
                                 <div>
                                     <strong>Email</strong>
@@ -80,7 +129,7 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            <div className={styles.infoItem}>
+                            <div className={`${styles.infoItem} anim-info-item`}>
                                 <div className={styles.infoIcon}><Phone size={18} /></div>
                                 <div>
                                     <strong>Contact Numbers</strong>
@@ -88,7 +137,7 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            <div className={styles.infoItem}>
+                            <div className={`${styles.infoItem} anim-info-item`}>
                                 <div className={styles.infoIcon}><Clock size={18} /></div>
                                 <div>
                                     <strong>Timings</strong>
@@ -98,7 +147,7 @@ export default function ContactPage() {
                         </div>
 
                         {/* Contact Form */}
-                        <div className={styles.formCard}>
+                        <div className={`${styles.formCard} anim-form-card`}>
                             <h2 className={styles.formTitle}>Any Query? Get In Touch!</h2>
 
                             {!isSubmitted ? (
@@ -196,7 +245,7 @@ export default function ContactPage() {
             </section>
 
             {/* CTA Strip */}
-            <section className={styles.ctaSection}>
+            <section className={`${styles.ctaSection} anim-cta-section`}>
                 <div className={styles.ctaContainer}>
                     <div className={styles.ctaContent}>
                         <h2>Ready to Apply?</h2>

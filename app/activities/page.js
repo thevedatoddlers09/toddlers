@@ -1,6 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const allActivities = [
     // Thematic Learning
@@ -23,14 +25,51 @@ const categories = [
 ];
 
 export default function ActivitiesPage() {
+    const mainRef = useRef(null);
     const [activeFilter, setActiveFilter] = useState('Thematic Learning');
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Header animation - smoother
+            gsap.fromTo('.anim-header',
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, ease: 'power2.out' }
+            );
+
+            // Filter pills stagger - smoother
+            gsap.fromTo('.anim-filter-pill',
+                { y: 15, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.08, delay: 0.4, ease: 'power2.out' }
+            );
+
+            // Photo grid items - smoother
+            gsap.fromTo('.anim-photo-card',
+                { y: 30, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.7,
+                    stagger: 0.06,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: '.anim-photo-grid',
+                        start: 'top 90%',
+                    }
+                }
+            );
+        }, mainRef);
+
+        return () => ctx.revert();
+    }, []);
 
     const filteredActivities = allActivities.filter(activity => activity.category === activeFilter);
 
     return (
-        <main className="bg-veda-background-DEFAULT min-h-screen">
+        <main ref={mainRef} className="bg-veda-background-DEFAULT min-h-screen">
             {/* Header */}
-            <section className="pt-20 pb-10 px-4 text-center">
+            <section className="anim-header pt-20 pb-10 px-4 text-center">
                 <h1 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
                     Our Activities
                 </h1>
@@ -46,9 +85,9 @@ export default function ActivitiesPage() {
                         <button
                             key={category}
                             onClick={() => setActiveFilter(category)}
-                            className={`py-2 px-5 rounded-full text-sm font-bold transition-all duration-300 border-2 cursor-pointer ${activeFilter === category
-                                    ? 'bg-veda-primary text-white border-veda-primary shadow-md'
-                                    : 'bg-white text-veda-text-muted border-veda-border hover:border-veda-primary hover:text-veda-primary'
+                            className={`anim-filter-pill py-2 px-5 rounded-full text-sm font-bold transition-all duration-300 border-2 cursor-pointer ${activeFilter === category
+                                ? 'bg-veda-primary text-white border-veda-primary shadow-md'
+                                : 'bg-white text-veda-text-muted border-veda-border hover:border-veda-primary hover:text-veda-primary'
                                 }`}
                         >
                             {category}
@@ -57,13 +96,12 @@ export default function ActivitiesPage() {
                 </div>
             </section>
 
-            {/* Masonry Photo Grid */}
             <section className="px-4 pb-24">
-                <div className="max-w-[1400px] mx-auto columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4">
+                <div className="anim-photo-grid max-w-[1400px] mx-auto columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4">
                     {filteredActivities.map((activity) => (
                         <div
                             key={activity.id}
-                            className="mb-4 break-inside-avoid group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300"
+                            className="anim-photo-card mb-4 break-inside-avoid group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300"
                         >
                             <img
                                 src={activity.image}
