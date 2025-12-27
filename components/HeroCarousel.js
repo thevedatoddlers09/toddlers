@@ -7,17 +7,17 @@ import gsap from 'gsap';
 const slides = [
     {
         id: 1,
-        title: { main: "Big Futures", accent: "Start Small" },
-        subtitle: "Nurturing young minds with a blend of modern curriculum and traditional values.",
-        cta: "Find a Center",
-        image: "https://images.unsplash.com/photo-1545665277-5937bf8607e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        title: { main: "Our Amazing", accent: "Team" },
+        subtitle: "Dedicated educators committed to nurturing young minds with care and passion.",
+        cta: "Meet Our Team",
+        image: "/images/carousel-team-1.jpg",
     },
     {
         id: 2,
-        title: { main: "Award Winning", accent: "Curriculum" },
-        subtitle: "Our Seven Petal approach ensures holistic development for every child.",
-        cta: "Explore Programs",
-        image: "https://images.unsplash.com/photo-1503919545885-7f4ab0213719?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        title: { main: "Together We", accent: "Grow" },
+        subtitle: "Building a community of learners, teachers, and parents for holistic education.",
+        cta: "Join Us",
+        image: "/images/carousel-team-2.jpg",
     },
     {
         id: 3,
