@@ -65,29 +65,34 @@ export default function HeroCarousel() {
 
     return (
         <div className="relative w-full h-[calc(100vh-80px)] min-h-[500px] overflow-hidden bg-veda-background-muted">
-            {slides.map((slide, index) => (
-                <div
-                    key={slide.id}
-                    className={`absolute top-0 left-0 w-full h-full flex items-center justify-center text-center px-[3%] transition-opacity duration-700 ease-out bg-cover bg-center ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0'}`}
-                    style={{
-                        backgroundImage: `linear-gradient(to bottom, rgba(62, 42, 79, 0.5), rgba(42, 27, 56, 0.7)), url(${slide.image})`,
-                    }}
-                >
-                    <div ref={index === currentSlide ? contentRef : null} className="relative z-20 max-w-3xl">
-                        <h1 className="text-3xl md:text-5xl text-white mb-5 font-bold font-poppins leading-tight">
-                            {slide.title.main} <span className="text-veda-accent">{slide.title.accent}</span>
-                        </h1>
-                        <p className="text-base md:text-lg text-white/90 mb-8 font-opensans max-w-2xl mx-auto">
-                            {slide.subtitle}
-                        </p>
-                        <div>
-                            <Button variant="primary" shape="pill">
-                                {slide.cta}
-                            </Button>
+            {slides.map((slide, index) => {
+                const hasText = slide.title.main || slide.title.accent || slide.subtitle;
+                return (
+                    <div
+                        key={slide.id}
+                        className={`absolute top-0 left-0 w-full h-full flex items-center justify-center text-center px-[3%] transition-opacity duration-700 ease-out bg-cover bg-center ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0'}`}
+                        style={{
+                            backgroundImage: hasText
+                                ? `linear-gradient(to bottom, rgba(62, 42, 79, 0.5), rgba(42, 27, 56, 0.7)), url(${slide.image})`
+                                : `url(${slide.image})`,
+                        }}
+                    >
+                        <div ref={index === currentSlide ? contentRef : null} className="relative z-20 max-w-3xl">
+                            <h1 className="text-3xl md:text-5xl text-white mb-5 font-bold font-poppins leading-tight">
+                                {slide.title.main} <span className="text-veda-accent">{slide.title.accent}</span>
+                            </h1>
+                            <p className="text-base md:text-lg text-white/90 mb-8 font-opensans max-w-2xl mx-auto">
+                                {slide.subtitle}
+                            </p>
+                            <div>
+                                <Button variant="primary" shape="pill">
+                                    {slide.cta}
+                                </Button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                )
+            })}
 
             {/* Navigation Controls */}
             <button
