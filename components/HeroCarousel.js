@@ -84,11 +84,13 @@ export default function HeroCarousel() {
                             <p className="text-base md:text-lg text-white/90 mb-8 font-opensans max-w-2xl mx-auto">
                                 {slide.subtitle}
                             </p>
-                            <div>
-                                <Button variant="primary" shape="pill">
-                                    {slide.cta}
-                                </Button>
-                            </div>
+                            {slide.cta && (
+                                <div>
+                                    <Button variant="primary" shape="pill">
+                                        {slide.cta}
+                                    </Button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 )
