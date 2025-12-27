@@ -7,16 +7,16 @@ import gsap from 'gsap';
 const slides = [
     {
         id: 1,
-        title: { main: "Our Amazing", accent: "Team" },
-        subtitle: "Dedicated educators committed to nurturing young minds with care and passion.",
-        cta: "Meet Our Team",
+        title: { main: "", accent: "" },
+        subtitle: "",
+        cta: "",
         image: "/images/carousel-team-1.jpg",
     },
     {
         id: 2,
-        title: { main: "Together We", accent: "Grow" },
-        subtitle: "Building a community of learners, teachers, and parents for holistic education.",
-        cta: "Join Us",
+        title: { main: "", accent: "" },
+        subtitle: "",
+        cta: "",
         image: "/images/carousel-team-2.jpg",
     },
     {
