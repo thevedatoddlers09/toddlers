@@ -168,12 +168,12 @@ export default function EventsPage() {
                     {filteredEvents.map((event) => (
                         <div
                             key={event.id}
-                            className="anim-photo-card group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300 aspect-[4/3]"
+                            className="anim-photo-card group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300 aspect-square"
                         >
                             <img
                                 src={event.image}
                                 alt={event.title}
-                                className="w-full h-full object-contain bg-gray-100 block group-hover:scale-105 transition-transform duration-500"
+                                className="w-full h-full object-cover object-top block group-hover:scale-105 transition-transform duration-500"
                                 style={event.rotate ? { transform: `rotate(${event.rotate}deg)` } : {}}
                             />
                         </div>
