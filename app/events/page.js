@@ -47,7 +47,16 @@ const allEvents = [
     { id: 8, title: 'Dandiya Dhamaal', category: 'Dandiya Dhamaal', image: 'https://images.unsplash.com/photo-1596464716127-f9a0639b9de0?w=600&q=80' },
     { id: 9, title: 'Graduation Day', category: 'Graduation Day', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80' },
     { id: 10, title: 'Grand Parents Day', category: 'Grand Parents Day', image: 'https://images.unsplash.com/photo-1542036720-bc2f605a6a20?w=600&q=80' },
-    { id: 11, title: 'Parent Teacher Meeting', category: 'Parent Teacher Meeting', image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80' },
+
+    { id: 114, title: 'PTM Presentation', category: 'Parent Teacher Meeting', image: '/images/events/ptm-5.jpg' },
+    { id: 115, title: 'PTM Felicitation', category: 'Parent Teacher Meeting', image: '/images/events/ptm-6.jpg' },
+    { id: 116, title: 'PTM Kids Performance', category: 'Parent Teacher Meeting', image: '/images/events/ptm-7.jpg' },
+    { id: 117, title: 'PTM Students', category: 'Parent Teacher Meeting', image: '/images/events/ptm-8.jpg' },
+    { id: 118, title: 'PTM Award Ceremony', category: 'Parent Teacher Meeting', image: '/images/events/ptm-9.jpg' },
+    { id: 119, title: 'PTM Kids Dance', category: 'Parent Teacher Meeting', image: '/images/events/ptm-10.jpg' },
+    { id: 120, title: 'PTM Recognition', category: 'Parent Teacher Meeting', image: '/images/events/ptm-11.jpg' },
+    { id: 121, title: 'PTM Kids', category: 'Parent Teacher Meeting', image: '/images/events/ptm-12.jpg' },
+    { id: 122, title: 'PTM Address', category: 'Parent Teacher Meeting', image: '/images/events/ptm-13.jpg' },
     { id: 12, title: 'Ram Mandir Inauguration', category: 'Cultural', image: 'https://images.unsplash.com/photo-1516083151740-1addfa71761e?w=600&q=80' },
     { id: 13, title: 'Christmas Carnival', category: 'Christmas Carnival', image: 'https://images.unsplash.com/photo-1512389142860-9c449e58a814?w=600&q=80' },
     { id: 14, title: 'Dussehra Celebration', category: 'Dussehra Celebration', image: 'https://images.unsplash.com/photo-1574095010310-6e4e4eacf03d?w=600&q=80' },
@@ -153,7 +162,7 @@ export default function EventsPage() {
                             <img
                                 src={event.image}
                                 alt={event.title}
-                                className="w-full h-full object-cover block group-hover:scale-105 transition-transform duration-500"
+                                className="w-full h-full object-contain bg-gray-100 block group-hover:scale-105 transition-transform duration-500"
                                 style={event.rotate ? { transform: `rotate(${event.rotate}deg)` } : {}}
                             />
                         </div>
