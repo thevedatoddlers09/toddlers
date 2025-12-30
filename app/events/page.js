@@ -62,12 +62,12 @@ const categories = [
     'Baisakhi',
     'Sports Day',
     'Ramleela',
-    'Annual Day',
+    'Parent Teacher Meeting',
     'Baby Show',
     'Dandiya Dhamaal',
     'Graduation Day',
     'Grand Parents Day',
-    'Parent Teacher Meeting',
+    'Annual Day',
     'Diwali',
 ];
 
