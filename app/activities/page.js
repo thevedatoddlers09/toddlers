@@ -79,6 +79,8 @@ const allActivities = [
     { id: 168, title: 'World Post Day Stamp', category: 'World Post Day', image: '/images/activities/world-post-day-9.jpg' },
     { id: 169, title: 'World Post Day Postcard', category: 'World Post Day', image: '/images/activities/world-post-day-10.jpg' },
     { id: 170, title: 'World Post Day Classroom', category: 'World Post Day', image: '/images/activities/world-post-day-11.jpg' },
+    { id: 171, title: 'World Post Day Posting Letter', category: 'World Post Day', image: '/images/activities/world-post-day-12.jpg' },
+    { id: 172, title: 'World Post Day Class Photo', category: 'World Post Day', image: '/images/activities/world-post-day-13.jpg' },
     // Messy Play
     { id: 148, title: 'Messy Play Kids Painting', category: 'Messy Play', image: '/images/activities/messy-play-1.jpg' },
     { id: 149, title: 'Messy Play Paint Colors', category: 'Messy Play', image: '/images/activities/messy-play-2.jpg' },
@@ -182,17 +184,48 @@ export default function ActivitiesPage() {
                 </div>
             </section>
 
+            {/* Pinterest-style Masonry Gallery */}
             <section className="px-4 pb-24">
-                <div className="anim-photo-grid max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div
+                    className="anim-photo-grid max-w-[1600px] mx-auto"
+                    style={{
+                        columnCount: 'auto',
+                        columnWidth: '280px',
+                        columnGap: '16px',
+                    }}
+                >
                     {filteredActivities.map((activity) => (
                         <div
                             key={activity.id}
-                            className="anim-photo-card aspect-[9/16] group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300 bg-gray-100"
+                            className="anim-photo-card group mb-4 break-inside-avoid"
+                            style={{
+                                borderRadius: '15px',
+                                overflow: 'hidden',
+                                background: 'linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%)',
+                                padding: '8px',
+                                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.08)',
+                                transition: 'all 0.3s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-4px)';
+                                e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.08)';
+                            }}
                         >
                             <img
                                 src={activity.image}
                                 alt={activity.title}
-                                className="w-full h-full object-contain block group-hover:scale-105 transition-transform duration-500"
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    display: 'block',
+                                    borderRadius: '10px',
+                                    transition: 'transform 0.4s ease',
+                                }}
+                                className="group-hover:scale-[1.02]"
                             />
                         </div>
                     ))}
