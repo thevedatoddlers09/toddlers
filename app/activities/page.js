@@ -18,16 +18,20 @@ const allActivities = [
     { id: 104, title: 'First Day Balloons', category: 'First Day', image: '/images/activities/first-day-5.jpg' },
     { id: 105, title: 'First Day Class', category: 'First Day', image: '/images/activities/first-day-6.jpg' },
     { id: 106, title: 'First Day Excitement', category: 'First Day', image: '/images/activities/first-day-7.jpg' },
-    // Skill Development
-    { id: 6, title: 'Airport Pretend Play', category: 'Skill Development', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80' },
-    { id: 7, title: 'Annual Sports Day', category: 'Skill Development', image: 'https://images.unsplash.com/photo-1545665277-5937bf8607e7?w=600&q=80' },
-    { id: 8, title: 'Class Assembly', category: 'Skill Development', image: 'https://images.unsplash.com/photo-1587654780291-39c940483719?w=600&q=80' },
+    // Easter Bunny
+    { id: 6, title: 'Easter Art', category: 'Easter Bunny', image: '/images/activities/easter-bunny-1.jpg' },
+    { id: 7, title: 'Easter Painting', category: 'Easter Bunny', image: '/images/activities/easter-bunny-2.jpg' },
+    { id: 8, title: 'Easter Craft', category: 'Easter Bunny', image: '/images/activities/easter-bunny-3.jpg' },
+    { id: 107, title: 'Easter Bunny Art', category: 'Easter Bunny', image: '/images/activities/easter-bunny-4.jpg' },
+    { id: 108, title: 'Easter Creation', category: 'Easter Bunny', image: '/images/activities/easter-bunny-5.jpg' },
+    { id: 109, title: 'Easter Chick', category: 'Easter Bunny', image: '/images/activities/easter-bunny-6.jpg' },
+    { id: 110, title: 'Easter Egg Card', category: 'Easter Bunny', image: '/images/activities/easter-bunny-7.jpg' },
 ];
 
 const categories = [
     'Bloomer Camp',
     'First Day',
-    'Skill Development',
+    'Easter Bunny',
 ];
 
 export default function ActivitiesPage() {
@@ -107,12 +111,12 @@ export default function ActivitiesPage() {
                     {filteredActivities.map((activity) => (
                         <div
                             key={activity.id}
-                            className="anim-photo-card aspect-[3/4] group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300"
+                            className="anim-photo-card aspect-[9/16] group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300 bg-gray-100"
                         >
                             <img
                                 src={activity.image}
                                 alt={activity.title}
-                                className="w-full h-full object-cover object-top block group-hover:scale-105 transition-transform duration-500"
+                                className="w-full h-full object-contain block group-hover:scale-105 transition-transform duration-500"
                             />
                         </div>
                     ))}
