@@ -26,12 +26,31 @@ const allActivities = [
     { id: 108, title: 'Easter Creation', category: 'Easter Bunny', image: '/images/activities/easter-bunny-5.jpg' },
     { id: 109, title: 'Easter Chick', category: 'Easter Bunny', image: '/images/activities/easter-bunny-6.jpg' },
     { id: 110, title: 'Easter Egg Card', category: 'Easter Bunny', image: '/images/activities/easter-bunny-7.jpg' },
+    // Summer Camp
+    { id: 111, title: 'Summer Camp Craft', category: 'Summer Camp', image: '/images/activities/summer-camp-1.jpg' },
+    { id: 112, title: 'Summer Camp Space Theme', category: 'Summer Camp', image: '/images/activities/summer-camp-2.jpg' },
+    { id: 113, title: 'Summer Camp Astronaut', category: 'Summer Camp', image: '/images/activities/summer-camp-3.jpg' },
+    { id: 114, title: 'Summer Camp Group', category: 'Summer Camp', image: '/images/activities/summer-camp-4.jpg' },
+    { id: 115, title: 'Summer Camp Yoga', category: 'Summer Camp', image: '/images/activities/summer-camp-5.jpg' },
+    { id: 116, title: 'Summer Camp Activity', category: 'Summer Camp', image: '/images/activities/summer-camp-6.jpg' },
+    { id: 117, title: 'Summer Camp Dance', category: 'Summer Camp', image: '/images/activities/summer-camp-7.jpg' },
+    { id: 118, title: 'Summer Camp Earth Day', category: 'Summer Camp', image: '/images/activities/summer-camp-8.jpg' },
+    { id: 119, title: 'Summer Camp Fun', category: 'Summer Camp', image: '/images/activities/summer-camp-9.jpg' },
+    { id: 120, title: 'Summer Camp Baking', category: 'Summer Camp', image: '/images/activities/summer-camp-10.jpg' },
 ];
 
 const categories = [
     'Bloomer Camp',
     'First Day',
     'Easter Bunny',
+    'Summer Camp',
+    'Van Mahotsav',
+    'Friendship Day',
+    'Visit to MRIS',
+    'Messy Play',
+    'Shadow Play',
+    'World Food Day',
+    'World Post Day',
 ];
 
 export default function ActivitiesPage() {
