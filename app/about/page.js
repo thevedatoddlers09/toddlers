@@ -275,20 +275,39 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Meet the passionate people behind The Veda</p>
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="flex flex-wrap justify-center gap-8 text-center">
+                    <div className="flex flex-wrap justify-center gap-6">
                         {leaders.map((leader, idx) => (
-                            <div key={idx} className="anim-leader-card w-[250px] bg-white rounded-2xl p-6 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
-                                {leader.image ? (
-                                    <div className="w-32 h-32 rounded-2xl mx-auto mb-4 overflow-hidden shadow-lg group-hover:scale-110 transition-transform">
-                                        <img src={leader.image} alt={leader.name} className="w-full h-full object-cover object-top" />
+                            <div
+                                key={idx}
+                                className="anim-leader-card w-[280px] overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 group"
+                            >
+                                <div className="relative h-[380px] overflow-hidden">
+                                    {leader.image ? (
+                                        <img
+                                            src={leader.image}
+                                            alt={leader.name}
+                                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    ) : (
+                                        <div className={`w-full h-full bg-gradient-to-br ${leader.color} flex items-center justify-center`}>
+                                            <span className="text-8xl text-white font-bold opacity-80">{leader.name.charAt(0)}</span>
+                                        </div>
+                                    )}
+                                    {/* Semi-transparent overlay at bottom - 1/5th height */}
+                                    <div
+                                        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"
+                                        style={{ height: '30%' }}
+                                    >
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                                            <h3 className="text-xl font-bold text-white mb-1 font-poppins drop-shadow-lg">
+                                                {leader.name}
+                                            </h3>
+                                            <p className="text-sm text-white/90 font-medium uppercase tracking-wider drop-shadow-md">
+                                                {leader.role}
+                                            </p>
+                                        </div>
                                     </div>
-                                ) : (
-                                    <div className={`w-32 h-32 bg-gradient-to-br ${leader.color} rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl text-white font-bold shadow-lg group-hover:scale-110 transition-transform`}>
-                                        <span>{leader.name.charAt(0)}</span>
-                                    </div>
-                                )}
-                                <h3 className="text-lg font-bold text-veda-text-heading mb-1 font-poppins">{leader.name}</h3>
-                                <p className="text-sm text-veda-text-muted font-medium uppercase tracking-wider">{leader.role}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
