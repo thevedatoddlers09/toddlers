@@ -15,6 +15,9 @@ const allActivities = [
     { id: 5, title: 'First Day Fun', category: 'First Day', image: '/images/activities/first-day-2.jpg' },
     { id: 102, title: 'First Day Kids', category: 'First Day', image: '/images/activities/first-day-3.jpg' },
     { id: 103, title: 'First Day Hug', category: 'First Day', image: '/images/activities/first-day-4.jpg' },
+    { id: 104, title: 'First Day Balloons', category: 'First Day', image: '/images/activities/first-day-5.jpg' },
+    { id: 105, title: 'First Day Class', category: 'First Day', image: '/images/activities/first-day-6.jpg' },
+    { id: 106, title: 'First Day Excitement', category: 'First Day', image: '/images/activities/first-day-7.jpg' },
     // Skill Development
     { id: 6, title: 'Airport Pretend Play', category: 'Skill Development', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80' },
     { id: 7, title: 'Annual Sports Day', category: 'Skill Development', image: 'https://images.unsplash.com/photo-1545665277-5937bf8607e7?w=600&q=80' },
