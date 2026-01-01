@@ -147,13 +147,12 @@ export default function AboutPage() {
 
     // Leadership Data
     const leaders = [
-        { name: 'Mandeep Sharma', role: 'Founder & Director', color: 'from-veda-accent to-amber-500' },
+        { name: 'Mandeep Sharma', role: 'Founder & Director', color: 'from-veda-accent to-amber-500', image: '/images/team/mandeep-sharma.png' },
         { name: 'Jatinder Pal', role: 'Marketing & Support', color: 'from-veda-primary to-veda-primary-dark' },
-        { name: 'Parul', role: 'Legal & Policy Advisor', color: 'from-veda-playful-green to-green-600' },
-        { name: 'Pooja Chauhan', role: 'Admission & Outreach', color: 'from-veda-playful-peach to-rose-400' },
-        { name: 'Kanika', role: 'Pedagogy & Training Head', color: 'from-veda-playful-blue to-blue-500' },
-        { name: 'Sukhmani Kaur', role: 'Academic Learning & Development', color: 'from-veda-secondary-dark to-purple-600' },
-        { name: 'Drishti Chugh', role: 'Parenting & Child Development Coach', color: 'from-veda-accent to-amber-500' },
+        { name: 'Parul', role: 'Legal & Policy Advisor', color: 'from-veda-playful-green to-green-600', image: '/images/team/parul.jpg' },
+        { name: 'Pooja Chauhan', role: 'Admission & Outreach', color: 'from-veda-playful-peach to-rose-400', image: '/images/team/pooja-chauhan.jpg' },
+
+        { name: 'Drishti Chugh', role: 'Parenting & Child Development Coach', color: 'from-veda-accent to-amber-500', image: '/images/team/drishti-chugh.jpg?v=2' },
     ];
 
     return (
@@ -278,10 +277,16 @@ export default function AboutPage() {
                 <div className="max-w-[1400px] mx-auto">
                     <div className="flex flex-wrap justify-center gap-6 text-center">
                         {leaders.map((leader, idx) => (
-                            <div key={idx} className="anim-leader-card w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] bg-white rounded-2xl p-5 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
-                                <div className={`w-20 h-20 bg-gradient-to-br ${leader.color} rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl text-white font-bold shadow-lg group-hover:scale-110 transition-transform`}>
-                                    <span>{leader.name.charAt(0)}</span>
-                                </div>
+                            <div key={idx} className="anim-leader-card w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[180px] bg-white rounded-2xl p-5 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
+                                {leader.image ? (
+                                    <div className="w-20 h-20 rounded-2xl mx-auto mb-4 overflow-hidden shadow-lg group-hover:scale-110 transition-transform">
+                                        <img src={leader.image} alt={leader.name} className="w-full h-full object-cover object-top" />
+                                    </div>
+                                ) : (
+                                    <div className={`w-20 h-20 bg-gradient-to-br ${leader.color} rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl text-white font-bold shadow-lg group-hover:scale-110 transition-transform`}>
+                                        <span>{leader.name.charAt(0)}</span>
+                                    </div>
+                                )}
                                 <h3 className="text-lg font-bold text-veda-text-heading mb-1 font-poppins">{leader.name}</h3>
                                 <p className="text-sm text-veda-text-muted font-medium uppercase tracking-wider">{leader.role}</p>
                             </div>
