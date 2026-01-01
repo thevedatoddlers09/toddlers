@@ -37,6 +37,22 @@ const allActivities = [
     { id: 118, title: 'Summer Camp Earth Day', category: 'Summer Camp', image: '/images/activities/summer-camp-8.jpg' },
     { id: 119, title: 'Summer Camp Fun', category: 'Summer Camp', image: '/images/activities/summer-camp-9.jpg' },
     { id: 120, title: 'Summer Camp Baking', category: 'Summer Camp', image: '/images/activities/summer-camp-10.jpg' },
+    { id: 121, title: 'Summer Camp Dinosaur', category: 'Summer Camp', image: '/images/activities/summer-camp-11.jpg' },
+    { id: 122, title: 'Summer Camp Jurassic', category: 'Summer Camp', image: '/images/activities/summer-camp-12.jpg' },
+    // Van Mahotsav
+    { id: 123, title: 'Van Mahotsav Tree Craft', category: 'Van Mahotsav', image: '/images/activities/van-mahotsav-1.jpg' },
+    { id: 124, title: 'Van Mahotsav Art', category: 'Van Mahotsav', image: '/images/activities/van-mahotsav-2.jpg' },
+    { id: 125, title: 'Van Mahotsav Drawings', category: 'Van Mahotsav', image: '/images/activities/van-mahotsav-3.jpg' },
+    { id: 126, title: 'Van Mahotsav Plant', category: 'Van Mahotsav', image: '/images/activities/van-mahotsav-4.jpg' },
+    { id: 127, title: 'Van Mahotsav Leaf Art', category: 'Van Mahotsav', image: '/images/activities/van-mahotsav-5.jpg' },
+    // Friendship Day
+    { id: 128, title: 'Friendship Day Best Friends', category: 'Friendship Day', image: '/images/activities/friendship-day-1.jpg' },
+    { id: 129, title: 'Friendship Day Boys', category: 'Friendship Day', image: '/images/activities/friendship-day-2.jpg' },
+    { id: 130, title: 'Friendship Day Together', category: 'Friendship Day', image: '/images/activities/friendship-day-3.jpg' },
+    { id: 131, title: 'Friendship Day Class', category: 'Friendship Day', image: '/images/activities/friendship-day-4.jpg' },
+    { id: 132, title: 'Friendship Day Hearts', category: 'Friendship Day', image: '/images/activities/friendship-day-5.jpg' },
+    { id: 133, title: 'Friendship Day Card', category: 'Friendship Day', image: '/images/activities/friendship-day-6.jpg' },
+    { id: 134, title: 'Friendship Day Bands', category: 'Friendship Day', image: '/images/activities/friendship-day-7.jpg' },
 ];
 
 const categories = [
