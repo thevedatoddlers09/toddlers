@@ -69,6 +69,16 @@ const allActivities = [
     { id: 147, title: 'World Food Day Bhel Puri Making', category: 'World Food Day', image: '/images/activities/world-food-day-6.jpg' },
     // World Post Day
     { id: 145, title: 'World Post Day Kids', category: 'World Post Day', image: '/images/activities/world-post-day-1.jpg' },
+    { id: 161, title: 'World Post Day Postman', category: 'World Post Day', image: '/images/activities/world-post-day-2.jpg' },
+    { id: 162, title: 'World Post Day Teacher', category: 'World Post Day', image: '/images/activities/world-post-day-3.jpg' },
+    { id: 163, title: 'World Post Day Letter', category: 'World Post Day', image: '/images/activities/world-post-day-4.jpg' },
+    { id: 164, title: 'World Post Day Mailbox', category: 'World Post Day', image: '/images/activities/world-post-day-5.jpg' },
+    { id: 165, title: 'World Post Day Group', category: 'World Post Day', image: '/images/activities/world-post-day-6.jpg' },
+    { id: 166, title: 'World Post Day Boy Letter', category: 'World Post Day', image: '/images/activities/world-post-day-7.jpg' },
+    { id: 167, title: 'World Post Day Girl Mailbox', category: 'World Post Day', image: '/images/activities/world-post-day-8.jpg' },
+    { id: 168, title: 'World Post Day Stamp', category: 'World Post Day', image: '/images/activities/world-post-day-9.jpg' },
+    { id: 169, title: 'World Post Day Postcard', category: 'World Post Day', image: '/images/activities/world-post-day-10.jpg' },
+    { id: 170, title: 'World Post Day Classroom', category: 'World Post Day', image: '/images/activities/world-post-day-11.jpg' },
     // Messy Play
     { id: 148, title: 'Messy Play Kids Painting', category: 'Messy Play', image: '/images/activities/messy-play-1.jpg' },
     { id: 149, title: 'Messy Play Paint Colors', category: 'Messy Play', image: '/images/activities/messy-play-2.jpg' },
