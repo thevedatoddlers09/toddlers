@@ -277,13 +277,13 @@ export default function AboutPage() {
                 <div className="max-w-[1400px] mx-auto">
                     <div className="flex flex-wrap justify-center gap-6 text-center">
                         {leaders.map((leader, idx) => (
-                            <div key={idx} className="anim-leader-card w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[180px] bg-white rounded-2xl p-5 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
+                            <div key={idx} className="anim-leader-card w-[calc(50%-12px)] sm:w-[220px] lg:w-[220px] bg-white rounded-2xl p-6 shadow-soft border border-veda-border hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group">
                                 {leader.image ? (
-                                    <div className="w-20 h-20 rounded-2xl mx-auto mb-4 overflow-hidden shadow-lg group-hover:scale-110 transition-transform">
+                                    <div className="w-28 h-28 rounded-2xl mx-auto mb-4 overflow-hidden shadow-lg group-hover:scale-110 transition-transform">
                                         <img src={leader.image} alt={leader.name} className="w-full h-full object-cover object-top" />
                                     </div>
                                 ) : (
-                                    <div className={`w-20 h-20 bg-gradient-to-br ${leader.color} rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl text-white font-bold shadow-lg group-hover:scale-110 transition-transform`}>
+                                    <div className={`w-28 h-28 bg-gradient-to-br ${leader.color} rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl text-white font-bold shadow-lg group-hover:scale-110 transition-transform`}>
                                         <span>{leader.name.charAt(0)}</span>
                                     </div>
                                 )}
