@@ -60,6 +60,13 @@ const allActivities = [
     { id: 138, title: 'MRIS Dance', category: 'Visit to MRIS', image: '/images/activities/visit-mris-4.jpg' },
     { id: 139, title: 'MRIS Tree', category: 'Visit to MRIS', image: '/images/activities/visit-mris-5.jpg' },
     { id: 140, title: 'MRIS Library', category: 'Visit to MRIS', image: '/images/activities/visit-mris-6.jpg' },
+    // World Food Day
+    { id: 141, title: 'World Food Day Chef', category: 'World Food Day', image: '/images/activities/world-food-day-1.jpg' },
+    { id: 142, title: 'World Food Day Cooking', category: 'World Food Day', image: '/images/activities/world-food-day-2.jpg' },
+    { id: 143, title: 'World Food Day Activity', category: 'World Food Day', image: '/images/activities/world-food-day-3.jpg' },
+    { id: 144, title: 'World Food Day Sandwich', category: 'World Food Day', image: '/images/activities/world-food-day-4.jpg' },
+    // World Post Day
+    { id: 145, title: 'World Post Day Kids', category: 'World Post Day', image: '/images/activities/world-post-day-1.jpg' },
 ];
 
 const categories = [
