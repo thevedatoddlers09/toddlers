@@ -65,8 +65,25 @@ const allActivities = [
     { id: 142, title: 'World Food Day Cooking', category: 'World Food Day', image: '/images/activities/world-food-day-2.jpg' },
     { id: 143, title: 'World Food Day Activity', category: 'World Food Day', image: '/images/activities/world-food-day-3.jpg' },
     { id: 144, title: 'World Food Day Sandwich', category: 'World Food Day', image: '/images/activities/world-food-day-4.jpg' },
+    { id: 146, title: 'World Food Day Bhel Puri Setup', category: 'World Food Day', image: '/images/activities/world-food-day-5.jpg' },
+    { id: 147, title: 'World Food Day Bhel Puri Making', category: 'World Food Day', image: '/images/activities/world-food-day-6.jpg' },
     // World Post Day
     { id: 145, title: 'World Post Day Kids', category: 'World Post Day', image: '/images/activities/world-post-day-1.jpg' },
+    // Messy Play
+    { id: 148, title: 'Messy Play Kids Painting', category: 'Messy Play', image: '/images/activities/messy-play-1.jpg' },
+    { id: 149, title: 'Messy Play Paint Colors', category: 'Messy Play', image: '/images/activities/messy-play-2.jpg' },
+    { id: 150, title: 'Messy Play Girls Painting', category: 'Messy Play', image: '/images/activities/messy-play-3.jpg' },
+    { id: 151, title: 'Messy Play Roller Fun', category: 'Messy Play', image: '/images/activities/messy-play-4.jpg' },
+    { id: 152, title: 'Messy Play Group Activity', category: 'Messy Play', image: '/images/activities/messy-play-5.jpg' },
+    // Shadow Play
+    { id: 153, title: 'Shadow Play Galaxy Girl', category: 'Shadow Play', image: '/images/activities/shadow-play-1.jpg' },
+    { id: 154, title: 'Shadow Play Starlight Boy', category: 'Shadow Play', image: '/images/activities/shadow-play-2.jpg' },
+    { id: 155, title: 'Shadow Play Green Glow', category: 'Shadow Play', image: '/images/activities/shadow-play-3.jpg' },
+    { id: 156, title: 'Shadow Play Hand Shadows', category: 'Shadow Play', image: '/images/activities/shadow-play-4.jpg' },
+    { id: 157, title: 'Shadow Play Classroom', category: 'Shadow Play', image: '/images/activities/shadow-play-5.jpg' },
+    { id: 158, title: 'Shadow Play Cup Craft', category: 'Shadow Play', image: '/images/activities/shadow-play-6.jpg' },
+    { id: 159, title: 'Shadow Play Projector Boy', category: 'Shadow Play', image: '/images/activities/shadow-play-7.jpg' },
+    { id: 160, title: 'Shadow Play Projector Girl', category: 'Shadow Play', image: '/images/activities/shadow-play-8.jpg' },
 ];
 
 const categories = [
