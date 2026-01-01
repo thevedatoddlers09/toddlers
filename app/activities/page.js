@@ -5,10 +5,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const allActivities = [
-    // Thematic Learning
-    { id: 1, title: 'Red Color Day', category: 'Thematic Learning', image: 'https://images.unsplash.com/photo-1544815610-1e5631247480?w=600&q=80' },
-    { id: 2, title: 'Earth Day Planting', category: 'Thematic Learning', image: 'https://images.unsplash.com/photo-1503919545885-7f4ab0213719?w=600&q=80' },
-    { id: 3, title: 'Basant Panchami', category: 'Thematic Learning', image: 'https://images.unsplash.com/photo-1502086223501-636a25424750?w=600&q=80' },
+    // Bloomer Camp
+    { id: 1, title: 'Pirate Party Day 10', category: 'Bloomer Camp', image: '/images/activities/bloomer-camp-1.jpg' },
+    { id: 2, title: 'Pirate Party Kids', category: 'Bloomer Camp', image: '/images/activities/bloomer-camp-2.jpg' },
+    { id: 3, title: 'Pirate Party Fun', category: 'Bloomer Camp', image: '/images/activities/bloomer-camp-3.jpg' },
+    { id: 101, title: 'Pirate Party Group', category: 'Bloomer Camp', image: '/images/activities/bloomer-camp-4.jpg' },
     // Excursions
     { id: 4, title: 'Rail Museum Visit', category: 'Excursions', image: 'https://images.unsplash.com/photo-1478131333786-8c7604f32997?w=600&q=80' },
     { id: 5, title: 'Day at the Zoo', category: 'Excursions', image: 'https://images.unsplash.com/photo-1534568759974-a2a5efbc647c?w=600&q=80' },
@@ -19,14 +20,14 @@ const allActivities = [
 ];
 
 const categories = [
-    'Thematic Learning',
+    'Bloomer Camp',
     'Excursions',
     'Skill Development',
 ];
 
 export default function ActivitiesPage() {
     const mainRef = useRef(null);
-    const [activeFilter, setActiveFilter] = useState('Thematic Learning');
+    const [activeFilter, setActiveFilter] = useState('Bloomer Camp');
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -97,16 +98,16 @@ export default function ActivitiesPage() {
             </section>
 
             <section className="px-4 pb-24">
-                <div className="anim-photo-grid max-w-[1400px] mx-auto columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4">
+                <div className="anim-photo-grid max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                     {filteredActivities.map((activity) => (
                         <div
                             key={activity.id}
-                            className="anim-photo-card mb-4 break-inside-avoid group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300"
+                            className="anim-photo-card aspect-[3/4] group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300"
                         >
                             <img
                                 src={activity.image}
                                 alt={activity.title}
-                                className="w-full h-auto object-cover block group-hover:scale-105 transition-transform duration-500"
+                                className="w-full h-full object-cover object-top block group-hover:scale-105 transition-transform duration-500"
                             />
                         </div>
                     ))}
