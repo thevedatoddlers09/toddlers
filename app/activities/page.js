@@ -10,9 +10,11 @@ const allActivities = [
     { id: 2, title: 'Pirate Party Kids', category: 'Bloomer Camp', image: '/images/activities/bloomer-camp-2.jpg' },
     { id: 3, title: 'Pirate Party Fun', category: 'Bloomer Camp', image: '/images/activities/bloomer-camp-3.jpg' },
     { id: 101, title: 'Pirate Party Group', category: 'Bloomer Camp', image: '/images/activities/bloomer-camp-4.jpg' },
-    // Excursions
-    { id: 4, title: 'Rail Museum Visit', category: 'Excursions', image: 'https://images.unsplash.com/photo-1478131333786-8c7604f32997?w=600&q=80' },
-    { id: 5, title: 'Day at the Zoo', category: 'Excursions', image: 'https://images.unsplash.com/photo-1534568759974-a2a5efbc647c?w=600&q=80' },
+    // First Day
+    { id: 4, title: 'First Day Welcome', category: 'First Day', image: '/images/activities/first-day-1.jpg' },
+    { id: 5, title: 'First Day Fun', category: 'First Day', image: '/images/activities/first-day-2.jpg' },
+    { id: 102, title: 'First Day Kids', category: 'First Day', image: '/images/activities/first-day-3.jpg' },
+    { id: 103, title: 'First Day Hug', category: 'First Day', image: '/images/activities/first-day-4.jpg' },
     // Skill Development
     { id: 6, title: 'Airport Pretend Play', category: 'Skill Development', image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80' },
     { id: 7, title: 'Annual Sports Day', category: 'Skill Development', image: 'https://images.unsplash.com/photo-1545665277-5937bf8607e7?w=600&q=80' },
@@ -21,7 +23,7 @@ const allActivities = [
 
 const categories = [
     'Bloomer Camp',
-    'Excursions',
+    'First Day',
     'Skill Development',
 ];
 
