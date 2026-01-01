@@ -53,6 +53,13 @@ const allActivities = [
     { id: 132, title: 'Friendship Day Hearts', category: 'Friendship Day', image: '/images/activities/friendship-day-5.jpg' },
     { id: 133, title: 'Friendship Day Card', category: 'Friendship Day', image: '/images/activities/friendship-day-6.jpg' },
     { id: 134, title: 'Friendship Day Bands', category: 'Friendship Day', image: '/images/activities/friendship-day-7.jpg' },
+    // Visit to MRIS
+    { id: 135, title: 'MRIS Puppet Show', category: 'Visit to MRIS', image: '/images/activities/visit-mris-1.jpg' },
+    { id: 136, title: 'MRIS Group Photo', category: 'Visit to MRIS', image: '/images/activities/visit-mris-2.jpg' },
+    { id: 137, title: 'MRIS Tour', category: 'Visit to MRIS', image: '/images/activities/visit-mris-3.jpg' },
+    { id: 138, title: 'MRIS Dance', category: 'Visit to MRIS', image: '/images/activities/visit-mris-4.jpg' },
+    { id: 139, title: 'MRIS Tree', category: 'Visit to MRIS', image: '/images/activities/visit-mris-5.jpg' },
+    { id: 140, title: 'MRIS Library', category: 'Visit to MRIS', image: '/images/activities/visit-mris-6.jpg' },
 ];
 
 const categories = [
