@@ -148,7 +148,7 @@ export default function AboutPage() {
     // Leadership Data
     const leaders = [
         { name: 'Mandeep Sharma', role: 'Founder & Director', color: 'from-veda-accent to-amber-500', image: '/images/team/mandeep-sharma.png' },
-        { name: 'Jatinder Pal', role: 'Marketing & Support', color: 'from-veda-primary to-veda-primary-dark' },
+        { name: 'Jatinder Pal', role: 'Marketing & Support', color: 'from-veda-primary to-veda-primary-dark', image: '/images/team/jatinder-pal.png' },
         { name: 'Parul', role: 'Legal & Policy Advisor', color: 'from-veda-playful-green to-green-600', image: '/images/team/parul.jpg' },
         { name: 'Pooja Chauhan', role: 'Admission & Outreach', color: 'from-veda-playful-peach to-rose-400', image: '/images/team/pooja-chauhan.jpg' },
 
