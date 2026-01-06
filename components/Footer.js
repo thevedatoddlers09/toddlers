@@ -114,7 +114,7 @@ export default function Footer() {
                                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-veda-accent hover:text-veda-primary-dark transition-all">
                                     <Facebook size={20} />
                                 </a>
-                                <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-veda-playful-peach hover:text-white transition-all">
+                                <a href="https://www.instagram.com/thevedatoddlers_sector105/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-veda-playful-peach hover:text-white transition-all">
                                     <Instagram size={20} />
                                 </a>
                                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
