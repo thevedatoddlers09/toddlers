@@ -10,21 +10,21 @@ const slides = [
         title: { main: "", accent: "" },
         subtitle: "",
         cta: "",
-        image: "/images/carousel-team-1.jpg",
+        image: "/images/carousel-event-1.jpg",
     },
     {
         id: 2,
         title: { main: "", accent: "" },
         subtitle: "",
         cta: "",
-        image: "/images/carousel-team-2.jpg",
+        image: "/images/carousel-event-2.jpg",
     },
     {
         id: 3,
-        title: { main: "Safe & Secure", accent: "Environment" },
-        subtitle: "CCTV monitored campuses with child-safe infrastructure and loving teachers.",
-        cta: "Visit Us",
-        image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+        title: { main: "", accent: "" },
+        subtitle: "",
+        cta: "",
+        image: "/images/carousel-event-3.jpg",
     },
 ];
 
