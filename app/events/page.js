@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const allEvents = [
+    // Baisakhi
     { id: 1, title: 'Baisakhi Celebration', category: 'Baisakhi', image: '/images/events/baisakhi-1.jpg', rotate: 270 },
     { id: 101, title: 'Baisakhi Dance', category: 'Baisakhi', image: '/images/events/baisakhi-2.jpg', rotate: 270 },
     { id: 102, title: 'Baisakhi Dhol', category: 'Baisakhi', image: '/images/events/baisakhi-3.jpg', rotate: 270 },
@@ -17,6 +18,8 @@ const allEvents = [
     { id: 111, title: 'Baisakhi Mother Child', category: 'Baisakhi', image: '/images/events/baisakhi-12.jpg', rotate: 270 },
     { id: 112, title: 'Baisakhi Pink Dress', category: 'Baisakhi', image: '/images/events/baisakhi-13.jpg', rotate: 270 },
     { id: 113, title: 'Baisakhi Art', category: 'Baisakhi', image: '/images/events/baisakhi-14.jpg' },
+
+    // Sports Day
     { id: 2, title: 'Sports Day Warmup', category: 'Sports Day', image: '/images/events/sports-1.jpg' },
     { id: 201, title: 'Sports Day Guests', category: 'Sports Day', image: '/images/events/sports-2.jpg' },
     { id: 202, title: 'Sports Day Race', category: 'Sports Day', image: '/images/events/sports-3.jpg' },
@@ -33,6 +36,8 @@ const allEvents = [
     { id: 213, title: 'Sports Day March', category: 'Sports Day', image: '/images/events/sports-14.jpg' },
     { id: 214, title: 'Sports Day Football', category: 'Sports Day', image: '/images/events/sports-15.jpg' },
     { id: 215, title: 'Sports Day Team', category: 'Sports Day', image: '/images/events/sports-16.jpg' },
+
+    // Ramleela
     { id: 3, title: 'Ramleela Stage', category: 'Ramleela', image: '/images/events/ramleela-1.jpg' },
     { id: 301, title: 'Ramleela Girls', category: 'Ramleela', image: '/images/events/ramleela-2.jpg' },
     { id: 302, title: 'Ramleela Group', category: 'Ramleela', image: '/images/events/ramleela-3.jpg' },
@@ -41,8 +46,19 @@ const allEvents = [
     { id: 305, title: 'Ramleela Performer', category: 'Ramleela', image: '/images/events/ramleela-6.png' },
     { id: 306, title: 'Ramleela Ravan', category: 'Ramleela', image: '/images/events/ramleela-7.png' },
     { id: 307, title: 'Ramleela Dance', category: 'Ramleela', image: '/images/events/ramleela-8.png' },
-    { id: 4, title: 'Alphabet Ramp Walk', category: 'Annual Day', image: 'https://images.unsplash.com/photo-1503919545885-7f4ab0213719?w=600&q=80' },
-    { id: 5, title: 'Annual Day', category: 'Annual Day', image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80' },
+
+    // Parent Teacher Meeting
+    { id: 114, title: 'PTM Presentation', category: 'Parent Teacher Meeting', image: '/images/events/ptm-5.jpg' },
+    { id: 115, title: 'PTM Felicitation', category: 'Parent Teacher Meeting', image: '/images/events/ptm-6.jpg' },
+    { id: 116, title: 'PTM Kids Performance', category: 'Parent Teacher Meeting', image: '/images/events/ptm-7.jpg' },
+    { id: 117, title: 'PTM Students', category: 'Parent Teacher Meeting', image: '/images/events/ptm-8.jpg' },
+    { id: 118, title: 'PTM Award Ceremony', category: 'Parent Teacher Meeting', image: '/images/events/ptm-9.jpg' },
+    { id: 119, title: 'PTM Kids Dance', category: 'Parent Teacher Meeting', image: '/images/events/ptm-10.jpg' },
+    { id: 120, title: 'PTM Recognition', category: 'Parent Teacher Meeting', image: '/images/events/ptm-11.jpg' },
+    { id: 121, title: 'PTM Kids', category: 'Parent Teacher Meeting', image: '/images/events/ptm-12.jpg' },
+    { id: 122, title: 'PTM Address', category: 'Parent Teacher Meeting', image: '/images/events/ptm-13.jpg' },
+
+    // Mother's Day
     { id: 6, title: "Mother's Day Celebration", category: "Mother's Day", image: '/images/events/mothers-day-1.png' },
     { id: 601, title: "Mother's Day Event", category: "Mother's Day", image: '/images/events/mothers-day-2.png' },
     { id: 602, title: "Mother's Day Special", category: "Mother's Day", image: '/images/events/mothers-day-3.png' },
@@ -55,27 +71,6 @@ const allEvents = [
     { id: 609, title: "Mother's Day Group", category: "Mother's Day", image: '/images/events/mothers-day-10.png' },
     { id: 610, title: "Mother's Day Speech", category: "Mother's Day", image: '/images/events/mothers-day-11.png' },
     { id: 611, title: "Mother's Day Cake Cutting", category: "Mother's Day", image: '/images/events/mothers-day-12.png' },
-    { id: 8, title: 'Dandiya Dhamaal', category: 'Dandiya Dhamaal', image: 'https://images.unsplash.com/photo-1596464716127-f9a0639b9de0?w=600&q=80' },
-    { id: 9, title: 'Graduation Day', category: 'Graduation Day', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80' },
-    { id: 10, title: 'Grand Parents Day', category: 'Grand Parents Day', image: 'https://images.unsplash.com/photo-1542036720-bc2f605a6a20?w=600&q=80' },
-
-    { id: 114, title: 'PTM Presentation', category: 'Parent Teacher Meeting', image: '/images/events/ptm-5.jpg' },
-    { id: 115, title: 'PTM Felicitation', category: 'Parent Teacher Meeting', image: '/images/events/ptm-6.jpg' },
-    { id: 116, title: 'PTM Kids Performance', category: 'Parent Teacher Meeting', image: '/images/events/ptm-7.jpg' },
-    { id: 117, title: 'PTM Students', category: 'Parent Teacher Meeting', image: '/images/events/ptm-8.jpg' },
-    { id: 118, title: 'PTM Award Ceremony', category: 'Parent Teacher Meeting', image: '/images/events/ptm-9.jpg' },
-    { id: 119, title: 'PTM Kids Dance', category: 'Parent Teacher Meeting', image: '/images/events/ptm-10.jpg' },
-    { id: 120, title: 'PTM Recognition', category: 'Parent Teacher Meeting', image: '/images/events/ptm-11.jpg' },
-    { id: 121, title: 'PTM Kids', category: 'Parent Teacher Meeting', image: '/images/events/ptm-12.jpg' },
-    { id: 122, title: 'PTM Address', category: 'Parent Teacher Meeting', image: '/images/events/ptm-13.jpg' },
-    { id: 12, title: 'Ram Mandir Inauguration', category: 'Cultural', image: 'https://images.unsplash.com/photo-1516083151740-1addfa71761e?w=600&q=80' },
-    { id: 13, title: 'Christmas Carnival', category: 'Christmas Carnival', image: 'https://images.unsplash.com/photo-1512389142860-9c449e58a814?w=600&q=80' },
-    { id: 14, title: 'Dussehra Celebration', category: 'Dussehra Celebration', image: 'https://images.unsplash.com/photo-1574095010310-6e4e4eacf03d?w=600&q=80' },
-    { id: 15, title: 'Halloween Party', category: 'Halloween Party', image: 'https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=600&q=80' },
-    { id: 16, title: 'Independence Day', category: 'Independence Day', image: 'https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=600&q=80' },
-    { id: 17, title: 'Janmashtami Celebration', category: 'Janmashtami Celebration', image: 'https://images.unsplash.com/photo-1596464716070-c8b39f9f0839?w=600&q=80' },
-    { id: 18, title: 'The Great Indian Kids Festival', category: 'Festival', image: 'https://images.unsplash.com/photo-1559818454-1b46997bfe30?w=600&q=80' },
-    { id: 19, title: 'Utsav The Diwali Fest', category: 'Diwali', image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&q=80' },
 ];
 
 const categories = [
@@ -84,11 +79,6 @@ const categories = [
     'Ramleela',
     'Parent Teacher Meeting',
     "Mother's Day",
-    'Dandiya Dhamaal',
-    'Graduation Day',
-    'Grand Parents Day',
-    'Annual Day',
-    'Diwali',
 ];
 
 export default function EventsPage() {
