@@ -70,14 +70,20 @@ export default function HeroCarousel() {
                 return (
                     <div
                         key={slide.id}
-                        className={`absolute top-0 left-0 w-full h-full flex items-center justify-center text-center px-[3%] transition-opacity duration-700 ease-out bg-cover bg-center ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0'}`}
-                        style={{
-                            backgroundImage: hasText
-                                ? `linear-gradient(to bottom, rgba(62, 42, 79, 0.5), rgba(42, 27, 56, 0.7)), url(${slide.image})`
-                                : `url(${slide.image})`,
-                        }}
+                        className={`absolute top-0 left-0 w-full h-full flex items-center justify-center text-center transition-opacity duration-700 ease-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0'}`}
                     >
-                        <div ref={index === currentSlide ? contentRef : null} className="relative z-20 max-w-3xl">
+                        {/* Background Image with consistent cropping */}
+                        <img
+                            src={slide.image}
+                            alt={slide.title.main || "Carousel image"}
+                            className="absolute inset-0 w-full h-full object-cover object-center"
+                            style={{ objectPosition: 'center 30%' }}
+                        />
+                        {/* Overlay for text readability */}
+                        {hasText && (
+                            <div className="absolute inset-0 bg-gradient-to-b from-[rgba(62,42,79,0.5)] to-[rgba(42,27,56,0.7)]" />
+                        )}
+                        <div ref={index === currentSlide ? contentRef : null} className="relative z-20 max-w-3xl px-[3%]">
                             <h1 className="text-3xl md:text-5xl text-white mb-5 font-bold font-poppins leading-tight">
                                 {slide.title.main} <span className="text-veda-accent">{slide.title.accent}</span>
                             </h1>
