@@ -85,10 +85,11 @@ export default function ProgramsPage() {
 
     // Pre-School Levels
     const preschoolLevels = [
-        { name: 'Playgroup', age: '1.5 - 2.5 Years', desc: 'First steps into social learning', Icon: Smile, color: 'text-rose-600', bg: 'bg-rose-100', border: 'border-rose-200' },
-        { name: 'Nursery', age: '2.5 - 3.5 Years', desc: 'Building curiosity & creativity', Icon: Sparkles, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' },
-        { name: 'Junior KG', age: '3.5 - 4.5 Years', desc: 'Foundation for early learning', Icon: BookOpen, color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
-        { name: 'Senior KG', age: '4.5 - 5.5 Years', desc: 'Preparing for formal schooling', Icon: GraduationCap, color: 'text-purple-600', bg: 'bg-purple-100', border: 'border-purple-200' },
+        { name: 'Seeding', age: '1 - 2 Years', desc: 'First steps into social learning', Icon: Smile, color: 'text-rose-600', bg: 'bg-rose-100', border: 'border-rose-200' },
+        { name: 'Sprout', age: '2 - 3 Years', desc: 'Building curiosity & creativity', Icon: Sprout, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' },
+        { name: 'Explorers', age: '3 - 4 Years', desc: 'Foundation for early learning', Icon: Rocket, color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
+        { name: 'Creators', age: '4 - 5 Years', desc: 'Preparing for formal schooling', Icon: PenTool, color: 'text-purple-600', bg: 'bg-purple-100', border: 'border-purple-200' },
+        { name: 'Leaders', age: '5 - 6 Years', desc: 'Ready to lead and excel', Icon: GraduationCap, color: 'text-amber-600', bg: 'bg-amber-100', border: 'border-amber-200' },
     ];
 
     // After-School Activities
@@ -168,11 +169,11 @@ export default function ProgramsPage() {
                             </div>
                             <div>
                                 <h3 className="text-3xl font-bold font-poppins text-veda-text-heading">Pre-School Programme</h3>
-                                <p className="text-rose-600 font-medium">For Little Learners (1.5 to 5.5 Years)</p>
+                                <p className="text-rose-600 font-medium">For Little Learners (1 to 6 Years)</p>
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
                             {preschoolLevels.map((level, idx) => (
                                 <div key={idx} className="anim-level-card relative">
                                     {/* Line connector for desktop */}

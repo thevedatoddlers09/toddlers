@@ -215,7 +215,7 @@ export default function Home() {
               </div>
               <div className="mt-8 pt-6 border-t border-veda-secondary">
                 <h3 className="text-xl font-bold text-veda-primary font-poppins">Mandeep Sharma</h3>
-                <p className="text-veda-accent font-semibold">(Principal, The Veda Toddlers)</p>
+                <p className="text-veda-accent font-semibold">(Founder & Director, The Veda Toddlers)</p>
               </div>
             </div>
           </div>
