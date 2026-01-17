@@ -25,8 +25,8 @@ export default function StatsCounter() {
     const hasAnimated = useRef(false);
 
     const stats = [
-        { key: 'teachers', target: 18, label: 'Qualified Teachers', Icon: GraduationCap },
-        { key: 'experience', target: 20, label: 'Years Of Experience', Icon: Award },
+        { key: 'teachers', target: 40, label: 'Qualified Teachers', Icon: GraduationCap },
+        { key: 'experience', target: 15, label: 'Years Of Experience', Icon: Award },
         { key: 'students', target: 2850, label: 'Students Enrolled', Icon: Users }
     ];
 

@@ -48,7 +48,7 @@ export default function Footer() {
                     {/* Column 3: Address & Timings */}
                     <div>
                         <h3 className="text-veda-accent text-lg font-bold mb-5">
-                            Address
+                            Head office
                         </h3>
                         <div className="space-y-4 font-opensans text-base">
                             <div className="flex items-start gap-3">
@@ -63,9 +63,15 @@ export default function Footer() {
                         <h3 className="text-veda-accent text-lg font-bold mt-6 mb-4">
                             Timings
                         </h3>
-                        <div className="flex items-center gap-3 font-opensans text-base">
-                            <Clock size={20} className="text-veda-playful-peach flex-shrink-0" />
-                            <p className="text-white">9:00 a.m. to 2:00 p.m.</p>
+                        <div className="space-y-2 font-opensans text-base">
+                            <div className="flex items-center gap-3">
+                                <Clock size={20} className="text-veda-playful-peach flex-shrink-0" />
+                                <p className="text-white"><span className="font-medium">School:</span> 9:00 a.m. to 2:00 p.m.</p>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <Clock size={20} className="text-veda-playful-peach flex-shrink-0" />
+                                <p className="text-white"><span className="font-medium">Daycare:</span> 9:00 a.m. to 6:00 p.m.</p>
+                            </div>
                         </div>
 
                         <h3 className="text-veda-accent text-lg font-bold mt-6 mb-4">

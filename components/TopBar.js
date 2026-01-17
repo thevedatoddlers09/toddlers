@@ -5,8 +5,9 @@ export default function TopBar() {
         { Icon: Phone, text: '+91-8968688486' },
         { Icon: Mail, text: 'info@vedatoddlers.com' },
         { Icon: MapPin, text: 'CPM 61, Sector 105 Emaar, Mohali' },
-        { Icon: Clock, text: '9:00 a.m. to 2:00 p.m.' },
-        { Icon: Phone, text: '+91-8968688486' },
+        { Icon: Clock, text: 'School: 9:00 a.m. to 2:00 p.m.' },
+        { Icon: Clock, text: 'Daycare: 9:00 a.m. to 6:00 p.m.' },
+        { Icon: Phone, text: '+91-8728000886' },
     ];
 
     // Duplicate items for seamless loop
