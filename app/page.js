@@ -227,7 +227,7 @@ export default function Home() {
         <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Why Choose Us?</h2>
         <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Discover what makes The Veda Toddlers the perfect choice for your child's early education</p>
         <div className="flex flex-wrap justify-center gap-6">
-          {/* Award Winning Curriculum - Golden Theme */}
+          {/* Kidora Curriculum - Golden Theme */}
           <div className="anim-why-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
             <div className="relative bg-gradient-to-br from-veda-accent/10 via-white to-veda-accent/5 rounded-2xl p-6 h-full border border-veda-accent/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-veda-accent/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
@@ -236,13 +236,13 @@ export default function Home() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-accent to-veda-accent-dark text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                   <Award size={30} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Award Winning Curriculum</h3>
-                <p className="text-veda-text-muted text-base text-center leading-relaxed">Designed by experts to foster holistic development through play-based learning.</p>
+                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Kidora Curriculum</h3>
+                <p className="text-veda-text-muted text-base text-center leading-relaxed">A research-backed curriculum designed to nurture cognitive, social, and emotional growth through age-appropriate activities.</p>
               </div>
             </div>
           </div>
 
-          {/* Safe & Secure - Green Theme */}
+          {/* Joyful Learning - Green Theme */}
           <div className="anim-why-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
             <div className="relative bg-gradient-to-br from-veda-playful-green/15 via-white to-veda-playful-green/5 rounded-2xl p-6 h-full border border-veda-playful-green/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
               <div className="absolute top-0 right-0 w-20 h-20 bg-veda-playful-green/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
@@ -250,42 +250,42 @@ export default function Home() {
               <div className="absolute top-1/2 right-4 w-2 h-2 bg-veda-playful-green/20 rounded-full"></div>
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-playful-green to-green-600 text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <ShieldCheck size={30} />
+                  <Heart size={30} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Safe & Secure</h3>
-                <p className="text-veda-text-muted text-base text-center leading-relaxed">CCTV monitored facilities and child-safe infrastructure for peace of mind.</p>
+                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Joyful Learning</h3>
+                <p className="text-veda-text-muted text-base text-center leading-relaxed">Learning through play, music, and exploration that makes every day exciting and keeps children naturally curious.</p>
               </div>
             </div>
           </div>
 
-          {/* Passionate Educators - Peach Theme */}
+          {/* Imagination Based Learning - Peach Theme */}
           <div className="anim-why-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
             <div className="relative bg-gradient-to-br from-veda-playful-peach/15 via-white to-rose-50 rounded-2xl p-6 h-full border border-veda-playful-peach/20 shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
               <div className="absolute top-4 right-4 text-veda-playful-peach/20">
-                <Heart size={60} />
+                <Flower2 size={60} />
               </div>
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-playful-peach to-rose-400 text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <Heart size={30} />
+                  <Flower2 size={30} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Passionate Educators</h3>
-                <p className="text-veda-text-muted text-base text-center leading-relaxed">Highly trained teachers who treat every child with love and care.</p>
+                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Imagination Based Learning</h3>
+                <p className="text-veda-text-muted text-base text-center leading-relaxed">Encouraging creative thinking through storytelling, art, and pretend play that sparks innovation and self-expression.</p>
               </div>
             </div>
           </div>
 
-          {/* Seven Petal Approach - Purple Theme */}
+          {/* Global Approach with Indian Values - Purple Theme */}
           <div className="anim-why-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
             <div className="relative bg-gradient-to-br from-veda-secondary/40 via-white to-veda-secondary/20 rounded-2xl p-6 h-full border border-veda-secondary shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
               <div className="absolute -bottom-4 -right-4 text-veda-secondary/30">
-                <Flower2 size={80} />
+                <ShieldCheck size={80} />
               </div>
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-veda-primary to-veda-primary-dark text-white mx-auto mb-5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <Flower2 size={30} />
+                  <ShieldCheck size={30} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Seven Petal Approach</h3>
-                <p className="text-veda-text-muted text-base text-center leading-relaxed">Ensuring development across all key skills, senses, and abilities.</p>
+                <h3 className="text-xl font-bold mb-3 text-veda-text-heading text-center">Global Approach with Indian Values</h3>
+                <p className="text-veda-text-muted text-base text-center leading-relaxed">Blending international early education standards with cultural roots, traditions, and values that shape character.</p>
               </div>
             </div>
           </div>
