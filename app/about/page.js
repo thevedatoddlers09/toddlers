@@ -340,7 +340,7 @@ export default function AboutPage() {
                         {[
                             { text: 'AIP – Association of Indian Principals', subtitle: 'Top Ranked Early Years School in Mohali', image: '/images/aip-award.jpg' },
                             { text: 'Indian School Award', subtitle: 'Best Pre School with Holistic Development', image: '/images/indian-school-award.jpg' },
-                            { text: 'Advita Women Entrepreneur Award', subtitle: 'Most Promising Startup Award', image: '/images/advita-award.jpg' },
+                            { text: 'Advaita Women Entrepreneur Award', subtitle: 'Most Promising Startup Award', image: '/images/advita-award.jpg' },
                             { text: 'Star Education Award 2024', subtitle: 'Best Pre-School - Mohali', image: '/images/star-education-award.jpg' },
                             { text: 'Visionary Leader Award', subtitle: 'Tricity Women Entrepreneurs', image: '/images/visionary-leader-award.jpg' }
                         ].map((award, idx) => (
@@ -348,9 +348,9 @@ export default function AboutPage() {
                                 key={idx}
                                 className="anim-award-card w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] group"
                             >
-                                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full border border-veda-border/50">
+                                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full border border-veda-border/50 flex flex-col">
                                     {/* Image Container */}
-                                    <div className="relative h-56 sm:h-64 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100">
+                                    <div className="relative h-56 sm:h-64 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100 flex-shrink-0">
                                         <img
                                             src={award.image}
                                             alt={award.text}
@@ -361,7 +361,7 @@ export default function AboutPage() {
                                     </div>
 
                                     {/* Content Section */}
-                                    <div className="p-5 bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark relative min-h-[100px]">
+                                    <div className="p-5 bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark relative flex-grow flex flex-col justify-center">
                                         {/* Trophy Badge */}
                                         <div className="absolute -top-5 right-5 w-10 h-10 bg-veda-accent rounded-xl flex items-center justify-center shadow-xl">
                                             <Trophy size={18} className="text-veda-primary-dark" />

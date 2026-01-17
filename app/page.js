@@ -307,7 +307,7 @@ export default function Home() {
                 <img src="/images/preschool-group.png" alt="Pre-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">1.5 - 6 Years</span>
+                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">1 - 6 Years</span>
                 </div>
               </div>
               <div className="p-6">
@@ -346,7 +346,7 @@ export default function Home() {
                 <img src="/images/afterschool-child.png" alt="After-School" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">2.5 Years+</span>
+                  <span className="inline-block bg-veda-accent text-veda-primary-dark py-1.5 px-4 rounded-full text-xs font-bold shadow-lg">2 Years+</span>
                 </div>
               </div>
               <div className="p-6">

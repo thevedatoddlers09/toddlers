@@ -47,16 +47,16 @@ const allEvents = [
     { id: 306, title: 'Ramleela Ravan', category: 'Ramleela', image: '/images/events/ramleela-7.png' },
     { id: 307, title: 'Ramleela Dance', category: 'Ramleela', image: '/images/events/ramleela-8.png' },
 
-    // Parent Teacher Meeting
-    { id: 114, title: 'PTM Presentation', category: 'Parent Teacher Meeting', image: '/images/events/ptm-5.jpg' },
-    { id: 115, title: 'PTM Felicitation', category: 'Parent Teacher Meeting', image: '/images/events/ptm-6.jpg' },
-    { id: 116, title: 'PTM Kids Performance', category: 'Parent Teacher Meeting', image: '/images/events/ptm-7.jpg' },
-    { id: 117, title: 'PTM Students', category: 'Parent Teacher Meeting', image: '/images/events/ptm-8.jpg' },
-    { id: 118, title: 'PTM Award Ceremony', category: 'Parent Teacher Meeting', image: '/images/events/ptm-9.jpg' },
-    { id: 119, title: 'PTM Kids Dance', category: 'Parent Teacher Meeting', image: '/images/events/ptm-10.jpg' },
-    { id: 120, title: 'PTM Recognition', category: 'Parent Teacher Meeting', image: '/images/events/ptm-11.jpg' },
-    { id: 121, title: 'PTM Kids', category: 'Parent Teacher Meeting', image: '/images/events/ptm-12.jpg' },
-    { id: 122, title: 'PTM Address', category: 'Parent Teacher Meeting', image: '/images/events/ptm-13.jpg' },
+    // Parents Day Celebration
+    { id: 114, title: 'PTM Presentation', category: 'Parents Day Celebration', image: '/images/events/ptm-5.jpg' },
+    { id: 115, title: 'PTM Felicitation', category: 'Parents Day Celebration', image: '/images/events/ptm-6.jpg' },
+    { id: 116, title: 'PTM Kids Performance', category: 'Parents Day Celebration', image: '/images/events/ptm-7.jpg' },
+    { id: 117, title: 'PTM Students', category: 'Parents Day Celebration', image: '/images/events/ptm-8.jpg' },
+    { id: 118, title: 'PTM Award Ceremony', category: 'Parents Day Celebration', image: '/images/events/ptm-9.jpg' },
+    { id: 119, title: 'PTM Kids Dance', category: 'Parents Day Celebration', image: '/images/events/ptm-10.jpg' },
+    { id: 120, title: 'PTM Recognition', category: 'Parents Day Celebration', image: '/images/events/ptm-11.jpg' },
+    { id: 121, title: 'PTM Kids', category: 'Parents Day Celebration', image: '/images/events/ptm-12.jpg' },
+    { id: 122, title: 'PTM Address', category: 'Parents Day Celebration', image: '/images/events/ptm-13.jpg' },
 
     // Mother's Day
     { id: 6, title: "Mother's Day Celebration", category: "Mother's Day", image: '/images/events/mothers-day-1.png' },
@@ -77,7 +77,7 @@ const categories = [
     'Baisakhi',
     'Sports Day',
     'Ramleela',
-    'Parent Teacher Meeting',
+    'Parents Day Celebration',
     "Mother's Day",
 ];
 
