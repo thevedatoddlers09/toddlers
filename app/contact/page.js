@@ -141,7 +141,7 @@ export default function ContactPage() {
                                 <div className={styles.infoIcon}><Clock size={18} /></div>
                                 <div>
                                     <strong>Timings</strong>
-                                    <p>8:30 a.m. to 3:30 p.m.<br />(Monday to Saturday)</p>
+                                    <p>9:00 a.m. to 2:00 p.m.<br />(Monday to Saturday)</p>
                                 </div>
                             </div>
                         </div>

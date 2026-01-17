@@ -65,7 +65,7 @@ export default function Footer() {
                         </h3>
                         <div className="flex items-center gap-3 font-opensans text-base">
                             <Clock size={20} className="text-veda-playful-peach flex-shrink-0" />
-                            <p className="text-white">8:30 a.m. to 3:30 p.m.</p>
+                            <p className="text-white">9:00 a.m. to 2:00 p.m.</p>
                         </div>
 
                         <h3 className="text-veda-accent text-lg font-bold mt-6 mb-4">
