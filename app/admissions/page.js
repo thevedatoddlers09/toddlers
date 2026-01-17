@@ -56,7 +56,7 @@ export default function AdmissionsPage() {
     ];
 
     const programs = [
-        { name: 'Pre-School Programme', age: '1.5 - 5.5 Years', desc: 'Playgroup, Nursery, Junior KG, Senior KG', Icon: GraduationCap, color: 'text-rose-600', bg: 'bg-rose-50' },
+        { name: 'Pre-School Programme', age: '1 - 6 Years', desc: 'Seeding, Sprout, Explorers, Creators, Leaders', Icon: GraduationCap, color: 'text-rose-600', bg: 'bg-rose-50' },
         { name: 'Day Care', age: '8 months onwards', desc: 'Full Day & Half Day options available', Icon: Baby, color: 'text-amber-600', bg: 'bg-amber-50' },
         { name: 'After School Explorers', age: 'All Ages', desc: 'Art, Dance, Public Speaking & more', Icon: Sparkles, color: 'text-blue-600', bg: 'bg-blue-50' },
     ];
@@ -200,29 +200,7 @@ export default function AdmissionsPage() {
                 </div>
             </section>
 
-            {/* Trust Signals */}
-            <section className={styles.trustSection}>
-                <div className={styles.container}>
-                    <div className={styles.trustGrid}>
-                        <div className={styles.trustItem}>
-                            <span className={styles.trustNumber}>900+</span>
-                            <span className={styles.trustLabel}>Preschools Across India</span>
-                        </div>
-                        <div className={styles.trustItem}>
-                            <span className={styles.trustNumber}>175+</span>
-                            <span className={styles.trustLabel}>Cities</span>
-                        </div>
-                        <div className={styles.trustItem}>
-                            <span className={styles.trustNumber}>200K+</span>
-                            <span className={styles.trustLabel}>Happy Children</span>
-                        </div>
-                        <div className={styles.trustItem}>
-                            <span className={styles.trustNumber}>50+</span>
-                            <span className={styles.trustLabel}>Years Combined Experience</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
         </main>
     );
 }

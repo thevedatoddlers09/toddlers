@@ -215,7 +215,7 @@ export default function ProgramsPage() {
                                         <div className="bg-white p-3 rounded-full text-amber-500 shadow-sm"><Sun size={24} /></div>
                                         <div>
                                             <div className="text-xs font-bold text-amber-400 uppercase">Full Day</div>
-                                            <div className="font-bold text-veda-text-heading text-lg">9:00 AM - 6:00 PM</div>
+                                            <div className="font-bold text-veda-text-heading text-lg">9:00 AM - 2:00 PM</div>
                                         </div>
                                     </div>
                                     <div className="bg-indigo-50 p-4 rounded-2xl border border-indigo-100 flex items-center gap-4 text-left">

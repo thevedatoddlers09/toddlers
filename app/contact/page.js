@@ -117,7 +117,7 @@ export default function ContactPage() {
                                 <div className={styles.infoIcon}><MapPin size={18} /></div>
                                 <div>
                                     <strong>Address</strong>
-                                    <p>BQ-Block, NS-9, Shalimar Bagh,<br />New Delhi - 110088</p>
+                                    <p>CPM 61 Ground, Second & Third Floor,<br />Sector 105 Emaar, Mohali</p>
                                 </div>
                             </div>
 
@@ -133,7 +133,7 @@ export default function ContactPage() {
                                 <div className={styles.infoIcon}><Phone size={18} /></div>
                                 <div>
                                     <strong>Contact Numbers</strong>
-                                    <p>+91-9310129888<br />+91-11-27422001</p>
+                                    <p>+91-8968688486<br />+91-8728000886</p>
                                 </div>
                             </div>
 
@@ -141,7 +141,7 @@ export default function ContactPage() {
                                 <div className={styles.infoIcon}><Clock size={18} /></div>
                                 <div>
                                     <strong>Timings</strong>
-                                    <p>9:00 a.m. to 2:00 p.m.<br />(Monday to Saturday)</p>
+                                    <p>School: 9:00 a.m. to 2:00 p.m.<br />Daycare: 9:00 a.m. to 6:00 p.m.<br />(Monday to Saturday)</p>
                                 </div>
                             </div>
                         </div>

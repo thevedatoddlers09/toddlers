@@ -11,7 +11,7 @@ export default function FranchisePage() {
     const requirements = [
         { label: 'Space Area', value: '2000 - 3000 Sq. Ft.', Icon: Building2, gradient: 'from-veda-accent to-amber-500', bgGradient: 'from-veda-accent/10 via-white to-amber-50' },
         { label: 'Investment', value: 'Moderate', Icon: Wallet, gradient: 'from-veda-playful-green to-green-600', bgGradient: 'from-veda-playful-green/15 via-white to-green-50' },
-        { label: 'Staffing', value: '1:10 Teacher Ratio', Icon: GraduationCap, gradient: 'from-veda-primary to-veda-primary-dark', bgGradient: 'from-veda-secondary/20 via-white to-veda-secondary/10' },
+        { label: 'Staffing', value: '1:15 Teacher Ratio', Icon: GraduationCap, gradient: 'from-veda-primary to-veda-primary-dark', bgGradient: 'from-veda-secondary/20 via-white to-veda-secondary/10' },
         { label: 'Passion', value: 'Love for Education', Icon: Heart, gradient: 'from-veda-playful-peach to-rose-400', bgGradient: 'from-veda-playful-peach/15 via-white to-rose-50' },
     ];
 
