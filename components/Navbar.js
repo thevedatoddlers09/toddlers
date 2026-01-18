@@ -16,6 +16,7 @@ export default function Navbar() {
         { name: 'Programs', href: '/programs' },
         { name: 'Events', href: '/events' },
         { name: 'Activities', href: '/activities' },
+        { name: 'Locations', href: '/locations' },
         { name: 'Franchise', href: '/franchise' },
         { name: 'Admissions', href: '/admissions' },
     ];

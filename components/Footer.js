@@ -8,6 +8,7 @@ export default function Footer() {
         { name: 'Programmes', href: '/programs' },
         { name: 'Events', href: '/events' },
         { name: 'Activities', href: '/activities' },
+        { name: 'Locations', href: '/locations' },
         { name: 'Contact Us', href: '/contact' },
         { name: 'Admission Form', href: '/admissions' },
     ];
