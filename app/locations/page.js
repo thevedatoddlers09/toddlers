@@ -74,7 +74,7 @@ export default function LocationsPage() {
         { title: 'Expert Teachers', desc: 'Qualified and caring educators', Icon: GraduationCap, color: 'from-veda-primary to-veda-primary-dark' },
         { title: 'Safe Environment', desc: 'CCTV monitored & secure', Icon: Heart, color: 'from-veda-playful-green to-green-600' },
         { title: 'Flexible Timings', desc: 'School & Daycare options', Icon: Clock, color: 'from-veda-accent to-amber-500' },
-        { title: 'Small Class Sizes', desc: '1:10 teacher-student ratio', Icon: Users, color: 'from-veda-playful-peach to-rose-400' },
+        { title: 'Small Class Sizes', desc: '1:15 teacher-student ratio', Icon: Users, color: 'from-veda-playful-peach to-rose-400' },
     ];
 
     return (
