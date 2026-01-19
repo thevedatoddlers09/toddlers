@@ -131,7 +131,7 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-lg text-veda-text-DEFAULT leading-relaxed">
                 <p>
-                  The Veda Toddlers is a <strong className="text-veda-primary">new-age preschool and daycare</strong> for children aged <strong className="text-veda-accent-dark">1.5 to 6 years</strong>, built on joyful, holistic, and experiential learning.
+                  The Veda Toddlers is a <strong className="text-veda-primary">new-age preschool and daycare</strong> for children aged <strong className="text-veda-accent-dark">1 to 6 years</strong>, built on joyful, holistic, and experiential learning.
                 </p>
                 <p>
                   Founded by <strong className="text-veda-primary">Mandeep Sharma</strong>, it blends global early education standards with rich Indian values. Every Veda school nurtures confident, kind, and creative learners through a child-centered philosophy, research-based curriculum, and warm, supportive environment — <em className="text-veda-primary">redefining early education, one happy childhood at a time.</em>
