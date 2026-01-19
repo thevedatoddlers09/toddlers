@@ -165,7 +165,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* From The Principal Section */}
+      {/* From The Founder & Director Section */}
       <section className="py-20 px-[3%] bg-gradient-to-br from-veda-secondary-light/40 via-veda-playful-blue/10 to-white relative overflow-hidden">
         {/* Decorative Hearts */}
         <div className="absolute top-20 right-20 text-veda-primary/20">
@@ -188,7 +188,7 @@ export default function Home() {
                 <div className="relative bg-gradient-to-br from-veda-primary-light to-veda-primary rounded-3xl p-1 shadow-softer">
                   <img
                     src="/principal.png"
-                    alt="Mandeep Sharma - Principal"
+                    alt="Mandeep Sharma - Founder & Director"
                     className="rounded-3xl w-full object-cover aspect-[3/4]"
                   />
                 </div>
@@ -197,11 +197,11 @@ export default function Home() {
             {/* Content */}
             <div className="lg:w-3/5">
               <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-6 leading-tight">
-                <span className="text-veda-primary">From The</span> <span className="text-veda-accent">Principal</span>
+                <span className="text-veda-primary">From The</span> <span className="text-veda-accent">Founder & Director</span>
               </h2>
               <div className="space-y-4 text-lg text-veda-text-DEFAULT leading-relaxed italic">
                 <p>
-                  "Being the Principal of The Veda Toddlers is a privilege. Our preschool offers a warm, nurturing, and future-ready environment where every child feels safe, supported, and encouraged to explore."
+                  "Being the Founder & Director of The Veda Toddlers is a privilege. Our preschool offers a warm, nurturing, and future-ready environment where every child feels safe, supported, and encouraged to explore."
                 </p>
                 <p>
                   "We are dedicated to early childhood education, ensuring each child's first school experience is joyful, meaningful, and filled with discovery."
