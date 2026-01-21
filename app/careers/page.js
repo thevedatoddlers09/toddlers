@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Heart, Users, Sparkles, GraduationCap, MapPin, Clock, ArrowRight, CheckCircle, Mail, Phone, Baby, BookOpen, Palette, Shield, Star, Rocket, Smile, Trophy, Briefcase } from 'lucide-react';
+import { Heart, Users, Sparkles, GraduationCap, MapPin, Clock, ArrowRight, CheckCircle, Mail, Phone, Baby, BookOpen, Palette, Shield, Star, Rocket, Smile, Trophy, Briefcase, Upload, Loader2, FileText, User, X } from 'lucide-react';
 import Link from 'next/link';
 
 export default function CareersPage() {
@@ -162,6 +162,104 @@ export default function CareersPage() {
         { title: 'Professional Growth', desc: 'Regular training and development programs', Icon: Rocket, color: 'text-blue-500', bg: 'bg-blue-50' },
     ];
 
+    // Modal and Application Form State
+    const [selectedJob, setSelectedJob] = useState(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        position: '',
+        message: '',
+    });
+    const [resumeFile, setResumeFile] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
+    const openApplyModal = (jobTitle) => {
+        setSelectedJob(jobTitle);
+        setFormData(prev => ({ ...prev, position: jobTitle }));
+        setSubmitStatus({ type: '', message: '' });
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeApplyModal = () => {
+        setSelectedJob(null);
+        setFormData({ name: '', email: '', phone: '', position: '', message: '' });
+        setResumeFile(null);
+        setSubmitStatus({ type: '', message: '' });
+        document.body.style.overflow = 'auto';
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            // Validate file type
+            const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+            if (!allowedTypes.includes(file.type)) {
+                setSubmitStatus({ type: 'error', message: 'Please upload PDF or DOC/DOCX files only.' });
+                return;
+            }
+            // Validate file size (5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                setSubmitStatus({ type: 'error', message: 'File size must be less than 5MB.' });
+                return;
+            }
+            setResumeFile(file);
+            setSubmitStatus({ type: '', message: '' });
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus({ type: '', message: '' });
+
+        try {
+            const formDataToSend = new FormData();
+            formDataToSend.append('name', formData.name);
+            formDataToSend.append('email', formData.email);
+            formDataToSend.append('phone', formData.phone);
+            formDataToSend.append('position', formData.position);
+            formDataToSend.append('message', formData.message);
+            if (resumeFile) {
+                formDataToSend.append('resume', resumeFile);
+            }
+
+            const response = await fetch('/api/careers', {
+                method: 'POST',
+                body: formDataToSend,
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setSubmitStatus({ type: 'success', message: result.message });
+                // Reset form
+                setFormData({ name: '', email: '', phone: '', position: '', message: '' });
+                setResumeFile(null);
+                // Reset file input
+                const fileInput = document.getElementById('resume-upload-modal');
+                if (fileInput) fileInput.value = '';
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    closeApplyModal();
+                }, 3000);
+            } else {
+                setSubmitStatus({ type: 'error', message: result.error || 'Failed to submit application.' });
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            setSubmitStatus({ type: 'error', message: 'Network error. Please try again.' });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <main ref={mainRef} className="bg-white overflow-hidden">
             {/* Hero Section - Creative with floating elements */}
@@ -297,13 +395,13 @@ export default function CareersPage() {
                                                     </span>
                                                 </div>
 
-                                                <a
-                                                    href={`mailto:career@thevedatoddlers.com?subject=Application for ${job.title}`}
+                                                <button
+                                                    onClick={() => openApplyModal(job.title)}
                                                     className={`w-full inline-flex items-center justify-center gap-2 ${colors.bg} ${colors.text} font-semibold py-3 px-5 rounded-xl ${colors.hover} hover:text-white transition-all duration-300`}
                                                 >
                                                     Apply Now
                                                     <ArrowRight size={16} />
-                                                </a>
+                                                </button>
                                             </div>
                                         </div>
                                     );
@@ -385,6 +483,203 @@ export default function CareersPage() {
                 </div>
             </section>
 
+            {/* Application Form Section */}
+            <section id="apply" className="py-12 px-4 bg-white">
+                <div className="max-w-[1400px] mx-auto">
+                    <div className="bg-gradient-to-br from-purple-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-purple-100 relative overflow-hidden">
+                        {/* Decorative blurs */}
+                        <div className="absolute -right-20 -top-20 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-50"></div>
+                        <div className="absolute -left-20 -bottom-20 w-72 h-72 bg-veda-accent/20 rounded-full blur-3xl opacity-50"></div>
+
+                        <div className="relative z-10">
+                            <div className="flex flex-col md:flex-row gap-4 items-center mb-12 text-center md:text-left">
+                                <div className="bg-white p-4 rounded-2xl shadow-sm text-purple-500">
+                                    <FileText size={40} />
+                                </div>
+                                <div>
+                                    <h2 className="text-3xl md:text-4xl font-bold font-poppins text-veda-text-heading">Apply Now</h2>
+                                    <p className="text-purple-600 font-medium">Submit your application and resume</p>
+                                </div>
+                            </div>
+
+                            <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    {/* Name */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                            Full Name <span className="text-red-500">*</span>
+                                        </label>
+                                        <div className="relative">
+                                            <User size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleInputChange}
+                                                required
+                                                placeholder="Enter your full name"
+                                                className="w-full pl-12 pr-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Email */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                            Email Address <span className="text-red-500">*</span>
+                                        </label>
+                                        <div className="relative">
+                                            <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleInputChange}
+                                                required
+                                                placeholder="your@email.com"
+                                                className="w-full pl-12 pr-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Phone */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                            Phone Number <span className="text-red-500">*</span>
+                                        </label>
+                                        <div className="relative">
+                                            <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleInputChange}
+                                                required
+                                                placeholder="+91 98765 43210"
+                                                className="w-full pl-12 pr-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Position */}
+                                    <div>
+                                        <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                            Position Applying For <span className="text-red-500">*</span>
+                                        </label>
+                                        <div className="relative">
+                                            <Briefcase size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                            <select
+                                                name="position"
+                                                value={formData.position}
+                                                onChange={handleInputChange}
+                                                required
+                                                className="w-full pl-12 pr-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white appearance-none cursor-pointer"
+                                            >
+                                                <option value="">Select a position</option>
+                                                {positions.map((pos, idx) => (
+                                                    <option key={idx} value={pos.title}>{pos.title}</option>
+                                                ))}
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Message */}
+                                <div className="mb-6">
+                                    <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                        Cover Message (Optional)
+                                    </label>
+                                    <textarea
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleInputChange}
+                                        rows={4}
+                                        placeholder="Tell us why you'd be a great fit for this role..."
+                                        className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white resize-none"
+                                    />
+                                </div>
+
+                                {/* Resume Upload */}
+                                <div className="mb-8">
+                                    <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                        Upload Resume <span className="text-red-500">*</span>
+                                    </label>
+                                    <div className="relative">
+                                        <input
+                                            type="file"
+                                            id="resume-upload"
+                                            accept=".pdf,.doc,.docx"
+                                            onChange={handleFileChange}
+                                            required
+                                            className="hidden"
+                                        />
+                                        <label
+                                            htmlFor="resume-upload"
+                                            className={`flex items-center justify-center gap-3 w-full py-6 px-4 border-2 border-dashed rounded-xl cursor-pointer transition-all ${resumeFile
+                                                ? 'border-green-400 bg-green-50 text-green-700'
+                                                : 'border-gray-300 hover:border-purple-400 hover:bg-purple-50'
+                                                }`}
+                                        >
+                                            {resumeFile ? (
+                                                <>
+                                                    <CheckCircle size={24} />
+                                                    <span className="font-medium">{resumeFile.name}</span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Upload size={24} className="text-gray-400" />
+                                                    <span className="text-gray-600">
+                                                        Click to upload PDF or DOC/DOCX (Max 5MB)
+                                                    </span>
+                                                </>
+                                            )}
+                                        </label>
+                                    </div>
+                                </div>
+
+                                {/* Status Message */}
+                                {submitStatus.message && (
+                                    <div className={`mb-6 p-4 rounded-xl flex items-center gap-3 ${submitStatus.type === 'success'
+                                        ? 'bg-green-50 text-green-700 border border-green-200'
+                                        : 'bg-red-50 text-red-700 border border-red-200'
+                                        }`}>
+                                        {submitStatus.type === 'success' ? (
+                                            <CheckCircle size={20} />
+                                        ) : (
+                                            <span className="text-xl">⚠️</span>
+                                        )}
+                                        <span className="font-medium">{submitStatus.message}</span>
+                                    </div>
+                                )}
+
+                                {/* Submit Button */}
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className={`w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 ${isSubmitting
+                                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                        : 'bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 shadow-lg hover:shadow-xl'
+                                        }`}
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 size={22} className="animate-spin" />
+                                            Submitting...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <ArrowRight size={22} />
+                                            Submit Application
+                                        </>
+                                    )}
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Application CTA Section - Premium gradient */}
             <section className="anim-cta-section py-24 px-4 bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark text-white text-center relative overflow-hidden">
                 {/* Decorative elements */}
@@ -424,6 +719,181 @@ export default function CareersPage() {
                     </p>
                 </div>
             </section>
+
+            {/* Application Modal */}
+            {selectedJob && (
+                <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4">
+                    {/* Backdrop */}
+                    <div
+                        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                        onClick={closeApplyModal}
+                    ></div>
+
+                    {/* Modal Content */}
+                    <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+                        {/* Modal Header */}
+                        <div className="sticky top-0 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-t-3xl flex items-center justify-between z-10">
+                            <div>
+                                <h3 className="text-2xl font-bold font-poppins">Apply for Position</h3>
+                                <p className="text-purple-100">{selectedJob}</p>
+                            </div>
+                            <button
+                                onClick={closeApplyModal}
+                                className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+                            >
+                                <X size={20} />
+                            </button>
+                        </div>
+
+                        {/* Modal Body - Form */}
+                        <form onSubmit={handleSubmit} className="p-6 space-y-5">
+                            {/* Name */}
+                            <div>
+                                <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                    Full Name <span className="text-red-500">*</span>
+                                </label>
+                                <div className="relative">
+                                    <User size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        required
+                                        placeholder="Enter your full name"
+                                        className="w-full pl-12 pr-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Email & Phone Row */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                        Email <span className="text-red-500">*</span>
+                                    </label>
+                                    <div className="relative">
+                                        <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            required
+                                            placeholder="your@email.com"
+                                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                        Phone <span className="text-red-500">*</span>
+                                    </label>
+                                    <div className="relative">
+                                        <Phone size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleInputChange}
+                                            required
+                                            placeholder="+91 98765 43210"
+                                            className="w-full pl-12 pr-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Message */}
+                            <div>
+                                <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                    Cover Message (Optional)
+                                </label>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
+                                    rows={3}
+                                    placeholder="Tell us why you'd be a great fit..."
+                                    className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none transition-all bg-white resize-none"
+                                />
+                            </div>
+
+                            {/* Resume Upload */}
+                            <div>
+                                <label className="block text-sm font-semibold text-veda-text-heading mb-2">
+                                    Upload Resume <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="file"
+                                    id="resume-upload-modal"
+                                    accept=".pdf,.doc,.docx"
+                                    onChange={handleFileChange}
+                                    required
+                                    className="hidden"
+                                />
+                                <label
+                                    htmlFor="resume-upload-modal"
+                                    className={`flex items-center justify-center gap-3 w-full py-5 px-4 border-2 border-dashed rounded-xl cursor-pointer transition-all ${resumeFile
+                                            ? 'border-green-400 bg-green-50 text-green-700'
+                                            : 'border-gray-300 hover:border-purple-400 hover:bg-purple-50'
+                                        }`}
+                                >
+                                    {resumeFile ? (
+                                        <>
+                                            <CheckCircle size={22} />
+                                            <span className="font-medium truncate max-w-[200px]">{resumeFile.name}</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Upload size={22} className="text-gray-400" />
+                                            <span className="text-gray-600 text-sm">PDF or DOC/DOCX (Max 5MB)</span>
+                                        </>
+                                    )}
+                                </label>
+                            </div>
+
+                            {/* Status Message */}
+                            {submitStatus.message && (
+                                <div className={`p-4 rounded-xl flex items-center gap-3 ${submitStatus.type === 'success'
+                                        ? 'bg-green-50 text-green-700 border border-green-200'
+                                        : 'bg-red-50 text-red-700 border border-red-200'
+                                    }`}>
+                                    {submitStatus.type === 'success' ? (
+                                        <CheckCircle size={20} />
+                                    ) : (
+                                        <span className="text-xl">⚠️</span>
+                                    )}
+                                    <span className="font-medium text-sm">{submitStatus.message}</span>
+                                </div>
+                            )}
+
+                            {/* Submit Button */}
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className={`w-full inline-flex items-center justify-center gap-3 py-4 px-8 rounded-xl font-bold text-lg transition-all duration-300 ${isSubmitting
+                                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                        : 'bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 shadow-lg hover:shadow-xl'
+                                    }`}
+                            >
+                                {isSubmitting ? (
+                                    <>
+                                        <Loader2 size={22} className="animate-spin" />
+                                        Submitting...
+                                    </>
+                                ) : (
+                                    <>
+                                        <ArrowRight size={22} />
+                                        Submit Application
+                                    </>
+                                )}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }
