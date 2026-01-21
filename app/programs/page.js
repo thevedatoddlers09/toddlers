@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles, Baby, Sprout, Footprints, PenTool, GraduationCap, Clock, Sun, Moon, Music, Mic, User, CircleDollarSign, Star, Rocket, Smile, Lightbulb } from 'lucide-react';
+import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles, Baby, Sprout, Footprints, PenTool, GraduationCap, Clock, Sun, Moon, Music, Mic, User, CircleDollarSign, Star, Rocket, Smile, Lightbulb, Shield, Gamepad2 } from 'lucide-react';
 
 export default function ProgramsPage() {
     const mainRef = useRef(null);
@@ -72,24 +72,23 @@ export default function ProgramsPage() {
         return () => ctx.revert();
     }, []);
 
-    // 7 Spectrums of Development
-    const spectrums = [
-        { title: 'Physical Development', desc: 'Strength, coordination, and motor skills through active play.', Icon: PersonStanding, gradient: 'from-veda-playful-peach to-rose-400', bgGradient: 'from-veda-playful-peach/15 via-white to-rose-50' },
-        { title: 'Language & Literacy', desc: 'Early reading, writing, and effective communication skills.', Icon: BookOpen, gradient: 'from-veda-playful-blue to-blue-500', bgGradient: 'from-veda-playful-blue/15 via-white to-blue-50' },
-        { title: 'Cognitive Development', desc: 'Problem-solving, critical thinking, and intellectual exploration.', Icon: Brain, gradient: 'from-veda-accent to-amber-500', bgGradient: 'from-veda-accent/10 via-white to-amber-50' },
-        { title: 'Aesthetic Development', desc: 'Art, music, dance, and creative self-expression.', Icon: Palette, gradient: 'from-veda-secondary-dark to-purple-600', bgGradient: 'from-veda-secondary/30 via-white to-purple-50' },
-        { title: 'Socio-Emotional Growth', desc: 'Fostering teamwork, empathy, moral values, and emotional intelligence.', Icon: Heart, gradient: 'from-veda-playful-green to-green-600', bgGradient: 'from-veda-playful-green/15 via-white to-green-50' },
-        { title: 'Cultural Awareness', desc: 'Understanding traditions, festivals, and diversity.', Icon: Globe, gradient: 'from-veda-primary to-veda-primary-dark', bgGradient: 'from-veda-secondary/20 via-white to-veda-secondary/10' },
-        { title: 'Spiritual Development', desc: 'Mindfulness, values, and inner peace.', Icon: Sparkles, gradient: 'from-amber-400 to-veda-accent', bgGradient: 'from-amber-50 via-white to-veda-accent/5' },
+    // KIDORA Curriculum - What Makes KIDORA Unique?
+    const kidoraPillars = [
+        { title: 'Imagination-Led Learning', desc: 'Curiosity drives the classroom — encouraging children to think beyond the ordinary, explore ideas freely, and express creativity through stories, art, and role play.', Icon: Lightbulb, gradient: 'from-amber-400 to-yellow-500', bgGradient: 'from-amber-50 via-white to-yellow-50' },
+        { title: 'Play + Project Approach', desc: 'Fun meets hands-on learning — integrating projects that help children learn by doing, building curiosity, teamwork, and problem-solving skills.', Icon: Gamepad2, gradient: 'from-teal-400 to-cyan-500', bgGradient: 'from-teal-50 via-white to-cyan-50' },
+        { title: 'Joyful Energy', desc: 'Music, rhythm, and movement daily — ensuring every moment is filled with happiness, laughter, and purposeful play, because joy is the key to learning.', Icon: Music, gradient: 'from-pink-400 to-rose-500', bgGradient: 'from-pink-50 via-white to-rose-50' },
+        { title: 'Safe Nest', desc: 'Nurturing, secure, and confident environment — providing a space where children feel protected and empowered to explore and grow.', Icon: Shield, gradient: 'from-blue-400 to-indigo-500', bgGradient: 'from-blue-50 via-white to-indigo-50' },
+        { title: 'Global + Indian Values', desc: 'Culture rooted, globally open — instilling respect, empathy, and understanding of diverse cultures and traditions to create responsible global citizens.', Icon: Globe, gradient: 'from-green-400 to-emerald-500', bgGradient: 'from-green-50 via-white to-emerald-50' },
+        { title: 'Cultural + Global Values', desc: 'Creating responsible global citizens through respect, empathy, and understanding of diverse cultures and traditions around the world.', Icon: Heart, gradient: 'from-purple-400 to-violet-500', bgGradient: 'from-purple-50 via-white to-violet-50' },
     ];
 
-    // Pre-School Levels
+    // KIDORA Age Groups
     const preschoolLevels = [
-        { name: 'Seeding', age: '1 - 2 Years', desc: 'First steps into social learning', Icon: Smile, color: 'text-rose-600', bg: 'bg-rose-100', border: 'border-rose-200' },
-        { name: 'Sprout', age: '2 - 3 Years', desc: 'Building curiosity & creativity', Icon: Sprout, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' },
-        { name: 'Explorers', age: '3 - 4 Years', desc: 'Foundation for early learning', Icon: Rocket, color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
-        { name: 'Creators', age: '4 - 5 Years', desc: 'Preparing for formal schooling', Icon: PenTool, color: 'text-purple-600', bg: 'bg-purple-100', border: 'border-purple-200' },
-        { name: 'Leaders', age: '5 - 6 Years', desc: 'Ready to lead and excel', Icon: GraduationCap, color: 'text-amber-600', bg: 'bg-amber-100', border: 'border-amber-200' },
+        { name: 'Seedling', age: '1 - 2 Years', desc: 'Focus on sensory play, emotional bonding, and early communication to nurture curiosity and comfort.', Icon: Smile, color: 'text-rose-600', bg: 'bg-rose-100', border: 'border-rose-200' },
+        { name: 'Sprouts', age: '2 - 3 Years', desc: 'Encourages self-expression, social interaction, and exploration through guided activities, songs, and storytelling.', Icon: Sprout, color: 'text-green-600', bg: 'bg-green-100', border: 'border-green-200' },
+        { name: 'Explorers', age: '3 - 4 Years', desc: 'Builds foundational literacy and numeracy skills through fun learning, hands-on projects, and creative play.', Icon: Rocket, color: 'text-blue-600', bg: 'bg-blue-100', border: 'border-blue-200' },
+        { name: 'Creators', age: '4 - 5 Years', desc: 'Introduces pre-math, phonics, and early writing concepts while strengthening critical thinking and teamwork.', Icon: PenTool, color: 'text-purple-600', bg: 'bg-purple-100', border: 'border-purple-200' },
+        { name: 'Leaders', age: '5 - 6 Years', desc: 'Prepares children for formal schooling by enhancing reading, writing, problem-solving, and confidence.', Icon: GraduationCap, color: 'text-amber-600', bg: 'bg-amber-100', border: 'border-amber-200' },
     ];
 
     // After-School Activities
@@ -114,18 +113,22 @@ export default function ProgramsPage() {
                 <div className="anim-hero-content relative z-10 p-6 max-w-5xl">
                     <span className="inline-block py-1 px-4 rounded-full bg-white/20 text-white font-bold uppercase tracking-widest text-xs mb-4 border border-white/30">Our Methodology</span>
                     <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
-                        The "7 Spectrums" Curriculum
+                        The KIDORA Curriculum
                     </h1>
                     <p className="font-opensans text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
-                        At The Veda Toddlers, we follow a unique, activity-based curriculum designed to nurture every aspect of a child's growth.
+                        Learning with Joyful Energy — Where Imagination Meets Learning
                     </p>
                 </div>
             </section>
 
-            {/* 7 Spectrums Grid */}
+            {/* KIDORA Pillars Grid */}
             <section className="anim-spectrums-section py-20 px-4 bg-veda-background-muted">
+                <div className="max-w-[1400px] mx-auto">
+                    <h2 className="text-center font-poppins text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">What Makes KIDORA Unique?</h2>
+                    <p className="text-center text-veda-text-muted text-lg max-w-2xl mx-auto mb-12">Built on four global early learning pillars that nurture every aspect of your child's development.</p>
+                </div>
                 <div className="max-w-[1400px] mx-auto flex flex-wrap justify-center gap-6">
-                    {spectrums.map((item, idx) => (
+                    {kidoraPillars.map((item, idx) => (
                         <div key={idx} className="anim-spectrum-card w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
                             <div className={`relative bg-gradient-to-br ${item.bgGradient} p-6 rounded-3xl shadow-soft border border-white/60 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 h-full group overflow-hidden`}>
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/40 to-transparent rounded-full -translate-y-1/3 translate-x-1/3 blur-xl"></div>
