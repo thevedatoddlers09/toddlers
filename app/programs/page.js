@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles, Baby, Sprout, Footprints, PenTool, GraduationCap, Clock, Sun, Moon, Music, Mic, User, CircleDollarSign, Star, Rocket, Smile } from 'lucide-react';
+import { PersonStanding, BookOpen, Brain, Palette, Heart, Globe, Sparkles, Baby, Sprout, Footprints, PenTool, GraduationCap, Clock, Sun, Moon, Music, Mic, User, CircleDollarSign, Star, Rocket, Smile, Lightbulb } from 'lucide-react';
 
 export default function ProgramsPage() {
     const mainRef = useRef(null);
@@ -97,11 +97,12 @@ export default function ProgramsPage() {
         { name: 'Art & Craft', Icon: Palette, color: 'text-rose-600', bg: 'bg-rose-50', hover: 'hover:bg-rose-100' },
         { name: 'Painting', Icon: Palette, color: 'text-orange-600', bg: 'bg-orange-50', hover: 'hover:bg-orange-100' },
         { name: 'Dance', Icon: Music, color: 'text-yellow-600', bg: 'bg-yellow-50', hover: 'hover:bg-yellow-100' },
-        { name: 'Personality Dev', Icon: User, color: 'text-green-600', bg: 'bg-green-50', hover: 'hover:bg-green-100' },
+        { name: 'Personality Development', Icon: User, color: 'text-green-600', bg: 'bg-green-50', hover: 'hover:bg-green-100' },
         { name: 'Public Speaking', Icon: Mic, color: 'text-teal-600', bg: 'bg-teal-50', hover: 'hover:bg-teal-100' },
         { name: 'Right Brain', Icon: Brain, color: 'text-blue-600', bg: 'bg-blue-50', hover: 'hover:bg-blue-100' },
         { name: 'Tuition Support', Icon: BookOpen, color: 'text-indigo-600', bg: 'bg-indigo-50', hover: 'hover:bg-indigo-100' },
         { name: 'Financial Literacy', Icon: CircleDollarSign, color: 'text-purple-600', bg: 'bg-purple-50', hover: 'hover:bg-purple-100' },
+        { name: 'KIDSPRENEUR', Icon: Lightbulb, color: 'text-amber-600', bg: 'bg-amber-50', hover: 'hover:bg-amber-100' },
     ];
 
     return (
