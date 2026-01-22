@@ -11,6 +11,7 @@ export default function Footer() {
         { name: 'Locations', href: '/locations' },
         { name: 'Contact Us', href: '/contact' },
         { name: 'Admission Form', href: '/admissions' },
+        { name: 'Careers', href: '/careers' },
     ];
 
     return (
