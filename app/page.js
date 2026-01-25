@@ -222,6 +222,154 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Photo Gallery Section */}
+      <section className="py-20 px-[3%] bg-gradient-to-br from-veda-secondary-light/20 via-white to-veda-playful-blue/10 relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-10 left-10 w-24 h-24 bg-veda-accent/10 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-10 right-10 w-32 h-32 bg-veda-playful-green/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 right-20 text-veda-accent/10">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+          </svg>
+        </div>
+
+        <div className="max-w-[1400px] mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
+              Our <span className="text-veda-accent">Gallery</span>
+            </h2>
+            <p className="text-veda-text-muted text-lg max-w-2xl mx-auto">
+              Glimpses of joyful learning and happy moments at The Veda Toddlers
+            </p>
+          </div>
+
+          {/* Photo Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            {/* Photo Box 1 - Large */}
+            <div className="col-span-2 md:col-span-1 md:row-span-2 group">
+              <div className="relative w-full h-full min-h-[280px] md:min-h-[400px] bg-gradient-to-br from-veda-secondary-light to-veda-secondary rounded-2xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 border border-veda-border">
+                <img
+                  src="/images/gallery-1.jpg"
+                  alt="Gallery Photo 1"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+                />
+                <div className="absolute inset-0 flex-col items-center justify-center text-veda-primary/40 hidden">
+                  <svg className="w-16 h-16 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                  </svg>
+                  <span className="text-sm font-medium">Add Photo</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+
+            {/* Photo Box 2 */}
+            <div className="group">
+              <div className="relative w-full h-[180px] md:h-[190px] bg-gradient-to-br from-veda-playful-peach/30 to-veda-playful-peach/50 rounded-2xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 border border-veda-border">
+                <img
+                  src="/images/gallery-2.jpg"
+                  alt="Gallery Photo 2"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+                />
+                <div className="absolute inset-0 flex-col items-center justify-center text-veda-primary/40 hidden">
+                  <svg className="w-12 h-12 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                  </svg>
+                  <span className="text-sm font-medium">Add Photo</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+
+            {/* Photo Box 3 */}
+            <div className="group">
+              <div className="relative w-full h-[180px] md:h-[190px] bg-gradient-to-br from-veda-playful-green/30 to-veda-playful-green/50 rounded-2xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 border border-veda-border">
+                <img
+                  src="/images/gallery-3.jpg"
+                  alt="Gallery Photo 3"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+                />
+                <div className="absolute inset-0 flex-col items-center justify-center text-veda-primary/40 hidden">
+                  <svg className="w-12 h-12 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                  </svg>
+                  <span className="text-sm font-medium">Add Photo</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+
+            {/* Photo Box 4 */}
+            <div className="group">
+              <div className="relative w-full h-[180px] md:h-[190px] bg-gradient-to-br from-veda-playful-blue/30 to-veda-playful-blue/50 rounded-2xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 border border-veda-border">
+                <img
+                  src="/images/gallery-4.jpg"
+                  alt="Gallery Photo 4"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+                />
+                <div className="absolute inset-0 flex-col items-center justify-center text-veda-primary/40 hidden">
+                  <svg className="w-12 h-12 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                  </svg>
+                  <span className="text-sm font-medium">Add Photo</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+
+            {/* Photo Box 5 */}
+            <div className="group">
+              <div className="relative w-full h-[180px] md:h-[190px] bg-gradient-to-br from-veda-accent/20 to-veda-accent/40 rounded-2xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 border border-veda-border">
+                <img
+                  src="/images/gallery-5.jpg"
+                  alt="Gallery Photo 5"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+                />
+                <div className="absolute inset-0 flex-col items-center justify-center text-veda-primary/40 hidden">
+                  <svg className="w-12 h-12 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                  </svg>
+                  <span className="text-sm font-medium">Add Photo</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+
+            {/* Photo Box 6 - Wide */}
+            <div className="col-span-2 group">
+              <div className="relative w-full h-[200px] md:h-[190px] bg-gradient-to-br from-veda-primary/10 to-veda-primary/20 rounded-2xl overflow-hidden shadow-soft hover:shadow-softer transition-all duration-300 border border-veda-border">
+                <img
+                  src="/images/gallery-6.jpg"
+                  alt="Gallery Photo 6"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
+                />
+                <div className="absolute inset-0 flex-col items-center justify-center text-veda-primary/40 hidden">
+                  <svg className="w-14 h-14 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                  </svg>
+                  <span className="text-sm font-medium">Add Photo</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-veda-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center mt-10">
+            <Button variant="primary" shape="pill" href="/activities">
+              View All Photos
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Why Us Section */}
       <section className="anim-why-section py-24 px-[3%] bg-veda-background-DEFAULT">
         <h2 className="text-center text-4xl font-bold mb-4 text-veda-text-heading font-poppins">Why Choose Us?</h2>
