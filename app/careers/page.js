@@ -513,7 +513,7 @@ export default function CareersPage() {
                             className="inline-flex items-center gap-3 bg-white/15 text-white font-bold py-4 px-8 rounded-full hover:bg-white/25 transition-all duration-300 border border-white/30 backdrop-blur-sm text-lg"
                         >
                             <Phone size={22} />
-                            +91 70091 09149
+                            +91-8728000886
                         </a>
                     </div>
 
