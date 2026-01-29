@@ -187,7 +187,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-veda-primary/20 to-veda-playful-green/20 rounded-3xl transform -rotate-3"></div>
                 <div className="relative bg-gradient-to-br from-veda-primary-light to-veda-primary rounded-3xl p-1 shadow-softer">
                   <img
-                    src="/principal.png"
+                    src="/principal.jpg"
                     alt="Mandeep Sharma - Founder & Director"
                     className="rounded-3xl w-full object-cover aspect-[3/4]"
                   />
