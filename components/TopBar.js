@@ -4,7 +4,12 @@ export default function TopBar() {
     const items = [
         { Icon: Phone, text: '+91-8968688486' },
         { Icon: Mail, text: 'info@vedatoddlers.com' },
-        { Icon: MapPin, text: 'CPM 61, Sector 105 Emaar, Mohali' },
+        { Icon: MapPin, text: 'Sector 105 Emaar, Mohali' },
+        { Icon: MapPin, text: 'Sector 79, Mohali' },
+        { Icon: MapPin, text: 'Sector 127, Mohali' },
+        { Icon: MapPin, text: 'Zirakpur, Punjab' },
+        { Icon: MapPin, text: 'Panchkula, Haryana' },
+        { Icon: MapPin, text: 'Ambala, Haryana' },
         { Icon: Clock, text: 'School: 9:00 a.m. to 2:00 p.m.' },
         { Icon: Clock, text: 'Daycare: 9:00 a.m. to 6:00 p.m.' },
         { Icon: Phone, text: '+91-8728000886' },
