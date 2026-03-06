@@ -3,7 +3,7 @@ import { Clock, Phone, Mail, MapPin } from 'lucide-react';
 export default function TopBar() {
     const items = [
         { Icon: Phone, text: '+91-8968688486' },
-        { Icon: Mail, text: 'info@vedatoddlers.com' },
+        { Icon: Mail, text: 'thevedatoddler@gmail.com' },
         { Icon: MapPin, text: 'Sector 105 Emaar, Mohali' },
         { Icon: MapPin, text: 'Sector 79, Mohali' },
         { Icon: MapPin, text: 'Sector 127, Mohali' },
