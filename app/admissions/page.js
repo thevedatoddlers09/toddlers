@@ -32,7 +32,7 @@ export default function AdmissionsPage() {
             const response = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ phone: formData.phone }),
+                body: JSON.stringify(formData),
             });
 
             if (response.ok) {
