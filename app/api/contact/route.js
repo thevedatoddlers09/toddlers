@@ -2,33 +2,36 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(request) {
-    try {
-        const { firstName, lastName, mobile, email, message } = await request.json();
+  try {
+    const { firstName, lastName, mobile, email, message } = await request.json();
 
-        // Validation
-        if (!firstName || !lastName || !mobile || !email || !message) {
-            return NextResponse.json(
-                { message: 'All fields are required' },
-                { status: 400 }
-            );
-        }
+    // Validation
+    if (!firstName || !lastName || !mobile || !email || !message) {
+      return NextResponse.json(
+        { message: 'All fields are required' },
+        { status: 400 }
+      );
+    }
 
-        // Create transporter
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.GMAIL_USER,
-                pass: process.env.GMAIL_APP_PASSWORD,
-            },
-        });
+    // Create transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    });
 
-        // Email content
-        const mailOptions = {
-            from: process.env.GMAIL_USER,
-            to: process.env.GMAIL_USER, // Send to admin
-            replyTo: email, // Allow reply to sender
-            subject: `New Contact Form Submission from ${firstName} ${lastName}`,
-            text: `
+    // Email content
+    const mailOptions = {
+      from: process.env.GMAIL_USER,
+      to: process.env.GMAIL_USER, // Send to admin
+      replyTo: email, // Allow reply to sender
+      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+      text: `
 New Contact Form Submission
 
 Name: ${firstName} ${lastName}
@@ -38,7 +41,7 @@ Email: ${email}
 Message:
 ${message}
       `,
-            html: `
+      html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #E5E1EC; border-radius: 10px;">
           <h2 style="color: #3E2A4F; border-bottom: 3px solid #F2C14E; padding-bottom: 10px;">New Contact Form Submission</h2>
           
@@ -69,20 +72,20 @@ ${message}
           </p>
         </div>
       `,
-        };
+    };
 
-        // Send email
-        await transporter.sendMail(mailOptions);
+    // Send email
+    await transporter.sendMail(mailOptions);
 
-        return NextResponse.json(
-            { message: 'Email sent successfully' },
-            { status: 200 }
-        );
-    } catch (error) {
-        console.error('Error sending contact email:', error);
-        return NextResponse.json(
-            { message: 'Failed to send email' },
-            { status: 500 }
-        );
-    }
+    return NextResponse.json(
+      { message: 'Email sent successfully' },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Error sending contact email:', error);
+    return NextResponse.json(
+      { message: 'Failed to send email' },
+      { status: 500 }
+    );
+  }
 }
