@@ -502,11 +502,11 @@ export default function CareersPage() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                         <a
-                            href="mailto:thevedatoddler@gmail.com"
+                            href="mailto:thevedatoddlers09@gmail.com"
                             className="inline-flex items-center gap-3 bg-white text-veda-primary font-bold py-4 px-8 rounded-full hover:bg-veda-accent hover:scale-105 transition-all duration-300 shadow-xl text-lg"
                         >
                             <Mail size={22} />
-                            thevedatoddler@gmail.com
+                            thevedatoddlers09@gmail.com
                         </a>
                         <a
                             href="tel:+917009109149"

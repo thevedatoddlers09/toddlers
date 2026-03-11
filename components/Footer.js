@@ -81,8 +81,8 @@ export default function Footer() {
                         </h3>
                         <div className="flex items-center gap-3 font-opensans text-base">
                             <Mail size={20} className="text-veda-playful-peach flex-shrink-0" />
-                            <a href="mailto:thevedatoddler@gmail.com" className="text-white hover:text-veda-accent transition-colors">
-                                thevedatoddler@gmail.com
+                            <a href="mailto:thevedatoddlers09@gmail.com" className="text-white hover:text-veda-accent transition-colors">
+                                thevedatoddlers09@gmail.com
                             </a>
                         </div>
                     </div>

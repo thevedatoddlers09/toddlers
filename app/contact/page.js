@@ -125,7 +125,7 @@ export default function ContactPage() {
                                 <div className={styles.infoIcon}><Mail size={18} /></div>
                                 <div>
                                     <strong>Email</strong>
-                                    <p>thevedatoddler@gmail.com</p>
+                                    <p>thevedatoddlers09@gmail.com</p>
                                 </div>
                             </div>
 
