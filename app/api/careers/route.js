@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request) {
     try {
@@ -102,6 +103,88 @@ export async function POST(request) {
                 { error: 'Failed to save application details.' },
                 { status: 500 }
             );
+        }
+
+        // 4. Send Email Notification to Admin
+        try {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.GMAIL_USER,
+                    pass: process.env.GMAIL_APP_PASSWORD,
+                },
+                tls: {
+                    rejectUnauthorized: false,
+                },
+            });
+
+            const mailOptions = {
+                from: process.env.GMAIL_USER,
+                to: process.env.GMAIL_USER, // Send to admin
+                replyTo: email, // Allow admin to hit "Reply" and email the applicant directly
+                subject: `New Career Application: ${name} - ${position}`,
+                text: `
+New Career Application Received!
+
+Applicant Details:
+- Name: ${name}
+- Email: ${email}
+- Phone: ${phone}
+- Position: ${position}
+
+Message / Cover Letter:
+${message || 'No additional message provided.'}
+
+Resume Link:
+${resumeUrl}
+                `,
+                html: `
+                  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #E5E1EC; border-radius: 10px;">
+                    <h2 style="color: #3E2A4F; border-bottom: 3px solid #6C5CE7; padding-bottom: 10px;">New Job Application Received</h2>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                      <tr>
+                        <td style="padding: 10px; background-color: #F8F9FA; font-weight: bold; width: 120px; border-radius: 5px 0 0 5px;">Position</td>
+                        <td style="padding: 10px; background-color: #FFFFFF; border-radius: 0 5px 5px 0; color: #6C5CE7; font-weight: bold;">${position}</td>
+                      </tr>
+                      <tr><td colspan="2" style="height: 10px;"></td></tr>
+                      <tr>
+                        <td style="padding: 10px; background-color: #F8F9FA; font-weight: bold; border-radius: 5px 0 0 5px;">Applicant</td>
+                        <td style="padding: 10px; background-color: #FFFFFF; border-radius: 0 5px 5px 0;">${name}</td>
+                      </tr>
+                      <tr><td colspan="2" style="height: 10px;"></td></tr>
+                      <tr>
+                        <td style="padding: 10px; background-color: #F8F9FA; font-weight: bold; border-radius: 5px 0 0 5px;">Email</td>
+                        <td style="padding: 10px; background-color: #FFFFFF; border-radius: 0 5px 5px 0;"><a href="mailto:${email}" style="color: #3E2A4F;">${email}</a></td>
+                      </tr>
+                      <tr><td colspan="2" style="height: 10px;"></td></tr>
+                      <tr>
+                        <td style="padding: 10px; background-color: #F8F9FA; font-weight: bold; border-radius: 5px 0 0 5px;">Phone</td>
+                        <td style="padding: 10px; background-color: #FFFFFF; border-radius: 0 5px 5px 0;"><a href="tel:${phone}" style="color: #3E2A4F;">${phone}</a></td>
+                      </tr>
+                    </table>
+                    
+                    <div style="text-align: center; margin: 30px 0;">
+                      <a href="${resumeUrl}" style="background-color: #6C5CE7; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">View Resume (PDF)</a>
+                    </div>
+                    
+                    <div style="margin-top: 20px; padding: 15px; background-color: #F8F9FA; border-left: 4px solid #6C5CE7; border-radius: 0 10px 10px 0;">
+                      <p style="margin: 0 0 10px 0; font-weight: bold; color: #3E2A4F;">Message / Cover Letter:</p>
+                      <p style="margin: 0; color: #4A4A4A; line-height: 1.6; white-space: pre-wrap;">${message || '<span style="color: #999; font-style: italic;">No additional message provided.</span>'}</p>
+                    </div>
+                    
+                    <p style="margin-top: 30px; font-size: 12px; color: #7A7A7A; text-align: center;">
+                      This notification was sent from The Veda Toddlers careers page.
+                    </p>
+                  </div>
+                `,
+            };
+
+            await transporter.sendMail(mailOptions);
+            console.log('Admin notification email sent successfully.');
+        } catch (emailError) {
+            console.error('Failed to send admin email notification:', emailError.message);
+            // We do not fail the request if the email fails, since the data IS in Supabase
         }
 
         return NextResponse.json({
