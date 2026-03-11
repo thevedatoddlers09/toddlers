@@ -82,7 +82,8 @@ ${message}
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error sending contact email:', error);
+    console.error('Error sending contact email:', error.message);
+    console.error('Full error:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
     return NextResponse.json(
       { message: 'Failed to send email' },
       { status: 500 }
