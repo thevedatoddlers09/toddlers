@@ -1,34 +1,5 @@
-import { google } from 'googleapis';
+import { supabase } from '@/lib/supabase';
 import { NextResponse } from 'next/server';
-import { Readable } from 'stream';
-
-// Disable body parsing for file uploads
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-};
-
-// Initialize Google Drive API
-const getDriveClient = () => {
-    const auth = new google.auth.GoogleAuth({
-        credentials: {
-            client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-            private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-        },
-        scopes: ['https://www.googleapis.com/auth/drive.file'],
-    });
-
-    return google.drive({ version: 'v3', auth });
-};
-
-// Convert buffer to readable stream
-const bufferToStream = (buffer) => {
-    const stream = new Readable();
-    stream.push(buffer);
-    stream.push(null);
-    return stream;
-};
 
 export async function POST(request) {
     try {
@@ -80,102 +51,63 @@ export async function POST(request) {
             );
         }
 
-        // Check if Google Drive is configured
-        if (!process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || !process.env.GOOGLE_PRIVATE_KEY || !process.env.GOOGLE_DRIVE_FOLDER_ID) {
-            console.error('Google Drive not configured. Saving application details locally.');
+        // 1. Upload Resume to Supabase Storage ('resumes' bucket)
+        const timestamp = Date.now();
+        const sanitizedName = name.replace(/[^a-zA-Z0-9]/g, '_');
+        const fileExtension = resumeFile.name.split('.').pop();
+        const fileName = `${timestamp}_${sanitizedName}.${fileExtension}`;
 
-            // For now, just log the application (you can implement email notification here)
-            console.log('New Application Received:');
-            console.log('Name:', name);
-            console.log('Email:', email);
-            console.log('Phone:', phone);
-            console.log('Position:', position);
-            console.log('Message:', message);
-            console.log('Resume:', resumeFile.name);
-
-            return NextResponse.json({
-                success: true,
-                message: 'Application submitted successfully! We will contact you soon.',
-                note: 'Google Drive not configured - application logged to server.'
+        const { data: storageData, error: storageError } = await supabase
+            .storage
+            .from('resumes')
+            .upload(fileName, resumeFile, {
+                cacheControl: '3600',
+                upsert: false
             });
+
+        if (storageError) {
+            console.error('Supabase Storage Error:', storageError);
+            return NextResponse.json(
+                { error: 'Failed to upload resume file.' },
+                { status: 500 }
+            );
         }
 
-        // Get Google Drive client
-        const drive = getDriveClient();
+        // 2. Get the public URL for the uploaded resume
+        const { data: publicUrlData } = supabase
+            .storage
+            .from('resumes')
+            .getPublicUrl(fileName);
 
-        // Convert file to buffer
-        const bytes = await resumeFile.arrayBuffer();
-        const buffer = Buffer.from(bytes);
+        const resumeUrl = publicUrlData.publicUrl;
 
-        // Create filename with applicant info and timestamp
-        const timestamp = new Date().toISOString().split('T')[0];
-        const sanitizedName = name.replace(/[^a-zA-Z0-9]/g, '_');
-        const sanitizedPosition = position.replace(/[^a-zA-Z0-9]/g, '_');
-        const fileExtension = resumeFile.name.split('.').pop();
-        const fileName = `${timestamp}_${sanitizedName}_${sanitizedPosition}.${fileExtension}`;
+        // 3. Insert Application Record into Supabase Database
+        const { data: dbData, error: dbError } = await supabase
+            .from('career_applications')
+            .insert([
+                {
+                    name,
+                    email,
+                    phone,
+                    position,
+                    message,
+                    resume_url: resumeUrl
+                }
+            ]);
 
-        // Upload to Google Drive
-        const fileMetadata = {
-            name: fileName,
-            parents: [process.env.GOOGLE_DRIVE_FOLDER_ID],
-            description: `
-Application Details:
-- Name: ${name}
-- Email: ${email}
-- Phone: ${phone}
-- Position: ${position}
-- Message: ${message || 'N/A'}
-- Original File: ${resumeFile.name}
-- Submitted: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
-            `.trim()
-        };
-
-        const media = {
-            mimeType: resumeFile.type,
-            body: bufferToStream(buffer),
-        };
-
-        const response = await drive.files.create({
-            requestBody: fileMetadata,
-            media: media,
-            fields: 'id, name, webViewLink',
-        });
-
-        console.log('Resume uploaded to Google Drive:', response.data);
-
-        // Create info file with applicant details
-        const infoContent = `
-APPLICATION DETAILS
-==================
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Position Applied: ${position}
-Message: ${message || 'N/A'}
-Resume File: ${fileName}
-Submitted On: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
-Google Drive Link: ${response.data.webViewLink || 'N/A'}
-        `.trim();
-
-        const infoFileName = `${timestamp}_${sanitizedName}_${sanitizedPosition}_INFO.txt`;
-
-        await drive.files.create({
-            requestBody: {
-                name: infoFileName,
-                parents: [process.env.GOOGLE_DRIVE_FOLDER_ID],
-                mimeType: 'text/plain',
-            },
-            media: {
-                mimeType: 'text/plain',
-                body: Readable.from([infoContent]),
-            },
-            fields: 'id',
-        });
+        if (dbError) {
+            console.error('Supabase Database Error:', dbError);
+            // Even if DB fails, the file uploaded, but we return an error to user
+            return NextResponse.json(
+                { error: 'Failed to save application details.' },
+                { status: 500 }
+            );
+        }
 
         return NextResponse.json({
             success: true,
             message: 'Application submitted successfully! We will review your resume and contact you soon.',
-            fileId: response.data.id,
+            resumeUrl: resumeUrl
         });
 
     } catch (error) {
