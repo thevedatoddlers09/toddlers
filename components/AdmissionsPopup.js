@@ -154,7 +154,7 @@ export default function AdmissionsPopup() {
 
                 {!isSubmitted ? (
                     <div className="flex flex-col gap-5">
-                        <h2 className="text-2xl text-gray-900 text-center font-bold font-poppins">Admissions Now Open</h2>
+                        <h2 className="text-2xl text-gray-900 text-center font-bold font-poppins">Admissions Open Now</h2>
                         <p className="text-center text-gray-600 text-sm">Enrich your child's future starting today.</p>
 
                         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
