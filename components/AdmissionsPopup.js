@@ -314,7 +314,7 @@ export default function AdmissionsPopup() {
                                                     name="preferredLocation"
                                                     id="preferredLocation"
                                                     className={inputClass}
-                                                    placeholder="e.g. South Delhi"
+                                                    placeholder="e.g. Mohali"
                                                     disabled={isLoading}
                                                 />
                                             </div>
