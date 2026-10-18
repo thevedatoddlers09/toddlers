@@ -5,7 +5,7 @@ This guide explains how to configure your Supabase project to accept career appl
 ## Step 1: Run the Database Setup SQL
 You need to create a table to store the applications and a storage bucket for the resumes.
 
-1. Go to your [Supabase Dashboard](https://supabase.com/dashboard)
+1. Go to our [Supabase Dashboard](https://supabase.com/dashboard)
 2. Go to the **SQL Editor** down the left sidebar
 3. Click **New Query**
 4. Paste the following SQL and click **Run**:
