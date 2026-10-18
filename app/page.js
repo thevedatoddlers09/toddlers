@@ -4,11 +4,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '@/components/Button';
-import Card from '@/components/Card';
 import HeroCarousel from '@/components/HeroCarousel';
 import AdmissionsPopup from '@/components/AdmissionsPopup';
 import StatsCounter from '@/components/StatsCounter';
-import { Award, ShieldCheck, Heart, Flower2, School, Shield, FerrisWheel, Laptop, Bus, Hospital } from 'lucide-react';
+import { Award, ShieldCheck, Heart, Flower2, School, Shield, FerrisWheel, Laptop, Bus, Hospital, ArrowRight, Check, Sun } from 'lucide-react';
 
 export default function Home() {
   const mainRef = useRef(null);
@@ -17,27 +16,6 @@ export default function Home() {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      // About Section Animation
-      gsap.from('.anim-about-text', {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: '.anim-about-section',
-          start: 'top 80%',
-        }
-      });
-      gsap.from('.anim-about-image', {
-        x: 50,
-        opacity: 0,
-        duration: 0.8,
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: '.anim-about-section',
-          start: 'top 80%',
-        }
-      });
-
       // Programs Stagger
       gsap.from('.anim-program-card', {
         y: 60,
@@ -107,58 +85,121 @@ export default function Home() {
       {/* Hero Carousel */}
       <HeroCarousel />
 
-      {/* About The Veda Toddlers Section */}
-      <section className="anim-about-section py-20 px-[3%] bg-gradient-to-br from-veda-playful-blue/10 via-white to-veda-secondary-light/20 relative overflow-hidden">
-        {/* Decorative Handprints */}
-        <div className="absolute top-10 right-10 text-veda-primary/10 rotate-12">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m0-9c-.83 0-1.5-.67-1.5-1.5S11.17 2.5 12 2.5s1.5.67 1.5 1.5S12.83 5.5 12 5.5M5.5 8C4.67 8 4 7.33 4 6.5S4.67 5 5.5 5 7 5.67 7 6.5 6.33 8 5.5 8m13 0c-.83 0-1.5-.67-1.5-1.5S17.67 5 18.5 5s1.5.67 1.5 1.5S19.33 8 18.5 8M19.5 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m-15 0c-.83 0-1.5-.67-1.5-1.5S3.67 18 4.5 18s1.5.67 1.5 1.5S5.33 21 4.5 21" />
-          </svg>
-        </div>
-        <div className="absolute bottom-16 right-32 text-veda-primary/15 -rotate-12">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 14.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m0-9c-.83 0-1.5-.67-1.5-1.5S11.17 2.5 12 2.5s1.5.67 1.5 1.5S12.83 5.5 12 5.5M5.5 8C4.67 8 4 7.33 4 6.5S4.67 5 5.5 5 7 5.67 7 6.5 6.33 8 5.5 8m13 0c-.83 0-1.5-.67-1.5-1.5S17.67 5 18.5 5s1.5.67 1.5 1.5S19.33 8 18.5 8M19.5 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5m-15 0c-.83 0-1.5-.67-1.5-1.5S3.67 18 4.5 18s1.5.67 1.5 1.5S5.33 21 4.5 21" />
-          </svg>
-        </div>
-        <div className="absolute top-1/2 left-10 w-20 h-20 bg-veda-accent/10 rounded-full blur-2xl"></div>
+      {/* Welcome / Philosophy */}
+      <section className="relative isolate overflow-hidden bg-veda-background-soft">
+        <div className="absolute inset-y-0 right-0 -z-10 hidden w-[42%] bg-veda-secondary-light/50 lg:block" aria-hidden="true" />
+        <div className="absolute -left-16 top-16 -z-10 h-40 w-40 rounded-full bg-veda-accent/20 blur-3xl sm:h-56 sm:w-56" aria-hidden="true" />
+        <div className="absolute -right-10 bottom-20 -z-10 h-28 w-28 rounded-full bg-veda-playful-blue/25 blur-3xl lg:hidden" aria-hidden="true" />
 
-        <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            {/* Content */}
-            <div className="anim-about-text lg:w-1/2 order-2 lg:order-1">
-              <h2 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-6 leading-tight">
-                About <span className="text-veda-accent">The Veda Toddlers</span>
-              </h2>
-              <div className="space-y-4 text-lg text-veda-text-DEFAULT leading-relaxed">
-                <p>
-                  The Veda Toddlers is a <strong className="text-veda-primary">new-age preschool and daycare</strong> for children aged <strong className="text-veda-accent-dark">1 to 6 years</strong>, built on joyful, holistic, and experiential learning.
-                </p>
-                <p>
-                  Founded by <strong className="text-veda-primary">Mandeep Sharma</strong>, it blends global early education standards with rich Indian values. Every Veda school nurtures confident, kind, and creative learners through a child-centered philosophy, research-based curriculum, and warm, supportive environment — <em className="text-veda-primary">redefining early education, one happy childhood at a time.</em>
-                </p>
-              </div>
-              <div className="mt-8">
-                <Button variant="primary" shape="pill" href="/about">
-                  Learn More About Us
-                </Button>
-              </div>
-            </div>
-            {/* Image */}
-            <div className="anim-about-image lg:w-1/2 order-1 lg:order-2">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-veda-accent/20 to-veda-primary/20 rounded-3xl transform rotate-3"></div>
+        <div className="mx-auto grid max-w-[1440px] items-center gap-5 px-4 py-7 max-sm:gap-0 sm:gap-10 sm:px-8 sm:py-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:px-12 lg:py-20">
+          <div className="relative z-10 order-1 max-w-2xl lg:order-1 lg:text-left">
+            {/* Mobile badge row — refined cohesion under 640px */}
+            <div className="mb-3.5 flex items-center gap-2.5 sm:mb-6 sm:block lg:block">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[1.1rem] bg-veda-secondary shadow-soft ring-2 ring-white/90 sm:hidden">
                 <img
                   src="/about-children.jpg"
-                  alt="Happy children at The Veda Toddlers"
-                  className="relative rounded-3xl shadow-softer w-full object-cover aspect-[4/3]"
+                  alt=""
+                  aria-hidden="true"
+                  className="h-full w-full object-cover object-[center_30%]"
                 />
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-veda-accent rounded-2xl flex items-center justify-center shadow-lg">
-                  <span className="text-2xl">🎨</span>
+              </div>
+              <div className="min-w-0 flex-1 sm:contents">
+                <div className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-veda-secondary/80 bg-white px-2.5 py-1.5 text-[10px] font-semibold leading-none text-veda-primary shadow-soft sm:gap-2 sm:px-4 sm:py-2 sm:text-sm">
+                  <Heart size={12} className="shrink-0 fill-veda-playful-peach/40 text-veda-primary sm:h-3.5 sm:w-3.5" aria-hidden="true" />
+                  <span className="truncate sm:whitespace-normal sm:leading-tight">Preschool, daycare & after-school care</span>
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-14 h-14 bg-veda-playful-green rounded-2xl flex items-center justify-center shadow-lg">
-                  <span className="text-xl">📚</span>
+              </div>
+            </div>
+
+            <h2 className="font-poppins text-[1.625rem] font-bold leading-[1.18] tracking-[-0.028em] text-veda-primary sm:text-4xl sm:leading-tight md:text-5xl lg:text-[4.25rem] lg:leading-[1.08] lg:tracking-[-0.035em]">
+              A joyful beginning for every{' '}
+              <span className="relative inline-block pb-0.5">
+                little learner
+                <svg className="absolute bottom-0 left-0 h-2 w-full text-veda-accent sm:-bottom-2 sm:h-3" viewBox="0 0 240 12" fill="none" aria-hidden="true">
+                  <path d="M3 8.5C64 2.5 160 2 237 7" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
+                </svg>
+              </span>
+            </h2>
+
+            <p className="mt-2.5 max-w-xl text-[13.5px] leading-6 text-veda-text-DEFAULT sm:mt-6 sm:text-lg sm:leading-8 lg:mt-7 lg:text-xl">
+              A warm, child-centred space where play, imagination, Indian values, and meaningful experiences help children grow with confidence.
+            </p>
+
+            {/* Mobile/tablet image — caption sits below on phones so faces stay visible */}
+            <div className="mt-4 sm:mt-6 lg:hidden">
+              <div className="relative overflow-hidden rounded-[1.25rem] bg-veda-secondary shadow-soft sm:rounded-3xl">
+                <div className="relative h-[112px] w-full sm:h-[200px]">
+                  <img
+                    src="/about-children.jpg"
+                    alt="Children learning and celebrating together at The Veda Toddlers"
+                    className="absolute inset-0 h-full w-full object-cover object-[center_28%] sm:object-center"
+                  />
+                  {/* Tablet-only overlay caption (unchanged tablet treatment) */}
+                  <div className="absolute inset-0 hidden bg-gradient-to-t from-veda-primary/35 via-transparent to-transparent sm:block" aria-hidden="true" />
+                  <div className="absolute bottom-3 left-3 right-3 hidden items-center gap-2.5 rounded-xl bg-white/95 px-3 py-2 shadow-soft backdrop-blur sm:flex">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-veda-accent text-veda-primary-dark">
+                      <Sun size={16} aria-hidden="true" />
+                    </span>
+                    <p className="text-sm font-semibold leading-5 text-veda-primary">
+                      Learning with joyful energy, every day.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              {/* Phone-only caption under the image */}
+              <div className="mt-2.5 flex items-center gap-2 rounded-2xl border border-veda-border/80 bg-white px-3 py-2 sm:hidden">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-veda-accent text-veda-primary-dark">
+                  <Sun size={14} aria-hidden="true" />
+                </span>
+                <p className="text-[11px] font-semibold leading-4 text-veda-primary">
+                  Learning with joyful energy, every day.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-4 flex flex-col gap-2 sm:mt-9 sm:flex-row sm:gap-3 lg:justify-start">
+              <Button href="/admissions" variant="secondary" shape="pill" className="w-full gap-2 px-5 py-3 text-[13px] sm:w-auto sm:px-7 sm:py-3.5 sm:text-base">
+                Book a School Visit
+                <ArrowRight size={16} className="sm:h-[18px] sm:w-[18px]" aria-hidden="true" />
+              </Button>
+              <Button href="/programs" variant="outline" shape="pill" className="w-full gap-2 border-veda-secondary bg-veda-secondary-light/40 px-5 py-3 text-[13px] text-veda-primary hover:bg-veda-secondary-light sm:w-auto sm:border-veda-primary sm:bg-white sm:px-7 sm:py-3.5 sm:text-base">
+                Explore Our Programs
+              </Button>
+            </div>
+
+            <div className="mt-3.5 flex flex-wrap gap-1.5 sm:mt-8 sm:gap-3 lg:gap-x-5">
+              {['Play-based learning', '8 months to 6 years', 'Half & full-day care'].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center gap-1 rounded-full border border-veda-border/70 bg-white px-2.5 py-1 text-[10.5px] font-semibold leading-none text-veda-primary sm:gap-1.5 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:text-sm sm:leading-normal"
+                >
+                  <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-veda-playful-green/30 sm:h-5 sm:w-5">
+                    <Check size={10} className="sm:h-[11px] sm:w-[11px]" aria-hidden="true" />
+                  </span>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Full image composition — desktop only */}
+          <div className="relative order-2 mx-auto hidden w-full max-w-[680px] pb-10 lg:block lg:order-2">
+            <div className="absolute -right-7 top-10 h-32 w-32 rounded-full border-[18px] border-veda-accent/35" aria-hidden="true" />
+            <div className="relative ml-auto aspect-[4/3] w-[92%] overflow-hidden rounded-[3rem] bg-veda-secondary shadow-[0_28px_70px_rgba(62,42,79,0.18)]">
+              <img
+                src="/about-children.jpg"
+                alt="Children learning and celebrating together at The Veda Toddlers"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 max-w-[240px] rounded-3xl border border-white/80 bg-white/95 p-5 shadow-xl backdrop-blur">
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-veda-accent text-veda-primary-dark">
+                  <Sun size={23} aria-hidden="true" />
+                </span>
+                <p className="text-sm font-semibold leading-5 text-veda-primary">
+                  Learning with joyful energy, every day.
+                </p>
               </div>
             </div>
           </div>
