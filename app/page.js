@@ -395,7 +395,7 @@ export default function Home() {
             <Button
               variant="primary"
               shape="pill"
-              href="/activities"
+              href="/gallery"
               className="bg-veda-accent px-6 py-2.5 text-sm font-bold text-veda-primary-dark hover:bg-veda-accent-dark sm:px-8 sm:py-3 sm:text-base"
             >
               View All Photos

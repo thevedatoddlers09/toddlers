@@ -1,178 +1,20 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-const allEvents = [
-    // Baisakhi
-    { id: 1, title: 'Baisakhi Celebration', category: 'Baisakhi', image: '/images/events/baisakhi-1.jpg', rotate: 270 },
-    { id: 101, title: 'Baisakhi Dance', category: 'Baisakhi', image: '/images/events/baisakhi-2.jpg', rotate: 270 },
-    { id: 102, title: 'Baisakhi Dhol', category: 'Baisakhi', image: '/images/events/baisakhi-3.jpg', rotate: 270 },
-    { id: 103, title: 'Baisakhi Group Photo', category: 'Baisakhi', image: '/images/events/baisakhi-4.jpg', rotate: 270 },
-    { id: 104, title: 'Baisakhi Performance', category: 'Baisakhi', image: '/images/events/baisakhi-5.jpg', rotate: 270 },
-    { id: 105, title: 'Baisakhi Girl', category: 'Baisakhi', image: '/images/events/baisakhi-6.jpg' },
-    { id: 108, title: 'Baisakhi Class Group', category: 'Baisakhi', image: '/images/events/baisakhi-9.jpg' },
-    { id: 109, title: 'Baisakhi Bangles', category: 'Baisakhi', image: '/images/events/baisakhi-10.jpg' },
-    { id: 110, title: 'Baisakhi Little Star', category: 'Baisakhi', image: '/images/events/baisakhi-11.jpg' },
-    { id: 111, title: 'Baisakhi Mother Child', category: 'Baisakhi', image: '/images/events/baisakhi-12.jpg', rotate: 270 },
-    { id: 112, title: 'Baisakhi Pink Dress', category: 'Baisakhi', image: '/images/events/baisakhi-13.jpg', rotate: 270 },
-    { id: 113, title: 'Baisakhi Art', category: 'Baisakhi', image: '/images/events/baisakhi-14.jpg' },
-
-    // Sports Day
-    { id: 2, title: 'Sports Day Warmup', category: 'Sports Day', image: '/images/events/sports-1.jpg' },
-    { id: 201, title: 'Sports Day Guests', category: 'Sports Day', image: '/images/events/sports-2.jpg' },
-    { id: 202, title: 'Sports Day Race', category: 'Sports Day', image: '/images/events/sports-3.jpg' },
-    { id: 203, title: 'Sports Day Parachute', category: 'Sports Day', image: '/images/events/sports-4.jpg' },
-    { id: 204, title: 'Sports Day Hurdles', category: 'Sports Day', image: '/images/events/sports-5.jpg' },
-    { id: 205, title: 'Sports Day Smile', category: 'Sports Day', image: '/images/events/sports-6.jpg' },
-    { id: 206, title: 'Sports Day Parents', category: 'Sports Day', image: '/images/events/sports-7.jpg' },
-    { id: 207, title: 'Sports Day Family', category: 'Sports Day', image: '/images/events/sports-8.jpg' },
-    { id: 208, title: 'Sports Day Group', category: 'Sports Day', image: '/images/events/sports-9.jpg' },
-    { id: 209, title: 'Sports Day Fun', category: 'Sports Day', image: '/images/events/sports-10.jpg' },
-    { id: 210, title: 'Sports Day Crowd', category: 'Sports Day', image: '/images/events/sports-11.jpg' },
-    { id: 211, title: 'Sports Day Finish', category: 'Sports Day', image: '/images/events/sports-12.jpg' },
-    { id: 212, title: 'Sports Day Hoops', category: 'Sports Day', image: '/images/events/sports-13.jpg' },
-    { id: 213, title: 'Sports Day March', category: 'Sports Day', image: '/images/events/sports-14.jpg' },
-    { id: 214, title: 'Sports Day Football', category: 'Sports Day', image: '/images/events/sports-15.jpg' },
-    { id: 215, title: 'Sports Day Team', category: 'Sports Day', image: '/images/events/sports-16.jpg' },
-
-    // Ramleela
-    { id: 3, title: 'Ramleela Stage', category: 'Ramleela', image: '/images/events/ramleela-1.jpg' },
-    { id: 301, title: 'Ramleela Girls', category: 'Ramleela', image: '/images/events/ramleela-2.jpg' },
-    { id: 302, title: 'Ramleela Group', category: 'Ramleela', image: '/images/events/ramleela-3.jpg' },
-    { id: 303, title: 'Ramleela Kids', category: 'Ramleela', image: '/images/events/ramleela-4.jpg' },
-    { id: 304, title: 'Ramleela Scene', category: 'Ramleela', image: '/images/events/ramleela-5.png' },
-    { id: 305, title: 'Ramleela Performer', category: 'Ramleela', image: '/images/events/ramleela-6.png' },
-    { id: 306, title: 'Ramleela Ravan', category: 'Ramleela', image: '/images/events/ramleela-7.png' },
-    { id: 307, title: 'Ramleela Dance', category: 'Ramleela', image: '/images/events/ramleela-8.png' },
-
-    // Parents Day Celebration
-    { id: 114, title: 'PTM Presentation', category: 'Parents Day Celebration', image: '/images/events/ptm-5.jpg' },
-    { id: 115, title: 'PTM Felicitation', category: 'Parents Day Celebration', image: '/images/events/ptm-6.jpg' },
-    { id: 116, title: 'PTM Kids Performance', category: 'Parents Day Celebration', image: '/images/events/ptm-7.jpg' },
-    { id: 117, title: 'PTM Students', category: 'Parents Day Celebration', image: '/images/events/ptm-8.jpg' },
-    { id: 118, title: 'PTM Award Ceremony', category: 'Parents Day Celebration', image: '/images/events/ptm-9.jpg' },
-    { id: 119, title: 'PTM Kids Dance', category: 'Parents Day Celebration', image: '/images/events/ptm-10.jpg' },
-    { id: 120, title: 'PTM Recognition', category: 'Parents Day Celebration', image: '/images/events/ptm-11.jpg' },
-    { id: 121, title: 'PTM Kids', category: 'Parents Day Celebration', image: '/images/events/ptm-12.jpg' },
-    { id: 122, title: 'PTM Address', category: 'Parents Day Celebration', image: '/images/events/ptm-13.jpg' },
-
-    // Mother's Day
-    { id: 6, title: "Mother's Day Celebration", category: "Mother's Day", image: '/images/events/mothers-day-1.png' },
-    { id: 601, title: "Mother's Day Event", category: "Mother's Day", image: '/images/events/mothers-day-2.png' },
-    { id: 602, title: "Mother's Day Special", category: "Mother's Day", image: '/images/events/mothers-day-3.png' },
-    { id: 603, title: "Mother's Day Award", category: "Mother's Day", image: '/images/events/mothers-day-4.png' },
-    { id: 604, title: "Mother's Day Dance", category: "Mother's Day", image: '/images/events/mothers-day-5.png' },
-    { id: 605, title: "Mother's Day Banner", category: "Mother's Day", image: '/images/events/mothers-day-6.png' },
-    { id: 606, title: "Mother's Day Joy", category: "Mother's Day", image: '/images/events/mothers-day-7.png' },
-    { id: 607, title: "Mother's Day Performance", category: "Mother's Day", image: '/images/events/mothers-day-8.png' },
-    { id: 608, title: "Mother's Day Ramp Walk", category: "Mother's Day", image: '/images/events/mothers-day-9.png' },
-    { id: 609, title: "Mother's Day Group", category: "Mother's Day", image: '/images/events/mothers-day-10.png' },
-    { id: 610, title: "Mother's Day Speech", category: "Mother's Day", image: '/images/events/mothers-day-11.png' },
-    { id: 611, title: "Mother's Day Cake Cutting", category: "Mother's Day", image: '/images/events/mothers-day-12.png' },
-];
-
-const categories = [
-    'Baisakhi',
-    'Sports Day',
-    'Ramleela',
-    'Parents Day Celebration',
-    "Mother's Day",
-];
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function EventsPage() {
-    const mainRef = useRef(null);
-    const [activeFilter, setActiveFilter] = useState('Baisakhi');
+  const router = useRouter();
 
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    router.replace('/gallery?centre=sector-105&theme=events');
+  }, [router]);
 
-        const ctx = gsap.context(() => {
-            // Header animation - smoother
-            gsap.fromTo('.anim-header',
-                { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 1, ease: 'power2.out' }
-            );
-
-            // Filter pills stagger - smoother
-            gsap.fromTo('.anim-filter-pill',
-                { y: 15, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.6, stagger: 0.04, delay: 0.4, ease: 'power2.out' }
-            );
-
-            // Photo grid items - smoother
-            gsap.fromTo('.anim-photo-card',
-                { y: 30, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.7,
-                    stagger: 0.05,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: '.anim-photo-grid',
-                        start: 'top 90%',
-                    }
-                }
-            );
-        }, mainRef);
-
-        return () => ctx.revert();
-    }, []);
-
-    const filteredEvents = allEvents.filter(event => event.category === activeFilter);
-
-    return (
-        <main ref={mainRef} className="bg-veda-background-DEFAULT min-h-screen">
-            {/* Header */}
-            <section className="anim-header pt-20 pb-10 px-4 text-center">
-                <h1 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
-                    Our Events
-                </h1>
-                <p className="text-veda-text-muted text-lg max-w-2xl mx-auto">
-                    Celebrating joyful moments, festivals, and milestones with our little stars.
-                </p>
-            </section>
-
-            {/* Filter Pills */}
-            <section className="px-4 pb-12">
-                <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-3">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setActiveFilter(category)}
-                            className={`anim-filter-pill py-2 px-5 rounded-full text-sm font-bold transition-all duration-300 border-2 cursor-pointer ${activeFilter === category
-                                ? 'bg-veda-primary text-white border-veda-primary shadow-md'
-                                : 'bg-white text-veda-text-muted border-veda-border hover:border-veda-primary hover:text-veda-primary'
-                                }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
-                </div>
-            </section>
-
-            <section className="px-4 pb-24">
-                <div className="anim-photo-grid max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {filteredEvents.map((event) => (
-                        <div
-                            key={event.id}
-                            className="anim-photo-card group relative overflow-hidden rounded-2xl shadow-soft hover:shadow-softer transition-shadow duration-300 aspect-square"
-                        >
-                            <img
-                                src={event.image}
-                                alt={event.title}
-                                className="w-full h-full object-cover object-top block group-hover:scale-105 transition-transform duration-500"
-                                style={event.rotate ? { transform: `rotate(${event.rotate}deg)` } : {}}
-                            />
-                        </div>
-                    ))}
-                </div>
-                {filteredEvents.length === 0 && (
-                    <p className="text-center text-veda-text-muted py-12 text-lg">No events found for this category.</p>
-                )}
-            </section>
-        </main>
-    );
+  return (
+    <main className="flex min-h-[50vh] items-center justify-center bg-veda-background-soft px-4">
+      <p className="font-poppins text-sm text-veda-text-muted sm:text-base">
+        Opening the events gallery…
+      </p>
+    </main>
+  );
 }

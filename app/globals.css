@@ -98,3 +98,42 @@ button {
 .animate-fade-in {
   animation: fade-in 0.2s ease-out;
 }
+
+/* Gallery skeleton — column-by-column load */
+@keyframes gallery-skeleton-col-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gallery-skeleton-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.gallery-skeleton-col {
+  opacity: 0;
+  animation: gallery-skeleton-col-in 0.45s ease-out forwards;
+}
+
+.gallery-skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ebe4f3 0%,
+    #f7f3fb 40%,
+    #ebe4f3 80%
+  );
+  background-size: 200% 100%;
+  animation: gallery-skeleton-shimmer 1.25s ease-in-out infinite;
+}
