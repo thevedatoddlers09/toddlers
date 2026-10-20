@@ -14,7 +14,7 @@ import MasonryGallery from '../../components/gallery/MasonryGallery';
 import Lightbox from '../../components/gallery/Lightbox';
 import GalleryEmpty from '../../components/gallery/GalleryEmpty';
 
-const VALID_THEMES = new Set(['all', 'celebrations', 'events', 'daily']);
+const VALID_THEMES = new Set(['all', 'celebrations', 'events', 'daily', 'learning']);
 const VALID_CENTRES = new Set(centres.map((c) => c.id));
 
 function GalleryContent() {
@@ -23,9 +23,7 @@ function GalleryContent() {
   const mainRef = useRef(null);
 
   const centreFromUrl = searchParams.get('centre');
-  const rawTheme = searchParams.get('theme');
-  // Legacy ?theme=learning → daily (Classroom Learning merged into Daily Activities)
-  const themeFromUrl = rawTheme === 'learning' ? 'daily' : rawTheme;
+  const themeFromUrl = searchParams.get('theme');
   const albumFromUrl = searchParams.get('album');
 
   const [centreId, setCentreId] = useState(
@@ -137,7 +135,7 @@ function GalleryContent() {
             Gallery
           </h1>
           <p className="mx-auto mt-2 max-w-xl px-1 text-xs leading-relaxed text-veda-secondary-light sm:mt-4 sm:text-base md:text-lg">
-            Celebrations, events, and daily joy — explore by centre.
+            Celebrations, events, daily activities, and classroom learning — explore by centre.
           </p>
         </div>
       </section>
