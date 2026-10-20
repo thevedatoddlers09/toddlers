@@ -20,9 +20,9 @@ export default function Card({
 
     const paddings = {
         none: "p-0",
-        small: "p-5",
-        normal: "p-8",
-        large: "p-12"
+        small: "p-4 sm:p-5",
+        normal: "p-5 sm:p-8",
+        large: "p-6 sm:p-10 md:p-12"
     };
 
     return (
@@ -32,7 +32,7 @@ export default function Card({
         >
             {image && (
                 <div
-                    className="w-full h-[200px] bg-cover bg-center border-b border-veda-border"
+                    className="w-full h-[160px] bg-cover bg-center border-b border-veda-border sm:h-[200px]"
                     style={{ backgroundImage: `url(${image})` }}
                 />
             )}

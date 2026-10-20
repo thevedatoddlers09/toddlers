@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* From The Founder & Director Section */}
-      <section className="py-20 px-[3%] bg-gradient-to-br from-veda-secondary-light/40 via-veda-playful-blue/10 to-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 px-[3%] bg-gradient-to-br from-veda-secondary-light/40 via-veda-playful-blue/10 to-white relative overflow-hidden">
         <div className="absolute top-20 right-20 text-veda-primary/20">
           <Heart size={40} />
         </div>
@@ -321,10 +321,10 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:w-3/5">
-              <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-poppins mb-6 leading-tight">
                 <span className="text-veda-primary">From The</span> <span className="text-veda-accent">Founder & Director</span>
               </h2>
-              <div className="space-y-4 text-lg text-veda-text-DEFAULT leading-relaxed italic">
+              <div className="space-y-4 text-sm sm:text-lg text-veda-text-DEFAULT leading-relaxed italic">
                 <p>
                   "Being the Founder & Director of The Veda Toddlers is a privilege. Our preschool offers a warm, nurturing, and future-ready environment where every child feels safe, supported, and encouraged to explore."
                 </p>
@@ -571,7 +571,7 @@ export default function Home() {
       </section>
 
       {/* Franchise Highlight */}
-      <section className="relative py-32 bg-veda-primary overflow-hidden">
+      <section className="relative py-16 sm:py-24 md:py-32 bg-veda-primary overflow-hidden">
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px] md:h-[100px]">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-white"></path>
@@ -589,7 +589,7 @@ export default function Home() {
             <span className="inline-block py-1 px-4 rounded-full bg-veda-accent/20 text-veda-accent font-bold uppercase tracking-widest text-xs mb-6 border border-veda-accent/30 backdrop-blur-sm">
               Growth Opportunity
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-white mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-poppins text-white mb-6 leading-tight">
               Partner With <span className="text-veda-accent relative inline-block">
                 The Veda
                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-veda-accent opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
@@ -597,7 +597,7 @@ export default function Home() {
                 </svg>
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-veda-secondary-light mb-10 font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-lg md:text-xl text-veda-secondary-light mb-10 font-light max-w-2xl mx-auto leading-relaxed">
               Join India's fastest-growing preschool network. We provide the blueprint, training, and support to build your own legacy of education.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -619,7 +619,7 @@ export default function Home() {
       </section>
 
       {/* Our Branches - Coming Soon */}
-      <section className="py-20 bg-gradient-to-b from-amber-50 via-pink-50 to-sky-50 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-amber-50 via-pink-50 to-sky-50 relative overflow-hidden">
         <div className="absolute top-10 left-[5%] text-6xl opacity-20 animate-bounce" style={{ animationDuration: '3s' }}>🏠</div>
         <div className="absolute top-20 right-[10%] text-5xl opacity-20 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>⭐</div>
         <div className="absolute bottom-20 left-[15%] text-4xl opacity-20 animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}>🌈</div>
@@ -631,21 +631,21 @@ export default function Home() {
         <div className="absolute top-30 right-[27%] w-8 h-4 bg-white rounded-full opacity-50"></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8 sm:mb-12 md:mb-14">
             <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white shadow-md text-veda-primary font-bold text-sm mb-6 border-2 border-dashed border-veda-accent">
               <span className="text-xl">🌟</span>
               <span>Coming Soon Near You!</span>
               <span className="text-xl">🌟</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
               Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">Learning Homes</span>
             </h2>
-            <p className="text-veda-text-muted text-lg max-w-xl mx-auto">
+            <p className="text-veda-text-muted text-sm sm:text-lg max-w-xl mx-auto">
               Building new playful spaces for little learners across the city!
             </p>
           </div>
 
-          <div className="anim-branches-section grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+          <div className="anim-branches-section grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 max-w-6xl mx-auto">
             {[
               { name: 'Sector 105', city: 'Mohali', iconColor: 'text-purple-500', bgColor: 'bg-gradient-to-b from-purple-100 to-purple-200', borderColor: 'border-purple-300' },
               { name: 'Sector 79', city: 'Mohali', iconColor: 'text-amber-500', bgColor: 'bg-gradient-to-b from-amber-100 to-amber-200', borderColor: 'border-amber-300' },
@@ -655,13 +655,13 @@ export default function Home() {
               { name: 'Ambala', city: 'Haryana', iconColor: 'text-rose-500', bgColor: 'bg-gradient-to-b from-rose-100 to-rose-200', borderColor: 'border-rose-300' },
             ].map((branch, index) => (
               <div key={index} className="anim-branch-card group">
-                <div className={`relative ${branch.bgColor} rounded-3xl p-6 pt-6 pb-8 text-center border-2 ${branch.borderColor} shadow-lg hover:shadow-xl transform hover:-translate-y-3 hover:scale-105 transition-all duration-300 cursor-pointer min-h-[160px] flex flex-col justify-center`}>
+                <div className={`relative ${branch.bgColor} rounded-3xl p-5 sm:p-6 pt-5 sm:pt-6 pb-6 sm:pb-8 text-center border-2 ${branch.borderColor} shadow-lg hover:shadow-xl transform hover:-translate-y-3 hover:scale-105 transition-all duration-300 cursor-pointer min-h-[160px] flex flex-col justify-center`}>
                   <div className={`${branch.iconColor} mb-4 transform group-hover:scale-110 transition-transform duration-300`}>
                     <svg className="w-12 h-12 mx-auto drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
                   </div>
-                  <h3 className="font-bold font-poppins text-gray-700 text-lg mb-1">{branch.name}</h3>
+                  <h3 className="font-bold font-poppins text-gray-700 text-sm sm:text-lg mb-1">{branch.name}</h3>
                   <p className="text-gray-500 text-sm">{branch.city}</p>
                   <div className="absolute -top-1 -right-1 bg-veda-accent text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-lg rounded-tr-3xl shadow-sm">
                     SOON ✨

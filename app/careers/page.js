@@ -263,7 +263,7 @@ export default function CareersPage() {
     return (
         <main ref={mainRef} className="bg-white overflow-hidden">
             {/* Hero Section - Creative with floating elements */}
-            <section className="relative min-h-[55vh] bg-gradient-to-br from-veda-primary via-veda-primary-dark to-veda-primary-dark flex items-center justify-center text-center text-white py-24 px-4 overflow-hidden">
+            <section className="relative min-h-[55vh] bg-gradient-to-br from-veda-primary via-veda-primary-dark to-veda-primary-dark flex items-center justify-center text-center text-white py-12 sm:py-16 md:py-24 px-4 overflow-hidden">
                 {/* Decorative blurred circles */}
                 <div className="absolute top-0 left-0 w-96 h-96 bg-veda-accent/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-veda-secondary/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
@@ -287,16 +287,16 @@ export default function CareersPage() {
                         <Briefcase size={16} />
                         <span>We're Hiring</span>
                     </div>
-                    <h1 className="font-poppins text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
+                    <h1 className="font-poppins text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
                         Join The <span className="text-veda-accent">Veda</span> Family
                     </h1>
-                    <p className="font-opensans text-xl md:text-2xl max-w-2xl mx-auto font-light text-white/90 mb-10">
+                    <p className="font-opensans text-sm sm:text-xl md:text-2xl max-w-2xl mx-auto font-light text-white/90 mb-10">
                         Be part of a team that's shaping the future, one child at a time.
                         Make a real difference in young lives every day.
                     </p>
                     <a
                         href="#positions"
-                        className="inline-flex items-center gap-3 bg-white text-veda-primary font-bold py-4 px-10 rounded-full hover:bg-veda-accent hover:text-veda-primary-dark transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-lg"
+                        className="inline-flex items-center gap-3 bg-white text-veda-primary font-bold py-3 sm:py-4 px-8 sm:px-10 rounded-full hover:bg-veda-accent hover:text-veda-primary-dark transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 text-base sm:text-lg"
                     >
                         View Open Positions
                         <ArrowRight size={22} />
@@ -305,7 +305,7 @@ export default function CareersPage() {
             </section>
 
             {/* Why Join Us Section - Rounded creative cards */}
-            <section className="anim-benefits-section py-24 px-4 bg-veda-background-muted relative">
+            <section className="anim-benefits-section py-12 sm:py-16 md:py-24 px-4 bg-veda-background-muted relative">
                 {/* Decorative elements */}
                 <div className="absolute top-10 right-10 text-veda-playful-peach/30 animate-pulse">
                     <Star size={56} className="fill-veda-playful-peach/20" />
@@ -315,23 +315,23 @@ export default function CareersPage() {
                 </div>
 
                 <div className="max-w-6xl mx-auto relative z-10">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-8 sm:mb-12 md:mb-16">
                         <div className="inline-flex items-center gap-2 bg-veda-primary/10 px-4 py-2 rounded-full mb-4">
                             <Heart size={18} className="text-veda-primary" />
                             <span className="text-veda-primary font-semibold text-sm uppercase tracking-wider">Benefits</span>
                         </div>
-                        <h2 className="font-poppins text-4xl md:text-5xl font-bold text-veda-text-heading mb-4">
+                        <h2 className="font-poppins text-2xl sm:text-4xl md:text-5xl font-bold text-veda-text-heading mb-4">
                             Why Join Us?
                         </h2>
-                        <p className="text-veda-text-muted text-xl max-w-2xl mx-auto">
+                        <p className="text-veda-text-muted text-sm sm:text-xl max-w-2xl mx-auto">
                             We believe in nurturing not just children, but also our amazing team members.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                         {benefits.map((benefit, idx) => (
                             <div key={idx} className="anim-benefit-card">
-                                <div className={`relative bg-gradient-to-br ${benefit.bgGradient} rounded-[2rem] p-8 h-full border border-white/60 shadow-soft hover:shadow-softer hover:-translate-y-3 transition-all duration-500 group overflow-hidden`}>
+                                <div className={`relative bg-gradient-to-br ${benefit.bgGradient} rounded-[2rem] p-5 sm:p-8 h-full border border-white/60 shadow-soft hover:shadow-softer hover:-translate-y-3 transition-all duration-500 group overflow-hidden`}>
                                     {/* Decorative blur */}
                                     <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-white/40 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
 
@@ -352,18 +352,18 @@ export default function CareersPage() {
             {/* Open Positions Section - Creative rounded container */}
             <section id="positions" className="anim-jobs-section py-12 px-4 bg-white">
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="bg-gradient-to-br from-blue-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-blue-100 relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-blue-50 to-white rounded-[3rem] p-5 sm:p-8 md:p-12 shadow-soft border border-blue-100 relative overflow-hidden">
                         {/* Decorative blurs */}
                         <div className="absolute -right-20 -top-20 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
                         <div className="absolute -left-20 -bottom-20 w-72 h-72 bg-veda-secondary/30 rounded-full blur-3xl opacity-50"></div>
 
                         <div className="relative z-10">
-                            <div className="flex flex-col md:flex-row gap-4 items-center mb-12 text-center md:text-left">
+                            <div className="flex flex-col md:flex-row gap-4 items-center mb-8 sm:mb-12 text-center md:text-left">
                                 <div className="bg-white p-4 rounded-2xl shadow-sm text-blue-500">
                                     <Briefcase size={40} />
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl md:text-4xl font-bold font-poppins text-veda-text-heading">Open Positions</h2>
+                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins text-veda-text-heading">Open Positions</h2>
                                     <p className="text-blue-600 font-medium">Find your perfect role and start making an impact</p>
                                 </div>
                             </div>
@@ -415,18 +415,18 @@ export default function CareersPage() {
             {/* Life at Veda Section - Creative layout */}
             <section className="anim-culture-section py-12 px-4 bg-white">
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="bg-gradient-to-br from-amber-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-amber-100 relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-amber-50 to-white rounded-[3rem] p-5 sm:p-8 md:p-12 shadow-soft border border-amber-100 relative overflow-hidden">
                         {/* Decorative blurs */}
                         <div className="absolute -left-20 -top-20 w-80 h-80 bg-amber-100 rounded-full blur-3xl opacity-60"></div>
                         <div className="absolute -right-10 bottom-0 w-60 h-60 bg-veda-accent/20 rounded-full blur-3xl"></div>
 
                         <div className="relative z-10">
-                            <div className="flex flex-col md:flex-row gap-4 items-center mb-12 text-center md:text-left">
+                            <div className="flex flex-col md:flex-row gap-4 items-center mb-8 sm:mb-12 text-center md:text-left">
                                 <div className="bg-white p-4 rounded-2xl shadow-sm text-amber-500">
                                     <Star size={40} className="fill-amber-100" />
                                 </div>
                                 <div>
-                                    <h2 className="text-3xl md:text-4xl font-bold font-poppins text-veda-text-heading">Life at The Veda</h2>
+                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins text-veda-text-heading">Life at The Veda</h2>
                                     <p className="text-amber-600 font-medium">More than a workplace — it's a community</p>
                                 </div>
                             </div>
@@ -452,7 +452,7 @@ export default function CareersPage() {
             {/* Diversity & Inclusion Section - Creative */}
             <section className="anim-diversity-section py-12 px-4 bg-white">
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="anim-diversity-content bg-gradient-to-br from-green-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-green-100 relative overflow-hidden">
+                    <div className="anim-diversity-content bg-gradient-to-br from-green-50 to-white rounded-[3rem] p-5 sm:p-8 md:p-12 shadow-soft border border-green-100 relative overflow-hidden">
                         <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-green-100 rounded-full blur-3xl opacity-50"></div>
 
                         <div className="relative z-10 flex flex-col lg:flex-row items-center gap-10">
@@ -460,10 +460,10 @@ export default function CareersPage() {
                                 <Shield size={48} />
                             </div>
                             <div className="text-center lg:text-left">
-                                <h2 className="font-poppins text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">
+                                <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">
                                     Diversity, Equity & Inclusion
                                 </h2>
-                                <p className="text-veda-text-muted text-lg leading-relaxed mb-6 max-w-3xl">
+                                <p className="text-veda-text-muted text-sm sm:text-lg leading-relaxed mb-6 max-w-3xl">
                                     We believe in equal opportunities for everyone. At The Veda Toddlers, we welcome individuals from all backgrounds, abilities, and experiences. Our inclusive culture ensures that every team member feels valued, respected, and empowered.
                                 </p>
                                 <div className="flex flex-wrap justify-center lg:justify-start gap-3">
@@ -493,24 +493,24 @@ export default function CareersPage() {
                     <div className="w-20 h-20 rounded-3xl bg-veda-accent text-veda-primary-dark flex items-center justify-center mx-auto mb-8 shadow-xl">
                         <Mail size={36} />
                     </div>
-                    <h2 className="font-poppins text-4xl md:text-5xl font-bold mb-6 text-white">
+                    <h2 className="font-poppins text-2xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
                         Ready to Make a Difference?
                     </h2>
-                    <p className="text-xl text-white/90 mb-10 font-light max-w-2xl mx-auto">
+                    <p className="text-sm sm:text-xl text-white/90 mb-10 font-light max-w-2xl mx-auto">
                         Send us your resume and let's start a conversation about your future with The Veda Toddlers.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
                         <a
                             href="mailto:thevedatoddlers09@gmail.com"
-                            className="inline-flex items-center gap-3 bg-white text-veda-primary font-bold py-4 px-8 rounded-full hover:bg-veda-accent hover:scale-105 transition-all duration-300 shadow-xl text-lg"
+                            className="inline-flex items-center gap-3 bg-white text-veda-primary font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full hover:bg-veda-accent hover:scale-105 transition-all duration-300 shadow-xl text-sm sm:text-lg"
                         >
                             <Mail size={22} />
                             thevedatoddlers09@gmail.com
                         </a>
                         <a
                             href="tel:+917009109149"
-                            className="inline-flex items-center gap-3 bg-white/15 text-white font-bold py-4 px-8 rounded-full hover:bg-white/25 transition-all duration-300 border border-white/30 backdrop-blur-sm text-lg"
+                            className="inline-flex items-center gap-3 bg-white/15 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full hover:bg-white/25 transition-all duration-300 border border-white/30 backdrop-blur-sm text-sm sm:text-lg"
                         >
                             <Phone size={22} />
                             +91-8728000886

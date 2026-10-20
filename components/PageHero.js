@@ -10,10 +10,10 @@ import Link from 'next/link';
  */
 export default function PageHero({ title, breadcrumbs = [] }) {
     return (
-        <section className="bg-veda-background-muted py-14 px-[5%] text-center border-b border-veda-border">
+        <section className="bg-veda-background-muted py-8 px-4 text-center border-b border-veda-border sm:py-12 sm:px-[5%] md:py-14">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-3xl text-veda-text-heading mb-3 font-poppins font-bold">{title}</h1>
-                <div className="text-sm text-veda-text-muted uppercase font-medium font-opensans flex justify-center items-center flex-wrap gap-2">
+                <h1 className="mb-2 font-poppins text-2xl font-bold text-veda-text-heading sm:mb-3 sm:text-3xl">{title}</h1>
+                <div className="flex flex-wrap items-center justify-center gap-1.5 text-xs font-medium uppercase text-veda-text-muted font-opensans sm:gap-2 sm:text-sm">
                     <Link href="/" className="text-veda-text-muted hover:text-veda-primary no-underline transition-colors">Home</Link>
                     {breadcrumbs.map((crumb, index) => (
                         <span key={index} className="flex items-center">

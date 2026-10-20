@@ -158,27 +158,27 @@ export default function AboutPage() {
     return (
         <main ref={mainRef}>
             {/* Section A: Hero Banner */}
-            <section className="relative h-[45vh] min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
+            <section className="relative h-[45vh] min-h-[260px] sm:min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
                 style={{ backgroundImage: "url('/philosophy-bg.png')" }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-primary-dark/80 to-veda-primary-dark/90"></div>
                 <div className="anim-hero-content relative z-10 p-6 max-w-5xl">
-                    <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
+                    <h1 className="font-poppins text-2xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
                         Our Philosophy
                     </h1>
-                    <p className="font-opensans text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
+                    <p className="font-opensans text-sm sm:text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
                         We blend global early education standards with rich Indian values, aiming to nurture confident, kind, and creative learners through a child-centered philosophy.
                     </p>
                 </div>
             </section>
 
             {/* Section B: Core Values - Redesigned */}
-            <section className="anim-values-section py-16 px-3 bg-veda-background-muted">
-                <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
+            <section className="anim-values-section py-10 sm:py-16 px-3 bg-veda-background-muted">
+                <h2 className="text-center font-poppins text-2xl sm:text-4xl font-bold text-veda-text-heading mb-4">
                     Core Values
                 </h2>
-                <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">The principles that guide everything we do</p>
+                <p className="text-center text-veda-text-muted text-sm sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto">The principles that guide everything we do</p>
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="flex flex-wrap justify-center gap-6">
+                    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
                         {values.map((value, idx) => (
                             <div key={idx} className="anim-value-card w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
                                 <div className={`relative bg-gradient-to-br ${value.bgGradient} rounded-2xl p-6 h-full border ${value.borderColor} shadow-soft hover:shadow-softer hover:-translate-y-2 transition-all duration-300 group overflow-hidden`}>
@@ -198,28 +198,28 @@ export default function AboutPage() {
             </section>
 
             {/* Section C: VEDA GROWTH JOURNEY - Redesigned */}
-            <section className="anim-timeline-section py-20 px-3 bg-gradient-to-b from-veda-secondary-light/30 via-white to-veda-background-soft relative overflow-hidden">
+            <section className="anim-timeline-section py-12 sm:py-16 md:py-20 px-3 bg-gradient-to-b from-veda-secondary-light/30 via-white to-veda-background-soft relative overflow-hidden">
                 {/* Decorative Elements */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-veda-accent/5 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 left-0 w-72 h-72 bg-veda-primary/5 rounded-full blur-3xl"></div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Section Header */}
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-8 sm:mb-12 md:mb-16">
                         <div className="inline-flex items-center gap-2 bg-veda-primary/10 px-3 py-2 rounded-full mb-4">
                             <Rocket size={18} className="text-veda-primary" />
                             <span className="text-veda-primary font-medium text-base uppercase tracking-wider">Our Journey</span>
                         </div>
-                        <h2 className="font-poppins text-4xl md:text-5xl font-bold text-veda-text-heading mb-4">
+                        <h2 className="font-poppins text-2xl sm:text-4xl md:text-5xl font-bold text-veda-text-heading mb-4">
                             VEDA GROWTH JOURNEY
                         </h2>
-                        <p className="text-veda-text-muted max-w-2xl mx-auto text-xl">
+                        <p className="text-veda-text-muted max-w-2xl mx-auto text-sm sm:text-xl">
                             A decade of excellence in education
                         </p>
                     </div>
 
                     {/* Timeline Cards - Horizontal Layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 sm:mb-12 md:mb-16">
                         {timeline.map((item, idx) => (
                             <div key={idx} className="anim-timeline-card group">
                                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full border border-veda-border/50">
@@ -228,15 +228,15 @@ export default function AboutPage() {
                                         <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                                             <item.Icon size={24} className="text-white" />
                                         </div>
-                                        <span className="text-veda-accent font-bold text-5xl font-poppins">{item.year}</span>
-                                        <h3 className="text-white font-poppins font-semibold text-2xl mt-2">
+                                        <span className="text-veda-accent font-bold text-3xl sm:text-5xl font-poppins">{item.year}</span>
+                                        <h3 className="text-white font-poppins font-semibold text-xl sm:text-2xl mt-2">
                                             {item.title}
                                         </h3>
                                     </div>
 
                                     {/* Description */}
                                     <div className="p-6">
-                                        <p className="text-veda-text-DEFAULT leading-relaxed text-lg">
+                                        <p className="text-veda-text-DEFAULT leading-relaxed text-sm sm:text-lg">
                                             "{item.text}"
                                         </p>
                                     </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* Franchise Support Message */}
-                    <div className="bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark rounded-3xl p-5 sm:p-8 md:p-12 text-center relative overflow-hidden">
                         {/* Decorative circles */}
                         <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                         <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
@@ -260,7 +260,7 @@ export default function AboutPage() {
                             <div className="w-16 h-16 bg-veda-accent rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
                                 <Handshake size={32} className="text-veda-primary-dark" />
                             </div>
-                            <p className="text-white text-lg md:text-xl leading-relaxed max-w-5xl mx-auto font-light">
+                            <p className="text-white text-sm sm:text-lg md:text-xl leading-relaxed max-w-5xl mx-auto font-light">
                                 At The Veda Toddlers, our core team is the driving force behind your success. With unmatched expertise and dedication, they provide complete franchise support – from setup, recruitment, and training to marketing and day-to-day operations. Beyond preschool setup, our team also focuses on sustainable growth strategies, ensuring that every partner not only launches smoothly but also scales with confidence. With The Veda Toddlers by your side, you gain the knowledge, resources, and continuous guidance needed to build and expand a thriving preschool business.
                             </p>
                         </div>
@@ -269,13 +269,13 @@ export default function AboutPage() {
             </section>
 
             {/* Section D: Leadership Team - Redesigned */}
-            <section className="anim-leaders-section py-16 px-3 bg-veda-background-DEFAULT">
-                <h2 className="text-center font-poppins text-4xl font-bold text-veda-text-heading mb-4">
+            <section className="anim-leaders-section py-10 sm:py-16 px-3 bg-veda-background-DEFAULT">
+                <h2 className="text-center font-poppins text-2xl sm:text-4xl font-bold text-veda-text-heading mb-4">
                     Leadership Team
                 </h2>
-                <p className="text-center text-veda-text-muted text-lg mb-12 max-w-2xl mx-auto">Meet the passionate people behind The Veda</p>
+                <p className="text-center text-veda-text-muted text-sm sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto">Meet the passionate people behind The Veda</p>
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="flex flex-wrap justify-center gap-6">
+                    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
                         {leaders.map((leader, idx) => (
                             <div
                                 key={idx}
@@ -314,7 +314,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="anim-awards-section py-24 px-3 bg-gradient-to-b from-veda-background-soft via-white to-veda-secondary-light/20 relative overflow-hidden">
+            <section className="anim-awards-section py-12 sm:py-16 md:py-24 px-3 bg-gradient-to-b from-veda-background-soft via-white to-veda-secondary-light/20 relative overflow-hidden">
                 {/* Decorative Background Elements */}
                 <div className="absolute top-0 left-0 w-72 h-72 bg-veda-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-veda-primary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
@@ -322,21 +322,21 @@ export default function AboutPage() {
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Section Header */}
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-8 sm:mb-12 md:mb-16">
                         <div className="inline-flex items-center gap-2 bg-veda-accent/10 px-3 py-2 rounded-full mb-4">
                             <Trophy size={18} className="text-veda-accent" />
                             <span className="text-veda-accent font-medium text-base uppercase tracking-wider">Recognition</span>
                         </div>
-                        <h2 className="font-poppins text-4xl md:text-5xl font-bold mb-4 text-veda-text-heading">
+                        <h2 className="font-poppins text-2xl sm:text-4xl md:text-5xl font-bold mb-4 text-veda-text-heading">
                             Our Awards & Achievements
                         </h2>
-                        <p className="text-veda-text-muted max-w-2xl mx-auto text-xl">
+                        <p className="text-veda-text-muted max-w-2xl mx-auto text-sm sm:text-xl">
                             We're proud to be recognized as one of India's most trusted preschool brands
                         </p>
                     </div>
 
                     {/* Awards Grid */}
-                    <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
+                    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8">
                         {[
                             { text: 'AIP – Association of Indian Principals', subtitle: 'Top Ranked Early Years School in Mohali', image: '/images/aip-award.jpg' },
                             { text: 'Indian School Award', subtitle: 'Best Pre School with Holistic Development', image: '/images/indian-school-award.jpg' },

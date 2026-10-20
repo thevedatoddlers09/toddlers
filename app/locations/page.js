@@ -80,7 +80,7 @@ export default function LocationsPage() {
     return (
         <main className="bg-veda-background-DEFAULT">
             {/* Hero Section */}
-            <section className="relative py-24 px-[3%] bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark text-white overflow-hidden">
+            <section className="relative py-12 sm:py-16 md:py-24 px-[3%] bg-gradient-to-br from-veda-primary via-veda-primary to-veda-primary-dark text-white overflow-hidden">
                 {/* Decorative Elements */}
                 <div className="absolute top-10 left-10 w-32 h-32 bg-veda-accent rounded-full blur-[80px] opacity-40"></div>
                 <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-[80px] opacity-20"></div>
@@ -92,10 +92,10 @@ export default function LocationsPage() {
                         <MapPin size={16} />
                         <span>Find Us Near You</span>
                     </div>
-                    <h1 className="font-poppins text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <h1 className="font-poppins text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                         Our <span className="text-veda-accent">Learning Homes</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
+                    <p className="text-sm sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
                         Building playful spaces for little learners across Punjab and Haryana. Find the perfect Veda Toddlers center for your child.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
@@ -110,19 +110,19 @@ export default function LocationsPage() {
             </section>
 
             {/* What Makes Us Special */}
-            <section className="py-16 px-[3%] bg-white">
+            <section className="py-10 sm:py-16 px-[3%] bg-white">
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="font-poppins text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">
+                    <div className="text-center mb-8 sm:mb-12">
+                        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">
                             What Every Veda Center Offers
                         </h2>
-                        <p className="text-veda-text-muted text-lg max-w-2xl mx-auto">
+                        <p className="text-veda-text-muted text-sm sm:text-lg max-w-2xl mx-auto">
                             Consistent quality and care across all our locations
                         </p>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
                         {features.map((feature, idx) => (
-                            <div key={idx} className="text-center p-6 rounded-2xl bg-veda-background-soft border border-veda-border hover:shadow-lg transition-all duration-300 group">
+                            <div key={idx} className="text-center p-5 sm:p-6 rounded-2xl bg-veda-background-soft border border-veda-border hover:shadow-lg transition-all duration-300 group">
                                 <div className={`w-14 h-14 bg-gradient-to-br ${feature.color} text-white rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
                                     <feature.Icon size={26} />
                                 </div>
@@ -135,7 +135,7 @@ export default function LocationsPage() {
             </section>
 
             {/* Locations Grid */}
-            <section className="py-20 px-[3%] bg-gradient-to-b from-amber-50 via-pink-50 to-sky-50 relative overflow-hidden">
+            <section className="py-12 sm:py-16 md:py-20 px-[3%] bg-gradient-to-b from-amber-50 via-pink-50 to-sky-50 relative overflow-hidden">
                 {/* Playful Background Elements */}
                 <div className="absolute top-10 left-[5%] text-6xl opacity-20 animate-bounce" style={{ animationDuration: '3s' }}>🏠</div>
                 <div className="absolute top-20 right-[10%] text-5xl opacity-20 animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>⭐</div>
@@ -150,16 +150,16 @@ export default function LocationsPage() {
 
                 <div className="max-w-[1400px] mx-auto relative z-10">
                     {/* Header */}
-                    <div className="text-center mb-14">
+                    <div className="text-center mb-8 sm:mb-12 md:mb-14">
                         <div className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white shadow-md text-veda-primary font-bold text-sm mb-6 border-2 border-dashed border-veda-accent">
                             <span className="text-xl">🌟</span>
                             <span>Coming Soon Near You!</span>
                             <span className="text-xl">🌟</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
+                        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-poppins text-veda-primary mb-4">
                             Explore Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">Centers</span>
                         </h2>
-                        <p className="text-veda-text-muted text-lg max-w-xl mx-auto">
+                        <p className="text-veda-text-muted text-sm sm:text-lg max-w-xl mx-auto">
                             Each center is designed with love, keeping your child's growth and happiness in mind.
                         </p>
                     </div>
@@ -168,7 +168,7 @@ export default function LocationsPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {locations.map((location, index) => (
                             <div key={index} className="group">
-                                <div className={`relative ${location.bgColor} rounded-3xl p-8 border-2 ${location.borderColor} shadow-lg hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-300 h-full`}>
+                                <div className={`relative ${location.bgColor} rounded-3xl p-5 sm:p-8 border-2 ${location.borderColor} shadow-lg hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-300 h-full`}>
                                     {/* Status Badge */}
                                     <div className={`absolute -top-3 right-6 ${location.accentColor} text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1`}>
                                         <Sparkles size={12} />
@@ -183,7 +183,7 @@ export default function LocationsPage() {
                                     </div>
 
                                     {/* Location Info */}
-                                    <h3 className="font-bold font-poppins text-gray-800 text-2xl mb-1">{location.name}</h3>
+                                    <h3 className="font-bold font-poppins text-gray-800 text-xl sm:text-2xl mb-1">{location.name}</h3>
                                     <p className="text-gray-500 text-sm font-medium mb-4">{location.city}</p>
                                     <p className="text-gray-600 text-base leading-relaxed mb-6">{location.description}</p>
 
@@ -200,13 +200,13 @@ export default function LocationsPage() {
             </section>
 
             {/* Franchise CTA */}
-            <section className="py-16 px-[3%] bg-white">
+            <section className="py-10 sm:py-16 px-[3%] bg-white">
                 <div className="max-w-5xl mx-auto">
-                    <div className="bg-gradient-to-br from-veda-secondary/20 via-white to-veda-secondary/10 rounded-3xl p-10 md:p-14 text-center border border-veda-secondary/30 shadow-soft">
-                        <h2 className="font-poppins text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">
+                    <div className="bg-gradient-to-br from-veda-secondary/20 via-white to-veda-secondary/10 rounded-3xl p-5 sm:p-10 md:p-14 text-center border border-veda-secondary/30 shadow-soft">
+                        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">
                             Want a Veda School in Your Neighborhood?
                         </h2>
-                        <p className="text-veda-text-muted text-lg mb-8 max-w-2xl mx-auto">
+                        <p className="text-veda-text-muted text-sm sm:text-lg mb-8 max-w-2xl mx-auto">
                             Partner with us to bring quality early childhood education to your community. We provide complete support from setup to launch.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
@@ -225,8 +225,8 @@ export default function LocationsPage() {
             <section className="py-12 px-4 bg-veda-primary text-white">
                 <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
                     <div>
-                        <h3 className="text-2xl md:text-3xl font-bold font-poppins mb-2">Ready to Visit Us?</h3>
-                        <p className="text-white/80 text-lg">Schedule a tour at our nearest center today.</p>
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-poppins mb-2">Ready to Visit Us?</h3>
+                        <p className="text-white/80 text-sm sm:text-lg">Schedule a tour at our nearest center today.</p>
                     </div>
                     <div className="flex gap-4">
                         <Button variant="primary" href="/contact" className="bg-veda-accent hover:bg-veda-accent-dark text-veda-primary-dark border-none font-bold px-8 py-4 shadow-lg rounded-full hover:scale-105 transition-transform">

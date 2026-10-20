@@ -6,15 +6,15 @@ import { useRouter } from 'next/navigation';
 export default function ActivitiesPage() {
   const router = useRouter();
 
-  useEffect(() => {
+    useEffect(() => {
     router.replace('/gallery?centre=sector-105&theme=daily');
   }, [router]);
 
-  return (
+    return (
     <main className="flex min-h-[50vh] items-center justify-center bg-veda-background-soft px-4">
       <p className="font-poppins text-sm text-veda-text-muted sm:text-base">
         Opening the activities gallery…
       </p>
-    </main>
-  );
+        </main>
+    );
 }

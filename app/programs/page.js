@@ -107,27 +107,27 @@ export default function ProgramsPage() {
     return (
         <main ref={mainRef} className="bg-white">
             {/* Hero Banner */}
-            <section className="relative h-[45vh] min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
+            <section className="relative h-[45vh] min-h-[260px] sm:min-h-[350px] bg-cover bg-center flex items-center justify-center text-center text-white"
                 style={{ backgroundImage: "url('/programs-bg.png')" }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-veda-primary-dark/80 to-veda-primary-dark/90"></div>
                 <div className="anim-hero-content relative z-10 p-6 max-w-5xl">
                     <span className="inline-block py-1 px-4 rounded-full bg-white/20 text-white font-bold uppercase tracking-widest text-xs mb-4 border border-white/30">Our Methodology</span>
-                    <h1 className="font-poppins text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
+                    <h1 className="font-poppins text-2xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg text-white">
                         The KIDORA Curriculum
                     </h1>
-                    <p className="font-opensans text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
+                    <p className="font-opensans text-sm sm:text-xl md:text-2xl max-w-3xl mx-auto font-light text-white/95 drop-shadow-md">
                         Learning with Joyful Energy — Where Imagination Meets Learning
                     </p>
                 </div>
             </section>
 
             {/* KIDORA Pillars Grid */}
-            <section className="anim-spectrums-section py-20 px-4 bg-veda-background-muted">
+            <section className="anim-spectrums-section py-12 sm:py-16 md:py-20 px-4 bg-veda-background-muted">
                 <div className="max-w-[1400px] mx-auto">
-                    <h2 className="text-center font-poppins text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">What Makes KIDORA Unique?</h2>
-                    <p className="text-center text-veda-text-muted text-lg max-w-2xl mx-auto mb-12">Built on four global early learning pillars that nurture every aspect of your child's development.</p>
+                    <h2 className="text-center font-poppins text-2xl sm:text-3xl md:text-4xl font-bold text-veda-text-heading mb-4">What Makes KIDORA Unique?</h2>
+                    <p className="text-center text-veda-text-muted text-sm sm:text-lg max-w-2xl mx-auto mb-8 sm:mb-12">Built on four global early learning pillars that nurture every aspect of your child's development.</p>
                 </div>
-                <div className="max-w-[1400px] mx-auto flex flex-wrap justify-center gap-6">
+                <div className="max-w-[1400px] mx-auto flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
                     {kidoraPillars.map((item, idx) => (
                         <div key={idx} className="anim-spectrum-card w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)]">
                             <div className={`relative bg-gradient-to-br ${item.bgGradient} p-6 rounded-3xl shadow-soft border border-white/60 hover:shadow-lg hover:-translate-y-2 transition-all duration-300 h-full group overflow-hidden`}>
@@ -146,24 +146,24 @@ export default function ProgramsPage() {
             </section>
 
             {/* Specialized Programs Intro */}
-            <section className="pt-20 pb-12 px-4 text-center bg-white relative">
+            <section className="pt-12 sm:pt-16 md:pt-20 pb-12 px-4 text-center bg-white relative">
                 <div className="absolute top-10 left-10 text-veda-playful-peach/20 animate-bounce delay-700"><Star size={48} /></div>
                 <div className="absolute top-20 right-20 text-veda-playful-blue/20 animate-pulse"><Rocket size={56} /></div>
 
                 <div className="max-w-4xl mx-auto relative z-10">
-                    <h2 className="text-center font-poppins text-4xl md:text-5xl font-bold text-veda-text-heading mb-6">
+                    <h2 className="text-center font-poppins text-2xl sm:text-4xl md:text-5xl font-bold text-veda-text-heading mb-6">
                         Our Learning Worlds
                     </h2>
-                    <p className="text-center text-veda-text-muted text-xl max-w-2xl mx-auto font-light">
+                    <p className="text-center text-veda-text-muted text-sm sm:text-xl max-w-2xl mx-auto font-light">
                         Three unique environments designed to inspire, nurture, and grow with your child.
                     </p>
                 </div>
             </section>
 
-            <div className="max-w-[1400px] mx-auto px-4 pb-24 space-y-12">
+            <div className="max-w-[1400px] mx-auto px-4 pb-12 sm:pb-16 md:pb-24 space-y-12">
 
                 {/* 1. Pre-School World */}
-                <section className="anim-levels-section bg-gradient-to-br from-rose-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-rose-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
+                <section className="anim-levels-section bg-gradient-to-br from-rose-50 to-white rounded-[3rem] p-5 sm:p-8 md:p-12 shadow-soft border border-rose-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
                     <div className="absolute -right-20 -top-20 w-96 h-96 bg-rose-100 rounded-full blur-3xl opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
 
                     <div className="relative z-10">
@@ -172,7 +172,7 @@ export default function ProgramsPage() {
                                 <Star size={40} className="fill-rose-100" />
                             </div>
                             <div>
-                                <h3 className="text-3xl font-bold font-poppins text-veda-text-heading">Pre-School Programme</h3>
+                                <h3 className="text-2xl sm:text-3xl font-bold font-poppins text-veda-text-heading">Pre-School Programme</h3>
                                 <p className="text-rose-600 font-medium">For Little Learners (1 to 6 Years)</p>
                             </div>
                         </div>
@@ -202,16 +202,16 @@ export default function ProgramsPage() {
                 </section>
 
                 {/* 2. Daycare World */}
-                <section className="bg-gradient-to-br from-amber-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-amber-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
+                <section className="bg-gradient-to-br from-amber-50 to-white rounded-[3rem] p-5 sm:p-8 md:p-12 shadow-soft border border-amber-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
                     <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
 
                     <div className="relative z-10 flex flex-col lg:flex-row gap-12 items-center">
                         <div className="lg:w-2/5 w-full">
-                            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-[2.5rem] shadow-sm border border-amber-200 text-center relative">
+                            <div className="bg-white/80 backdrop-blur-sm p-5 sm:p-8 rounded-[2.5rem] shadow-sm border border-amber-200 text-center relative">
                                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-amber-500 text-white p-3 rounded-2xl shadow-md">
                                     <Clock size={32} />
                                 </div>
-                                <h3 className="text-3xl font-bold font-poppins text-veda-text-heading mt-6 mb-2">Daycare</h3>
+                                <h3 className="text-2xl sm:text-3xl font-bold font-poppins text-veda-text-heading mt-6 mb-2">Daycare</h3>
                                 <p className="text-amber-600 font-medium mb-8">Home Away From Home</p>
 
                                 <div className="space-y-4">
@@ -245,7 +245,7 @@ export default function ProgramsPage() {
                                     </div>
                                 ))}
                             </div>
-                            <p className="mt-8 text-lg text-veda-text-muted leading-relaxed">
+                            <p className="mt-8 text-sm sm:text-lg text-veda-text-muted leading-relaxed">
                                 We provide a safe, caring, and engaging space for children from <strong className="text-amber-600">8 months onwards</strong>. Our environment ensures comfort, supervision, and joyful experiences throughout the day.
                             </p>
                         </div>
@@ -253,16 +253,16 @@ export default function ProgramsPage() {
                 </section>
 
                 {/* 3. After-School World */}
-                <section className="bg-gradient-to-br from-blue-50 to-white rounded-[3rem] p-8 md:p-12 shadow-soft border border-blue-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
+                <section className="bg-gradient-to-br from-blue-50 to-white rounded-[3rem] p-5 sm:p-8 md:p-12 shadow-soft border border-blue-100 relative overflow-hidden group hover:shadow-softer transition-shadow duration-500">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-blue-100/30 to-transparent opacity-50"></div>
 
                     <div className="relative z-10 text-center">
                         <div className="inline-flex items-center gap-3 bg-blue-100/50 px-6 py-2 rounded-full mb-8">
                             <Rocket size={24} className="text-blue-600" />
-                            <h3 className="text-2xl font-bold font-poppins text-veda-text-heading">After-School Explorers</h3>
+                            <h3 className="text-xl sm:text-2xl font-bold font-poppins text-veda-text-heading">After-School Explorers</h3>
                         </div>
 
-                        <p className="max-w-3xl mx-auto text-lg text-veda-text-muted mb-12">
+                        <p className="max-w-3xl mx-auto text-sm sm:text-lg text-veda-text-muted mb-8 sm:mb-12">
                             Designed to enrich children beyond academics. Pick your passion and start building confidence!
                         </p>
 

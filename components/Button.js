@@ -20,7 +20,7 @@ export default function Button({
     href,
     ...rest
 }) {
-    const baseClass = "inline-flex items-center justify-center py-3 px-6 font-poppins font-semibold text-base border-none cursor-pointer transition-all duration-200 no-underline";
+    const baseClass = "inline-flex items-center justify-center py-2.5 px-5 text-sm font-poppins font-semibold border-none cursor-pointer transition-all duration-200 no-underline sm:py-3 sm:px-6 sm:text-base";
 
     const shapes = {
         pill: "rounded-full",

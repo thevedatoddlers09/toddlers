@@ -238,3 +238,44 @@
         text-align: center;
     }
 }
+
+@media (max-width: 640px) {
+    .contactSection {
+        padding: 2.5rem 3%;
+    }
+
+    .infoCard {
+        padding: 1.5rem;
+    }
+
+    .infoTitle {
+        font-size: 1.35rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .formCard {
+        padding: 1.25rem;
+    }
+
+    .formTitle {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .ctaSection {
+        padding: 1.5rem 3%;
+    }
+
+    .ctaContainer {
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .ctaContent h2 {
+        font-size: 1.35rem;
+    }
+
+    .ctaContent p {
+        font-size: 0.95rem;
+    }
+}

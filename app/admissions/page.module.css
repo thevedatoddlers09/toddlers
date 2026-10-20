@@ -411,12 +411,48 @@
 }
 
 @media (max-width: 640px) {
+    .hero {
+        padding: 3rem 5% 5rem;
+    }
+
     .heroTitle {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .heroSubtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .mainSection {
+        padding: 2.5rem 5%;
+    }
+
+    .sectionTitle {
+        font-size: 1.35rem;
+    }
+
+    .formCard {
+        padding: 1.25rem;
+    }
+
+    .formTitle {
+        font-size: 1.25rem;
+    }
+
+    .stepsSection {
+        padding: 3rem 5%;
+    }
+
+    .stepsTitle {
+        font-size: 1.5rem;
+    }
+
+    .trustSection {
+        padding: 2.5rem 5%;
+    }
+
+    .trustNumber {
+        font-size: 1.75rem;
     }
 
     .programsGrid {
