@@ -22,6 +22,7 @@ import {
   BookOpen,
   Utensils,
   Clock,
+  Quote,
 } from 'lucide-react';
 
 const preschoolLevels = [
@@ -293,54 +294,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* From The Founder & Director Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-[3%] bg-gradient-to-br from-veda-secondary-light/40 via-veda-playful-blue/10 to-white relative overflow-hidden">
-        <div className="absolute top-20 right-20 text-veda-primary/20">
-          <Heart size={40} />
+      {/* From The Founder — editorial letter composition */}
+      <section className="relative overflow-hidden bg-veda-background-soft py-12 sm:py-16 md:py-24">
+        {/* Atmosphere (not a card grid) */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 12% 20%, rgba(242,193,78,0.18), transparent 42%), radial-gradient(circle at 88% 70%, rgba(207,198,223,0.45), transparent 48%)',
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -right-8 top-10 hidden text-veda-secondary/50 md:block"
+          aria-hidden="true"
+        >
+          <Quote size={180} strokeWidth={1} />
         </div>
-        <div className="absolute bottom-20 right-40 text-veda-primary/15">
-          <Heart size={30} />
-        </div>
-        <div className="absolute top-1/3 right-16 text-veda-primary/10">
-          <Heart size={25} />
-        </div>
-        <div className="absolute bottom-1/4 left-20 w-32 h-32 bg-veda-accent/5 rounded-full blur-3xl"></div>
 
-        <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-2/5">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-veda-primary/20 to-veda-playful-green/20 rounded-3xl transform -rotate-3"></div>
-                <div className="relative bg-gradient-to-br from-veda-primary-light to-veda-primary rounded-3xl p-1 shadow-softer">
-                  <img
-                    src="/principal.jpg"
-                    alt="Mandeep Sharma - Founder & Director"
-                    className="rounded-3xl w-full object-cover aspect-[3/4]"
-                  />
+        <div className="relative z-10 mx-auto grid max-w-[1200px] items-stretch gap-8 px-4 sm:gap-10 sm:px-[3%] lg:grid-cols-12 lg:gap-0 lg:px-[4%]">
+          {/* Portrait column */}
+          <div className="relative lg:col-span-5 lg:mb-6 lg:pr-8">
+            <div className="relative mx-auto max-w-sm lg:mx-0 lg:max-w-none lg:pb-8">
+              {/* Accent plane behind photo */}
+              <div
+                className="absolute -inset-x-3 -bottom-3 top-8 rounded-[1.75rem] bg-veda-primary sm:-inset-x-4 sm:-bottom-4 sm:top-10 sm:rounded-[2rem]"
+                aria-hidden="true"
+              />
+              <div className="absolute -left-2 top-16 hidden h-[55%] w-1.5 rounded-full bg-veda-accent sm:block lg:-left-3" aria-hidden="true" />
+
+              <div className="relative overflow-hidden rounded-[1.5rem] shadow-[0_24px_60px_rgba(42,27,56,0.22)] sm:rounded-[1.75rem]">
+                <img
+                  src="/principal.jpg"
+                  alt="Mandeep Sharma — Founder & Director of The Veda Toddlers"
+                  className="aspect-[4/5] w-full object-cover object-top sm:aspect-[3/4]"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-veda-primary-dark/90 via-veda-primary-dark/40 to-transparent px-4 pb-4 pt-16 sm:px-5 sm:pb-5 lg:hidden">
+                  <p className="font-poppins text-lg font-bold text-white">Mandeep Sharma</p>
+                  <p className="text-xs font-semibold text-veda-accent sm:text-sm">Founder & Director</p>
                 </div>
               </div>
-            </div>
-            <div className="lg:w-3/5">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-poppins mb-6 leading-tight">
-                <span className="text-veda-primary">From The</span> <span className="text-veda-accent">Founder & Director</span>
-              </h2>
-              <div className="space-y-4 text-sm sm:text-lg text-veda-text-DEFAULT leading-relaxed italic">
-                <p>
-                  "Being the Founder & Director of The Veda Toddlers is a privilege. Our preschool offers a warm, nurturing, and future-ready environment where every child feels safe, supported, and encouraged to explore."
-                </p>
-                <p>
-                  "We are dedicated to early childhood education, ensuring each child's first school experience is joyful, meaningful, and filled with discovery."
-                </p>
-                <p>
-                  "Our focus is on building confidence, healthy habits, emotional well-being, social skills, and curiosity through play-based, hands-on learning. By nurturing creativity and individuality, we help children learn naturally and develop a strong foundation of essential skills."
-                </p>
-                <p>
-                  "I am confident that you and your child will cherish your time at The Veda Toddlers as we work together to build a bright future."
-                </p>
+
+              {/* Desktop name plate overlapping photo */}
+              <div className="absolute -bottom-5 left-4 right-4 hidden rounded-2xl border border-white/70 bg-white/95 px-5 py-4 shadow-xl backdrop-blur-sm lg:left-6 lg:right-auto lg:block lg:min-w-[240px]">
+                <p className="font-poppins text-lg font-bold text-veda-primary">Mandeep Sharma</p>
+                <p className="mt-0.5 text-sm font-semibold text-veda-accent">Founder & Director</p>
+                <p className="mt-1 text-xs text-veda-text-muted">The Veda Toddlers</p>
               </div>
-              <div className="mt-8 pt-6 border-t border-veda-secondary">
-                <h3 className="text-xl font-bold text-veda-primary font-poppins">Mandeep Sharma</h3>
-                <p className="text-veda-accent font-semibold">(Founder & Director, The Veda Toddlers)</p>
+            </div>
+          </div>
+
+          {/* Letter column */}
+          <div className="flex flex-col justify-center lg:col-span-7 lg:border-l lg:border-veda-secondary/60 lg:pl-10 xl:pl-14">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-veda-primary/70 sm:mb-3 sm:text-xs">
+              A note from leadership
+            </p>
+            <h2 className="mb-5 font-poppins text-2xl font-bold leading-[1.15] text-veda-primary sm:mb-6 sm:text-4xl md:text-[2.75rem]">
+              From the{' '}
+              <span className="relative inline-block text-veda-accent">
+                Founder
+                <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-veda-accent/40" aria-hidden="true" />
+              </span>
+              <span className="text-veda-primary"> & Director</span>
+            </h2>
+
+            <Quote
+              className="mb-3 h-8 w-8 text-veda-accent sm:mb-4 sm:h-10 sm:w-10"
+              strokeWidth={1.75}
+              aria-hidden="true"
+            />
+
+            <div className="space-y-3.5 text-sm leading-relaxed text-veda-text-DEFAULT sm:space-y-4 sm:text-base md:text-lg md:leading-relaxed">
+              <p className="font-medium text-veda-primary">
+                Being the Founder & Director of The Veda Toddlers is a privilege. Our preschool offers a warm,
+                nurturing, and future-ready environment where every child feels safe, supported, and encouraged
+                to explore.
+              </p>
+              <p>
+                We are dedicated to early childhood education, ensuring each child&apos;s first school experience
+                is joyful, meaningful, and filled with discovery.
+              </p>
+              <p>
+                Our focus is on building confidence, healthy habits, emotional well-being, social skills, and
+                curiosity through play-based, hands-on learning. By nurturing creativity and individuality, we
+                help children learn naturally and develop a strong foundation of essential skills.
+              </p>
+              <p>
+                I am confident that you and your child will cherish your time at The Veda Toddlers as we work
+                together to build a bright future.
+              </p>
+            </div>
+
+            <div className="mt-7 flex items-center gap-4 sm:mt-9">
+              <div className="h-px flex-1 bg-gradient-to-r from-veda-accent via-veda-secondary to-transparent" />
+              <div className="text-right">
+                <p className="font-poppins text-base font-bold text-veda-primary sm:text-lg">— Mandeep Sharma</p>
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-veda-accent sm:text-xs">
+                  Founder & Director
+                </p>
               </div>
             </div>
           </div>
