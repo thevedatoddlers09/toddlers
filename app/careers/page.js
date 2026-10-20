@@ -21,22 +21,6 @@ export default function CareersPage() {
                 ease: 'power3.out'
             });
 
-            // Floating icons animation
-            gsap.to('.anim-float-1', {
-                y: -15,
-                duration: 2,
-                repeat: -1,
-                yoyo: true,
-                ease: 'sine.inOut'
-            });
-            gsap.to('.anim-float-2', {
-                y: 15,
-                duration: 2.5,
-                repeat: -1,
-                yoyo: true,
-                ease: 'sine.inOut'
-            });
-
             // Why Join cards stagger
             gsap.from('.anim-benefit-card', {
                 y: 60,
@@ -262,27 +246,21 @@ export default function CareersPage() {
 
     return (
         <main ref={mainRef} className="bg-white overflow-hidden">
-            {/* Hero Section - Creative with floating elements */}
-            <section className="relative min-h-[55vh] bg-gradient-to-br from-veda-primary via-veda-primary-dark to-veda-primary-dark flex items-center justify-center text-center text-white py-12 sm:py-16 md:py-24 px-4 overflow-hidden">
-                {/* Decorative blurred circles */}
-                <div className="absolute top-0 left-0 w-96 h-96 bg-veda-accent/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-                <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-veda-secondary/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+            {/* Hero Section — team background */}
+            <section className="relative flex min-h-[55vh] items-center justify-center overflow-hidden px-4 py-12 text-center text-white sm:py-16 md:py-24">
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: "url('/images/carousel-team-1.jpg')" }}
+                    aria-hidden="true"
+                />
+                <div
+                    className="absolute inset-0 bg-gradient-to-b from-veda-primary-dark/85 via-veda-primary/80 to-veda-primary-dark/90"
+                    aria-hidden="true"
+                />
+                <div className="pointer-events-none absolute -left-16 top-0 h-72 w-72 rounded-full bg-veda-accent/15 blur-3xl" aria-hidden="true" />
+                <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-veda-secondary/20 blur-3xl" aria-hidden="true" />
 
-                {/* Floating icons */}
-                <div className="anim-float-1 absolute top-20 left-[10%] text-white/20">
-                    <Star size={48} className="fill-white/10" />
-                </div>
-                <div className="anim-float-2 absolute top-32 right-[15%] text-white/20">
-                    <Heart size={40} className="fill-white/10" />
-                </div>
-                <div className="anim-float-1 absolute bottom-20 left-[20%] text-white/20">
-                    <Sparkles size={36} />
-                </div>
-                <div className="anim-float-2 absolute bottom-32 right-[10%] text-white/20">
-                    <Rocket size={44} />
-                </div>
-
-                <div className="anim-hero-content relative z-10 max-w-4xl mx-auto">
+                <div className="anim-hero-content relative z-10 mx-auto max-w-4xl">
                     <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-white/15 text-white font-semibold text-sm mb-6 border border-white/20 backdrop-blur-sm">
                         <Briefcase size={16} />
                         <span>We're Hiring</span>
