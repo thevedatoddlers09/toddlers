@@ -16,6 +16,7 @@ export default function Navbar() {
         { name: 'Programs', href: '/programs' },
         { name: 'Gallery', href: '/gallery' },
         { name: 'Locations', href: '/locations' },
+        { name: 'Our Centres', href: '/franchisees' },
         { name: 'Franchise', href: '/franchise' },
         { name: 'Careers', href: '/careers' },
         { name: 'Admissions', href: '/admissions' },

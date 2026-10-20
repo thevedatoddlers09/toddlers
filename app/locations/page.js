@@ -11,7 +11,9 @@ export default function LocationsPage() {
         {
             name: 'Sector 105',
             city: 'Mohali',
-            status: 'Coming Soon',
+            status: 'Operational',
+            href: '/franchisees#sector-105',
+            ctaLabel: 'Meet the team',
             iconColor: 'text-purple-500',
             bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100',
             borderColor: 'border-purple-200',
@@ -187,9 +189,14 @@ export default function LocationsPage() {
                                     <p className="text-gray-500 text-sm font-medium mb-4">{location.city}</p>
                                     <p className="text-gray-600 text-base leading-relaxed mb-6">{location.description}</p>
 
-                                    {/* Contact Button */}
-                                    <Button variant="outline" shape="rounded" href="/contact" className="w-full border-gray-300 text-gray-700 hover:bg-white hover:border-veda-primary hover:text-veda-primary transition-all group-hover:border-veda-primary group-hover:text-veda-primary">
-                                        <span>Get Notified</span>
+                                    {/* Contact / profile Button */}
+                                    <Button
+                                        variant="outline"
+                                        shape="rounded"
+                                        href={location.href || '/contact'}
+                                        className="w-full border-gray-300 text-gray-700 hover:bg-white hover:border-veda-primary hover:text-veda-primary transition-all group-hover:border-veda-primary group-hover:text-veda-primary"
+                                    >
+                                        <span>{location.ctaLabel || 'Get Notified'}</span>
                                         <ArrowRight size={16} className="ml-2" />
                                     </Button>
                                 </div>

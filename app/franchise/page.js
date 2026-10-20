@@ -104,8 +104,36 @@ export default function FranchisePage() {
                 </div>
             </section>
 
+            {/* Existing partners teaser */}
+            <section className="relative overflow-hidden py-12 sm:py-16 px-3 bg-veda-background-soft">
+                <div className="pointer-events-none absolute -left-16 top-8 h-40 w-40 rounded-full bg-veda-accent/15 blur-3xl" />
+                <div className="pointer-events-none absolute -right-12 bottom-4 h-48 w-48 rounded-full bg-veda-secondary/40 blur-3xl" />
+                <div className="relative max-w-4xl mx-auto">
+                    <div className="rounded-3xl border border-veda-border/80 bg-white p-6 sm:p-10 md:p-12 text-center shadow-softer">
+                        <div className="mx-auto mb-5 h-1 w-16 rounded-full bg-gradient-to-r from-veda-accent to-veda-playful-peach" />
+                        <span className="inline-block py-1 px-3 rounded-full bg-veda-playful-green/15 text-green-800 font-bold uppercase tracking-widest text-xs mb-4 border border-veda-playful-green/30">
+                            Already thriving
+                        </span>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins text-veda-text-heading mb-4">
+                            Meet Centres Already Running
+                        </h2>
+                        <p className="text-sm sm:text-lg text-veda-text-muted leading-relaxed mb-8 max-w-2xl mx-auto">
+                            Explore existing franchisee profiles — Centre Directors, personal notes, centre photographs, activities, and parent voices from our operational learning homes.
+                        </p>
+                        <Button
+                            variant="primary"
+                            shape="pill"
+                            href="/franchisees"
+                            className="bg-veda-primary hover:bg-veda-primary-dark text-white font-bold px-8 py-4 shadow-lg hover:scale-[1.02] transition-transform"
+                        >
+                            View franchisee profiles
+                        </Button>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Strip */}
-            <section className="py-12 px-4 bg-veda-primary text-white">
+            <section id="enquire" className="py-12 px-4 bg-veda-primary text-white">
                 <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
                     <p className="text-base sm:text-xl md:text-2xl font-bold font-poppins text-white">
                         Get in touch with us to discuss franchise opportunities in your city.

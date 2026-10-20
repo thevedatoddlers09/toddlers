@@ -8,6 +8,8 @@ export default function Footer() {
         { name: 'Programmes', href: '/programs' },
         { name: 'Gallery', href: '/gallery' },
         { name: 'Locations', href: '/locations' },
+        { name: 'Our Centres', href: '/franchisees' },
+        { name: 'Franchise', href: '/franchise' },
         { name: 'Contact Us', href: '/contact' },
         { name: 'Admission Form', href: '/admissions' },
         { name: 'Careers', href: '/careers' },
