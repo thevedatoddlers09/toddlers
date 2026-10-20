@@ -23,7 +23,9 @@ export default function LocationsPage() {
         {
             name: 'Sector 79',
             city: 'Mohali',
-            status: 'Coming Soon',
+            status: 'Operational',
+            href: '/franchisees#sector-79',
+            ctaLabel: 'Meet the team',
             iconColor: 'text-amber-500',
             bgColor: 'bg-gradient-to-br from-amber-50 to-amber-100',
             borderColor: 'border-amber-200',

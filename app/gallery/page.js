@@ -53,8 +53,12 @@ function GalleryContent() {
     const nextCentre =
       centreFromUrl && VALID_CENTRES.has(centreFromUrl) ? centreFromUrl : 'sector-105';
     const nextTheme =
-      themeFromUrl && VALID_THEMES.has(themeFromUrl) ? themeFromUrl : 'all';
-    const nextAlbum = albumFromUrl || null;
+      nextCentre === 'sector-79'
+        ? 'all'
+        : themeFromUrl && VALID_THEMES.has(themeFromUrl)
+          ? themeFromUrl
+          : 'all';
+    const nextAlbum = nextCentre === 'sector-79' ? null : albumFromUrl || null;
 
     if (nextCentre !== centreId) setCentreId(nextCentre);
     if (nextTheme !== themeId) setThemeId(nextTheme);
@@ -85,6 +89,10 @@ function GalleryContent() {
 
   const items = useMemo(() => {
     if (!centreLive) return [];
+    // Sector 79: no theme/album sub-filters — always show all centre photos
+    if (centreId === 'sector-79') {
+      return filterGalleryItems({ centreId, themeId: 'all', albumId: null });
+    }
     return filterGalleryItems({ centreId, themeId, albumId });
   }, [centreId, themeId, albumId, centreLive]);
 
@@ -92,7 +100,10 @@ function GalleryContent() {
     setCentreId(id);
     setAlbumId(null);
     setLightboxIndex(null);
-    syncUrl(id, themeId, null);
+    // Sector 79 has no theme/album sub-filters for now — show all photos
+    const nextTheme = id === 'sector-79' ? 'all' : themeId;
+    setThemeId(nextTheme);
+    syncUrl(id, nextTheme, null);
   };
 
   const handleThemeChange = (id) => {
@@ -144,7 +155,7 @@ function GalleryContent() {
       <div className="sticky top-[60px] z-[50] border-b border-veda-border/80 bg-veda-background-soft/95 px-2.5 py-2 backdrop-blur-md sm:top-[72px] sm:px-[3%] sm:py-4">
         <div className="mx-auto max-w-[1400px] space-y-2 sm:space-y-4">
           <CentrePicker activeCentre={centreId} onChange={handleCentreChange} />
-          {centreLive && (
+          {centreLive && centreId !== 'sector-79' && (
             <ThemeFilters
               activeTheme={themeId}
               activeAlbum={albumId}
